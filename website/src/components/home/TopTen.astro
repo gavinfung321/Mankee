@@ -4,16 +4,29 @@ import { publicValue } from "../../lib/facts.ts";
 
 const section = homeSections[3];
 const disclaimer = publicValue(site.disclaimer);
+const dishes = [...topTen];
 ---
 
 <section id={section.anchor} class="home-section nav-target">
   <div class="home-inner">
     <h2>{section.heading}</h2>
-    <ol class="top-ten-list">
-      {topTen.map((dish) => (
-        <li>{dish.name}</li>
+    <p class="top-ten-feature">{dishes[0].name}</p>
+    <ol class="top-ten-list top-ten-interactive">
+      {dishes.map((dish, index) => (
+        <li>
+          <details class="top-ten-dish" name="top-ten" open={index === 0}>
+            <summary>{dish.name}</summary>
+          </details>
+        </li>
       ))}
     </ol>
     {disclaimer && <p>{disclaimer}</p>}
   </div>
 </section>
+
+<script>
+  import { attachTopTenPreview } from "../../islands/TopTenPreview.ts";
+
+  const section = document.querySelector("#top-ten");
+  if (section instanceof HTMLElement) attachTopTenPreview(section);
+</script>

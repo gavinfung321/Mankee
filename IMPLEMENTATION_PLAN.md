@@ -298,9 +298,9 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
     - With JavaScript off, or with reduced motion, show the poster and the heading. Do not leave an empty gap. The jade-dark backdrop remains behind the media.
 
 11. `Feature: Implement 文記十大 interaction`
-    - Hover and keyboard focus on desktop.
-    - Tap/accordion behavior on mobile.
-    - No essential information hidden behind interaction.
+    - Homepage only. All ten wall names and the disclaimer stay visible with JavaScript off. 上湯花膠 is the featured name on load.
+    - At 48rem and above, hover and keyboard focus move the featured name. Below 48rem, each name is a native disclosure; the name stays visible when closed, and opening one closes the others.
+    - Do not add an ingredient photo, a price, or a wireframe description. `/menu/` keeps the static ordered list.
 
 12. `Enhancement: Add restrained section transitions`
     - Maximum one signature motion concept per section.

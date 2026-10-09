@@ -2,7 +2,7 @@
 
 Use this checklist with `IMPLEMENTATION_PLAN.md` and `GITHUB_ISSUES_GUIDE.md`. Decisions stay in the plan. This file tracks whether the work is done.
 
-Status on 9 October 2026: Gate 0 is complete. `website/` contains the static homepage, menu guide, press index, locations section, and a one-view Hero scrub that uses the temporary video. Local Git is initialized on `main` with `origin` set to `gavinfung321/Mankee`. Nothing is committed or pushed, so branch and commit items stay open. Map and delivery URLs are still unverified. The next build is the 文記十大 interaction.
+Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline commit. The 文記十大 interaction is committed on `feat/issue-11-top-ten-interaction`. Map and delivery URLs are still unverified. The next build is restrained section transitions.
 
 ## Gate 0 — Before Cursor writes code
 
@@ -71,9 +71,9 @@ Status on 9 October 2026: Gate 0 is complete. `website/` contains the static hom
 ## Interaction and motion
 
 - [x] Static content is complete before motion is connected.
-- [ ] Top Ten works with mouse, keyboard and touch.
-- [ ] Mobile Top Ten uses a clear tap/accordion pattern.
-- [ ] Only one signature motion idea is used per section.
+- [x] Top Ten works with mouse, keyboard and touch.
+- [x] Mobile Top Ten uses a clear tap/accordion pattern.
+- [x] Only one signature motion idea is used per section.
 - [x] `prefers-reduced-motion` produces a complete page without empty scroll space.
 - [x] Hero scrub never blocks navigation or essential content.
 - [x] No camera correction, paid media generation or final-Hero replacement occurs without approval.
