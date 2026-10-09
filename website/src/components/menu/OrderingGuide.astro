@@ -1,0 +1,33 @@
+---
+import { homeSections, site, topTen } from "../../content/index.ts";
+import { publicValue } from "../../lib/facts.ts";
+
+const orderLink = site.navigation.find((item) => item.id === "order");
+const steps = homeSections[2];
+const signatures = homeSections[3];
+const disclaimer = publicValue(site.disclaimer);
+---
+
+<section class="home-section menu-guide">
+  <div class="home-inner">
+    {orderLink && <h1>{orderLink.label}</h1>}
+    <h2>{steps.flow}</h2>
+    <ol class="order-steps">
+      {steps.steps.map((step) => (
+        <li>
+          <span>{step.label}</span>
+          {"flavours" in step && step.flavours.length > 0 && (
+            <span class="flavours">{step.flavours.join("、")}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+    <h2>{signatures.heading}</h2>
+    <ol class="top-ten-list">
+      {topTen.map((dish) => (
+        <li>{dish.name}</li>
+      ))}
+    </ol>
+    {disclaimer && <p>{disclaimer}</p>}
+  </div>
+</section>

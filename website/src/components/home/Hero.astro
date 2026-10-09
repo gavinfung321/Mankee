@@ -1,0 +1,31 @@
+---
+import { homeSections } from "../../content/index.ts";
+import { heroMedia } from "../../lib/hero.ts";
+
+const hero = homeSections[0];
+const frame = `object-fit: ${heroMedia.crop.fit}; object-position: ${heroMedia.crop.position}`;
+---
+
+<section class="hero-backdrop home-hero" data-text-safe={heroMedia.textSafe}>
+  <img class="hero-poster" src={heroMedia.poster} alt="" style={frame} />
+  <video
+    class="hero-video"
+    src={heroMedia.src}
+    poster={heroMedia.poster}
+    muted
+    playsinline
+    preload="metadata"
+    style={frame}
+  ></video>
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="home-inner">
+    <h1>{hero.heading}</h1>
+  </div>
+</section>
+
+<script>
+  import { attachHeroScrub } from "../../islands/HeroScrub.ts";
+
+  const section = document.querySelector(".home-hero");
+  if (section instanceof HTMLElement) attachHeroScrub(section);
+</script>

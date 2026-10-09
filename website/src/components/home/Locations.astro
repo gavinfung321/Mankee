@@ -1,0 +1,40 @@
+---
+import {
+  homeSections,
+  locations,
+  visibleLocationLinks,
+} from "../../content/index.ts";
+import { publicValue } from "../../lib/facts.ts";
+
+const section = homeSections[7];
+---
+
+<section id={section.anchor} class="home-section nav-target">
+  <div class="home-inner">
+    <h2>{section.heading}</h2>
+    <ol class="location-list">
+      {locations.map((location) => {
+        const label = publicValue(location.label);
+        const address = publicValue(location.address);
+        const hours = publicValue(location.hours);
+        const links = visibleLocationLinks(location);
+        return (
+          <li class={`location-${location.role}`}>
+            {label && <h3>{label}</h3>}
+            {address && <p>{address}</p>}
+            {hours && <p>{hours}</p>}
+            {links.length > 0 && (
+              <ul class="location-links">
+                {links.map((link) => (
+                  <li>
+                    <a href={link.url}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </div>
+</section>

@@ -1,0 +1,121 @@
+.site-header,
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+}
+
+.site-header {
+  padding: var(--space-12) var(--space-24);
+  background: var(--jade);
+  color: var(--paper);
+}
+
+.site-header a,
+.site-footer a {
+  text-decoration: none;
+}
+
+.site-header a {
+  color: var(--paper);
+}
+
+.wordmark {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.site-header .wordmark {
+  color: var(--paper);
+}
+
+.nav-disclosure {
+  margin-left: auto;
+}
+
+.nav-disclosure summary {
+  min-height: 44px;
+  padding: var(--space-8) var(--space-16);
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-disclosure summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-disclosure summary:focus-visible {
+  outline: var(--focus-width) solid var(--noodle);
+  outline-offset: var(--focus-offset);
+}
+
+.nav-list {
+  display: none;
+  gap: var(--space-8);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-disclosure[open] + .nav-list,
+.site-footer .nav-list {
+  display: grid;
+}
+
+.nav-disclosure[open] + .nav-list {
+  flex-basis: 100%;
+}
+
+.nav-list a {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 44px;
+  padding: var(--space-8) var(--space-12);
+  white-space: nowrap;
+}
+
+.site-header a[aria-current="page"] {
+  box-shadow: inset 0 calc(var(--focus-width) * -1) 0 var(--noodle);
+}
+
+.nav-cta {
+  background: var(--lacquer);
+  color: var(--paper);
+}
+
+.site-footer {
+  padding: var(--space-32) var(--space-24);
+  border-top: var(--space-4) solid var(--lacquer);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.site-footer a {
+  color: var(--ink);
+}
+
+.site-footer .nav-cta {
+  color: var(--paper);
+}
+
+.nav-target {
+  scroll-margin-top: var(--space-24);
+}
+
+@media (min-width: 48rem) {
+  .nav-disclosure {
+    display: none;
+  }
+
+  .site-header .nav-list,
+  .site-footer .nav-list {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}

@@ -1,0 +1,40 @@
+:root {
+  --paper: #eadcbf;
+  --ink: #1b1916;
+  --lacquer: #cf2028;
+  --jade: #23493d;
+  --noodle: #c99e26;
+  --jade-dark: #102d26;
+
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+
+  --content: 72rem;
+  --measure: 40rem;
+  --bp-tablet: 48rem;
+  --bp-desktop: 64rem;
+
+  --font-display: "Noto Serif TC", "Source Han Serif TC", "PMingLiU", serif;
+  --font-text: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+
+  --duration-short: 160ms;
+  --duration-medium: 320ms;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+
+  --focus-width: 2px;
+  --focus-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-short: 0ms;
+    --duration-medium: 0ms;
+  }
+}

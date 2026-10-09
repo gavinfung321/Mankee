@@ -1,0 +1,59 @@
+@import "./tokens.css";
+@import "./shell.css";
+@import "./home.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  line-height: 1.7;
+}
+
+h1,
+.display {
+  font-family: var(--font-display);
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--lacquer);
+}
+
+a:focus-visible,
+.skip-link:focus,
+.skip-link:focus-visible {
+  outline: var(--focus-width) solid var(--noodle);
+  outline-offset: var(--focus-offset);
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-8);
+  top: var(--space-8);
+  padding: var(--space-8) var(--space-12);
+  background: var(--paper);
+  color: var(--ink);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: none;
+}
+
+.quiet {
+  color: color-mix(in srgb, var(--ink) 72%, transparent);
+}
+
+.hero-backdrop {
+  background: var(--jade-dark);
+  color: var(--paper);
+}

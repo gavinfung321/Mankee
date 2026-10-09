@@ -1,0 +1,31 @@
+---
+import Header from "../components/shell/Header.astro";
+import Footer from "../components/shell/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">
+      跳至主要內容
+    </a>
+    <Header />
+    <main id="content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

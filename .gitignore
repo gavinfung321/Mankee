@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+
+# Hero lab, generated masters, and uncleared reference media stay on this machine.
+scrollcraft/
+assets/generated/
+assets/sourced/
+assets/references/
+scrollcraftbuildsmankee-hero-r1labv18-motion.txt
+
+.DS_Store
+Thumbs.db
