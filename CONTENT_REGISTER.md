@@ -241,12 +241,13 @@ The Concept B wireframe currently uses Foodpanda's Man Kee chain page as a provi
 
 Unverified facts must not render as confirmed facts. The Big 10 wall list above is confirmed. These decisions are still open:
 
-- Founder: original portrait master and portrait release; whether the English name Simon Wong appears; confirmation of the quotation wording and its source.
-- Michelin: exact public wording, mark usage, and whether “nine consecutive years” or a 2018–2026 range may be stated.
-- Portraits: founder portrait rights; photographs of 白種元 and 黎芷珊 stay private wireframe material until clearance, or until production uses an approved link or official embed.
-- Maps: official map links for 深水埗 and 尖沙咀. The 尖沙咀 unit, map pin, and telephone are still incomplete.
-- Hours: 深水埗 daily 11:00–04:00 is owner-confirmed. Last-order time, holiday exceptions, and 尖沙咀 hours are not confirmed. The OpenRice hours of 11:00–23:00 stay unused.
-- Delivery links: the Foodpanda chain URL in the wireframe needs an owner-approved branch link before launch. Keeta links are not confirmed.
+- Founder: Simon Wong, the draft portrait, and the draft quotation 「最希望是港人珍惜本土風味食店。」 are published.
+- Michelin: the public years are 2018–2025, with the draft image `michelin-2018-2025.png`. 
+- Portraits of 白種元 and 黎芷珊 stay off the new site.
+- Maps: 深水埗 uses https://share.google/otLrnzLumqWZaN8mg. 尖沙咀 has no map link. The unit is 尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas.
+- Contact: (+852) 9059-5104 and mankeecartnoodles@gmail.com are published on 深水埗.
+- Hours: 深水埗 daily 11:00–04:00. 尖沙咀 daily 11:00–21:00. Last-order time and holiday exceptions are not confirmed. The OpenRice hours of 11:00–23:00 stay unused.
+- Delivery links: Foodpanda for 深水埗 is https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle. Foodpanda for 尖沙咀 is https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos. There is no Keeta link.
 
 ## Owner data still required
 

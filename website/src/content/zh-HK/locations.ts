@@ -28,10 +28,12 @@ export const locations = [
     hours: confirmed("每日 11:00–04:00"),
     lastOrder: pending(),
     holidays: pending(),
-    phone: pending(),
-    email: pending(),
-    mapUrl: pending(),
-    foodpanda: pending(),
+    phone: confirmed("(+852) 9059-5104"),
+    email: confirmed("mankeecartnoodles@gmail.com"),
+    mapUrl: confirmed("https://share.google/otLrnzLumqWZaN8mg"),
+    foodpanda: confirmed(
+      "https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle",
+    ),
     keeta: pending(),
   },
   {
@@ -39,14 +41,18 @@ export const locations = [
     role: "secondary" as const,
     label: confirmed("尖沙咀店"),
     district: confirmed("尖沙咀"),
-    address: pending(),
-    hours: pending(),
+    address: confirmed(
+      "尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas",
+    ),
+    hours: confirmed("每日 11:00–21:00"),
     lastOrder: pending(),
     holidays: pending(),
     phone: pending(),
     email: pending(),
     mapUrl: pending(),
-    foodpanda: pending(),
+    foodpanda: confirmed(
+      "https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos",
+    ),
     keeta: pending(),
   },
 ] as const;

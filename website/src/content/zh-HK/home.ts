@@ -1,4 +1,4 @@
-import { confirmed, pending } from "../types.ts";
+import { confirmed } from "../types.ts";
 import { ordering } from "./menu.ts";
 
 export const homeSections = [
@@ -34,9 +34,9 @@ export const homeSections = [
     anchor: "story",
     founder: {
       name: confirmed("黃志強"),
-      englishName: pending(),
-      quotation: pending(),
-      portrait: pending(),
+      englishName: confirmed("Simon Wong"),
+      quotation: confirmed("最希望是港人珍惜本土風味食店。"),
+      portrait: confirmed("/media/founder/wong-chi-keung-960.webp"),
     },
   },
   {

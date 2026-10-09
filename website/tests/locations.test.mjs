@@ -19,9 +19,22 @@ test("location links appear only when the URL is confirmed", async () => {
     "utf8",
   );
 
-  for (const location of locations) {
-    assert.deepEqual(visibleLocationLinks(location), []);
-  }
+  assert.deepEqual(visibleLocationLinks(locations[0]), [
+    {
+      label: "地圖",
+      url: "https://share.google/otLrnzLumqWZaN8mg",
+    },
+    {
+      label: "Foodpanda",
+      url: "https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle",
+    },
+  ]);
+  assert.deepEqual(visibleLocationLinks(locations[1]), [
+    {
+      label: "Foodpanda",
+      url: "https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos",
+    },
+  ]);
 
   const hidden = {
     mapUrl: pending(),
@@ -49,6 +62,6 @@ test("location links appear only when the URL is confirmed", async () => {
   assert.equal(existsSync(join(root, "src/pages/locations")), false);
   assert.doesNotMatch(
     readFileSync(join(root, "src/content/zh-HK/locations.ts"), "utf8"),
-    /11:00–23:00|11:00-23:00|foodpanda\.hk/,
+    /11:00–23:00|11:00-23:00/,
   );
 });

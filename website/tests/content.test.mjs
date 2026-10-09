@@ -36,8 +36,11 @@ test("pending facts resolve to nothing and confirmed facts stay", async () => {
   assert.equal(homeSections[2].flow, "湯 → 麵 → 餸");
   assert.deepEqual(homeSections[2].steps[0].flavours, ["咖喱", "沙嗲", "麻辣"]);
   assert.equal(homeSections[4].role, "transition");
-  assert.equal(publicValue(homeSections[5].founder.englishName), undefined);
-  assert.equal(publicValue(homeSections[5].founder.quotation), undefined);
+  assert.equal(publicValue(homeSections[5].founder.englishName), "Simon Wong");
+  assert.equal(
+    publicValue(homeSections[5].founder.quotation),
+    "最希望是港人珍惜本土風味食店。",
+  );
   assert.equal(publicValue(homeSections[5].founder.name), "黃志強");
 
   assert.deepEqual(
@@ -61,15 +64,31 @@ test("pending facts resolve to nothing and confirmed facts stay", async () => {
   assert.equal(shamShuiPo.role, "primary");
   assert.equal(tsimShaTsui.role, "secondary");
   assert.equal(publicValue(shamShuiPo.hours), "每日 11:00–04:00");
+  assert.equal(
+    publicValue(shamShuiPo.foodpanda),
+    "https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle",
+  );
+  assert.equal(
+    publicValue(tsimShaTsui.address),
+    "尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas",
+  );
+  assert.equal(publicValue(tsimShaTsui.hours), "每日 11:00–21:00");
+  assert.equal(
+    publicValue(tsimShaTsui.foodpanda),
+    "https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos",
+  );
+  assert.equal(publicValue(shamShuiPo.phone), "(+852) 9059-5104");
+  assert.equal(publicValue(shamShuiPo.email), "mankeecartnoodles@gmail.com");
+  assert.equal(
+    publicValue(shamShuiPo.mapUrl),
+    "https://share.google/otLrnzLumqWZaN8mg",
+  );
   for (const fact of [
     shamShuiPo.lastOrder,
     shamShuiPo.holidays,
-    shamShuiPo.mapUrl,
-    shamShuiPo.foodpanda,
     shamShuiPo.keeta,
-    tsimShaTsui.address,
-    tsimShaTsui.hours,
-    tsimShaTsui.foodpanda,
+    tsimShaTsui.mapUrl,
+    tsimShaTsui.phone,
     tsimShaTsui.keeta,
   ]) {
     assert.equal(publicValue(fact), undefined);
@@ -83,17 +102,14 @@ test("pending facts resolve to nothing and confirmed facts stay", async () => {
   assert.equal(publicValue(recognition[1].line), "白種元曾到訪文記");
   assert.equal(publicValue(recognition[2].line), "黎芷珊曾到訪文記");
   assert.equal(publicValue(recognition[0].wording), undefined);
-  assert.equal(publicValue(recognition[0].yearRange), undefined);
+  assert.equal(publicValue(recognition[0].yearRange), "2018–2025");
   assert.equal(publicValue(recognition[1].quotation), undefined);
   assert.equal(publicValue(recognition[2].portrait), undefined);
 
   const contentDir = join(root, "src/content");
   const files = walk(contentDir);
   const source = files.map((file) => readFileSync(file, "utf8")).join("\n");
-  assert.doesNotMatch(
-    source,
-    /11:00–23:00|11:00-23:00|Simon Wong|foodpanda\.hk|keeta\.|\$\d/,
-  );
+  assert.doesNotMatch(source, /11:00–23:00|11:00-23:00|keeta\.|\$\d/);
 });
 
 function walk(directory) {

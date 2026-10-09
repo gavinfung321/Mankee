@@ -6,7 +6,8 @@ export const recognition = [
     name: confirmed("米芝蓮"),
     line: confirmed("米芝蓮"),
     wording: pending(),
-    yearRange: pending(),
+    yearRange: confirmed("2018–2025"),
+    image: confirmed("/media/recognition/michelin-2018-2025.png"),
     portrait: pending(),
   },
   {
