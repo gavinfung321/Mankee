@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { RestaurantJsonLd } from "../components/seo/RestaurantJsonLd";
 import { Footer } from "../components/shell/Footer";
 import { Header } from "../components/shell/Header";
+import { fontDisplay, fontText } from "../lib/fonts.ts";
 import { homeDescription, pageMetadata } from "../lib/seo.ts";
 import "./globals.css";
 
@@ -13,7 +14,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-HK">
+    <html
+      lang="zh-HK"
+      className={`${fontDisplay.variable} ${fontText.variable}`}
+    >
       <body>
         <a className="skip-link" href="#content">
           跳至主要內容
