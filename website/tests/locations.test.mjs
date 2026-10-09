@@ -11,11 +11,11 @@ test("location links appear only when the URL is confirmed", async () => {
   const { locations, visibleLocationLinks } =
     await import("../src/content/zh-HK/locations.ts");
   const component = readFileSync(
-    join(root, "src/components/home/Locations.astro"),
+    join(root, "src/components/home/Locations.tsx"),
     "utf8",
   );
   const footer = readFileSync(
-    join(root, "src/components/shell/Footer.astro"),
+    join(root, "src/components/shell/Footer.tsx"),
     "utf8",
   );
 
@@ -43,7 +43,8 @@ test("location links appear only when the URL is confirmed", async () => {
   );
 
   assert.match(component, /visibleLocationLinks/);
-  assert.doesNotMatch(component, /phone|lastOrder|holidays|<iframe/);
+  assert.match(component, /location\.phone/);
+  assert.doesNotMatch(component, /lastOrder|holidays|<iframe/);
   assert.doesNotMatch(footer, /福榮街|11:00|Foodpanda|Keeta|foodpanda\.hk/);
   assert.equal(existsSync(join(root, "src/pages/locations")), false);
   assert.doesNotMatch(

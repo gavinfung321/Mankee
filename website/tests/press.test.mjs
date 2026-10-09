@@ -10,9 +10,9 @@ test("the press index publishes confirmed links only", async () => {
   const { confirmed, pending } = await import("../src/content/types.ts");
   const { pressItems, visiblePressLinks } =
     await import("../src/content/zh-HK/press.ts");
-  const page = readFileSync(join(root, "src/pages/press/index.astro"), "utf8");
+  const page = readFileSync(join(root, "src/app/press/page.tsx"), "utf8");
   const list = readFileSync(
-    join(root, "src/components/press/PressList.astro"),
+    join(root, "src/components/press/PressList.tsx"),
     "utf8",
   );
   const navigation = readFileSync(
@@ -20,7 +20,7 @@ test("the press index publishes confirmed links only", async () => {
     "utf8",
   );
   const recognition = readFileSync(
-    join(root, "src/components/home/Recognition.astro"),
+    join(root, "src/components/home/Recognition.tsx"),
     "utf8",
   );
 
@@ -50,7 +50,7 @@ test("the press index publishes confirmed links only", async () => {
     [{ title: "標題", url: "https://example.com/story" }],
   );
 
-  assert.match(page, /title="文記車仔麵｜報道"/);
+  assert.match(page, /文記車仔麵｜報道/);
   assert.match(page, /<PressList/);
   assert.equal(list.match(/<h1>/g)?.length ?? 0, 1);
   assert.match(list, /visiblePressLinks/);

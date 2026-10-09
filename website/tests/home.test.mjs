@@ -7,7 +7,7 @@ import test from "node:test";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 test("homepage renders the eight static sections from confirmed records", () => {
-  const page = readFileSync(join(root, "src/pages/index.astro"), "utf8");
+  const page = readFileSync(join(root, "src/app/page.tsx"), "utf8");
   const order = [
     "<Hero",
     "<SensoryTrio",
@@ -26,16 +26,16 @@ test("homepage renders the eight static sections from confirmed records", () => 
   }
   assert.doesNotMatch(page, /specimen|client:|HeroScrub|video/);
 
-  const hero = read("Hero.astro");
-  const founder = read("Founder.astro");
-  const recognition = read("Recognition.astro");
-  const locations = read("Locations.astro");
-  const slip = read("OrderSlip.astro");
-  const topTen = read("TopTen.astro");
+  const hero = read("Hero.tsx");
+  const founder = read("Founder.tsx");
+  const recognition = read("Recognition.tsx");
+  const locations = read("Locations.tsx");
+  const slip = read("OrderSlip.tsx");
+  const topTen = read("TopTen.tsx");
   const homeFiles = [
     hero,
-    read("SensoryTrio.astro"),
-    read("HowToOrder.astro"),
+    read("SensoryTrio.tsx"),
+    read("HowToOrder.tsx"),
     topTen,
     slip,
     founder,
@@ -51,11 +51,10 @@ test("homepage renders the eight static sections from confirmed records", () => 
   assert.match(recognition, /href="\/press\/"/);
   assert.match(slip, /<hr/);
   assert.doesNotMatch(slip, /<p|<h2/);
-  assert.doesNotMatch(founder, /englishName|quotation|portrait/);
-  assert.doesNotMatch(
-    locations,
-    /foodpanda|keeta|mapUrl|phone|lastOrder|holidays/,
-  );
+  assert.match(founder, /englishName/);
+  assert.match(founder, /portrait/);
+  assert.match(founder, /quotation/);
+  assert.doesNotMatch(locations, /foodpanda|keeta|mapUrl|lastOrder|holidays/);
   assert.doesNotMatch(
     homeFiles,
     /Simon Wong|Foodpanda|Keeta|11:00–23:00|\$\d|specimen/,

@@ -6,24 +6,31 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
     "test": "node --test"
   },
   "dependencies": {
-    "astro": "^7.3.8"
+    "framer-motion": "^12.23.22",
+    "lucide-react": "^0.545.0",
+    "next": "^15.5.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.12.0",
-    "eslint-plugin-astro": "^3.2.1",
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@types/node": "^24.7.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "^15.5.4",
     "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^1.1.0",
-    "typescript-eslint": "^8.71.1"
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3"
   }
 }

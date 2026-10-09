@@ -8,7 +8,7 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 test("the homepage top ten can be featured without hiding the names", () => {
   const hero = readFileSync(
-    join(root, "src/components/home/TopTen.astro"),
+    join(root, "src/components/home/TopTen.tsx"),
     "utf8",
   );
   const preview = readFileSync(
@@ -16,12 +16,12 @@ test("the homepage top ten can be featured without hiding the names", () => {
     "utf8",
   );
   const menu = readFileSync(
-    join(root, "src/components/menu/OrderingGuide.astro"),
+    join(root, "src/components/menu/OrderingGuide.tsx"),
     "utf8",
   );
   const css = readFileSync(join(root, "src/styles/home.css"), "utf8");
 
-  assert.match(hero, /class="top-ten-feature"/);
+  assert.match(hero, /top-ten-feature/);
   assert.match(hero, /dishes\[0\]\.name/);
   assert.match(hero, /<details/);
   assert.match(hero, /<summary>/);
@@ -31,6 +31,6 @@ test("the homepage top ten can be featured without hiding the names", () => {
   assert.match(preview, /focusin/);
   assert.match(preview, /min-width: 48rem/);
   assert.match(css, /top-ten-dish\[open\] summary/);
-  assert.match(menu, /class="top-ten-list"/);
+  assert.match(menu, /top-ten-list/);
   assert.doesNotMatch(menu, /<details|TopTenPreview|top-ten-feature/);
 });

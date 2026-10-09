@@ -20,10 +20,7 @@ test("the hero uses the temporary pair and a replaceable scrub contract", () => 
   assert.equal(statSync(publicPoster).size, statSync(originalPoster).size);
 
   const contract = readFileSync(join(root, "src/lib/hero.ts"), "utf8");
-  const hero = readFileSync(
-    join(root, "src/components/home/Hero.astro"),
-    "utf8",
-  );
+  const hero = readFileSync(join(root, "src/components/home/Hero.tsx"), "utf8");
   const scrub = readFileSync(join(root, "src/islands/HeroScrub.ts"), "utf8");
   const css = readFileSync(join(root, "src/styles/home.css"), "utf8");
 
@@ -33,7 +30,7 @@ test("the hero uses the temporary pair and a replaceable scrub contract", () => 
   assert.match(contract, /textSafe: "left"/);
   assert.match(hero, /<h1>/);
   assert.match(hero, /heroMedia\.poster/);
-  assert.match(hero, /class="hero-video"/);
+  assert.match(hero, /hero-video/);
   assert.match(hero, /attachHeroScrub/);
   assert.doesNotMatch(hero, /autoplay|scale\(/);
   assert.match(scrub, /prefers-reduced-motion/);

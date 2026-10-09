@@ -21,8 +21,12 @@
   --bp-tablet: 48rem;
   --bp-desktop: 64rem;
 
-  --font-display: "Noto Serif TC", "Source Han Serif TC", "PMingLiU", serif;
-  --font-text: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-display:
+    var(--font-display-loaded, "Noto Serif TC"), "Source Han Serif TC",
+    "PMingLiU", serif;
+  --font-text:
+    var(--font-text-loaded, "Noto Sans TC"), "PingFang TC",
+    "Microsoft JhengHei", sans-serif;
 
   --duration-short: 160ms;
   --duration-medium: 320ms;

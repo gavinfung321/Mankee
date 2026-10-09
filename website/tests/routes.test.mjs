@@ -6,10 +6,10 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const requiredPaths = [
-  "src/layouts/BaseLayout.astro",
-  "src/pages/index.astro",
-  "src/pages/menu/index.astro",
-  "src/pages/press/index.astro",
+  "src/app/layout.tsx",
+  "src/app/page.tsx",
+  "src/app/menu/page.tsx",
+  "src/app/press/page.tsx",
   "src/styles",
   "src/content/zh-HK",
   "src/lib",
@@ -29,18 +29,18 @@ for (const path of requiredPaths) {
 
 assert.equal(existsSync(join(root, "src/pages/privacy")), false);
 
-const layout = readFileSync(join(root, "src/layouts/BaseLayout.astro"), "utf8");
+const layout = readFileSync(join(root, "src/app/layout.tsx"), "utf8");
 assert.match(layout, /lang="zh-HK"/);
 assert.match(layout, /<Header/);
 assert.match(layout, /<Footer/);
 assert.match(layout, /href="#content"/);
 
 const header = readFileSync(
-  join(root, "src/components/shell/Header.astro"),
+  join(root, "src/components/shell/Header.tsx"),
   "utf8",
 );
 const footer = readFileSync(
-  join(root, "src/components/shell/Footer.astro"),
+  join(root, "src/components/shell/Footer.tsx"),
   "utf8",
 );
 const navigation = readFileSync(join(root, "src/lib/navigation.ts"), "utf8");
@@ -59,7 +59,7 @@ assert.doesNotMatch(
   `${header}\n${footer}\n${navigation}`,
   /福榮街|11:00|Foodpanda|Keeta/,
 );
-assert.match(layout, /global\.css/);
+assert.match(layout, /globals\.css/);
 
 const tokens = readFileSync(join(root, "src/styles/tokens.css"), "utf8");
 for (const token of [
@@ -86,16 +86,16 @@ assert.doesNotMatch(
   /--wood|--steel|--paper-deep|--lacquer-bright|--muted|--on-jade|DFKai|KaiTi/,
 );
 
-const globalCss = readFileSync(join(root, "src/styles/global.css"), "utf8");
+const globalCss = readFileSync(join(root, "src/app/globals.css"), "utf8");
 assert.match(globalCss, /outline: var\(--focus-width\) solid var\(--noodle\)/);
 assert.match(globalCss, /outline-offset: var\(--focus-offset\)/);
 assert.match(globalCss, /\.hero-backdrop[\s\S]*background: var\(--jade-dark\)/);
 assert.doesNotMatch(globalCss, /color:\s*var\(--noodle\)/);
 
-const page = readFileSync(join(root, "src/pages/index.astro"), "utf8");
-const hero = readFileSync(join(root, "src/components/home/Hero.astro"), "utf8");
+const page = readFileSync(join(root, "src/app/page.tsx"), "utf8");
+const hero = readFileSync(join(root, "src/components/home/Hero.tsx"), "utf8");
 assert.doesNotMatch(page, /specimen|swatch/);
-assert.match(hero, /class="hero-backdrop/);
+assert.match(hero, /hero-backdrop/);
 assert.match(page, /<Hero/);
 assert.match(page, /<TopTen/);
 assert.match(page, /<Founder/);

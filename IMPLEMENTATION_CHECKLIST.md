@@ -2,13 +2,13 @@
 
 Use this checklist with `IMPLEMENTATION_PLAN.md` and `GITHUB_ISSUES_GUIDE.md`. Decisions stay in the plan. This file tracks whether the work is done.
 
-Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline commit. The 文記十大 interaction is committed on `feat/issue-11-top-ten-interaction`. Map and delivery URLs are still unverified. The next build is restrained section transitions.
+Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline commit. Next.js App Router with TypeScript is the approved production architecture, recorded on `chore/issue-19-nextjs-architecture`.
 
 ## Gate 0 — Before Cursor writes code
 
 - [x] Confirm the correct Mankee GitHub repository, visibility and default branch. `gavinfung321/Mankee` is public, with default branch `main`.
 - [x] Confirm that `website/` is the production application directory.
-- [x] Confirm Astro with TypeScript as the production stack.
+- [x] Confirm Next.js App Router and TypeScript as the production architecture. Tailwind CSS may support utilities and must not dictate a generic template appearance. Framer Motion is only for restrained progressive enhancement. Lucide supplies the menu icon. Supabase is not used. The earlier Astro recommendation is superseded.
 - [x] Read `PROJECT-HANDOFF.md` completely.
 - [x] Read `CONCEPT-B-APPROVED-STRUCTURE.md` completely.
 - [x] Read `IMPLEMENTATION_PLAN.md` completely.
@@ -34,7 +34,7 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 
 ## Foundation build
 
-- [x] Astro and TypeScript scaffold exists only under `website/`.
+- [x] Next.js and TypeScript scaffold exists only under `website/`.
 - [x] Existing reference and Hero-production folders are unchanged.
 - [x] Run, build, format and test commands are documented.
 - [x] Design tokens cover colour, typography, spacing, focus and motion. The brand colours are paper, ink, lacquer, jade, and noodle. Jade dark is the Hero backdrop only. The page background is paper.
@@ -81,35 +81,35 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 ## Content, rights and operational data
 
 - [ ] Every production image has owner/source, usage status and alt text.
-- [ ] Founder portrait and quotation are approved.
-- [ ] Michelin wording and mark usage are approved.
-- [ ] 白種元 and 黎芷珊 are described as documented visits, not endorsements.
+- [x] Founder portrait and quotation are approved.
+- [x] Michelin wording and mark usage are approved.
+- [x] 白種元 and 黎芷珊 are described as documented visits, not endorsements.
 - [ ] Addresses, hours, map links and delivery links are owner-verified.
-- [ ] Pending operational fields do not render as confirmed facts.
+- [x] Pending operational fields do not render as confirmed facts.
 - [ ] No guessed prices or complete unstable menu catalogue is published.
 - [ ] `實際供應及選擇以店內餐牌為準。` appears where required.
 
 ## Responsive and accessibility QA
 
-- [ ] Desktop layout reviewed at common laptop and large-monitor widths.
-- [ ] Tablet layout reviewed.
-- [ ] Mobile reviewed around 390px.
-- [ ] Compact 360 × 640 layout reviewed.
+- [x] Desktop layout reviewed at common laptop and large-monitor widths.
+- [x] Tablet layout reviewed.
+- [x] Mobile reviewed around 390px.
+- [x] Compact 360 × 640 layout reviewed.
 - [ ] Real iPhone test completed before launch.
-- [ ] Heading order and landmarks are logical.
-- [ ] Keyboard navigation and focus order pass.
-- [ ] Screen-reader names are meaningful.
-- [ ] Text contrast passes.
-- [ ] Essential Chinese copy is not embedded inside images.
-- [ ] Controls meet touch-target expectations.
+- [x] Heading order and landmarks are logical.
+- [x] Keyboard navigation and focus order pass.
+- [x] Screen-reader names are meaningful.
+- [x] Text contrast passes.
+- [x] Essential Chinese copy is not embedded inside images.
+- [x] Controls meet touch-target expectations.
 
 ## Performance and release
 
-- [ ] Production build completes without warnings that affect users.
-- [ ] No lab, review-board or rejected media ships in the bundle.
-- [ ] Images are responsive and appropriately compressed.
-- [ ] Fonts are licensed and loading is controlled.
-- [ ] Hero loading does not prevent first content render.
+- [x] Production build completes without warnings that affect users.
+- [x] No lab, review-board or rejected media ships in the bundle.
+- [x] Images are responsive and appropriately compressed.
+- [x] Fonts are licensed and loading is controlled.
+- [x] Hero loading does not prevent first content render.
 - [ ] Metadata, canonical URLs and social cards are correct.
 - [ ] Structured data contains only verified information.
 - [ ] Broken links and failed assets are checked.

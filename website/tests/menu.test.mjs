@@ -7,13 +7,13 @@ import test from "node:test";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 test("the menu page is an evergreen guide", () => {
-  const page = readFileSync(join(root, "src/pages/menu/index.astro"), "utf8");
+  const page = readFileSync(join(root, "src/app/menu/page.tsx"), "utf8");
   const guide = readFileSync(
-    join(root, "src/components/menu/OrderingGuide.astro"),
+    join(root, "src/components/menu/OrderingGuide.tsx"),
     "utf8",
   );
 
-  assert.match(page, /title="文記車仔麵｜點餐"/);
+  assert.match(page, /文記車仔麵｜點餐/);
   assert.match(page, /<OrderingGuide/);
   assert.equal(guide.match(/<h1>/g)?.length ?? 0, 1);
   assert.match(guide, /orderLink\.label/);

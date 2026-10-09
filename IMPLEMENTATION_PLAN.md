@@ -1,6 +1,6 @@
 # Mankee Website Implementation Plan
 
-Status: planning approved in principle; no production application code has started.
+Status: Next.js App Router with TypeScript is the approved production architecture. The application is `website/`.
 
 This plan converts the approved Concept B v9 wireframe into a production website while protecting the unfinished Hero project and keeping all work traceable through GitHub Issues.
 
@@ -22,13 +22,15 @@ Do not restore the older nine-act homepage, the former three-topping combination
 
 ### Stack
 
-Decided 9 October 2026:
+Decided 9 October 2026. Next.js App Router with TypeScript is the approved production architecture. This supersedes the earlier Astro recommendation. Do not revert the Next.js application and do not restore Astro.
 
-- Astro with TypeScript.
-- Static-first semantic HTML and CSS.
-- Client-side islands only for the Hero scrub, mobile navigation, and the 文記十大 preview.
+- Next.js App Router.
+- TypeScript.
+- Tailwind CSS may support utilities. It must not dictate a generic template appearance. Colour, type, and layout stay on the Mankee tokens.
+- Framer Motion only for restrained progressive enhancement. The mobile navigation is the current use.
+- Lucide for the menu icon.
+- No Supabase. This site has no database.
 - Typed TypeScript content records. `zh-HK` is the only active locale.
-- No generic component library and no generic landing-page template.
 
 ### Motion
 
@@ -58,7 +60,8 @@ Decided 9 October 2026. Planning documents, `wireframes/`, `scrollcraft/`, and s
 
 ```text
 website/
-  astro.config.mjs
+  next.config.ts
+  postcss.config.mjs
   package.json
   tsconfig.json
   public/
@@ -67,11 +70,15 @@ website/
       hero/                 temporary video and poster, replaceable as a pair
       food/                 approved copies only, added in the media issue
   src/
-    layouts/
-      BaseLayout.astro      lang="zh-HK", skip link, header, footer
+    app/
+      layout.tsx            lang="zh-HK", skip link, header, footer
+      page.tsx              /
+      globals.css
+      menu/page.tsx         /menu/
+      press/page.tsx        /press/
     styles/
       tokens.css            colour, type, spacing, focus, motion
-      global.css
+      home.css
     content/
       types.ts              locale and confirmed/pending fact types
       zh-HK/
@@ -88,37 +95,31 @@ website/
       facts.ts              pending values render nothing
     components/
       shell/
-        Header.astro
-        Footer.astro
-        MobileNav.astro
+        Header.tsx
+        Footer.tsx
       home/
-        Hero.astro
-        SensoryTrio.astro
-        HowToOrder.astro
-        TopTen.astro
-        OrderSlip.astro     transition between 文記十大 and Founder
-        Founder.astro
-        Recognition.astro
-        Locations.astro
+        Hero.tsx
+        SensoryTrio.tsx
+        HowToOrder.tsx
+        TopTen.tsx
+        OrderSlip.tsx       transition between 文記十大 and Founder
+        Founder.tsx
+        Recognition.tsx
+        Locations.tsx
       menu/
-        OrderingGuide.astro
+        OrderingGuide.tsx
       press/
-        PressList.astro
+        PressList.tsx
     islands/
       HeroScrub.ts          added with the Hero issue
       TopTenPreview.ts      added with the Top Ten interaction issue
-      MobileNav.ts
-    pages/
-      index.astro           /
-      menu/index.astro      /menu/
-      press/index.astro     /press/
 ```
 
 `/privacy/` is added only if analytics or a form requires it. Founder and locations stay on the homepage. Primary navigation is 首頁, 點餐, 文記十大, 故事, and 到店／外賣. Press is linked from the recognition section.
 
 The homepage sensory names stay `瑞士雞翼`, `上湯花膠`, and `南乳豬手`. `top-ten.ts` uses the wall names, including `瑞士雞中翼`.
 
-The scaffold issue creates the Astro project, this empty folder tree, `BaseLayout.astro`, and the three empty routes. Section components, token values, content copy, islands, and media copies arrive in their own issues.
+The production app is this Next.js App Router tree. Section components, token values, content copy, islands, and media copies belong to their own issues.
 
 ### Design tokens
 
@@ -148,7 +149,7 @@ Noto Serif TC and Noto Sans TC are the recommended webfonts. Both are SIL Open F
 
 Motion tokens cover a short duration, a medium duration, and one easing. Reduced motion sets those durations to zero. Section animation itself stays in later issues.
 
-The token issue applies these values in `website/src/styles/tokens.css` and `global.css`, through `BaseLayout.astro`. The homepage shows a temporary type, colour, and focus specimen. `/menu/` and `/press/` use the same base styles. The specimen is replaced when the static homepage is built.
+The token issue applies these values in `website/src/styles/tokens.css` and `website/src/app/globals.css`, through `src/app/layout.tsx`. `/menu/` and `/press/` use the same base styles.
 
 ### Shared shell
 
@@ -217,7 +218,7 @@ Every implementation issue must have a label and one of these milestones.
 
 | Milestone | Outcome |
 |---|---|
-| `v0.1 — Planning & Foundation` | Repository confirmed, source-of-truth documents frozen, Astro scaffold and quality tooling ready |
+| `v0.1 — Planning & Foundation` | Repository confirmed, source-of-truth documents frozen, Next.js scaffold and quality tooling ready |
 | `v0.2 — Static Experience` | All approved routes and homepage sections work without animation |
 | `v0.3 — Interaction & Accessibility` | Hero scrub, Top Ten interaction, responsive behavior and reduced motion pass |
 | `v0.4 — Content & Media Approval` | Approved production assets and verified operational content replace placeholders |
@@ -237,10 +238,9 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
    - Record unresolved content and rights questions.
 
 2. `Chore: Initialize Astro production workspace`
-   - Create `website/` with Astro and TypeScript, using the approved file structure.
-   - Add the empty folders, `BaseLayout.astro`, and empty `/`, `/menu/`, and `/press/` routes.
-   - Add formatting, linting and basic test commands.
-   - Preserve all reference directories. Leave section components, tokens, content copy, islands, and media for later issues.
+   - Superseded on 9 October 2026. Do not create or restore an Astro application.
+   - The approved production app is Next.js App Router with TypeScript, recorded in the stack section above.
+   - GitHub #2 closed the original scaffold. GitHub #19 records this architecture decision.
 
 3. `Design: Establish Mankee design tokens and typography`
    - Add the five brand colours, the Hero-only jade dark, and the spacing, type, focus, layout, and motion tokens.
@@ -303,24 +303,26 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
     - Do not add an ingredient photo, a price, or a wireframe description. `/menu/` keeps the static ordered list.
 
 12. `Enhancement: Add restrained section transitions`
-    - Maximum one signature motion concept per section.
-    - No prototype labels, decorative AI artifacts or excessive parallax.
+    - Sections other than the Hero and 文記十大 fade in and rise 12px as they enter. The Hero keeps the scrub. 文記十大 keeps the featured-dish selection. The order slip stays a static rule.
+    - Use a view timeline inside `prefers-reduced-motion: no-preference`. Reduced motion, JavaScript off, and browsers without view timelines leave every section visible.
+    - No parallax, prototype label, or new island.
 
 13. `Accessibility: Complete keyboard, screen-reader and reduced-motion pass`
-    - Semantic headings and landmarks.
-    - Visible focus, alt text and sufficient contrast.
-    - No empty pinned space when reduced motion is active.
+    - Header and footer navigation are named landmarks, 主要 and 頁尾. One `h1` per page. The skip link still targets `#content`.
+    - On paper, focus is an ink, noodle, ink ring. On jade, focus stays a noodle ring. Body links and the selected 文記十大 name use ink. The 到店／外賣 label is large bold paper on lacquer. The six colour values stay unchanged.
+    - Hero media is decorative. The order slip is decorative. Reduced motion adds no pinned space.
 
 14. `Enhancement: Complete responsive layout pass`
-    - Desktop, tablet, 390px and compact 360 × 640 review.
-    - Mobile order slip is not persistent.
+    - Reviewed at 1440, 1024, 768, 390, and 360×640 on the homepage, `/menu/`, and `/press/`. No horizontal scroll. At 1440 the text column stays 72rem. At 768 and above the header links sit on one line. Below 768, 選單 is used and the sections are one column.
+    - The order slip stays a static rule in the page. It is not fixed or sticky.
 
 ### v0.4 — Content & Media Approval
 
 15. `Content: Verify founder, recognition and location records`
-    - Founder portrait, quote, source and English-name decision.
-    - Michelin wording and mark treatment.
-    - Addresses, hours, maps and delivery links.
+    - The public founder line stays 黃志強. The English name, quotation, and portrait stay unpublished.
+    - Recognition stays 米芝蓮, 白種元曾到訪文記, and 黎芷珊曾到訪文記. No year count, mark, or quotation.
+    - 深水埗 keeps the confirmed address and 每日 11:00–04:00. 尖沙咀店 stays a name. Maps, phones, last-order times, holiday notes, and delivery links stay unpublished. OpenRice 11:00–23:00 and the wireframe Foodpanda chain URL stay unused.
+    - Simon Wong, the draft portrait, the draft quotation 「最希望是港人珍惜本土風味食店。」, the 2018–2025 Michelin image, the 尖沙咀 unit, daily 11:00–21:00, phone, email, the Sham Shui Po map link, and both Foodpanda links are published. 尖沙咀 has no map. There is no Keeta link.
 
 16. `Content: Approve and import production photography`
     - Copy only approved, permission-cleared assets.
@@ -333,11 +335,15 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
 ### v1.0 — Launch Ready
 
 18. `SEO: Add metadata and structured data`
-    - `zh-HK`, canonical URLs, social cards and verified restaurant/location schema.
+    - Titles and descriptions for the homepage, `/menu/`, and `/press/` come from confirmed records.
+    - Open Graph uses locale `zh_HK` and no image.
+    - Restaurant structured data includes 文記車仔麵, the 深水埗 address, and daily 11:00–04:00.
+    - The production origin stays pending, so no canonical host is published.
 
 19. `Performance: Meet launch performance budget`
     - Responsive images, local font strategy and bounded Hero loading.
     - No review or lab assets in the production bundle.
+    - GitHub #18 ships SIL OFL WOFF2 subsets of Noto Serif TC and Noto Sans TC, a layout-sized founder photograph, and a Hero poster that loads before the temporary video.
 
 20. `QA: Complete launch verification and owner sign-off`
     - Cross-browser, real iPhone, keyboard, screen-reader, reduced-motion and broken-link checks.
