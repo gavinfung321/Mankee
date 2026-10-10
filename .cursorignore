@@ -1,0 +1,13 @@
+.git/
+scrollcraft/
+assets/generated/
+wireframes/
+website/node_modules/
+website/.next/
+website/dist/
+**/*.mp4
+**/*.mov
+**/*.webm
+**/*.avi
+**/*.zip
+**/*.log

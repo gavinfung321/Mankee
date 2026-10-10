@@ -1,0 +1,18 @@
+---
+description: One homepage section and at most three visual fixes per request
+alwaysApply: true
+---
+
+# One section per request
+
+- Work on the named section only. Change at most three visual items.
+- Read only that component and its CSS. Make the smallest diff.
+- Do not edit other sections, Hero media, `/menu`, or `/press`.
+- Do not commit, push, or merge.
+- Do not update the canvas or GitHub. Tick `IMPLEMENTATION_CHECKLIST.md` only when the user asked to track that section.
+
+# Example
+
+User: "Do the Header."
+
+Edit `Header.tsx` and the header rules in `globals.css` only. Leave the Hero.

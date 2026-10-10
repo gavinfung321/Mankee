@@ -1,0 +1,24 @@
+---
+description: Use only localhost:3000 and one 1440 screenshot after a small homepage edit
+alwaysApply: true
+---
+
+# Port 3000 only
+
+- The only live site is http://localhost:3000/.
+- Do not visit, probe, start, restart, or wait for port 4500.
+- Do not search for another server or run port-discovery commands.
+- Do not restart port 3000 if it is already responding.
+- If it stops responding, make one recovery attempt. If that fails, stop and report the error.
+- Concept B stays a frozen reference. Read source files or old screenshots. Do not run its server.
+
+# After the edit
+
+- If the user already stated the change, make it. Do not ask them to choose again.
+- A change that only sets font-weight, font-size, color, letter-spacing, or line-height on text already on the page: edit that property and stop. Do not refresh, scroll, resize, or take a screenshot.
+- For any other visual change, refresh http://localhost:3000/ once.
+- Capture one screenshot of the changed section at 1440×900. No full-page shot. Do not scroll a pinned section to reach the change.
+- Run only checks that name the touched files.
+- Do not run a production build, full lint, or the full test suite for a small CSS change.
+- If a command has no useful output for 60 seconds, stop it.
+- Report the result and stop.

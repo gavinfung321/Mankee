@@ -1,0 +1,18 @@
+---
+description: Keep a type-only edit to one change and stop
+alwaysApply: true
+---
+
+# Small type edits
+
+A request to bold, resize, or recolor words that are already on the page is one CSS property.
+
+- Edit that property and stop.
+- Do not ask a second question after the user has already said what they want.
+- Do not open the browser, scroll the hero, or take a screenshot for that edit.
+
+# Example
+
+User: "Bold 一碗文記."
+
+Set `font-weight: 700` on that title. Stop.
