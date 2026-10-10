@@ -26,7 +26,9 @@ test("the homepage top ten can be featured without hiding the names", () => {
   assert.match(hero, /<details/);
   assert.match(hero, /<summary>/);
   assert.match(hero, /attachTopTenPreview/);
-  assert.doesNotMatch(hero, /<img|assets\/references|厚身吸湯/);
+  assert.match(hero, /<img/);
+  assert.match(hero, /dish-preview/);
+  assert.doesNotMatch(hero, /assets\/references|assets\/sourced|\$\d/);
   assert.match(preview, /mouseenter/);
   assert.match(preview, /focusin/);
   assert.match(preview, /min-width: 48rem/);

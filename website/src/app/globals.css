@@ -29,6 +29,7 @@
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-text);
+    font-size: var(--type-body);
     line-height: 1.7;
   }
 
@@ -51,8 +52,16 @@
   color: var(--paper);
 }
 
+.hero-stick {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
 .nav-target {
-  scroll-margin-top: var(--space-24);
+  scroll-margin-top: 5.5rem;
 }
 
 .nav-cta {
@@ -94,4 +103,96 @@ main:focus,
 main:focus-visible {
   outline: none;
   box-shadow: none;
+}
+
+main {
+  padding-top: 4.25rem;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 30;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding-block: 0.7rem;
+  color: var(--paper);
+  background: transparent;
+}
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.site-header .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.75rem;
+  color: var(--lacquer);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.brand-seal {
+  display: grid;
+  width: 1.35rem;
+  height: 1.35rem;
+  place-items: center;
+  border: 1.5px solid var(--lacquer);
+  color: var(--lacquer);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.site-header.is-solid {
+  color: var(--ink);
+  background: var(--paper);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+.site-header.is-solid .nav-links {
+  margin-inline: auto;
+}
+
+.site-header.is-overlay .nav-cta {
+  margin-left: auto;
+}
+
+.site-header .nav-links a {
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+}
+
+.site-header a {
+  color: inherit;
+}
+
+.site-header .brand-mark,
+.site-header .brand-seal {
+  color: var(--lacquer);
+}
+
+.site-header .nav-cta {
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.85rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-text);
+  font-size: 0.9rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-header,
+.site-footer {
+  padding-inline: max(var(--space-16), calc((100% - var(--content)) / 2));
 }

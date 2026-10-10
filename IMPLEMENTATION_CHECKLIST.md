@@ -116,6 +116,22 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 - [ ] Analytics and privacy behavior are approved if enabled.
 - [ ] Owner performs final visual, content and operational sign-off.
 
+## Homepage polish — Issue #20
+
+Status on 10 October 2026. The structure issues #1–#19 are closed. Issue #20 is open on `design/issue-20-concept-b-visual-system`. The first visual draft was rejected. The second draft is the current uncommitted page: photographic first half, sparse second half. The audit and five-pass plan are written. Implementation of the polish has not started. The fish-maw sensory crop is updated, and the new Sham Shui Po store photos are filed under `assets/sourced/user/store/`.
+
+Gemini’s seven steps are the same sequence as the five passes, split more finely. Do not open a second issue series for them.
+
+- [x] 1. Global typography, spacing, widths and color discipline. Pass 1. Type tokens, one content width, one photo frame, one text-link style, and section padding reduced from 6.5rem to 48px.
+- [x] 2. Header and Hero overlay. Pass 2. Transparent 64px bar, logo, bold headline, and the pinned film are in place.
+- [ ] 3. Sensory, ordering and 文記十大 narrative flow. Pass 2. In progress. The middle sensory frame is raised, the order steps read down the copy column, and the ten names are one column.
+- [ ] 4. Order slip, founder and recognition. Pass 3. Slip, portrait and Michelin mark exist. They do not yet read as one sequence.
+- [ ] 5. Locations and footer. Pass 3. Facts are published. Daytime Sham Shui Po storefront is chosen and not yet placed. Broadcast frames of 白種元 and 黎芷珊 stay off the page.
+- [ ] 6. Mobile and responsive treatment. Pass 4. Audited at 1440, 1280 and 390. Not refined.
+- [ ] 7. Subtle motion and final performance work. Pass 5. Not started. Hero media stays unchanged.
+
+Locked for every step: approved facts, Hero video and poster bytes, heading 文記十大, founder before recognition, no prices, no V10 or honeycomb media, no redraw of the stall mural.
+
 ## Per-issue completion
 
 - [ ] Every acceptance criterion is verified.

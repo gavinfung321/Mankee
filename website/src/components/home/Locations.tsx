@@ -17,10 +17,12 @@ export function Locations() {
             const label = publicValue(location.label);
             const address = publicValue(location.address);
             const hours = publicValue(location.hours);
-const phoneValue = publicValue(location.phone);
+            const phoneValue = publicValue(location.phone);
             const emailValue = publicValue(location.email);
-            const phone = typeof phoneValue === "string" ? phoneValue : undefined;
-            const email = typeof emailValue === "string" ? emailValue : undefined;
+            const phone =
+              typeof phoneValue === "string" ? phoneValue : undefined;
+            const email =
+              typeof emailValue === "string" ? emailValue : undefined;
             const links = visibleLocationLinks(location);
             return (
               <li key={location.id} className={`location-${location.role}`}>

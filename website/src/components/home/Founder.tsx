@@ -13,8 +13,7 @@ const quote = typeof quotation === "string" ? quotation : undefined;
 export function Founder() {
   return (
     <section id={section.anchor} className="home-section nav-target">
-      <div className="home-inner">
-        <h2>{section.heading}</h2>
+      <div className="home-inner founder-layout">
         {portrait && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -29,9 +28,12 @@ export function Founder() {
             alt="文記車仔麵創辦人黃志強"
           />
         )}
-        {name && <p className="founder-name">{name}</p>}
-        {english && <p className="founder-english">{english}</p>}
-        {quote && <blockquote className="founder-quote">{quote}</blockquote>}
+        <div className="founder-copy">
+          <h2>{section.heading}</h2>
+          {quote && <blockquote className="founder-quote">{quote}</blockquote>}
+          {name && <p className="founder-name">{name}</p>}
+          {english && <p className="founder-english">{english}</p>}
+        </div>
       </div>
     </section>
   );

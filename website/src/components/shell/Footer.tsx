@@ -3,7 +3,7 @@ import { primaryNav } from "../../lib/navigation";
 
 export function Footer() {
   return (
-    <footer className="flex flex-wrap items-center gap-4 border-t-4 border-lacquer bg-paper px-6 py-8 text-ink">
+    <footer className="site-footer flex flex-wrap items-center gap-4 border-t-4 border-lacquer bg-paper px-6 py-8 text-ink">
       <p className="font-display text-[1.35rem] leading-tight font-[650]">
         文記車仔麵
       </p>

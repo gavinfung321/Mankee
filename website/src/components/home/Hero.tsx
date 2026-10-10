@@ -7,6 +7,12 @@ import { heroMedia } from "../../lib/hero.ts";
 
 const hero = homeSections[0];
 
+const toppingMoments = [
+  { start: 1.55, end: 2.9, kicker: "SWISS CHICKEN WING", name: "瑞士雞翼" },
+  { start: 5.55, end: 6.55, kicker: "SUPERIOR SOUP FISH MAW", name: "上湯花膠" },
+  { start: 10.55, end: 11.7, kicker: "FERMENTED PORK KNUCKLE", name: "南乳豬手" },
+];
+
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -15,7 +21,41 @@ export function Hero() {
     if (!section) return;
     attachHeroScrub(section);
     const video = section.querySelector("video");
-    if (!(video instanceof HTMLVideoElement)) return;
+    const label = section.querySelector(".hero-topping-label");
+    const labelKicker = label?.querySelector("span");
+    const labelName = label?.querySelector("strong");
+    const paint = () => {
+      const travel = Math.max(1, section.offsetHeight - window.innerHeight);
+      const progress = Math.min(
+        1,
+        Math.max(0, -section.getBoundingClientRect().top / travel),
+      );
+      const intro = 1 - Math.min(1, progress / 0.22);
+      const finish = Math.min(1, Math.max(0, (progress - 0.94) / 0.05));
+      section.style.setProperty("--hero-p", progress.toFixed(4));
+      section.style.setProperty("--hero-shade-opacity", (1 - progress * 0.55).toFixed(3));
+      section.style.setProperty("--hero-intro-opacity", intro.toFixed(3));
+      section.style.setProperty("--hero-intro-y", `${(-progress * 22).toFixed(2)}px`);
+      section.style.setProperty("--hero-finish-opacity", finish.toFixed(3));
+      section.style.setProperty("--hero-finish-y", `${((1 - progress) * 28).toFixed(2)}px`);
+      const time =
+        video instanceof HTMLVideoElement && Number.isFinite(video.duration)
+          ? progress * video.duration
+          : 0;
+      const active = toppingMoments.find((item) => time >= item.start && time <= item.end);
+      label?.classList.toggle("is-visible", Boolean(active));
+      if (labelKicker) labelKicker.textContent = active?.kicker ?? "";
+      if (labelName) labelName.textContent = active?.name ?? "";
+    };
+    paint();
+    window.addEventListener("scroll", paint, { passive: true });
+    window.addEventListener("resize", paint);
+    if (!(video instanceof HTMLVideoElement)) {
+      return () => {
+        window.removeEventListener("scroll", paint);
+        window.removeEventListener("resize", paint);
+      };
+    }
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const start = () => {
       if (reduced.matches) return;
@@ -24,7 +64,11 @@ export function Hero() {
     };
     if (document.readyState === "complete") start();
     else window.addEventListener("load", start, { once: true });
-    return () => window.removeEventListener("load", start);
+    return () => {
+      window.removeEventListener("load", start);
+      window.removeEventListener("scroll", paint);
+      window.removeEventListener("resize", paint);
+    };
   }, []);
 
   return (
@@ -33,6 +77,7 @@ export function Hero() {
       className="hero-backdrop home-hero"
       data-text-safe={heroMedia.textSafe}
     >
+      <div className="hero-stick">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className="hero-poster"
@@ -45,8 +90,8 @@ export function Hero() {
         fetchPriority="high"
         aria-hidden="true"
         style={{
-          objectFit: heroMedia.crop.fit,
-          objectPosition: heroMedia.crop.position,
+          objectFit: "cover",
+          objectPosition: "54% 56%",
         }}
       />
       <video
@@ -57,13 +102,28 @@ export function Hero() {
         preload="none"
         aria-hidden="true"
         style={{
-          objectFit: heroMedia.crop.fit,
-          objectPosition: heroMedia.crop.position,
+          objectFit: "cover",
+          objectPosition: "54% 56%",
         }}
       />
       <div className="hero-scrim" aria-hidden="true" />
-      <div className="home-inner">
-        <h1>{hero.heading}</h1>
+      <header className="hero-intro">
+        <p className="hero-kicker">文記推介</p>
+        <h1>{hero.heading}。</h1>
+        <p className="hero-lead">捲動控制三款招牌配料逐一落碗。</p>
+      </header>
+      <div className="hero-finish">
+        <span>三款招牌</span>
+        <strong>一碗文記</strong>
+        <p>瑞士雞翼、上湯花膠、南乳豬手。</p>
+      </div>
+      <div className="hero-topping-label" aria-hidden="true">
+        <span />
+        <strong />
+      </div>
+      <div className="hero-progress" aria-hidden="true">
+        <i />
+      </div>
       </div>
     </section>
   );

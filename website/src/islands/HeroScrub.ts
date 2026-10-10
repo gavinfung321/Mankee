@@ -11,7 +11,8 @@ export function attachHeroScrub(section: HTMLElement) {
     frame = 0;
     if (!Number.isFinite(video.duration) || video.duration <= 0) return;
     const rect = section.getBoundingClientRect();
-    const progress = Math.min(1, Math.max(0, -rect.top / rect.height));
+    const travel = Math.max(1, rect.height - window.innerHeight);
+    const progress = Math.min(1, Math.max(0, -rect.top / travel));
     const nextTime = progress * video.duration;
     if (Math.abs(video.currentTime - nextTime) > 0.012) {
       video.currentTime = nextTime;
