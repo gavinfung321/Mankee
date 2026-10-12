@@ -1,127 +1,158 @@
-# `你揀，文記煮` — desktop cinemagraph plan
+# `你揀，文記煮` — Kie.ai living-photograph plan
 
-Status: **approved direction; asset not yet created or integrated.**
+Status: **deferred by the owner on 12 Oct 2026. Do not run the Kie.ai preflight, generate video, spend credits, or integrate motion until the owner explicitly reopens this plan.**
 
-Current approved still: `public/media/order-pass/order-pass-desktop-approved-v1.png` (V15). V15 is the only source permitted for motion; never use V5, V9 or the rejected intermediate candidates.
+Locked desktop source: `public/media/order-pass/order-pass-desktop-approved-v1.png` (V15, 1672×941).  
+Locked mobile fallback: `public/media/order-pass/order-pass-mobile-approved-v1.png` (864×1152).
 
-This plan adds one restrained ambient loop to the approved V15 still. It is not a second Hero, a scroll scrub, or a new composition. The HTML order slip and its existing flight remain separate from the photographic motion.
+This replaces the rejected 2.5D/parallax idea. The result is one quiet desktop cinemagraph, not another Hero scrub, narrative video, camera move, or new composition.
 
-## Purpose
+## Goal
 
-Make the completed bowl feel freshly served while keeping this section quieter than the Hero. The motion should be noticed only after the viewer has already read the slip and bowl.
+Make the finished bowl feel freshly served without redrawing the food or competing with the Hero. The approved still remains the source of truth, poster and permanent fallback.
 
-The section must still work as a complete static composition when motion is unavailable.
+The HTML lockup remains separate from the video:
 
-## Locked visual invariants
+- 熱騰騰上枱
+- 坐低，開餐。
 
-The following must remain pixel-stable:
+The words are never baked into the generated video.
 
-- camera, crop and left wood reserve;
+## Locked invariants
+
+These pixels and shapes must remain visually stationary:
+
+- camera, crop and wood grain;
 - bowl silhouette, rim and blue decoration;
 - noodles, daikon, squid and exactly two dumplings;
 - spoon and chopsticks;
 - all four condiment containers;
-- wood grain, contact shadows and lighting direction;
-- HTML order slip, copy, typography and landing position.
+- contact shadows and overall exposure;
+- HTML copy and typography.
 
-Reject any result that changes food anatomy, invents ingredients, moves utensils, bends the bowl, shifts bottles, pulses the whole exposure, or introduces camera movement.
+Reject any result that changes food anatomy, invents ingredients, bends utensils, shifts the bowl or bottles, pulses the whole exposure, changes focus, or moves the camera.
 
-## Motion design
+## Motion scope
 
-Loop duration: **5 seconds**, seamless, with no visible first or last frame.
+First proof: **steam only**.
 
-Only two motion zones are permitted:
+- Two or three fine translucent wisps rise a short distance from the centre of the broth.
+- Steam moves slowly, disperses naturally and disappears before touching the chopsticks or condiment group.
+- Steam never obscures the squid, dumplings, noodles or payoff copy.
+- Camera and every solid object remain locked.
 
-1. **Steam:** two or three fine, translucent wisps rise a short distance from the bowl. They drift slowly, dissolve before reaching the chopsticks or condiment group, and never cover the toppings or slip.
-2. **Broth highlights:** an extremely small, irregular shimmer remains inside the visible broth. Displacement must stay below roughly 2px at source resolution. Noodles and toppings do not move.
+Do not request broth shimmer in the first generation. It may be considered only after the steam proof passes and must remain inside a tightly drawn broth mask with movement below about 2px at source resolution.
 
-No zoom, pan, parallax, rack focus, camera shake, animated garnish, moving shadows, pouring sauce, moving chopsticks, or floating food.
+## Kie.ai generation gate
+
+Use an image-to-video model that supports first and last frames. Recommended first attempt: the current high-fidelity Kie model with first-and-last-frame control, quality mode, and no prompt expansion. Use V15 as **both** the first and last frame.
+
+Generation settings:
+
+- one 5-second clip;
+- 16:9;
+- 24fps delivery target;
+- no audio;
+- locked camera;
+- identical V15 first and last frames;
+- one candidate only before review;
+- no batch generation and no automatic retries.
+
+Prompt:
+
+> Locked-off close food photograph on a warm wooden table. Preserve the supplied frame exactly. Only two or three very fine translucent wisps of natural heat steam rise slowly from the centre of the hot broth and dissolve before reaching the chopsticks. The camera, crop, bowl, noodles, daikon, squid, two dumplings, orange spoon, chopsticks, four condiment containers, wood grain, shadows, focus and exposure remain completely motionless and unchanged. Seamless restrained five-second cinemagraph. No audio.
+
+Negative prompt:
+
+> camera movement, zoom, pan, parallax, focus change, exposure pulsing, flicker, boiling, bubbling, smoke, fog, heavy steam, moving food, moving noodles, moving dumplings, moving squid, moving spoon, bending spoon, moving chopsticks, extra utensil, shifting bowl, shifting bottles, changing labels, duplicated ingredients, invented garnish, warped ceramic, warped table, altered wood grain, text, logo, watermark
+
+## Required inputs and security
+
+Already available:
+
+- [x] Locked V15 desktop still.
+- [x] Approved mobile still.
+- [x] FFmpeg is available locally for inspection, masking, looping and compression.
+- [x] `.env.local` is ignored by Git.
+
+Still required before generation:
+
+- [ ] The owner places the Kie key locally as `KIE_API_KEY` in `website/.env.local` or in the local process environment.
+- [ ] Cursor confirms it will not print, paste, log or commit the key.
+- [ ] V15 is uploaded through the supported Kie file/input mechanism and its temporary URL is used for both first and last frame.
+- [ ] The chosen Kie model, estimated credit cost and exact settings are reported before submission.
+- [ ] The owner approves that single paid generation.
+
+Never paste the API key into a chat prompt, source file, plan, screenshot, command output or Git commit.
 
 ## Production method
 
-Use the final approved still as the immutable base frame. Create motion as a masked overlay, then composite it back over the unchanged still. Do not rely on a free-running image-to-video result as the final asset because it may redraw the bowl and ingredients.
+The generated full-frame clip is only a motion source, not automatically the final website asset.
 
-An image-to-video service may be used only to create candidate steam or broth movement. The final loop must restore untouched V15 pixels outside the two approved masks.
+1. Generate one candidate using identical first and last frames.
+2. Review the whole clip at 100% and compare several frames against V15.
+3. If all solid objects are stable, isolate only the steam area with a feathered mask.
+4. Composite that masked motion over untouched V15 pixels.
+5. Make the five-second seam invisible.
+6. Export a review master outside `public/`.
 
-Produce one review master before any website integration:
+If the full frame deforms but the steam is usable, retain only the steam through the mask. If usable steam cannot be isolated after one correction pass, stop and keep the still. Do not enter another regeneration cycle.
 
-- same 16:9 framing as V15;
-- no crop or generative extension;
-- 5-second seamless loop;
-- 24fps;
-- no audio;
-- exact first-frame match to V15.
+## Review gates
 
-## Web deliverables
+### C0 — preflight
 
-- WebM/VP9 primary loop, target **1.5MB or less**.
-- MP4/H.264 fallback, target **2.5MB or less**.
-- V15 still remains the poster and permanent fallback.
-- Keep the source master outside `public/`; place only compressed delivery files in `public/media/order-pass/`.
+- [ ] Key is local, ignored and never exposed.
+- [ ] Model, price estimate, duration, resolution and first/last-frame settings are stated.
+- [ ] V15 is used at both ends without crop or generative extension.
+- [ ] One-generation limit is acknowledged.
 
-Do not upscale V15 merely to claim 1080p. The current source is sufficient for its approved maximum display width; preserve detail instead of fabricating it.
+### C1 — raw motion proof
 
-## Playback policy
+- [ ] Exactly one five-second candidate is generated.
+- [ ] Only restrained steam is visible.
+- [ ] Camera and crop are locked.
+- [ ] Food, utensils, containers, wood and exposure do not drift.
+- [ ] First and last frames return cleanly to V15.
 
-Motion is desktop-only:
+### C2 — masked review master
 
-- mount and play only at `min-width: 1024px`;
-- `autoplay`, `muted`, `loop`, and `playsInline`;
-- use `preload="metadata"` rather than eager loading;
-- do not mount the video when `prefers-reduced-motion: reduce` is active;
-- do not mount it when the browser reports data-saving mode;
-- pause when the section is offscreen or the tab is hidden;
-- use a separately approved mobile still at 360, 390 and 768px; until then, V15 is the temporary static fallback.
+- [ ] Untouched V15 supplies every pixel outside the steam mask.
+- [ ] Steam looks like heat steam, not smoke, fog or a particle effect.
+- [ ] Steam does not cross the chopsticks, condiments, food or HTML-copy area.
+- [ ] The seam is invisible for three consecutive loops.
+- [ ] The loop remains quieter than the Hero.
 
-The video must not become the page's LCP asset and must not block the still image from rendering.
+### C3 — web delivery
 
-## Interaction relationship
+- [ ] WebM/VP9 is 1.5MB or less.
+- [ ] MP4/H.264 is 2.5MB or less.
+- [ ] Neither file contains audio.
+- [ ] V15 remains the poster and immediate fallback.
+- [ ] Poster and video have identical framing and colour.
 
-The existing order-slip flight remains the only foreground interaction. The cinemagraph is ambient background motion and is not tied to scroll position.
+### C4 — integration
 
-- Do not restart the loop when the slip lands.
-- Do not animate the HTML slip as part of the video.
-- Do not add a second scrub timeline.
-- Do not change the current topping-to-slip data flow.
-
-## Approval gates
-
-### C1 — motion proof
-
-- [ ] One 5-second review loop uses V15 without changing composition.
-- [ ] Only steam and contained broth highlights move.
-- [ ] The seam is invisible during three consecutive loops.
-- [ ] No ingredient, utensil, bowl, bottle or wood deformation is visible.
-- [ ] The loop remains quieter than the Hero scrub.
-
-### C2 — compressed assets
-
-- [ ] WebM is 1.5MB or less and MP4 is 2.5MB or less.
-- [ ] Both formats preserve the approved colour and contrast.
-- [ ] The poster-to-video transition does not jump or change crop.
-- [ ] No audio track is present.
-
-### C3 — website integration
-
-- [ ] V15 loads first and remains the desktop fallback.
-- [ ] Motion mounts only at 1024px and above.
-- [ ] Reduced-motion and data-saving users receive only V5.
-- [ ] The video pauses offscreen and in a hidden tab.
-- [ ] The existing slip flight and selected topping names remain correct.
-- [ ] No layout shift, horizontal overflow or crop regression at 1024 and 1440px.
-- [ ] Static presentation remains unchanged at 360, 390 and 768px.
-- [ ] Automated tests and production build pass.
+- [ ] Desktop only at 1024px and above.
+- [ ] `autoplay`, `muted`, `loop`, `playsInline`, `preload="metadata"`.
+- [ ] Video mounts only when reduced motion and data saver are both off.
+- [ ] Playback pauses offscreen and while the tab is hidden.
+- [ ] Mobile and reduced-motion users receive the approved still.
+- [ ] The HTML payoff text remains readable and stationary.
+- [ ] No layout shift, overflow or crop regression at 1024 and 1440px.
 
 ## Stop conditions
 
-Keep the still image and cancel the cinemagraph if any of these remain after one correction pass:
+Cancel the cinemagraph and keep V15 if any of these remain after one correction pass:
 
-- visible morphing or AI redrawing;
-- steam looks like smoke, fog or a particle effect;
-- the loop seam is noticeable;
+- bowl, food, spoon, chopsticks, condiments or table deform;
+- camera, focus, crop or overall exposure moves;
+- steam resembles smoke, fog or a digital particle effect;
+- seam remains visible;
 - compression damages the food;
-- playback competes with the order-slip flight;
-- either delivery file exceeds its budget materially.
+- motion competes with the Hero or typography;
+- delivery files materially exceed the size budget.
 
-The still V15 photograph is the approved production fallback. Motion is optional enhancement, not a completion requirement.
+## Next action
 
+None while deferred. Keep the approved static desktop and mobile photographs. Revisit this plan only after the other homepage chapters and the final continuity audit show that the section still needs motion.

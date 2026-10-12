@@ -23,7 +23,10 @@ test("the live slip stays in Top Ten and the flight file is not mounted", () => 
   assert.match(topTen, /slipDone \? "完成" : "落單"/);
   assert.match(topTen, /setSlipDone\(false\)/);
   assert.doesNotMatch(order, /order-ticket|order-slip-card/);
-  assert.match(order, /你揀好的湯、麵同餸，煮成熱騰騰一碗。坐低，就可以開餐。/);
+  assert.match(order, /熱騰騰上枱/);
+  assert.match(order, /坐低，開餐。/);
+  assert.doesNotMatch(order, /排隊時揀好湯、麵同餸/);
+  assert.doesNotMatch(order, /order-pass-wood/);
 });
 
 test("the slip stays static below 1024px and flies only on a wide screen", () => {
@@ -42,7 +45,7 @@ test("the slip stays static below 1024px and flies only on a wide screen", () =>
   const mobileStart = css.indexOf("@media (max-width: 639px)");
   const mobile = css.slice(mobileStart, css.indexOf("@media", mobileStart + 1));
   assert.match(mobile, /flex-direction:\s*column/);
-  assert.match(mobile, /position:\s*static/);
+  assert.match(mobile, /\.order-pass-plate[\s\S]*position:\s*relative/);
   assert.match(mobile, /order:\s*2/);
 });
 

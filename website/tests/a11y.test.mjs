@@ -33,7 +33,7 @@ test("landmarks, focus, and decorative media stay accessible", () => {
   assert.match(footer, /aria-label="頁尾"/);
   assert.match(hero, /<h1>/);
   assert.match(hero, /aria-hidden="true"/);
-  assert.match(slip, /order-pass-wood/);
+  assert.match(slip, /order-pass-line/);
   assert.doesNotMatch(slip, /aria-hidden="true"/);
   assert.match(topTen, /alt=""/);
   assert.match(topTen, /aria-live="polite"/);

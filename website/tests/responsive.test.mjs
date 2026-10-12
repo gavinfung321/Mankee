@@ -24,13 +24,13 @@ test("the layout stacks on small screens and keeps the order slip in flow", () =
   assert.match(wide, /\.sensory-list/);
   assert.match(wide, /\.top-ten-list/);
   assert.match(mobile, /\.order-pass-stage[\s\S]*flex-direction:\s*column/);
-  assert.match(mobile, /\.order-pass-stage \.order-pass-wood[\s\S]*position:\s*static/);
+  assert.doesNotMatch(home, /order-pass-wood/);
   assert.match(mobile, /\.order-pass-plate[\s\S]*order:\s*2/);
   assert.match(mobile, /aspect-ratio:\s*1/);
   assert.doesNotMatch(mobile, /\.order-steps/);
   assert.match(header, /md:hidden/);
   assert.match(header, /md:flex/);
-  assert.match(slip, /order-slip/);
+  assert.match(slip, /order-pass-line/);
   assert.doesNotMatch(slip, /position:\s*(fixed|sticky)/);
   const wideTop = home.indexOf("@media (min-width: 64rem)");
   assert.doesNotMatch(home, /position:\s*fixed/);

@@ -1246,12 +1246,12 @@ header.site-header .nav-cta:focus-visible {
 }
 
 .order-pass-copy {
-  max-width: 35rem;
-  margin-bottom: 36px;
+  max-width: 45rem;
+  margin-bottom: 28px;
 }
 
 .order-pass .section-kicker {
-  color: var(--noodle);
+  color: #1b4336;
 }
 
 .order-pass-title {
@@ -1262,10 +1262,43 @@ header.site-header .nav-cta:focus-visible {
   line-height: 1;
 }
 
+.order-pass-stage::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(18, 10, 6, 0.55) 0%, rgba(18, 10, 6, 0.28) 42%, transparent 100%);
+}
+
 .order-pass-line {
-  max-width: 35rem;
+  position: absolute;
+  z-index: 3;
+  top: 40%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   margin: 0;
-  line-height: 1.75;
+  transform: translateY(-50%);
+  color: #fff8ea;
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.05;
+  text-shadow: 0 1px 12px rgba(18, 10, 6, 0.32);
+}
+
+.order-pass-line-lead {
+  font-size: 46px;
+  font-weight: 600;
+}
+
+.order-pass-line-payoff {
+  font-size: 52px;
+  font-weight: 700;
 }
 
 .order-pass-stage {
@@ -1280,6 +1313,7 @@ header.site-header .nav-cta:focus-visible {
 
 .order-pass-plate {
   position: absolute;
+  z-index: 1;
   inset: 0;
   display: block;
   width: 100%;
@@ -1294,19 +1328,6 @@ header.site-header .nav-cta:focus-visible {
 
 .order-pass-stage .order-ticket {
   opacity: 1;
-}
-
-.order-pass-wood {
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 7%;
-  width: min(11.5rem, 24%);
-  margin: 0;
-  transform: translateY(-50%);
-  color: #241d18;
-  font-size: 16px;
-  line-height: 1.75;
 }
 
 .order-ticket {
@@ -1362,15 +1383,29 @@ header.site-header .nav-cta:focus-visible {
     gap: 16px;
   }
 
-  .order-pass-stage .order-pass-wood {
+  .order-pass-stage::before {
+    content: none;
+  }
+
+  .order-pass-line {
     position: static;
     top: auto;
     left: auto;
-    z-index: auto;
-    width: auto;
-    max-width: 35rem;
-    margin: 0;
+    max-width: 40em;
     transform: none;
+    color: #241d18;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.75;
+    text-shadow: none;
+  }
+
+  .order-pass-line-lead,
+  .order-pass-line-payoff {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.75;
   }
 
   .order-pass-plate {
@@ -1383,15 +1418,6 @@ header.site-header .nav-cta:focus-visible {
     object-fit: cover;
     object-position: right center;
   }
-}
-
-.order-slip {
-  width: 7.5rem;
-  height: 0;
-  margin: var(--space-24) 0 0;
-  border: 0;
-  border-top: 3px solid var(--lacquer);
-  background: transparent;
 }
 
 .founder-copy h2 {
