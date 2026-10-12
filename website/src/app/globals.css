@@ -196,3 +196,12 @@ main {
 .site-footer {
   padding-inline: max(var(--space-16), calc((100% - var(--content)) / 2));
 }
+
+.order-slip-rail {
+  position: fixed;
+  z-index: 45;
+  right: 16px;
+  bottom: 18px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}

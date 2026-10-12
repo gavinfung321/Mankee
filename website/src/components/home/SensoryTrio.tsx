@@ -1,51 +1,37 @@
-import { homeSections } from "../../content/index.ts";
-
-const sensory = homeSections[1];
-
-const frames: Record<string, { src: string; note: string }> = {
-  瑞士雞翼: { src: "/media/food/sensory-wings.webp", note: "醬香、軟嫩" },
-  上湯花膠: { src: "/media/food/sensory-fish-maw.webp", note: "飽滿、吸湯" },
-  南乳豬手: { src: "/media/food/sensory-trotter.webp", note: "南乳香、軟腍" },
-};
+const queues = [
+  {
+    src: "/media/store/queue-day.webp",
+    alt: "日間，客人在文記店外輪候",
+    label: "日間",
+    width: 1024,
+    height: 768,
+  },
+  {
+    src: "/media/store/queue-dusk.webp",
+    alt: "傍晚，客人沿街輪候",
+    label: "傍晚",
+    width: 1024,
+    height: 768,
+  },
+];
 
 export function SensoryTrio() {
   return (
-    <section className="home-section sensory-section">
+    <section className="home-section sensory-section" aria-label="舊式香港">
       <div className="home-inner">
-        <div className="sensory-heading">
-          <p className="section-kicker">三款招牌</p>
-          <h2>三款招牌，三種記憶。</h2>
-          <p>
-            同一碗裡，瑞士雞翼的香、上湯花膠的厚、南乳豬手的濃，各自有清楚的質感。
-          </p>
-        </div>
-        <ul className="sensory-list">
-          {sensory.items.map((item) => {
-            const frame = frames[item.dish];
-            return (
-              <li key={item.dish}>
-                {frame && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    className="sensory-photo"
-                    src={frame.src}
-                    alt={item.dish}
-                    width={1200}
-                    height={1400}
-                  />
-                )}
-                <div className="sensory-caption">
-                  <span className="sensory-sense">{item.sense}</span>
-                  <span className="sensory-dish">{item.dish}</span>
-                  {frame && <span className="sensory-note">{frame.note}</span>}
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="sensory-handoff">
-          <p>由三款招牌走到真實落單，沿着配料檔，由湯開始。</p>
-          <a href="#how-to-order">沿着配料檔，由湯開始</a>
+        <header className="sensory-heading">
+          <p className="section-kicker">舊式香港</p>
+          <h2>排隊輪候，逐樣落單，是車仔麵的舊式點法。</h2>
+          <p className="sensory-note">舊時是一架木頭車，麵、湯、餸都由客人自己揀。</p>
+        </header>
+        <div className="sensory-list">
+          {queues.map((queue) => (
+            <figure key={queue.src} className="sensory-queue">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={queue.src} alt={queue.alt} width={queue.width} height={queue.height} />
+              <figcaption>{queue.label}</figcaption>
+            </figure>
+          ))}
         </div>
       </div>
     </section>

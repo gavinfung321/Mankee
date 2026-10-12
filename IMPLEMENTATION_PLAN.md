@@ -13,10 +13,28 @@ When project documents disagree, use this precedence:
 3. `IMPLEMENTATION_PLAN.md` — production phases, technical direction and delivery gates.
 4. `CONTENT_REGISTER.md` — factual evidence, permissions and operational-data status.
 5. `ASSET_MANIFEST.md` — asset provenance and approval status.
-6. Concept B v9 — visual and interaction reference only.
+6. `wireframes/concept-b.html` (Concept B v9) — visual source of truth for section layout and interaction.
 7. Older roadmaps, architecture drafts and wireframes — historical reference only where they do not conflict with the documents above.
 
+A checklist note, a production sketch, or a sentence about reading order does not replace the wireframe picture. Approved facts still come from the documents above. Where a wireframe sentence and a confirmed fact disagree, the fact is what gets published and the wireframe layout stays.
+
+### Visual rebuild
+
+Decided 10 October 2026. These rules apply to every homepage section, and to `/menu/` and `/press/` where Concept B has a counterpart.
+
+Reuse the CSS decisions in `wireframes/wireframe.css`. Do not replace a section with a different design system.
+
+The production result should feel like the wireframe has been faithfully rebuilt as a real website. Real-website changes are limited to approved sentences, working links, semantic markup, the existing `48rem` and `64rem` breakpoints, and keeping `position: fixed` out of `home.css`. Each section keeps that section’s colour, type, and layout from the wireframe. Hero media bytes stay the approved temporary pair.
+
 Do not restore the older nine-act homepage, the former three-topping combination, complete menu pricing or technical ScrollCraft labels merely because they remain in an older document.
+
+### 文記落單體驗
+
+Decided 10 October 2026. The layout that stacks 一、二、三 under the heading, with one counter photograph beside that column, is withdrawn.
+
+Port the paint, grid, and spacing from `.menu-stagger`, `.alt-grid`, `.menu-disclaimer`, `.menu-experience`, `.heritage-steps`, `.queue-story`, `.queue-counter`, `.queue-people`, and `.order-slip-rail`. The handoff 跟住點揀？ / 第一次來，可以由文記十大開始 stays off this section. 文記十大 says that itself. The heading and kicker use the same Kai title and gold kicker as the section above. The cards read 一 湯, 二 麵, 三 餸. Each card is a photo over a solid timber band. 一 lists 腩汁、瑞士汁、清湯、走湯 and 可加咖喱、沙嗲、麻辣. 二 lists 粗麵、河粉、烏冬、日式拉麵, cropped onto the noodles. 三 says 可以逐樣加. No prices, and the full noodle list and topping board stay off these cards. The left column aligns to the top of the cards. On this section the paper’s 餸 row says 逐樣揀. 花膠 · 魷魚 · 雞翼 appears when the paper reaches 文記十大. Each card keeps the timber wash over an existing photo: the counter for 湯, a noodle bowl for 麵, and the chicken-wing close-up for 餸. Hover lifts a card 4px and grows its hard shadow. 咖喱、沙嗲、麻辣 stay on the soup card only. The separate flavour sentence and the three 湯 麵 餸 circles stay off. The counter is the wireframe’s steel gradient, not a photograph. The queue figures are 揀湯, 揀麵, 揀餸. The red step moves from 揀湯 to 揀麵 to 揀餸 and repeats. Hover pauses that loop and steps the pointed figure forward. Reduced motion keeps the last figure red and still. The left paragraph is 跟住條隊向前，就是香港車仔麵的點法。 The red label 不鏽鋼配料檔 stays off the steel panel. This section does not use the scroll-entry transform, so the corner paper can stay fixed to the viewport.
+
+`position: fixed` on `.order-slip-rail` stays out of `home.css`. That one paper is fixed from `globals.css`: it appears on this section, 湯 and 麵 fill here, 餸 fills on 文記十大, and the stamp becomes 完成 on the later slip. Published sentences stay the approved `zh-HK` records. `.act-tag`, `.device-badge`, and `.handoff` stay off the page, as Concept B already hides them.
 
 ## 2. Production strategy
 
@@ -171,7 +189,7 @@ Planned for the navigation issue. Primary navigation is 首頁, 點餐, 文記�
 
 1. Hero — `一碗，由這裏開始`
 2. Three textures — `香：瑞士雞翼`, `厚：上湯花膠`, `濃：南乳豬手`
-3. How to order — `湯 → 麵 → 餸`; curry, satay and spicy flavour remain optional soup choices
+3. How to order — the 10 October 2026 picture above. Cards read 一 湯, 二 麵, 三 餸. Curry, satay and spicy flavour stay on the soup card. The stacked copy-column layout is withdrawn.
 4. 文記十大
 5. Completed order-slip transition
 6. Founder and Mankee story

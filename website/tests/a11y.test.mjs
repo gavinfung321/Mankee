@@ -33,16 +33,23 @@ test("landmarks, focus, and decorative media stay accessible", () => {
   assert.match(footer, /aria-label="頁尾"/);
   assert.match(hero, /<h1>/);
   assert.match(hero, /aria-hidden="true"/);
-  assert.match(slip, /aria-hidden="true"/);
+  assert.match(slip, /order-pass-wood/);
+  assert.doesNotMatch(slip, /aria-hidden="true"/);
+  assert.match(topTen, /alt=""/);
   assert.match(topTen, /aria-live="polite"/);
   assert.match(globalCss, /a \{\s*color: var\(--ink\)/);
   assert.match(globalCss, /\.nav-cta[\s\S]*font-weight: 700/);
   assert.match(
     homeCss,
-    /\.top-ten-dish\[open\] summary \{\s*color: var\(--ink\)/,
+    /\.top-ten-section \.top-ten-dish\[open\] summary \{[^}]*color: #fff1d9/,
   );
+  const withoutStageStick = homeCss.replace(
+    /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky;/,
+    "#top-ten .top-ten-stage {",
+  );
+  assert.match(homeCss, /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky/);
   assert.doesNotMatch(
-    homeCss,
+    withoutStageStick,
     /position:\s*sticky|animation-timeline:\s*view\(\)[\s\S]*prefers-reduced-motion:\s*reduce/,
   );
 });

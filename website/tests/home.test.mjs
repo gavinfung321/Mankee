@@ -50,7 +50,8 @@ test("homepage renders the eight static sections from confirmed records", () => 
   assert.match(locations, /id=\{section\.anchor\}/);
   assert.match(recognition, /href="\/press\/"/);
   assert.match(slip, /<hr/);
-  assert.doesNotMatch(slip, /<p|<h2/);
+  assert.match(slip, /<p className="order-pass-wood">/);
+  assert.doesNotMatch(slip, /<h2/);
   assert.match(founder, /englishName/);
   assert.match(founder, /portrait/);
   assert.match(founder, /quotation/);

@@ -37,8 +37,9 @@ test("the hero uses the temporary pair and a replaceable scrub contract", () => 
   assert.match(scrub, /currentTime/);
   assert.match(css, /object-fit:\s*cover|hero-video/);
   assert.match(css, /prefers-reduced-motion:\s*reduce[\s\S]*\.hero-video/);
-  assert.doesNotMatch(
-    `${hero}\n${scrub}\n${css}`,
-    /transform:\s*scale|100vh\s+100vh/,
-  );
+  const heroMedia = css.slice(css.indexOf(".hero-poster,"), css.indexOf(".hero-scrim"));
+  assert.match(heroMedia, /\.hero-video/);
+  assert.doesNotMatch(heroMedia, /transform:\s*scale/);
+  assert.match(css, /\.hero-progress i[\s\S]*?transform:\s*scaleX\(var\(--hero-p/);
+  assert.doesNotMatch(`${hero}\n${scrub}`, /transform:\s*scale|100vh\s+100vh/);
 });

@@ -17,13 +17,23 @@ test("the layout stacks on small screens and keeps the order slip in flow", () =
     "utf8",
   );
   const wide = home.slice(home.indexOf("@media (min-width: 48rem)"));
+  const mobileStart = home.indexOf("@media (max-width: 639px)");
+  const mobile = home.slice(mobileStart, home.indexOf("@media", mobileStart + 1));
 
   assert.match(home, /width: min\(var\(--content\)/);
   assert.match(wide, /\.sensory-list/);
-  assert.match(wide, /\.order-steps/);
   assert.match(wide, /\.top-ten-list/);
+  assert.match(mobile, /\.order-pass-stage[\s\S]*flex-direction:\s*column/);
+  assert.match(mobile, /\.order-pass-stage \.order-pass-wood[\s\S]*position:\s*static/);
+  assert.match(mobile, /\.order-pass-plate[\s\S]*order:\s*2/);
+  assert.match(mobile, /aspect-ratio:\s*1/);
+  assert.doesNotMatch(mobile, /\.order-steps/);
   assert.match(header, /md:hidden/);
   assert.match(header, /md:flex/);
   assert.match(slip, /order-slip/);
-  assert.doesNotMatch(`${home}\n${slip}`, /position:\s*(fixed|sticky)/);
+  assert.doesNotMatch(slip, /position:\s*(fixed|sticky)/);
+  const wideTop = home.indexOf("@media (min-width: 64rem)");
+  assert.doesNotMatch(home, /position:\s*fixed/);
+  assert.doesNotMatch(home.slice(0, wideTop), /position:\s*sticky/);
+  assert.match(home.slice(wideTop), /#top-ten \.top-ten-stage[\s\S]*position:\s*sticky/);
 });
