@@ -3,7 +3,7 @@
 Status: **active recovery and organisation**  
 Updated: 14 Oct 2026
 
-This is the single index for workflow, priorities and approval status. It does not replace section plans or factual content files.
+This is the current website-phase index for workflow, priorities and approval status. It does not replace the root project governance, section plans or factual content files.
 
 ## Immediate rule
 
@@ -13,16 +13,32 @@ The working tree currently contains 23 uncommitted changes spanning documentatio
 
 ## Order of authority
 
-When documents disagree, use this order:
+The Git and project root is `Mankee/`, not `Mankee/website/`. Root governance remains authoritative:
 
-1. Confirmed content and media records in `src/content/zh-HK/*` plus explicit owner decisions.
-2. This project control plan for sequence, status and scope.
-3. `docs/visual-system.md` for fonts, type scale, colour roles and shared visual tokens **after its approval gate passes**.
-4. `docs/inspiration-analysis.md` for pacing, focal-point discipline, composition principles and motion budget.
-5. The relevant `docs/sections/*` plan for section-specific content, layout and acceptance criteria.
-6. `docs/analysis.md` as historical analysis and rationale, not a current implementation checklist.
+1. `PROJECT-HANDOFF.md` for Hero media, credit safety and generation restrictions.
+2. `CONCEPT-B-APPROVED-STRUCTURE.md` for homepage order and content scope.
+3. `IMPLEMENTATION_PLAN.md` and `IMPLEMENTATION_CHECKLIST.md` for production architecture and gates.
+4. `CONTENT_REGISTER.md` for factual evidence, permissions and operational status.
+5. `ASSET_MANIFEST.md` for asset provenance and approval.
 
-No document may override factual, licensing, accessibility or performance requirements.
+Within the current website-design phase:
+
+1. This file coordinates sequence and status.
+2. `docs/visual-system.md` governs fonts, type scale, colour roles and shared visual tokens **after its approval gate passes**.
+3. `docs/inspiration-analysis.md` governs pacing, focal-point discipline, composition principles and motion budget.
+4. The relevant `docs/sections/*` plan governs section-specific layout and acceptance criteria.
+5. `docs/analysis.md` remains historical rationale rather than a current implementation checklist.
+
+Typed records in `src/content/zh-HK/*` implement approved content; they do not replace the evidence and permission status in the root `CONTENT_REGISTER.md`. No document may override factual, licensing, accessibility or performance requirements.
+
+## Workspace boundary
+
+- Open `C:/Users/gavin/OneDrive/Desktop/Mankee` as the Cursor workspace so root governance and the production application are visible together.
+- Run Git operations from `Mankee/`; the `.git` directory is at the project root.
+- Run Next.js, npm and application tests from `Mankee/website/`, where `package.json` lives.
+- Keep production source, styles, tests and public assets inside `website/`.
+- Keep root planning, source assets, wireframes, ScrollCraft experiments and tooling in their existing root folders.
+- Do not move the Next.js package to the root and do not copy the whole asset or experiment library into `website/`.
 
 ## Working method
 

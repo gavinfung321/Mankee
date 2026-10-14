@@ -7,12 +7,17 @@ This becomes the shared visual guide only after the Typography Lock in `docs/pro
 
 ## Order of authority
 
-1. Confirmed content in `src/content/zh-HK/*` plus explicit owner decisions — facts, wording limits and approved media. Always wins.
-2. `docs/project-plan.md` — workflow, priority and approval status.
-3. This file after its approval gate passes — fonts, type scale and chapter colours.
-4. `docs/inspiration-analysis.md` — pacing and motion budget: one focal point per viewport, peak-and-pause rhythm, signature motion limited to Hero, 文記十大 and the optional bowl cinemagraph.
-5. `docs/sections/*` — layout and copy requirements for each section.
-6. `docs/analysis.md` — historical analysis and rationale.
+The root-level precedence in `IMPLEMENTATION_PLAN.md` remains authoritative. In particular, `PROJECT-HANDOFF.md`, `CONCEPT-B-APPROVED-STRUCTURE.md`, `CONTENT_REGISTER.md` and `ASSET_MANIFEST.md` remain outside `website/` and must be read from the `Mankee/` project root.
+
+Within the current website-design phase:
+
+1. `docs/project-plan.md` — workflow, priority and approval status.
+2. This file after its approval gate passes — fonts, type scale and chapter colours.
+3. `docs/inspiration-analysis.md` — pacing and motion budget: one focal point per viewport, peak-and-pause rhythm, signature motion limited to Hero, 文記十大 and the optional bowl cinemagraph.
+4. `docs/sections/*` — layout and copy requirements for each section.
+5. `docs/analysis.md` — historical analysis and rationale.
+
+Typed content in `src/content/zh-HK/*` implements approved facts but does not establish evidence or media permission by itself.
 
 Baseline: Concept B's type and colour system, refined by the inspiration's pacing and restraint.
 
