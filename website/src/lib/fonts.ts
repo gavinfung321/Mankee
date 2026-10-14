@@ -11,11 +11,11 @@ export const fontText = localFont({
 });
 
 export const fontDisplay = localFont({
-  src: "../fonts/noto-serif-tc.woff2",
+  src: "../fonts/lxgw-wenkai-tc-bold.woff2",
   display: "swap",
   preload: false,
-  weight: "200 900",
+  weight: "700",
   variable: "--font-display-loaded",
-  fallback: ["Source Han Serif TC", "PMingLiU", "serif"],
+  fallback: ["Kaiti TC", "serif"],
   adjustFontFallback: false,
 });

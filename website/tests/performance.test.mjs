@@ -29,7 +29,7 @@ test("fonts, images, and the hero stay within the launch budget", () => {
     statSync(join(root, "src/fonts/noto-sans-tc.woff2")).size < 150_000,
   );
   assert.ok(
-    statSync(join(root, "src/fonts/noto-serif-tc.woff2")).size < 200_000,
+    statSync(join(root, "src/fonts/lxgw-wenkai-tc-bold.woff2")).size < 200_000,
   );
 
   const hero = readFileSync(join(root, "src/components/home/Hero.tsx"), "utf8");

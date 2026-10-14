@@ -1,5 +1,5 @@
 ---
-description: Use only localhost:3000 and one 1440 screenshot after a small homepage edit
+description: Use only localhost:3000 and a strict browser and screenshot review budget
 alwaysApply: true
 ---
 
@@ -12,13 +12,62 @@ alwaysApply: true
 - If it stops responding, make one recovery attempt. If that fails, stop and report the error.
 - Concept B stays a frozen reference. Read source files or old screenshots. Do not run its server.
 
-# After the edit
+# Browser and screenshot review budget
 
-- If the user already stated the change, make it. Do not ask them to choose again.
-- A change that only sets font-weight, font-size, color, letter-spacing, or line-height on text already on the page: edit that property and stop. Do not refresh, scroll, resize, or take a screenshot.
-- For any other visual change, refresh http://localhost:3000/ once.
-- Capture one screenshot of the changed section at 1440×900. No full-page shot. Do not scroll a pinned section to reach the change.
+If the user already stated the change, make it. Do not ask them to choose again.
+
+## Tier 0 — no browser
+
+Use no browser actions, refreshes or screenshots for:
+
+- Planning and analysis documents
+- Documentation moves
+- Copy-only changes
+- Source inspection
+- Changes limited to font size, weight, colour, line height or letter spacing
+- Analysis when the user has already supplied a screenshot
+
+## Tier 1 — ordinary visual edit
+
+For a completed section-level visual edit:
+
+- Implement the full requested change first.
+- Perform one browser review only after implementation.
+- Refresh once.
+- Capture one cropped screenshot of the affected section at 1440×900.
+- Do not inspect unrelated sections or produce a full-page screenshot.
+- Do not scroll a pinned section to reach the change.
+- Stop after the first successful check.
+
+## Tier 2 — responsive or interactive edit
+
+Use this tier only when the request explicitly changes responsive layout, overflow, scrolling, animation or interaction:
+
+- Check 1440px and 390px once each.
+- Do not check 1024px unless one of those checks reveals a genuine breakpoint problem or the user explicitly requests it.
+- Do not repeat screenshots after a successful result.
+- Do not record video or perform a scrolling walkthrough unless explicitly requested.
+
+## General limits
+
+- Reuse screenshots supplied by the user.
+- Do not measure every element or inspect DOM geometry unless diagnosing visible clipping, overflow or alignment failure.
+- Do not verify that untouched content remains unchanged by taking more screenshots.
+- Do not restart an already working server.
+- Do not run full builds or full test suites for visual-only edits.
 - Run only checks that name the touched files.
-- Do not run a production build, full lint, or the full test suite for a small CSS change.
 - If a command has no useful output for 60 seconds, stop it.
+- If verification becomes slow or uncertain, stop and report the specific issue instead of exploring repeatedly.
+- Explicit user instructions override the tier limits.
 - Report the result and stop.
+
+# Speed budget
+
+- Unless the user explicitly says “verify in browser,” do not open the browser.
+- When exact target files are supplied, read and edit only those files and their direct imports.
+- Do not reread project documentation for a narrowly scoped edit.
+- Do not inspect computed styles, DOM measurements or screenshots unless diagnosing a visible defect.
+- When the user can review a local page themselves, provide the URL and stop.
+- Never repeat a successful verification.
+- If a small task has not produced an edit within three minutes, stop and report the blocker.
+- A direct small edit should normally finish without tests, screenshots or browser actions.

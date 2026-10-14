@@ -70,7 +70,7 @@ for (const token of [
   "--noodle: #c99e26",
   "--jade-dark: #102d26",
   "--font-display:",
-  "Noto Serif TC",
+  "LXGW WenKai TC",
   "--font-text:",
   "Noto Sans TC",
   "--duration-short: 0ms",
@@ -83,7 +83,7 @@ for (const token of [
 
 assert.doesNotMatch(
   tokens,
-  /--wood|--steel|--paper-deep|--lacquer-bright|--muted|--on-jade|DFKai|KaiTi/,
+  /--wood|--steel|--paper-deep|--lacquer-bright|--muted|--on-jade|KaiTi/,
 );
 
 const globalCss = readFileSync(join(root, "src/app/globals.css"), "utf8");

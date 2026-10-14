@@ -21,7 +21,7 @@ test("the layout stacks on small screens and keeps the order slip in flow", () =
   const mobile = home.slice(mobileStart, home.indexOf("@media", mobileStart + 1));
 
   assert.match(home, /width: min\(var\(--content\)/);
-  assert.match(wide, /\.sensory-list/);
+  assert.match(wide, /\.sensory-dusk/);
   assert.match(wide, /\.top-ten-list/);
   assert.match(mobile, /\.order-pass-stage[\s\S]*flex-direction:\s*column/);
   assert.doesNotMatch(home, /order-pass-wood/);

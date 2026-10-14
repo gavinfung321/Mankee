@@ -28,9 +28,10 @@
   --bp-tablet: 48rem;
   --bp-desktop: 64rem;
 
+  /* 標楷體 cannot be self-hosted; WenKai TC is the hosted stand-in where it is missing. */
   --font-display:
-    var(--font-display-loaded, "Noto Serif TC"), "Source Han Serif TC",
-    "PMingLiU", serif;
+    "DFKai-SB", "BiauKai", var(--font-display-loaded, "LXGW WenKai TC"),
+    "Kaiti TC", serif;
   --font-text:
     var(--font-text-loaded, "Noto Sans TC"), "PingFang TC",
     "Microsoft JhengHei", sans-serif;
