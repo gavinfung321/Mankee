@@ -38,7 +38,7 @@ The rules for that order are in `docs/current/homepage-structure.md`.
 
 ## Run the site
 
-Commands for the Next.js app are in `website/README.md`.
+Run app commands from this directory or from `website/`. The root `package.json` has no dependencies; it forwards `dev`, `build`, `start`, `test`, `lint` and `format:check` to `website/` with `npm --prefix website`, so `npm run dev` here starts the site at http://localhost:3000/. Install dependencies inside `website/`. Details are in `website/README.md`.
 
 ## Leave alone
 
