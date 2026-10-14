@@ -1,8 +1,101 @@
 # Locations + Footer — implementation plan
 
-Planning document only. Do not implement until this plan is approved.
-
 Live check: http://localhost:3000/
+
+## Follow this
+
+Updated 14 Oct 2026. This block wins where it disagrees with older paragraphs.
+
+### Locations — two equal store entries (owner direction, 14 Oct 2026)
+
+**Rejected on 14 Oct 2026:** the asymmetric primary/secondary build (深水埗 about two-thirds, `另一分店`, solid cream map button), and then the single full-width 深水埗 storefront banner above two text columns. Older paragraphs below that make 深水埗 dominant, call 尖沙咀 secondary or supporting, or say 尖沙咀 has no map or contacts are superseded.
+
+Owner decision: 深水埗店 and 尖沙咀店 have **equal visual and typographic importance**. Each has its own storefront photograph.
+
+Built in `src/components/home/Locations.tsx` and the Locations rules in `src/styles/home.css`. **Visually and factually approved by the owner on 14 Oct 2026** at desktop (1440px), tablet (1024px) and mobile (390px), and frozen against further visual redesign. The 尖沙咀 photograph's publication permission and the Foodpanda mark's brand-use clearance were confirmed by the owner the same day. Preserve:
+
+- two equal storefront entries;
+- the shared telephone and email, stored once in `sharedContacts`;
+- both map links;
+- the Foodpanda icon always beside the visible `Foodpanda ↗` label;
+- no embedded maps;
+- no motion (the shared section-entry animation stays off).
+
+```text
+━━ (gold rule)
+到店／外賣
+
+┌──────────────────────┐   ┌──────────────────────┐
+│ 深水埗 storefront 4:3 │   │ 尖沙咀 storefront 4:3 │
+└──────────────────────┘   └──────────────────────┘
+深水埗店                     尖沙咀店
+address                      address
+營業時間  hours               營業時間  hours
+電話      (+852) 9059-5104    電話      (+852) 9059-5104
+電郵      mankee…@gmail.com   電郵      mankee…@gmail.com
+地圖 ↗   Foodpanda ↗          地圖 ↗   Foodpanda ↗
+```
+
+- **Ground:** `--jade-dark` with `--cream` text (about 13:1). Gold (`--noodle`) only for the heading rule, field labels and link underlines (about 5.9:1). No card, shadow, gradient, rounded container, map embed or motion; the shared section-entry animation stays off for this section.
+- **Heading:** the existing `到店／外賣` with the short gold rule above it.
+- **Layout:** two equal-width columns from 1024px with a 64px gap. A four-row subgrid lines up photo, name, facts and actions across both columns. Below 1024px the complete 深水埗 entry stacks above the complete 尖沙咀 entry, 64px apart.
+- **Each entry, identical system:**
+  - storefront photograph at 4:3, no text over it;
+  - shop name in the display role, same size and weight for both (32–44px, 700);
+  - address at 17px. The 尖沙咀 address breaks into two controlled lines after `商場` (`addressBreakAfter` in `locations.ts`, rendered as `<wbr>` with `word-break: keep-all`); 深水埗 stays on one line;
+  - label/value rows `營業時間`, `電話`, `電郵` (13px gold labels in a 4.5rem column, 17px values). The email stays on one line at 390px and wider; on narrower phones it breaks only after `@`, and its accessible name stays the unbroken address;
+  - actions `地圖 ↗` and `Foodpanda ↗` as underlined text links, 16px semibold, 44px tap height.
+- **Photographs** (owner-supplied, originals in `assets/sourced/user/store/` unchanged; both derivatives pre-cropped to 4:3):
+  - 深水埗: `ssp-storefront-day.jpg` → `/media/store/ssp-storefront-day-1024.webp`, `-640.webp`. Full frame: 文記 sign, Man Kee Cart Noodle lettering and entrance.
+  - 尖沙咀: `tst-storefront-wide.jpg` → `/media/store/tst-storefront-768.webp`, `-480.webp`. Left 4:3 crop keeping the 文記車仔麵 sign, Michelin frame, entrance and counter. At desktop the 768px source is shown at about 544px, so no upscaling. Supplied by the owner in the project chat on 14 Oct 2026, with publication permission confirmed the same day (asset R15).
+  - Both frames hold 4:3 at every width (measured 502×376 at 1114px, 457×342 at 1024px, 358×269 at 390px).
+- **Shared contacts:** (+852) 9059-5104 and mankeecartnoodles@gmail.com are owner-confirmed shared contacts for both shops (14 Oct 2026). Telephone uses `tel:`, email uses `mailto:`, each with a 44px tap height.
+- **Maps:** 深水埗 https://share.google/otLrnzLumqWZaN8mg; 尖沙咀 https://maps.app.goo.gl/acZKwec46s7T8JsB9 (Food Atlas, supplied by the owner on 14 Oct 2026). Links only; no embedded map.
+- **Foodpanda:** always the visible word `Foodpanda ↗`, with the owner-supplied panda mark (`/media/brand/foodpanda-mark-64.webp`, 20px, decorative, empty alt) beside it, never alone. Brand-use clearance was confirmed by the owner on 14 Oct 2026 (`docs/reference/content-register.md`). The icon path lives in `linkIcons` in `locations.ts`. The underline sits on the label only, so `地圖 ↗` and `Foodpanda ↗` keep the same text treatment.
+- **External links:** open in a new tab with `rel="noopener noreferrer"`, show a visible `↗` and carry an accessible name such as `尖沙咀店 地圖（新分頁開啟）`.
+- **New copy:** only the structural field labels `營業時間`, `電話`, `電郵`. Image alt text: `深水埗店門面：文記車仔麵招牌與入口`, `尖沙咀店門面：文記車仔麵招牌與入口`.
+- **Header:** the solid header background is fully opaque (`#faf8f3`), and Locations is an isolated stacking context, so location text cannot show through or above the header.
+- Recognition, Founder, Footer and every other section are unchanged.
+
+### Footer — compact three-zone sign-off on warm paper (owner direction, 14 Oct 2026)
+
+**Rejected after visual review on 14 Oct 2026:**
+
+1. The full lacquer-red Footer field (deepened lacquer ground, 2px gold top rule, wordmark up to 136px). It did not match the approved header and was too abrupt after Locations.
+2. The cream, header-mirroring Footer (header cream `#faf8f3`, large seal, 108px red wordmark, horizontal navigation row). It read as an oversized duplicate of the header.
+3. The near-black `--ink` editorial Footer (52px seal, 84px cream wordmark, ruled vertical index). It was too heavy straight after the dark-green Locations and made one continuous dark block.
+
+Older paragraphs below that call for an ink or lacquer-red brand field, an oversized wordmark, a "final brand peak", or that forbid a slogan or social links are superseded: the owner supplied the slogan and the social URLs below.
+
+**Approved direction:** a compact, structured three-zone Footer on the warm sand `--paper` token, visibly deeper than the header cream and clearly separate from the dark-green Locations. The brand no longer dominates.
+
+**Refinement, 14 Oct 2026 (owner: "clean but too sparse and generic"):** 4px lacquer top rule, less empty space, everything aligned to the site container, a horizontal brand lockup, compact right-hand navigation and social groups, circular 44px social controls. A slim lacquer closing strip with `到店／外賣 →` was tried and then **removed at owner request (14 Oct 2026)**: it linked to the immediately preceding Locations section and duplicated the navigation link. The Footer ends after the brand, navigation and social row. Further owner refinements the same day: the top rule reduced from 4px to 2px, the three columns aligned flush to one top line, the slogan made slightly larger and darker, and `報道 →` given the same style as the other links so it no longer looks disabled.
+
+Built in `src/components/shell/Footer.tsx` and the Footer rules in `src/app/globals.css`. **Approved by the owner on 14 Oct 2026** at desktop, tablet and mobile, and frozen against further visual redesign; no Footer motion. Measured in the browser at 1440px, 1024px, 768px and 390px: content edges match the Locations container, every link and icon is at least 44px, no horizontal overflow (measured with the strip; removing it only shortens the Footer by about 44px).
+
+```text
+Locations (dark green)
+━━━━━━━━━━━━━━━━━━━━━━━━━━ 2px lacquer rule ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+warm paper (--paper), site container
+[seal] 文記車仔麵 (40px)        網站導覽 ───── (gold)       關注我們 ── (gold)
+       你揀，文記煮。            首頁   點餐   文記十大       (IG) (FB) (in) (YT)
+                                故事   到店／外賣  報道 →
+```
+
+- **Ground and colour:** `var(--paper)`; no raw hex. A 2px `--lacquer` rule on the top edge. Ink text. Lacquer red for interaction: the 2px hover underline on text links, and the social hover state. Gold (`--noodle` at 60%) only for the 1px divider under each zone label. No black or full-red field, cards, shadows, gradients or animation.
+- **Container alignment:** the Footer uses the shared site gutter `max(16px, (100% − 72rem) ÷ 2)` with the header, so its content lines up with the Locations container. Padding is 32px top and bottom.
+- **Brand lockup (horizontal):** the existing seal (`/brand/mankee-seal-320.webp`, `next/image`, decorative) at 44px beside `文記車仔麵` in the display face, 700, ink, 40px, one line; `你揀，文記煮。` sits 8px beneath the wordmark at 17px, ink at 90%. The seal, wordmark and both zone labels start on one shared top line (line-height 1 on the wordmark and labels).
+- **Navigation zone:** the label `網站導覽` over a gold divider, then `primaryNav` in its established order (首頁, 點餐, 文記十大, 故事, 到店／外賣) followed by `報道 →` (same style as the other links) in a grid of equal 6.5rem columns: three columns from 640px, two below. 16px semibold ink, 44px tall. `到店／外賣` is a plain link. The `nav` keeps the accessible name `頁尾`.
+- **Social zone:** the label `關注我們` over a gold divider, then four icon-only circular controls (lucide-react `Instagram`, `Facebook`, `Linkedin`, `Youtube`, 20px icons in 44×44px circles with a 1px ink-22% border). Hover: lacquer border and icon with an 8% lacquer tint. Each has an accessible name such as `Instagram（新分頁開啟）` and opens in a new tab with `rel="noopener noreferrer"`. URLs supplied and verified by the owner on 14 Oct 2026, unchanged, stored in `socialLinks` in `Footer.tsx`:
+  - Instagram: https://www.instagram.com/mankeecartnoodles/
+  - Facebook: https://www.facebook.com/profile.php?id=61587927208864
+  - LinkedIn: https://www.linkedin.com/company/%E6%96%87%E8%A8%98%E8%BB%8A%E4%BB%94%E9%BA%B5-man-kee-cart-noodles/?viewAsMember=true
+  - YouTube: https://www.youtube.com/@ManKeeCartNoodles
+- **Desktop (from 1024px):** brand on the left (flexible column), navigation and social as compact top-aligned columns on the right, 64px apart. Padding 32px top, 24px bottom.
+- **Tablet (768–1023px):** brand across the top; navigation left and social right beneath it.
+- **Mobile (below 768px, owner polish 14 Oct 2026):** brand, then navigation, then social, 16px apart; Footer padding 24px top and bottom. Seal 36px and wordmark 30px, with the slogan (16px) directly beneath and aligned to the wordmark's column. Navigation is a balanced 3 × 2 grid of equal columns (首頁 點餐 文記十大 / 故事 到店／外賣 報道 →). The four social icons stay on one row. Locations' bottom padding drops from 64px to 48px on mobile only, so less dark green sits before the Footer.
+- **Policy and terms:** no Privacy, Terms or Cookie links until approved pages exist. When they do, add them as a fourth full-width row under the three zones in `.footer-layout`; no dead links or generic legal copy in the meantime.
+- **Not in the Footer:** addresses, telephone, email, maps, Foodpanda, buttons, a closing `到店／外賣` strip, legal name, copyright line and newsletter.
 
 ## Purpose
 
@@ -59,12 +152,14 @@ Use the current typed content in `src/content/zh-HK/locations.ts` as the factual
 - Foodpanda: `https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle`
 - Keeta: not confirmed; do not display it.
 
-### Secondary location — 尖沙咀店
+### 尖沙咀店
 
 - Address: `尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas`
 - Opening hours: `每日 11:00–21:00`
+- Map: `https://maps.app.goo.gl/acZKwec46s7T8JsB9` — the Food Atlas map, supplied by the owner on 14 Oct 2026.
 - Foodpanda: `https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos`
-- Telephone, email, map and Keeta are not confirmed; do not invent or display them.
+- Telephone and email: the shared `(+852) 9059-5104` and `mankeecartnoodles@gmail.com`, owner-confirmed for both shops on 14 Oct 2026.
+- Keeta is not confirmed; do not invent or display it.
 
 ### Footer
 
@@ -330,45 +425,56 @@ Check an item only after it has been implemented and visually verified. Location
 
 ### Locations — content contract
 
-- [ ] Confirm 深水埗 address, hours, telephone, email, map URL and Foodpanda URL against the typed content source.
-- [ ] Confirm 尖沙咀 address, hours and Foodpanda URL against the typed content source.
-- [ ] Confirm 深水埗 remains the primary location and 尖沙咀 remains secondary.
-- [ ] Confirm no unverified map, telephone, email or Keeta destination is displayed.
-- [ ] Confirm no stale `待定`, `coming soon` or disabled placeholder appears.
-- [ ] Confirm any new chapter label or heading is structural copy, not a new factual claim.
+- [x] Confirm 深水埗 address, hours, telephone, email, map URL and Foodpanda URL against the typed content source.
+- [x] Confirm 尖沙咀 address, hours, owner-supplied Food Atlas map URL (14 Oct 2026) and Foodpanda URL against the typed content source.
+- [x] ~~Confirm 深水埗 remains the primary location and 尖沙咀 remains secondary.~~ Superseded 14 Oct 2026: both shops have equal typographic importance.
+- [x] Confirm the shared telephone and email (owner-confirmed 14 Oct 2026) appear for both shops, and no unverified Keeta destination is displayed.
+- [x] Confirm no stale `待定`, `coming soon` or disabled placeholder appears.
+- [x] Confirm any new label is structural copy, not a new factual claim. New labels: `營業時間`, `電話`, `電郵` and the two storefront alt texts. `另一分店` and the banner caption `深水埗店外` are removed.
+
+The two-entry build below was approved by the owner on 14 Oct 2026.
 
 ### Locations — implementation and approval
 
-- [ ] Add the dark-green practical closing chapter treatment.
-- [ ] Build the asymmetric desktop composition with 深水埗 carrying approximately two-thirds of the visual weight.
-- [ ] Separate identity/address, hours/contact and actions into a clear reading hierarchy.
-- [ ] Make the 深水埗 map link the primary action and Foodpanda the secondary action.
-- [ ] Make the confirmed telephone and email directly actionable and visibly labelled.
-- [ ] Present 尖沙咀 as a quieter secondary location with only its confirmed information and Foodpanda action.
-- [ ] Use rules, alignment and spacing rather than two matching rounded cards.
-- [ ] Keep all external links distinguishable and safely configured.
-- [ ] Do not embed a map or load third-party location scripts.
-- [ ] Keep the first approved pass static and free of new media.
-- [ ] Verify the mobile order is heading, 深水埗, then 尖沙咀.
-- [ ] Verify complete addresses and email wrap without clipping.
-- [ ] Capture and review one 1440×900 Locations screenshot.
-- [ ] Capture and review one 390×844 Locations screenshot.
-- [ ] Receive Locations visual and content approval before starting Footer.
+- [x] Add the dark-green practical closing chapter treatment.
+- [x] ~~Build the asymmetric desktop composition with 深水埗 carrying approximately two-thirds of the visual weight.~~ Rejected 14 Oct 2026.
+- [x] ~~Place one wide documentary storefront photograph below the heading.~~ Rejected 14 Oct 2026: each shop now has its own photograph.
+- [x] Give each shop its own 4:3 storefront photograph showing signage and entrance, with no text over it.
+- [x] Build two equal-width shop columns on desktop with identical name size, weight, typography and spacing; stack them on mobile with the same styling.
+- [x] Separate identity/address, hours/contact and actions into a clear reading hierarchy.
+- [x] Give both shops the same compact `地圖 ↗` and `Foodpanda ↗` actions with 44px tap targets.
+- [x] Make the confirmed telephone and email directly actionable and visibly labelled.
+- [x] ~~Present 尖沙咀 as a quieter secondary location with only its confirmed information and Foodpanda action.~~ Rejected 14 Oct 2026.
+- [x] Use rules, alignment and spacing rather than two matching rounded cards.
+- [x] Keep all external links distinguishable and safely configured.
+- [x] Do not embed a map or load third-party location scripts.
+- [x] Keep the pass static. The only new media is the two owner-supplied storefront photographs and the Foodpanda mark.
+- [x] Keep the opaque header above Locations with no text showing through.
+- [x] Verify the mobile order is heading, 深水埗, then 尖沙咀.
+- [x] Verify complete addresses and email wrap without clipping (measured at 1024px, 390px and 375px; no horizontal overflow; every link at least 44px tall).
+- [x] Review Locations at 1440×900 (owner review, 14 Oct 2026).
+- [x] Review Locations at 390×844 (owner review, 14 Oct 2026).
+- [x] Receive Locations visual and content approval before starting Footer (14 Oct 2026, including the 尖沙咀 photo permission and Foodpanda mark clearance).
 
 ### Footer — implementation and approval
 
-- [ ] Resolve Locations into the approved decisive ink or lacquer-red Footer field.
-- [ ] Build the oversized wordmark zone plus compact navigation/secondary-links zone.
-- [ ] Confirm the 文記 wordmark/signage treatment is the single Footer focal point.
-- [ ] Preserve the established primary navigation labels and destinations.
-- [ ] Add `/press/` only as a secondary editorial destination.
-- [ ] Do not repeat the location address, contact details or red location CTA.
-- [ ] Do not add an unapproved slogan, social account, policy page, newsletter or legal name.
-- [ ] Avoid a generic large corporate sitemap or duplicated header appearance.
-- [ ] Ensure mobile links have comfortable touch spacing and a clear vertical order.
-- [ ] Capture and review one 1440×900 Footer screenshot.
-- [ ] Capture and review one 390×844 Footer screenshot.
-- [ ] Receive Footer visual and content approval.
+The Footer was approved by the owner on 14 Oct 2026.
+
+- [x] ~~Resolve Locations into the approved decisive ink or lacquer-red Footer field (deepened lacquer, one 2px gold rule).~~ Rejected after visual review, 14 Oct 2026.
+- [x] ~~Resolve Locations into a cream, header-matching Footer with one 2px lacquer rule.~~ Rejected after visual review, 14 Oct 2026: read as an oversized duplicate of the header.
+- [x] ~~Resolve Locations into a dark-ink editorial Footer with one 3px lacquer rule, a restrained brand zone and a vertical navigation index.~~ Rejected after visual review, 14 Oct 2026: too heavy after the dark-green Locations.
+- [x] Resolve Locations into a compact three-zone Footer (brand, 網站導覽, 關注我們) on the warm `--paper` ground.
+- [x] ~~Build the oversized wordmark zone plus compact navigation/secondary-links zone.~~ Superseded: a compact horizontal brand lockup beside navigation and social zones.
+- [x] Confirm the 文記 seal and wordmark lockup leads the Footer without dominating it (owner review, 14 Oct 2026).
+- [x] Preserve the established primary navigation labels and destinations.
+- [x] Add `/press/` only as a secondary editorial destination.
+- [x] Do not repeat the location address, contact details or red location CTA.
+- [x] Do not add an unapproved slogan, social account, policy page, newsletter or legal name. The slogan `你揀，文記煮。` and the four social URLs are owner-supplied (14 Oct 2026); no policy links until approved pages exist.
+- [x] Avoid a generic large corporate sitemap or duplicated header appearance.
+- [x] Ensure mobile links have comfortable touch spacing and a clear vertical order (brand, navigation, 報道; 44px targets).
+- [x] Capture and review one 1440×900 Footer screenshot.
+- [x] Capture and review one 390×844 Footer screenshot (owner screenshot, 14 Oct 2026).
+- [x] Receive Footer visual and content approval (14 Oct 2026).
 
 ### Combined transition and QA
 
@@ -383,15 +489,14 @@ Check an item only after it has been implemented and visually verified. Location
 - [ ] Verify the complete static experience with reduced motion enabled.
 - [ ] Verify no iframe, third-party map script, new dependency or unnecessary client JavaScript was added.
 - [ ] Verify no unconfirmed location data or Footer destination was introduced.
-- [ ] Run formatting, lint, tests and the production build only after visual approval.
+- [x] Run lint, tests, type check and the production build after visual approval (14 Oct 2026, Stage 3 checkpoint).
 - [ ] Complete final desktop and mobile visual review before committing.
 
 ## Acceptance criteria
 
 ### Locations
 
-- 深水埗 is immediately recognizable as the primary location.
-- 尖沙咀 remains easy to find without competing equally for attention.
+- ~~深水埗 is immediately recognizable as the primary location.~~ ~~尖沙咀 remains easy to find without competing equally for attention.~~ Superseded 14 Oct 2026: both shops have equal visual and typographic importance.
 - A visitor can understand where to go, when it is open and which actions are available within a quick scan.
 - Missing facts are omitted cleanly rather than replaced with placeholders.
 - The section feels specific to 文記 and not like a generic pair of location cards.
@@ -414,4 +519,4 @@ Check an item only after it has been implemented and visually verified. Location
 
 ## Current next step
 
-Approve this plan. Then give Cursor only Pass 2: Locations markup and styling. Do not ask it to implement Locations and Footer simultaneously.
+Locations (Pass 2, two equal store entries) was visually and factually approved and frozen on 14 Oct 2026. The full lacquer-red, cream header-mirroring and near-black Footers were rejected after visual review; the compact three-zone Footer on warm paper (Pass 3) was approved and frozen on 14 Oct 2026. Stage 3 is complete. Pass 4's transition review moves to the Stage 5 global continuity pass, and any optional Locations reveal to Stage 6. Do not reopen Locations or the Footer.

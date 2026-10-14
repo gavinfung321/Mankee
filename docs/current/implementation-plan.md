@@ -48,7 +48,7 @@ Current interaction decisions:
 - It does not fly into `你揀，文記煮`.
 - `你揀，文記煮` uses the approved static food photograph recorded in `docs/reference/asset-manifest.md` and `docs/current/sections/`.
 - Its cinemagraph remains deferred.
-- Founder and Recognition are visually approved (14 Oct 2026). Locations and Footer are not.
+- Founder, Recognition, Locations and Footer are visually approved (14 Oct 2026).
 
 ### Visual rebuild
 
@@ -136,7 +136,7 @@ website/
         menu.ts             湯 → 麵 → 餸 and the signature list
         recognition.ts      Michelin, 白種元, 黎芷珊
         press.ts            other coverage
-        locations.ts        深水埗 primary, 尖沙咀 secondary
+        locations.ts        two equal shops, shared contacts
       index.ts              exports zh-HK only
     lib/
       hero.ts               source, poster, duration, crop, text-safe area
@@ -226,8 +226,8 @@ Current order, 14 October 2026. See the addendum. Component filenames are unchan
 5. `你揀，文記煮` — approved static food photograph; the order form does not fly here
 6. Founder and Mankee story — not visually approved
 7. Recognition — Michelin, 白種元 and 黎芷珊 only; approved 14 Oct 2026 and frozen; programme screenshots pending publication clearance
-8. Locations and delivery — not visually approved
-9. Footer — not visually approved
+8. Locations and delivery — two equal store entries; visually and factually approved 14 Oct 2026 and frozen
+9. Footer — compact three-zone Footer on warm paper; approved 14 Oct 2026 and frozen
 
 **Superseded homepage list, 9–10 October 2026.** The earlier list put a three-texture chapter second, specified timber cards for how to order, and called item 5 a completed order-slip transition into Founder. Those three instructions are not current.
 
@@ -337,7 +337,7 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
    - JavaScript stays off. Review at desktop and about 390px.
 
 9. `Feature: Build locations and delivery section`
-   - Keep the homepage 到店／外賣 section. 深水埗 stays first and visually primary, with the confirmed address and daily 11:00–04:00. 尖沙咀店 stays the secondary name. Do not add a `/locations/` route.
+   - Keep the homepage 到店／外賣 section. 深水埗 stays first and visually primary, with the confirmed address and daily 11:00–04:00. 尖沙咀店 stays the secondary name. Do not add a `/locations/` route. **Superseded 14 Oct 2026:** both shops are equal store entries; see `docs/current/sections/locations-footer.md`.
    - A map, Foodpanda, or Keeta control renders only as a text link when that URL is confirmed. Pending phone, last-order, holiday, 尖沙咀 address, and 尖沙咀 hours stay hidden.
    - Every one of those URLs is pending today, so the visible section does not gain a map, a delivery name, or a button. Do not use the wireframe Foodpanda chain URL or the OpenRice hours.
    - The footer still does not add an address, hours, or delivery link. JavaScript stays off. Review at desktop and about 390px.

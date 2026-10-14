@@ -83,12 +83,16 @@ test("pending facts resolve to nothing and confirmed facts stay", async () => {
     publicValue(shamShuiPo.mapUrl),
     "https://share.google/otLrnzLumqWZaN8mg",
   );
+  assert.equal(
+    publicValue(tsimShaTsui.mapUrl),
+    "https://maps.app.goo.gl/acZKwec46s7T8JsB9",
+  );
+  assert.equal(tsimShaTsui.phone, shamShuiPo.phone);
+  assert.equal(tsimShaTsui.email, shamShuiPo.email);
   for (const fact of [
     shamShuiPo.lastOrder,
     shamShuiPo.holidays,
     shamShuiPo.keeta,
-    tsimShaTsui.mapUrl,
-    tsimShaTsui.phone,
     tsimShaTsui.keeta,
   ]) {
     assert.equal(publicValue(fact), undefined);

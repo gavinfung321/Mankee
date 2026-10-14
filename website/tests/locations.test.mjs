@@ -31,6 +31,10 @@ test("location links appear only when the URL is confirmed", async () => {
   ]);
   assert.deepEqual(visibleLocationLinks(locations[1]), [
     {
+      label: "地圖",
+      url: "https://maps.app.goo.gl/acZKwec46s7T8JsB9",
+    },
+    {
       label: "Foodpanda",
       url: "https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos",
     },

@@ -244,7 +244,7 @@ header.site-header.is-hero .nav-cta {
 
 header.site-header.is-solid {
   border-bottom: 1px solid #ded8cc;
-  background: rgba(250, 248, 243, 0.96);
+  background: #faf8f3;
   color: #26211b;
   box-shadow: none;
 }
@@ -286,8 +286,7 @@ header.site-header .nav-cta:focus-visible {
 .sensory-handoff a,
 .order-link,
 .order-handoff a,
-.press-link,
-.location-list a {
+.press-link {
   font-family: var(--font-display);
   font-size: var(--type-lead);
   font-weight: 650;
@@ -323,7 +322,6 @@ header.site-header .nav-cta:focus-visible {
   line-height: 1.2;
 }
 
-.location-list,
 .top-ten-list,
 .order-steps {
   margin: 0;
@@ -1778,39 +1776,178 @@ header.site-header .nav-cta:focus-visible {
   font-family: var(--font-display);
 }
 
-.location-list {
-  display: grid;
-  gap: var(--space-48);
+/* Cream on --jade-dark is about 13:1; the muted cream labels stay above 7:1. */
+.locations-section {
+  isolation: isolate;
+  padding-block: var(--section-space);
+  background: var(--jade-dark);
+  color: var(--cream);
 }
 
-.location-list h3,
-.location-list p {
-  margin: 0;
+@media (max-width: 47.99rem) {
+  .locations-section {
+    padding-bottom: var(--space-48);
+  }
 }
 
-.location-primary h3 {
+.locations-section h2 {
+  max-width: none;
+  margin: 0 0 var(--space-32);
+  color: var(--cream);
   font-family: var(--font-display);
-  font-size: var(--type-title);
+  font-size: clamp(30px, 3.2vw, 46px);
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
-.location-secondary h3 {
-  font-family: var(--font-display);
-  font-size: var(--type-lead);
+.locations-section h2::before {
+  content: "";
+  display: block;
+  width: var(--rule-length);
+  height: var(--rule-weight);
+  margin-bottom: var(--space-16);
+  background: var(--noodle);
 }
 
-.location-links {
+.locations-section a {
+  color: var(--cream);
+}
+
+.locations-section :focus-visible {
+  outline-color: var(--gold-bright);
+}
+
+.locations-layout {
+  display: grid;
+  gap: var(--space-64);
+}
+
+.location {
+  display: grid;
+  align-content: start;
+  gap: var(--space-24);
+  min-width: 0;
+}
+
+/* Both derivatives are pre-cropped to 4:3 with the sign and entrance in frame. */
+.location-photo {
+  align-self: start;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: color-mix(in srgb, var(--cream) 8%, var(--jade-dark));
+}
+
+.location-photo img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+}
+
+.location-identity {
+  display: grid;
+  align-content: start;
+  gap: var(--space-8);
+}
+
+.location h3 {
+  margin: 0;
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* keep-all limits breaks to spaces, punctuation and the content's <wbr>; anywhere is only an overflow fallback. */
+.location address {
+  max-width: 20em;
+  font-size: 17px;
+  font-style: normal;
+  line-height: 1.6;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.location-facts {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+  margin: 0;
+}
+
+.location-facts div {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: var(--space-16);
+  min-width: 0;
+}
+
+.location-facts dt {
+  color: var(--noodle);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+
+.location-facts dd {
+  min-width: 0;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.location-facts a {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 44px;
+  text-decoration-color: var(--noodle);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.24em;
+}
+
+.location-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-8) var(--space-24);
-  margin: var(--space-24) 0 0;
+  align-items: center;
+  gap: var(--space-8) var(--space-32);
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.location-primary p + p,
-.location-secondary p + p {
-  margin-top: var(--space-8);
+.location-action {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 44px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.location-action > span {
+  text-decoration-line: underline;
+  text-decoration-color: var(--noodle);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.28em;
+}
+
+.location-action-icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.locations-section .location-action:hover {
+  color: var(--gold-bright);
 }
 
 @media (min-width: 48rem) {
@@ -2033,20 +2170,28 @@ header.site-header .nav-cta:focus-visible {
     font-size: 19px;
   }
 
-  .location-list {
-    grid-template-columns: minmax(0, 1.45fr) minmax(16rem, 0.7fr);
-    align-items: start;
+  .locations-section h2 {
+    margin-bottom: var(--space-48);
   }
 
-  .location-primary {
-    padding-right: var(--space-48);
-    border-right: 1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  /* Two equal shops; the subgrid lines up photo, name, facts and actions across both. */
+  .locations-layout {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
+    column-gap: var(--space-64);
+    row-gap: 0;
+  }
+
+  .location {
+    grid-row: span 4;
+    grid-template-rows: subgrid;
+    row-gap: var(--space-24);
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
-    .home-section:not(#top-ten):not(.sensory-section):not(.order-section):not(.founder-section):not(.recognition-section) {
+    .home-section:not(#top-ten):not(.sensory-section):not(.order-section):not(.founder-section):not(.recognition-section):not(.locations-section) {
       animation: section-enter linear both;
       animation-duration: auto;
       animation-timeline: view();

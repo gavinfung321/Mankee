@@ -15,8 +15,8 @@ Current order, 14 October 2026. Do not rename the components that already implem
 5. `你揀，文記煮` — the approved static food photograph. The order form does not fly into this section. The cinemagraph remains deferred.
 6. Founder and Mankee story — not visually approved
 7. Recognition — Michelin, 白種元 and 黎芷珊; approved 14 Oct 2026 and frozen; programme screenshots pending publication clearance
-8. Locations and delivery — not visually approved
-9. Footer — not visually approved
+8. Locations and delivery — two equal store entries; visually and factually approved 14 Oct 2026 and frozen
+9. Footer — compact three-zone Footer on warm paper; approved 14 Oct 2026 and frozen
 
 **Superseded on 14 October 2026:** the earlier second chapter called “three textures”, the completed order-slip transition into Founder, and the requirement that the slip pass through a service window and disappear before the Founder content. `你揀，文記煮` is its own section. The order form stays with `文記十大`.
 
@@ -49,8 +49,7 @@ All other coverage moves to `/press/`. Use sourced facts and approved imagery. A
 
 ## Location hierarchy
 
-- 深水埗 is primary and visually dominant.
-- Other locations are secondary.
+- 深水埗 and 尖沙咀 have equal visual and typographic importance (owner decision, 14 Oct 2026). 深水埗 is listed first.
 - Verify addresses, hours, location classification and official Maps/delivery links before launch.
 
 ## Production navigation

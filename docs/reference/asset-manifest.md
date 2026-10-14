@@ -29,6 +29,9 @@ Status: Creative direction selected. Mankee-controlled asset collection authoris
 | R12 | Near-overhead dark-braise bowl reference | Ingredient zoning, broth sheen, bowl rim and orange-spoon placement | User-supplied reference; creator/ownership not yet recorded | Composition reference only until rights are confirmed |
 | R13 | Noodle-lift dark-braise bowl reference | Lifted noodle shape, chopstick interaction, depth between bowl and side dishes | User-supplied reference; creator/ownership not yet recorded | Motion and staging reference only until rights are confirmed |
 | R14 | Complete low-angle bowl reference | Full bowl silhouette, table contact, noodle bed and topping groups | User-supplied reference; creator/ownership not yet recorded | 3D silhouette and camera reference only until rights are confirmed |
+| R15 | Owner-supplied storefront photographs, 14 Oct 2026 (`assets/sourced/user/store/`) | 深水埗 daytime storefront (`ssp-storefront-day.jpg`); 尖沙咀 Food Atlas storefront (`tst-storefront-wide.jpg`), plus unused `tst-counter-man-kee.jpg` and `tst-sign-queue.jpg` | Supplied by the owner in the project chat; publication permission confirmed by the owner on 14 Oct 2026 | Published in Locations as 4:3 WebP derivatives |
+| R16 | Owner-supplied Foodpanda logos, 14 Oct 2026 (`assets/sourced/user/brand/`) | Panda mark used at 20px beside the word `Foodpanda ↗`; three other logo files unused | Third-party trademark; brand-use clearance confirmed by the owner on 14 Oct 2026 | Keep beside the visible word only, never alone |
+| R17 | Footer seal derivative of `public/brand/mankee-logo-transparent.png` | Established 文記 three-circle logo, transparent padding trimmed, 320×295 WebP (`public/brand/mankee-seal-320.webp`) | Same status as the existing header logo | Used at 40px (36px mobile) above the 文記車仔麵 wordmark in the Footer brand zone |
 
 ## Owner-supplied menu result
 

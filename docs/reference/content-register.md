@@ -124,7 +124,7 @@ These establish useful editorial leads but are third-party broadcast, guide, cre
 | Sham Shui Po role | Main store and preferred principal setting | Owner-confirmed | Internal context only. Do not say publicly that Mankee's success began here; lead with food and show this location first in practical information |
 | 121 Fuk Wing Street | Published by HKTB/current site and visible on owner-supplied menu photograph | Owner-confirmed shopfront | Use as the primary displayed address only if owner approves; retain all connected numbers in the location details |
 | Public Sham Shui Po label | 深水埗店 | Owner-confirmed | Use consistently in navigation, location controls and structured content |
-| Tsim Sha Tsui presence | Collaboration location with other owners inside Harbour City/Gateway Arcade | Owner-confirmed relationship; public label 尖沙咀店 approved; operational detail incomplete | Treat as a supporting location; confirm unit, map pin, telephone and opening date |
+| Tsim Sha Tsui presence | Collaboration location with other owners inside Harbour City/Gateway Arcade | Owner-confirmed relationship; public label 尖沙咀店 approved; operational detail incomplete | Confirm unit and opening date; Food Atlas map link supplied and shared telephone/email confirmed by the owner on 14 Oct 2026 |
 | Sham Shui Po hours | Daily 11:00–04:00 for website use | Owner-confirmed | Publish consistently and define last-order time separately if applicable |
 | OpenRice hours conflict | OpenRice lists 121 Fuk Wing Street as 11:00–23:00 | Superseded by owner confirmation | Do not use the OpenRice hours |
 | Tsim Sha Tsui hours | 11:00–21:00 on Instagram | Supported | Confirm days, last order and holiday exceptions |
@@ -246,8 +246,13 @@ Unverified facts must not render as confirmed facts. The Big 10 wall list above 
 - Founder: Simon Wong, the draft portrait, and the draft quotation 「最希望是港人珍惜本土風味食店。」 were placed on the working site.
 - Michelin: the public years shown are 2018–2025, with the draft image `michelin-2018-2025.png`.
 - Portraits of 白種元 and 黎芷珊 stay off the new site.
-- Maps: 深水埗 uses https://share.google/otLrnzLumqWZaN8mg. 尖沙咀 has no map link. The unit recorded for the working site is 尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas.
-- Contact: (+852) 9059-5104 and mankeecartnoodles@gmail.com were placed on 深水埗.
+- Maps: 深水埗 uses https://share.google/otLrnzLumqWZaN8mg. 尖沙咀 (Food Atlas) uses https://maps.app.goo.gl/acZKwec46s7T8JsB9, supplied by the owner on 14 Oct 2026. The unit recorded for the working site is 尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas.
+- Storefront photographs (owner-supplied, 14 Oct 2026; source files unchanged):
+  - 深水埗: `assets/sourced/user/store/ssp-storefront-day.jpg`, shown as `/media/store/ssp-storefront-day-1024.webp` and `-640.webp` (full 4:3 frame).
+  - 尖沙咀: `assets/sourced/user/store/tst-storefront-wide.jpg`, shown as `/media/store/tst-storefront-768.webp` and `-480.webp` (left 4:3 crop keeping the 文記車仔麵 sign, Michelin frame, entrance and counter). The other two supplied 尖沙咀 photos, `tst-counter-man-kee.jpg` and `tst-sign-queue.jpg`, are stored but not used.
+  - Provenance: both supplied by the owner in the project chat on 14 Oct 2026 (asset manifest R15). **Publication permission for both photographs was confirmed by the owner on 14 Oct 2026.**
+- Contact: (+852) 9059-5104 and mankeecartnoodles@gmail.com are the owner-confirmed shared contacts for both 深水埗 and 尖沙咀 (14 Oct 2026).
+- Foodpanda mark: four Foodpanda logo files were supplied by the owner on 14 Oct 2026 and stored in `assets/sourced/user/brand/` (`foodpanda-panda-mark.jpg`, `foodpanda-logo-stacked.jpg`, `foodpanda-app-icon-stacked.png`, `foodpanda-app-icon-horizontal.png`). Only the panda mark is used: `/media/brand/foodpanda-mark-64.webp`, cut out from its white background and shown at 20px, decorative, always beside the visible word `Foodpanda ↗` in Locations, never alone. **Brand-use clearance was confirmed by the owner on 14 Oct 2026.**
 - Hours: 深水埗 daily 11:00–04:00. 尖沙咀 daily 11:00–21:00. Last-order time and holiday exceptions are not confirmed. The OpenRice hours of 11:00–23:00 stay unused.
 - Delivery links placed on the working site: Foodpanda for 深水埗 is https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle. Foodpanda for 尖沙咀 is https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos. There is no Keeta link.
 
@@ -260,14 +265,14 @@ One owner review is still required before any of the following can be treated as
 1. Founder portrait.
 2. Founder quotation 「最希望是港人珍惜本土風味食店。」
 3. Michelin artwork, including `michelin-2018-2025.png` and the 2018–2025 year range.
-4. Tsim Sha Tsui facts, including the unit wording, the daily 11:00–21:00 hours, and the absence of a map, phone and email.
+4. Tsim Sha Tsui facts, including the unit wording and the daily 11:00–21:00 hours. Its Food Atlas map link (https://maps.app.goo.gl/acZKwec46s7T8JsB9) was supplied by the owner on 14 Oct 2026, and the owner confirmed on the same day that it shares the 深水埗 telephone and email.
 5. Delivery links, including both Foodpanda URLs above and the still-absent Keeta link.
 
 Until that review is recorded, these items stay pending. Do not invent a new permission, a new address, or a new delivery URL to close the review.
 
 ## Owner data still required
 
-- Remaining branch contact, map, delivery and last-order fields.
+- Remaining delivery and last-order fields. Both shops now have owner-supplied map links and the shared owner-confirmed telephone and email.
 - A straight-on menu master or confirmation of the unclear fine print, the final $13 noodle item and the $34/$35 重慶酸辣粉 discrepancy.
 - Founder and company timeline.
 - Precise conveyor and AI explanation, if that claim remains in public copy.

@@ -299,8 +299,8 @@ An **Approved and aligned** section is protected from accidental drift, but it i
 | `你揀，文記煮` cinemagraph | Deferred | Reconsider only after the final continuity audit. |
 | Founder | Approved and aligned | Approved 14 Oct 2026 at desktop and mobile as the editorial poster composition: quotation above, dominant documentary portrait, identity rail. Optional motion deferred to Stage 6. |
 | Recognition | Approved and aligned | Approved 14 Oct 2026 at desktop, tablet and mobile, including typography, as the Michelin-first composition: Michelin > 白種元 > 黎芷珊. Frozen against further visual redesign. Programme screenshots pending publication clearance. Optional motion deferred to Stage 6. |
-| Locations | In progress | Aligned plan exists; 深水埗 must remain the practical focal point. |
-| Footer | In progress | Aligned plan now requires a memorable oversized 文記 brand ending. |
+| Locations | Approved and aligned | Approved 14 Oct 2026 at desktop, tablet and mobile as two equal store entries, each with its own 4:3 storefront photograph, shared phone and email, and `地圖 ↗` / `Foodpanda ↗`. Visually and factually approved. Frozen: no embedded maps, no motion. |
+| Footer | Approved and aligned | Approved 14 Oct 2026 at desktop, tablet and mobile as a compact three-zone Footer on warm paper: seal and wordmark lockup with 「你揀，文記煮。」, 網站導覽 and 關注我們. The oversized brand ending, full-red, header-cream and near-black versions were rejected. Frozen; no motion. |
 | Cross-page colour, typography and continuity | Global visual audit pending | Standardise tokens and rhythm without restructuring approved chapters. |
 
 No section currently remains in **Plan requires alignment** after this documentation audit. If a future plan omits an explicit Inspiration Alignment Gate, it automatically returns to that status.

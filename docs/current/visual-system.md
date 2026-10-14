@@ -56,7 +56,8 @@ The jump between kicker, heading and body must stay obvious. No middle-sized-eve
 | Hero | Photograph / `#17120e` | Unchanged |
 | Founder | Warm cream `#f4efe6` | Ink text, one lacquer rule |
 | Recognition | Cream `var(--paper)` | Dark 白種元 card, light 黎芷珊 card, full-width red Michelin band (`#a3191e`, the artwork's own red) |
-| Locations | Dark green with cream cards | As Concept B; confirm when Locations is rebuilt |
+| Locations | Dark green `--jade-dark`, cream text | Approved 14 Oct 2026. No cards; gold only for the heading rule, field labels and link underlines |
+| Footer | Warm sand `--paper`, ink text | Approved 14 Oct 2026. 2px lacquer top rule; otherwise lacquer only for hover accents; gold for the zone-label dividers; full-red, header-cream and near-black grounds rejected |
 
 Lacquer red stays semantic: actions, completion, the Michelin band and kicker rules.
 

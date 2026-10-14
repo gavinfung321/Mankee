@@ -116,8 +116,8 @@ Work sequentially:
 
 1. **Founder** — approved 14 Oct 2026 at desktop and mobile as the editorial poster composition in `docs/current/sections/founder-recognition.md`. Optional motion is deferred to Stage 6.
 2. **Recognition** — approved 14 Oct 2026 at desktop, tablet and mobile, including typography, as the Michelin-first two-level composition in `docs/current/sections/founder-recognition.md`. Frozen against further visual redesign. Programme screenshots remain pending publication clearance. Optional motion is deferred to Stage 6.
-3. **Locations** — next active chapter. Recognition approval is complete.
-4. **Footer** — begin only after Locations is approved; finish with the approved memorable 文記 brand field.
+3. **Locations** — approved 14 Oct 2026 at desktop, tablet and mobile as two equal store entries (own 4:3 storefront photo, address, hours, shared phone and email, `地圖 ↗` and `Foodpanda ↗`) in `docs/current/sections/locations-footer.md`. Visually and factually approved, including the 尖沙咀 photo permission and Foodpanda mark clearance. Frozen: keep two equal entries, shared contacts, both map links, the Foodpanda icon beside its label, no embedded maps and no motion.
+4. **Footer** — the full lacquer-red, cream header-mirroring and near-black versions were rejected after visual review (14 Oct 2026). Approved 14 Oct 2026 at desktop, tablet and mobile as a compact three-zone Footer (brand, 網站導覽, 關注我們) on warm `--paper` with a 2px lacquer top rule, in `docs/current/sections/locations-footer.md`. Frozen; no Footer motion. **Stage 3 is complete.**
 
 Each chapter requires static approval at 1440px, 1024px and 390px before the next begins.
 
@@ -175,11 +175,11 @@ Motion remains last.
 | `你揀，文記煮` | Static composition built; cinemagraph deferred | Freeze until Stage 4/6 |
 | Founder | Approved 14 Oct 2026: editorial poster composition, desktop and mobile | Freeze; optional motion in Stage 6 |
 | Recognition | Approved 14 Oct 2026: Michelin-first composition and typography, desktop, tablet and mobile; programme screenshots pending publication clearance | Freeze; optional motion in Stage 6 |
-| Locations | Aligned plan exists | Next: Stage 3 build |
-| Footer | Aligned plan exists | Not started |
+| Locations | Approved 14 Oct 2026, visually and factually: two equal store entries, desktop, tablet and mobile | Freeze; no motion |
+| Footer | Approved 14 Oct 2026: compact three-zone Footer on warm paper, desktop, tablet and mobile | Freeze |
 | Global visual audit | Pending | Stage 5 |
 | Motion/performance | Deferred | Stage 6 |
 
 ## Current next action
 
-Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. Founder and Recognition are approved and frozen. The current next action is Stage 3 — Locations. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.
+Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. Founder, Recognition, Locations and Footer are approved and frozen, and Stage 3 is complete (checkpoint commit, 14 Oct 2026). The current next action is Stage 4 — the inspiration-led review, starting with Hero. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.

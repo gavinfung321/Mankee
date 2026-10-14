@@ -8,7 +8,7 @@ This repository is the Mankee website. The production app is `website/`. Git and
 2. Read `docs/current/homepage-structure.md`.
 3. Stop, unless the task needs another file named below.
 
-Visual implementation is paused at the Typography Lock. Founder, Recognition, Locations, and Footer are not visually approved.
+Founder is visually approved. Recognition is visually approved at desktop, tablet and mobile; its programme screenshots remain pending publication clearance. Locations is visually and factually approved at desktop, tablet and mobile as two equal store entries and is frozen. Footer is visually approved at desktop, tablet and mobile and frozen. Stage 3 is complete; Stage 4 (inspiration-led review, starting with Hero) is next.
 
 The homepage order is:
 
