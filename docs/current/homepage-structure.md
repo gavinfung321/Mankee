@@ -14,7 +14,7 @@ Current order, 14 October 2026. Do not rename the components that already implem
 4. `文記十大` — the confirmed signature list. The order form supports this interaction and changes from 落單 to 完成 while still visible near the end of the section.
 5. `你揀，文記煮` — the approved static food photograph. The order form does not fly into this section. The cinemagraph remains deferred.
 6. Founder and Mankee story — not visually approved
-7. Recognition — Michelin, 白種元 and 黎芷珊; not visually approved
+7. Recognition — Michelin, 白種元 and 黎芷珊; approved 14 Oct 2026 and frozen; programme screenshots pending publication clearance
 8. Locations and delivery — not visually approved
 9. Footer — not visually approved
 

@@ -48,7 +48,7 @@ Current interaction decisions:
 - It does not fly into `你揀，文記煮`.
 - `你揀，文記煮` uses the approved static food photograph recorded in `docs/reference/asset-manifest.md` and `docs/current/sections/`.
 - Its cinemagraph remains deferred.
-- Founder, Recognition, Locations and Footer are not visually approved.
+- Founder and Recognition are visually approved (14 Oct 2026). Locations and Footer are not.
 
 ### Visual rebuild
 
@@ -225,7 +225,7 @@ Current order, 14 October 2026. See the addendum. Component filenames are unchan
 4. `文記十大`
 5. `你揀，文記煮` — approved static food photograph; the order form does not fly here
 6. Founder and Mankee story — not visually approved
-7. Recognition — Michelin, 白種元 and 黎芷珊 only; not visually approved
+7. Recognition — Michelin, 白種元 and 黎芷珊 only; approved 14 Oct 2026 and frozen; programme screenshots pending publication clearance
 8. Locations and delivery — not visually approved
 9. Footer — not visually approved
 

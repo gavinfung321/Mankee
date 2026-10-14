@@ -115,8 +115,8 @@ This is a token pass, not a section redesign.
 Work sequentially:
 
 1. **Founder** — approved 14 Oct 2026 at desktop and mobile as the editorial poster composition in `docs/current/sections/founder-recognition.md`. Optional motion is deferred to Stage 6.
-2. **Recognition** — next active chapter. Founder approval is complete.
-3. **Locations** — begin only after Recognition is approved.
+2. **Recognition** — approved 14 Oct 2026 at desktop, tablet and mobile, including typography, as the Michelin-first two-level composition in `docs/current/sections/founder-recognition.md`. Frozen against further visual redesign. Programme screenshots remain pending publication clearance. Optional motion is deferred to Stage 6.
+3. **Locations** — next active chapter. Recognition approval is complete.
 4. **Footer** — begin only after Locations is approved; finish with the approved memorable 文記 brand field.
 
 Each chapter requires static approval at 1440px, 1024px and 390px before the next begins.
@@ -174,12 +174,12 @@ Motion remains last.
 | `文記十大` | Built; future inspiration review planned | Freeze until Stage 4 |
 | `你揀，文記煮` | Static composition built; cinemagraph deferred | Freeze until Stage 4/6 |
 | Founder | Approved 14 Oct 2026: editorial poster composition, desktop and mobile | Freeze; optional motion in Stage 6 |
-| Recognition | Implementation has begun but is not visually approved | Next: Stage 3 build |
-| Locations | Aligned plan exists | Not started |
+| Recognition | Approved 14 Oct 2026: Michelin-first composition and typography, desktop, tablet and mobile; programme screenshots pending publication clearance | Freeze; optional motion in Stage 6 |
+| Locations | Aligned plan exists | Next: Stage 3 build |
 | Footer | Aligned plan exists | Not started |
 | Global visual audit | Pending | Stage 5 |
 | Motion/performance | Deferred | Stage 6 |
 
 ## Current next action
 
-Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. Founder is approved. The current next action is Stage 3 — Recognition. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.
+Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. Founder and Recognition are approved and frozen. The current next action is Stage 3 — Locations. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.

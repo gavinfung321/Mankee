@@ -38,16 +38,69 @@ Approved values (`src/components/home/Founder.tsx`, Founder rules in `src/styles
 - Mobile order: label → quotation → photograph → identity → context. No extreme crop.
 - No overlap, card, shadow, biography, second quotation, new media or animation. Do not copy the Concept B dark field.
 
-### Recognition — the next build
+### Recognition — two-level editorial composition (approved 14 Oct 2026)
 
-The list on the page now is the one to replace. It repeats `2018–2025` at the same size as the visits, and it explains the homepage.
+**Approved by the owner on 14 Oct 2026 at desktop, tablet and mobile, including typography.** This Michelin-first composition (Michelin > 白種元 > 黎芷珊) is the Recognition design of record and is frozen against further visual redesign; the Stage 5 audit may only adjust shared type scale and weights. The programme screenshots remain pending publication clearance (see below). Optional motion is deferred to Stage 6.
 
-- The approved Michelin mark is the one visual mass, larger, on the left.
-- Do not set `2018–2025` again in large type. The mark already shows the years. Small label only: `指南記錄`.
-- Two quieter text rows, in this order: `到訪記錄` / `白種元曾到訪文記`, then `到訪記錄` / `黎芷珊曾到訪文記`.
-- No visitor portraits, programme images, quotations, or a sentence about what the homepage lists.
-- One ending link: `其他報道 →` to `/press/`.
-- No motion. Do not edit any other section.
+Rejected on 14 Oct 2026: the full-red certificate layout, and the documentary spread that made 白種元 dominant with a compact Michelin block (its hierarchy was backwards). Replace; do not refine either.
+
+Required hierarchy: **Michelin > 白種元 > 黎芷珊.**
+
+Refined 14 Oct 2026 (same concept): section header restored above the panel, larger artwork, `到訪記錄` divider, bottom-aligned visitor row.
+
+```text
+— 認可與到訪
+米芝蓮指南，八年記錄。
+
+┌───────────────────────┬──────────────────────────────────┐
+│  Michelin artwork      │                                  │  Level 1 — Michelin panel
+│  (~40% of panel width, │  2018—2025   ← prominent,        │  --michelin red, ~420–440px tall
+│   ~2.3× previous size) │     vertically centred           │  on desktop
+└───────────────────────┴──────────────────────────────────┘
+到訪記錄 ─────────────────────────────────────────────────────  divider
+┌──────────────────────────────────┐ ┌──────────────────┐
+│ 白種元 still (larger, ~2/3)        │ │ 黎芷珊 still       │    Level 2 — visitor evidence
+└──────────────────────────────────┘ └──────────────────┘
+白種元曾到訪文記 · 韓國節目畫面             黎芷珊曾到訪文記 · TVB 節目畫面
+                                        其他報道 →   ← bottom-aligned with the 白種元 caption
+```
+
+- Ground: `--ground-light`, continuous with Founder, with the Stage 2 boundary (`--section-space` padding, 1px ink hairline at 18% on the top edge). The red is a panel inside the section, not the section ground.
+- **Header:** kicker `認可與到訪` (`--jade-text`, lacquer rule) and headline `米芝蓮指南，八年記錄。` in ink, above the panel.
+- **Level 1 — Michelin panel.** `--michelin` red (the artwork's own red), full content width, about 420–440px tall on desktop. The artwork takes about 40% of the panel width and is shown at 120% of that column so its empty red margins crop away invisibly; every word in it (`MICHELIN`, `文記車仔麵`, `Man Kee Cart Noodles`, `2018 - 2025`) renders at about 1.1× its source size. `2018—2025` sits in the other 60%, prominent but capped at 96px so it does not overpower the artwork. Both sides vertically centred. The in-panel label and headline are removed because the header carries them. Do not claim a Michelin star.
+- **Divider:** `到訪記錄` label with a 1px ink hairline at 18% running to the right edge, between the panel and the photographs. The per-caption `到訪記錄` labels are removed.
+- **Level 2 — visitor evidence.** 白種元 still larger (about two-thirds), 黎芷珊 still smaller (about one-third), top-aligned. Deliberate 2:1 crops that keep the top-edge watermarks (백 channel mark top left, `tvb.com` top right). Captions: `白種元曾到訪文記` / `黎芷珊曾到訪文記` and the source credit (`韓國節目畫面`, `TVB 節目畫面`). No endorsement wording.
+- `其他報道 →` to `/press/` sits at the foot of the 黎芷珊 column, bottom-aligned with the end of the 白種元 caption, so the right column has no trailing empty space. On mobile it follows the 黎芷珊 caption. (Existing tests require the Recognition section to keep a `/press/` link.)
+- Removed: `三項重要記錄`, the scattered three-object layout, equal treatment of the three records, excess empty space.
+- Mobile order: header, Michelin panel, divider, 白種元 still and caption, 黎芷珊 still and caption, `其他報道 →`.
+
+**Polish pass (owner direction, 14 Oct 2026) — supersedes the conflicting points above:**
+
+- Michelin panel: small cream label above `2018—2025`. Artwork unchanged. (Label superseded by the responsive pass below.)
+- Visitor chapter header: `到訪記錄` kicker row with hairline, headline `從指南，到鏡頭。`, supporting line `文記亦曾出現在海外與本地節目。`.
+- Visitor grid about 64/36. 白種元 stays 2:1 and dominant. 黎芷珊 is enlarged to the 36% column at 7:5 (close to 4:3; exact 4:3 clips 黎芷珊's arm), cropped from the right edge so 黎芷珊, both staff and the `tvb.com` mark stay in frame.
+- Captions standardised: visitor statement 21px display, source 13px `--ink-muted`, same spacing under both photographs.
+- `其他報道 →` sits directly beneath the 黎芷珊 caption, not at the foot of the column.
+- A restrained 1px ink hairline at 18% closes the section; the bottom padding is reduced to `--space-48` so the gap before `到店／外賣` is shorter.
+- Locked fonts, colours and header. No card styling, shadow, rounded corner, logo wall or animation. Do not edit any other section.
+
+**Responsive polish (owner direction, 14 Oct 2026) — desktop structure approved and kept:**
+
+- Desktop, 1024px (64rem) and above: the split panel stays exactly as approved — enlarged artwork left, `指南收錄記錄` and the large `2018—2025` right, same size, colour and alignment.
+- Below 1024px (the same breakpoint where the panel stacks): the whole external `指南收錄記錄 / 2018—2025` block is hidden, because the artwork already carries the years. The heading `米芝蓮指南，八年記錄。` stays above the panel. The panel holds only the artwork, centred on its own content box (about 49% × 51% of the file, centred at 49.5% / 48.3%). The artwork is `min(140% of the panel width, 640px)` and the panel height is 0.72 of that, leaving about 50px of red above and below at 390px and about 65px at 768px. The artwork's lines stay at or above their native size at both widths, and the mark stays inside the panel's overflow clip, so there is no horizontal overflow.
+- Visitor records: 白種元 stays full-width and dominant on mobile; 黎芷珊 stays the narrower secondary entry. Both use the same rhythm: image → 16px → statement → 8px → source. Watermarks and source labels stay visible.
+- `其他報道 →` stays below the 黎芷珊 entry with a minimum 44px tap area; the gap above it is 8px so the visible spacing matches the caption rhythm.
+- The closing hairline and the reduced gap before `到店／外賣` are unchanged.
+
+**Typography (owner direction, 14 Oct 2026):**
+
+- The display role (DFKai-SB first) is used only for `米芝蓮指南，八年記錄。`, `從指南，到鏡頭。` and the large `2018—2025`. Both headlines are tracked at -0.02em, trim the full-width punctuation boxes where the browser and font support it, and wrap with balanced natural breaks.
+- `2018—2025` uses tabular numerals at -0.02em.
+- The text role is used for the kickers, the supporting line (16px), visitor captions (semibold, 17px below 1024px and 19px from 1024px), sources (13px `--ink-muted`) and `其他報道 →` (16px semibold, 44px tap area). No third font.
+
+**Header:** the global header is fixed and opaque and is not edited here. The Recognition section is an isolated stacking context, so none of its content can paint above or through the header.
+
+**Publication clearance — pending.** `paik-visit-counter.png` (Korean programme frame) and `luisa-tvb-counter.png` (TVB frame) are third-party broadcast stills. Per `docs/reference/content-register.md`, reuse permission and source URLs are not yet recorded. They are shown at owner direction for design review only and must not ship to production until clearance is recorded there. Web derivatives live in `website/public/media/recognition/`.
 
 Live check: http://localhost:3000/
 
@@ -395,11 +448,19 @@ Check an item only after it has been implemented and visually verified. Founder 
 - [x] Do not publish visitor portraits, programme screenshots, quotations or invented descriptions.
 - [x] Clearly distinguish Michelin recognition from documented visits.
 - [x] Add a truthful `其他報道 →` route to `/press/`.
-- [ ] Add only a restrained one-time reveal; no carousel, marquee or scroll capture.
+- [ ] Optional restrained one-time reveal — deferred to Stage 6. No carousel, marquee or scroll capture.
 - [x] Verify the mobile order is introduction, Michelin, 白種元, 黎芷珊, then Press.
 - [x] Capture and review one 1440×900 Recognition screenshot.
 - [x] Capture and review one 390×844 Recognition screenshot.
-- [ ] Receive Recognition visual approval.
+- [x] ~~Text-only ledger and full-red certificate layout.~~ Rejected 14 Oct 2026; the items above describe that retired build.
+- [x] ~~Documentary editorial spread with dominant 白種元 still and compact Michelin block.~~ Rejected 14 Oct 2026: hierarchy backwards.
+- [x] Build the two-level composition: Michelin hero field (Level 1), then 白種元 larger and 黎芷珊 smaller (Level 2).
+- [x] Verify the mobile order: Michelin, 白種元, 黎芷珊.
+- [x] Below 1024px, show only the centred Michelin artwork; from 1024px, keep the split panel with `指南收錄記錄` and `2018—2025`.
+- [x] Apply the Recognition typography: display role for the two headlines and `2018—2025` only; text role for kickers, supporting copy, captions, sources and `其他報道 →`.
+- [x] Owner review of the Michelin-first composition and typography at desktop, tablet and mobile.
+- [ ] Record publication clearance for both broadcast stills in `docs/reference/content-register.md` before production release.
+- [x] Receive Recognition visual approval. Approved 14 Oct 2026 at desktop, tablet and mobile; frozen against further visual redesign.
 
 ### Combined transition and QA
 
@@ -447,4 +508,4 @@ Check an item only after it has been implemented and visually verified. Founder 
 
 ## Current next step
 
-Follow the block at the top. Founder is approved as the editorial poster composition (14 Oct 2026); its optional motion is deferred to Stage 6. Next build is Recognition only, which stays open: larger Michelin mark, no repeated year, two quieter visit rows, one press link. Motion stays off.
+Follow the block at the top. Founder is approved as the editorial poster composition (14 Oct 2026); its optional motion is deferred to Stage 6. Recognition is approved (14 Oct 2026) at desktop, tablet and mobile as the Michelin-first two-level composition (Michelin > 白種元 > 黎芷珊), including typography, and is frozen against further visual redesign. The programme screenshots remain pending publication clearance and must not ship to production until it is recorded. Optional motion for both sections is deferred to Stage 6.
