@@ -39,9 +39,31 @@ Status: Creative direction selected. Mankee-controlled asset collection authoris
 - A straight-on, higher-resolution capture is still required for an error-free full topping transcription.
 - The visible $34/$35 重慶酸辣粉 conflict requires owner confirmation before publication.
 
+## Hero bowl and `你揀，文記煮` photograph — distinct assets
+
+Updated 14 October 2026. These are different pictures and different recipes. Do not substitute one for the other.
+
+### Hero recipe and provisional bowl assets
+
+The Hero recipe and the provisional bowl references below belong to the Hero-media workstream and to early food-art reference. They are not the approved `你揀，文記煮` photograph.
+
+- Provisional Hero ingredient combination: 瑞士雞中翼、南乳豬手、鹵水豬大腸.
+- Provisional and reference bowls: the PackTravel image (R10), the owner close-up, and R12–R14. Their rights limits in the sections below still apply.
+- The temporary Hero video and poster remain the development pair named in `PROJECT-HANDOFF.md`. They are not the payoff still.
+
+### Approved `你揀，文記煮` photograph
+
+`你揀，文記煮` uses the approved static food photograph. Its cinemagraph remains deferred. The section plan is `website/docs/sections/order-pass/你揀，文記煮.md`.
+
+- Desktop still: `website/public/media/order-pass/order-pass-desktop-approved-v1.png` (V15, 1672×941).
+- Mobile still: `website/public/media/order-pass/order-pass-mobile-approved-v1.png` (864×1152). It is not a crop of the desktop still.
+- Locked bowl inventory for this photograph, from that section plan: daikon, one modest serving of 玻璃辣魷魚, and exactly two 自制韭菜餃, with spoon, chopsticks and four condiments.
+
+This photograph does not establish the Hero recipe, and the provisional Hero bowl does not replace it.
+
 ## Hero bowl reference decision
 
-- Provisional ingredient combination: 瑞士雞中翼、南乳豬手、鹵水豬大腸.
+- Provisional ingredient combination: 瑞士雞中翼、南乳豬手、鹵水豬大腸. This is the Hero reference combination, not the `你揀，文記煮` photograph.
 - The attached PackTravel bowl is approved only as a broad visual preference for bowl shape and presentation density.
 - Its visible ingredients do not establish the final hero recipe and it cannot enter the production asset folder because the image is third-party and watermarked.
 - Required companion views: an overhead and an unobstructed 30-degree Mankee-owned photograph of the exact provisional combination, including the intended noodle, soup, vegetable, garnish, spoon and actual serving bowl.
@@ -108,6 +130,10 @@ Public availability does not establish commercial reuse permission. Every collec
 - Visual contact sheet: `assets/sourced/instagram/review/contact-sheet.jpg`.
 
 Instagram derivatives must be replaced with original Mankee exports before final production.
+
+## Earlier collection plans
+
+**Superseded on 14 October 2026 as current website tasks.** The Hero layer contract, priority shoot list and 3D production assets below remain collection history. They do not replace the temporary Hero pair or the approved `你揀，文記煮` photograph. The approved production architecture does not add a 3D bowl.
 
 ## Hero layer contract
 

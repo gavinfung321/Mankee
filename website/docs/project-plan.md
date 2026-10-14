@@ -9,7 +9,7 @@ This is the current website-phase index for workflow, priorities and approval st
 
 Pause all visual implementation in Cursor until Stage 1 — Typography Lock is approved.
 
-The working tree currently contains 23 uncommitted changes spanning documentation, fonts, components, styles and tests. Do not layer another section redesign onto this state. Do not discard or overwrite these changes; first audit and checkpoint them.
+On 14 October 2026 the recovery checkpoint `35548f48b5545db9918ec02cd7c3f482508e4cbb` was made on `codex/mankee-recovery-2026-10-14`. The earlier note of 23 uncommitted changes described the tree before that checkpoint. Do not layer another section redesign onto the current phase. Visual implementation stays paused at the Typography Lock.
 
 ## Order of authority
 
@@ -57,10 +57,12 @@ Typed records in `src/content/zh-HK/*` implement approved content; they do not r
 - [ ] Review the 23 uncommitted changes and separate intentional work from accidental drift.
 - [ ] Confirm no approved asset or interaction was unintentionally removed.
 - [ ] Run focused tests for the existing changes.
-- [ ] Create one recoverable checkpoint commit before beginning another redesign.
-- [ ] Record the checkpoint commit here.
+- [x] Create one recoverable checkpoint commit before beginning another redesign. Commit `35548f48b5545db9918ec02cd7c3f482508e4cbb` on `codex/mankee-recovery-2026-10-14`.
+- [x] Record the checkpoint commit here.
 
-Checkpoint: `pending`
+Checkpoint: `35548f48b5545db9918ec02cd7c3f482508e4cbb`
+
+The other Stage 0 checks stay open. This documentation reconciliation did not run tests or audit every earlier change.
 
 ## Stage 1 — Typography Lock
 
@@ -180,4 +182,4 @@ Motion remains last.
 
 ## Current next action
 
-Do not ask Cursor to improve another section. First review and preserve the current working tree in a recoverable checkpoint. Then audit and approve the two-font typography system before returning to Founder or any other section.
+Do not ask Cursor to improve another section. The recovery checkpoint exists. The current next action is to audit and approve the two-font typography system before returning to Founder or any other section. `docs/visual-system.md` stays a draft until that lock is approved.

@@ -3,7 +3,7 @@
 Status: **draft — typography approval pending**  
 Updated: 14 Oct 2026
 
-This becomes the shared visual guide only after the Typography Lock in `docs/project-plan.md` passes. Until then, do not treat the current font stack, weights or scale as approved production direction. Section plans describe content and layout; after this guide is approved, its shared fonts, type scale and chapter colour roles win over section-level styling instructions.
+This file remains an explicit draft until the Typography Lock in `docs/project-plan.md` is approved. That approval has not happened. Until then, do not treat the proposed font stack, weights, scale or chapter colours as approved production direction. Section plans describe content and layout; their font instructions also wait for the lock. After this guide is approved, its shared fonts, type scale and chapter colour roles win over section-level styling instructions.
 
 ## Order of authority
 

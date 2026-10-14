@@ -8,33 +8,63 @@ This plan converts the approved Concept B v9 wireframe into a production website
 
 When project documents disagree, use this precedence:
 
-1. `PROJECT-HANDOFF.md` — Hero media, credit safety, texture and continuity restrictions.
+1. `PROJECT-HANDOFF.md` — Hero-media workstream only: credit safety, texture and continuity restrictions. Its port-4500 review URL and proof-board next step are Hero-lab context, not the current website task.
 2. `CONCEPT-B-APPROVED-STRUCTURE.md` — current homepage order, navigation, language and content scope.
-3. `IMPLEMENTATION_PLAN.md` — production phases, technical direction and delivery gates.
+3. `IMPLEMENTATION_PLAN.md` — production architecture, technical direction and delivery gates. The 14 October 2026 addendum below is the current visual-phase reading of this file.
 4. `CONTENT_REGISTER.md` — factual evidence, permissions and operational-data status.
 5. `ASSET_MANIFEST.md` — asset provenance and approval status.
-6. `wireframes/concept-b.html` (Concept B v9) — visual source of truth for section layout and interaction.
-7. Older roadmaps, architecture drafts and wireframes — historical reference only where they do not conflict with the documents above.
+6. Current website visual work, in this order: `website/docs/project-plan.md` (workflow and approval status), `website/docs/visual-system.md` (draft until the Typography Lock is approved), `website/docs/inspiration-analysis.md` (pacing and motion budget; its workflow order defers to the project plan), and `website/docs/sections/` (section plans).
+7. `wireframes/concept-b.html` (Concept B v9) — historical visual reference. Superseded on 14 October 2026 as the current visual source for section layout and interaction.
+8. Older roadmaps, architecture drafts and wireframes — historical reference only where they do not conflict with the documents above.
 
-A checklist note, a production sketch, or a sentence about reading order does not replace the wireframe picture. Approved facts still come from the documents above. Where a wireframe sentence and a confirmed fact disagree, the fact is what gets published and the wireframe layout stays.
+Approved facts still come from `CONTENT_REGISTER.md`. Where a wireframe sentence and a confirmed fact disagree, the fact is what gets published. A checklist note does not replace a section plan.
+
+### Current-phase addendum — 14 October 2026
+
+Next.js App Router with TypeScript remains the approved production architecture. This addendum does not replace that decision, and it does not authorise a new master plan.
+
+Visual implementation is paused at the Typography Lock in `website/docs/project-plan.md`. Typography is unresolved. The Noto Serif display stack in this file, the wireframe Kai titles, and the draft LXGW WenKai proposal in `website/docs/visual-system.md` are not an approved font lock.
+
+Current homepage order. Component filenames stay as they are:
+
+1. Hero — `Hero.tsx`
+2. `舊式香港` — currently implemented inside the historically named `SensoryTrio`
+3. `文記落單體驗` — `HowToOrder.tsx`
+4. `文記十大` — `TopTen.tsx`
+5. `你揀，文記煮` — `OrderSlip.tsx`
+6. Founder — `Founder.tsx`
+7. Recognition — `Recognition.tsx`
+8. Locations — `Locations.tsx`
+9. Footer — `Footer.tsx`
+
+This nine-part sequence is the current homepage. It is not a restoration of the older nine-act homepage.
+
+Current interaction decisions:
+
+- `文記落單體驗` uses the compact photographic 湯 → 麵 → 餸 rail.
+- The 10 October 2026 timber-card and queue-figure specification below is superseded.
+- The order form supports the `文記十大` interaction.
+- It changes from 落單 to 完成 while still visible near the end of that section.
+- It does not fly into `你揀，文記煮`.
+- `你揀，文記煮` uses the approved static food photograph recorded in `ASSET_MANIFEST.md` and `website/docs/sections/order-pass/`.
+- Its cinemagraph remains deferred.
+- Founder, Recognition, Locations and Footer are not visually approved.
 
 ### Visual rebuild
 
-Decided 10 October 2026. These rules apply to every homepage section, and to `/menu/` and `/press/` where Concept B has a counterpart.
-
-Reuse the CSS decisions in `wireframes/wireframe.css`. Do not replace a section with a different design system.
-
-The production result should feel like the wireframe has been faithfully rebuilt as a real website. Real-website changes are limited to approved sentences, working links, semantic markup, the existing `48rem` and `64rem` breakpoints, and keeping `position: fixed` out of `home.css`. Each section keeps that section’s colour, type, and layout from the wireframe. Hero media bytes stay the approved temporary pair.
+**Superseded on 14 October 2026.** The 10 October 2026 instruction to rebuild every section from `wireframes/wireframe.css`, including Kai titles, is not current visual direction. Current visual work follows the addendum and the website documents in the source-of-truth list. Hero media bytes stay the approved temporary pair. Real-website constraints that remain current: approved sentences, working links, semantic markup, the `48rem` and `64rem` breakpoints, and keeping `position: fixed` out of `home.css`.
 
 Do not restore the older nine-act homepage, the former three-topping combination, complete menu pricing or technical ScrollCraft labels merely because they remain in an older document.
 
 ### 文記落單體驗
 
-Decided 10 October 2026. The layout that stacks 一、二、三 under the heading, with one counter photograph beside that column, is withdrawn.
+**Superseded on 14 October 2026.** The timber-card, queue-figure and flying-slip instructions in this section are not current. The current section is the compact photographic 湯 → 麵 → 餸 rail in `website/docs/sections/how-to-order/文記落單體驗.md`. The historical specification is kept below so the withdrawn direction stays readable.
+
+Decided 10 October 2026, and withdrawn as current direction on 14 October 2026. The layout that stacks 一、二、三 under the heading, with one counter photograph beside that column, was withdrawn on 10 October 2026.
 
 Port the paint, grid, and spacing from `.menu-stagger`, `.alt-grid`, `.menu-disclaimer`, `.menu-experience`, `.heritage-steps`, `.queue-story`, `.queue-counter`, `.queue-people`, and `.order-slip-rail`. The handoff 跟住點揀？ / 第一次來，可以由文記十大開始 stays off this section. 文記十大 says that itself. The heading and kicker use the same Kai title and gold kicker as the section above. The cards read 一 湯, 二 麵, 三 餸. Each card is a photo over a solid timber band. 一 lists 腩汁、瑞士汁、清湯、走湯 and 可加咖喱、沙嗲、麻辣. 二 lists 粗麵、河粉、烏冬、日式拉麵, cropped onto the noodles. 三 says 可以逐樣加. No prices, and the full noodle list and topping board stay off these cards. The left column aligns to the top of the cards. On this section the paper’s 餸 row says 逐樣揀. 花膠 · 魷魚 · 雞翼 appears when the paper reaches 文記十大. Each card keeps the timber wash over an existing photo: the counter for 湯, a noodle bowl for 麵, and the chicken-wing close-up for 餸. Hover lifts a card 4px and grows its hard shadow. 咖喱、沙嗲、麻辣 stay on the soup card only. The separate flavour sentence and the three 湯 麵 餸 circles stay off. The counter is the wireframe’s steel gradient, not a photograph. The queue figures are 揀湯, 揀麵, 揀餸. The red step moves from 揀湯 to 揀麵 to 揀餸 and repeats. Hover pauses that loop and steps the pointed figure forward. Reduced motion keeps the last figure red and still. The left paragraph is 跟住條隊向前，就是香港車仔麵的點法。 The red label 不鏽鋼配料檔 stays off the steel panel. This section does not use the scroll-entry transform, so the corner paper can stay fixed to the viewport.
 
-`position: fixed` on `.order-slip-rail` stays out of `home.css`. That one paper is fixed from `globals.css`: it appears on this section, 湯 and 麵 fill here, 餸 fills on 文記十大, and the stamp becomes 完成 on the later slip. Published sentences stay the approved `zh-HK` records. `.act-tag`, `.device-badge`, and `.handoff` stay off the page, as Concept B already hides them.
+**Superseded flying slip.** `position: fixed` on `.order-slip-rail` stays out of `home.css`. The 10 October instruction that one paper is fixed from `globals.css`, fills across sections, and stamps 完成 on a later slip is not current. The order form stays with `文記十大`, changes from 落單 to 完成 while still visible near the end of that section, and does not fly into `你揀，文記煮`. Published sentences stay the approved `zh-HK` records. `.act-tag`, `.device-badge`, and `.handoff` stay off the page, as Concept B already hides them.
 
 ## 2. Production strategy
 
@@ -101,7 +131,7 @@ website/
       types.ts              locale and confirmed/pending fact types
       zh-HK/
         site.ts             name, navigation, shared lines
-        home.ts             eight homepage sections, in approved order
+        home.ts             homepage sections, in the current order in the 14 October 2026 addendum
         top-ten.ts          wall list, display order
         menu.ts             湯 → 麵 → 餸 and the signature list
         recognition.ts      Michelin, 白種元, 黎芷珊
@@ -120,7 +150,7 @@ website/
         SensoryTrio.tsx
         HowToOrder.tsx
         TopTen.tsx
-        OrderSlip.tsx       transition between 文記十大 and Founder
+        OrderSlip.tsx       你揀，文記煮; historical filename, not a flying transition
         Founder.tsx
         Recognition.tsx
         Locations.tsx
@@ -135,7 +165,7 @@ website/
 
 `/privacy/` is added only if analytics or a form requires it. Founder and locations stay on the homepage. Primary navigation is 首頁, 點餐, 文記十大, 故事, and 到店／外賣. Press is linked from the recognition section.
 
-The homepage sensory names stay `瑞士雞翼`, `上湯花膠`, and `南乳豬手`. `top-ten.ts` uses the wall names, including `瑞士雞中翼`.
+The homepage sensory names `瑞士雞翼`, `上湯花膠`, and `南乳豬手` remain approved dish names. They do not define the second homepage section. That section is `舊式香港`, implemented inside `SensoryTrio`. `top-ten.ts` uses the wall names, including `瑞士雞中翼`.
 
 The production app is this Next.js App Router tree. Section components, token values, content copy, islands, and media copies belong to their own issues.
 
@@ -158,12 +188,12 @@ Spacing uses a 4px step: 4, 8, 12, 16, 24, 32, 48, 64, 96.
 
 Layout: content width `72rem`, text measure `40rem`. Review widths remain 360, 390, tablet, and desktop. Breakpoints are `48rem` and `64rem`.
 
-Type, two families only:
+Type, two families only. **Superseded on 14 October 2026 as a font lock.** The stacks below are the historical token-issue recommendation. Typography is unresolved and blocked by the Typography Lock. Do not treat Noto Serif TC, the wireframe Kai faces, or the draft display face in `website/docs/visual-system.md` as approved.
 
 - Display: `"Noto Serif TC", "Source Han Serif TC", "PMingLiU", serif`
 - Text and controls: `"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`
 
-Noto Serif TC and Noto Sans TC are the recommended webfonts. Both are SIL Open Font License. This issue records that license and does not add font files. Self-hosted WOFF2 subsets wait until the approved copy is locked. `DFKai-SB` and `KaiTi` stay in the wireframe only.
+Noto Serif TC and Noto Sans TC were the recommended webfonts for that issue. Both are SIL Open Font License. That issue records the license and does not add font files. Self-hosted WOFF2 subsets wait until the Typography Lock approves the copy. `DFKai-SB` and `KaiTi` stay in the wireframe only.
 
 Motion tokens cover a short duration, a medium duration, and one easing. Reduced motion sets those durations to zero. Section animation itself stays in later issues.
 
@@ -187,14 +217,19 @@ Planned for the navigation issue. Primary navigation is 首頁, 點餐, 文記�
 
 ### Homepage
 
+Current order, 14 October 2026. See the addendum. Component filenames are unchanged.
+
 1. Hero — `一碗，由這裏開始`
-2. Three textures — `香：瑞士雞翼`, `厚：上湯花膠`, `濃：南乳豬手`
-3. How to order — the 10 October 2026 picture above. Cards read 一 湯, 二 麵, 三 餸. Curry, satay and spicy flavour stay on the soup card. The stacked copy-column layout is withdrawn.
-4. 文記十大
-5. Completed order-slip transition
-6. Founder and Mankee story
-7. Recognition — Michelin, 白種元 and 黎芷珊 only
-8. Locations and delivery
+2. `舊式香港` — implemented inside `SensoryTrio`
+3. `文記落單體驗` — compact photographic 湯 → 麵 → 餸 rail
+4. `文記十大`
+5. `你揀，文記煮` — approved static food photograph; the order form does not fly here
+6. Founder and Mankee story — not visually approved
+7. Recognition — Michelin, 白種元 and 黎芷珊 only; not visually approved
+8. Locations and delivery — not visually approved
+9. Footer — not visually approved
+
+**Superseded homepage list, 9–10 October 2026.** The earlier list put a three-texture chapter second, specified timber cards for how to order, and called item 5 a completed order-slip transition into Founder. Those three instructions are not current.
 
 ### Supporting routes
 
@@ -228,7 +263,7 @@ Locked on 9 October 2026 from the owner-confirmed wall titled 本店十大必食
 9. 玻璃辣魷魚
 10. 蠔皇小花菇
 
-Use these names and this order for 文記十大. Keep the wall forms 滷水豬大腸 and 自制韭菜餃. The homepage sensory trio remains `香：瑞士雞翼`, `厚：上湯花膠`, `濃：南乳豬手`. Decisions that are still open, including founder, Michelin, portrait, map, hours, and delivery links, are listed in `CONTENT_REGISTER.md` and must not render as confirmed facts.
+Use these names and this order for 文記十大. Keep the wall forms 滷水豬大腸 and 自制韭菜餃. The approved sensory names remain `香：瑞士雞翼`, `厚：上湯花膠`, `濃：南乳豬手`. They are not the second homepage section; that section is `舊式香港`. Founder portrait, founder quotation, Michelin artwork, Tsim Sha Tsui facts and delivery links stay in the pending-publication review in `CONTENT_REGISTER.md` and must not be treated as cleared.
 
 ## 5. GitHub milestones
 
@@ -262,7 +297,7 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
 
 3. `Design: Establish Mankee design tokens and typography`
    - Add the five brand colours, the Hero-only jade dark, and the spacing, type, focus, layout, and motion tokens.
-   - Use Noto Serif TC and Noto Sans TC by name. Record the SIL Open Font License and add no font files yet.
+   - Historical issue text: use Noto Serif TC and Noto Sans TC by name. Record the SIL Open Font License and add no font files yet. Superseded as a font lock on 14 October 2026; typography waits for the Typography Lock.
    - Show a temporary specimen on the homepage. Leave navigation and section content for later issues.
 
 4. `Feature: Build shared shell and production navigation`
@@ -278,10 +313,10 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
    - Only verified or explicitly pending data is accepted.
 
 6. `Feature: Build static homepage sections`
-   - Replace the homepage specimen with the eight approved sections, in order, using the `zh-HK` records. The page stays complete with JavaScript disabled. No island, video scrub, or accordion.
+   - Historical issue text: replace the homepage specimen with the eight approved sections, in order, using the `zh-HK` records. The page stays complete with JavaScript disabled. No island, video scrub, or accordion. The current order is the nine-part sequence in the 14 October 2026 addendum.
    - Hero is a static jade-dark block whose only heading is `一碗，由這裏開始`. The temporary video, poster, and scrub stay with the later Hero issue.
-   - Sensory trio, `湯 → 麵 → 餸` with 咖喱、沙嗲、麻辣 inside the soup step, and the wall-order 文記十大 render as visible text. Show `實際供應及選擇以店內餐牌為準。` The 點餐 link goes to `/menu/`; the menu guide itself stays a later issue.
-   - The order slip is a short transition after 文記十大, not a second chapter and not a persistent mobile panel. It adds no new claims.
+   - Historical issue text: sensory trio, `湯 → 麵 → 餸` with 咖喱、沙嗲、麻辣 inside the soup step, and the wall-order 文記十大 render as visible text. Show `實際供應及選擇以店內餐牌為準。` The 點餐 link goes to `/menu/`; the menu guide itself stays a later issue. Superseded as the second-section description on 14 October 2026: that section is `舊式香港` inside `SensoryTrio`, and ordering is the compact rail.
+   - Historical issue text: the order slip is a short transition after 文記十大, not a second chapter and not a persistent mobile panel. It adds no new claims. Superseded on 14 October 2026: `你揀，文記煮` is its own section, and the order form stays in `文記十大` without flying forward.
    - 故事 shows the confirmed name 黃志強 only. English name, quotation, and portrait stay hidden.
    - Recognition shows 米芝蓮 as a name, plus the approved lines 白種元曾到訪文記 and 黎芷珊曾到訪文記. No year count, quotation, or portrait. A text link to `/press/` is the route for other coverage.
    - 到店／外賣 shows 深水埗 first, with the confirmed address and daily 11:00–04:00, and 尖沙咀店 as the secondary label. Pending maps, phones, 尖沙咀 hours, and delivery links stay hidden. Those controls stay with the later locations issue.
@@ -321,22 +356,23 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
     - Do not add an ingredient photo, a price, or a wireframe description. `/menu/` keeps the static ordered list.
 
 12. `Enhancement: Add restrained section transitions`
-    - Sections other than the Hero and 文記十大 fade in and rise 12px as they enter. The Hero keeps the scrub. 文記十大 keeps the featured-dish selection. The order slip stays a static rule.
+    - Sections other than the Hero and 文記十大 fade in and rise 12px as they enter. The Hero keeps the scrub. 文記十大 keeps the featured-dish selection. Historical issue text that the order slip stays a static rule is superseded by the 14 October 2026 addendum: the order form changes from 落單 to 完成 inside `文記十大` and does not fly.
     - Use a view timeline inside `prefers-reduced-motion: no-preference`. Reduced motion, JavaScript off, and browsers without view timelines leave every section visible.
     - No parallax, prototype label, or new island.
 
 13. `Accessibility: Complete keyboard, screen-reader and reduced-motion pass`
     - Header and footer navigation are named landmarks, 主要 and 頁尾. One `h1` per page. The skip link still targets `#content`.
     - On paper, focus is an ink, noodle, ink ring. On jade, focus stays a noodle ring. Body links and the selected 文記十大 name use ink. The 到店／外賣 label is large bold paper on lacquer. The six colour values stay unchanged.
-    - Hero media is decorative. The order slip is decorative. Reduced motion adds no pinned space.
+    - Hero media is decorative. Historical issue text that the order slip is decorative is superseded: the order form is part of the `文記十大` interaction. Reduced motion adds no pinned space.
 
 14. `Enhancement: Complete responsive layout pass`
     - Reviewed at 1440, 1024, 768, 390, and 360×640 on the homepage, `/menu/`, and `/press/`. No horizontal scroll. At 1440 the text column stays 72rem. At 768 and above the header links sit on one line. Below 768, 選單 is used and the sections are one column.
-    - The order slip stays a static rule in the page. It is not fixed or sticky.
+    - Historical issue text: the order slip stays a static rule in the page. It is not fixed or sticky. The flying-slip instruction elsewhere in this file is superseded. Current behaviour is the `文記十大` order form described in the 14 October 2026 addendum.
 
 ### v0.4 — Content & Media Approval
 
 15. `Content: Verify founder, recognition and location records`
+    - Historical issue text follows. It disagrees with itself about what was unpublished and what was placed on the site. **Superseded as a clearance decision on 14 October 2026.** The pending-publication review in `CONTENT_REGISTER.md` is the current status for the founder portrait, founder quotation, Michelin artwork, Tsim Sha Tsui facts and delivery links.
     - The public founder line stays 黃志強. The English name, quotation, and portrait stay unpublished.
     - Recognition stays 米芝蓮, 白種元曾到訪文記, and 黎芷珊曾到訪文記. No year count, mark, or quotation.
     - 深水埗 keeps the confirmed address and 每日 11:00–04:00. 尖沙咀店 stays a name. Maps, phones, last-order times, holiday notes, and delivery links stay unpublished. OpenRice 11:00–23:00 and the wireframe Foodpanda chain URL stay unused.
@@ -361,7 +397,7 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
 19. `Performance: Meet launch performance budget`
     - Responsive images, local font strategy and bounded Hero loading.
     - No review or lab assets in the production bundle.
-    - GitHub #18 ships SIL OFL WOFF2 subsets of Noto Serif TC and Noto Sans TC, a layout-sized founder photograph, and a Hero poster that loads before the temporary video.
+    - Historical issue record: GitHub #18 ships SIL OFL WOFF2 subsets of Noto Serif TC and Noto Sans TC, a layout-sized founder photograph, and a Hero poster that loads before the temporary video. Those shipped files are not the Typography Lock.
 
 20. `QA: Complete launch verification and owner sign-off`
     - Cross-browser, real iPhone, keyboard, screen-reader, reduced-motion and broken-link checks.

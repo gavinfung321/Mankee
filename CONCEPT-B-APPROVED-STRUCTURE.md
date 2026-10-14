@@ -1,24 +1,26 @@
 # Concept B — Approved Production Structure
 
-Status: approved for the next Concept B revision and Cursor handoff preparation.
+Status: current homepage structure, updated 14 October 2026. Gate 0 is complete. Visual implementation is paused at the Typography Lock.
 
-Implementation is governed by `IMPLEMENTATION_PLAN.md`, `IMPLEMENTATION_CHECKLIST.md` and the Mankee-specific `GITHUB_ISSUES_GUIDE.md`. Production code must not begin until the checklist's Gate 0 is complete.
+Implementation is governed by `IMPLEMENTATION_PLAN.md`, `IMPLEMENTATION_CHECKLIST.md` and the Mankee-specific `GITHUB_ISSUES_GUIDE.md`. Current visual work follows `website/docs/project-plan.md` and the section plans. Production architecture remains Next.js.
 
 ## Homepage sequence
 
-1. Hero — `一碗，由這裏開始`
-2. Three textures — the same three Hero toppings
-   - `香：瑞士雞翼`
-   - `厚：上湯花膠`
-   - `濃：南乳豬手`
-3. How to order — `湯 → 麵 → 餸`（加味屬於揀湯時的自選項目，不另設一步）
-4. 文記十大 — the confirmed signature list
-5. Completed order-slip transition into the Founder section
-6. Founder and Mankee story
-7. Recognition — Michelin, 白種元 and 黎芷珊
-8. Locations and delivery
+Current order, 14 October 2026. Do not rename the components that already implement these sections.
 
-The order slip is a transition device, not a separate full-height chapter. It appears during the ordering journey, completes after 文記十大, passes through the service window and disappears before the Founder content.
+1. Hero — `一碗，由這裏開始`
+2. `舊式香港` — currently implemented inside the historically named `SensoryTrio`
+3. `文記落單體驗` — compact photographic `湯 → 麵 → 餸` rail. Curry, satay and spicy flavour stay optional inside the soup step.
+4. `文記十大` — the confirmed signature list. The order form supports this interaction and changes from 落單 to 完成 while still visible near the end of the section.
+5. `你揀，文記煮` — the approved static food photograph. The order form does not fly into this section. The cinemagraph remains deferred.
+6. Founder and Mankee story — not visually approved
+7. Recognition — Michelin, 白種元 and 黎芷珊; not visually approved
+8. Locations and delivery — not visually approved
+9. Footer — not visually approved
+
+**Superseded on 14 October 2026:** the earlier second chapter called “three textures”, the completed order-slip transition into Founder, and the requirement that the slip pass through a service window and disappear before the Founder content. `你揀，文記煮` is its own section. The order form stays with `文記十大`.
+
+The dish names `香：瑞士雞翼`, `厚：上湯花膠`, and `濃：南乳豬手` remain approved names. This document does not assign them a new section.
 
 ## Menu and ordering scope
 
@@ -73,8 +75,8 @@ Press is reached from the recognition/story area and does not need a primary-nav
 ## Mobile behavior
 
 - Shorter Hero scroll distance.
-- No persistent floating order slip.
-- Ordering steps stack vertically.
+- No persistent floating order slip. The order form does not fly into `你揀，文記煮`.
+- `文記落單體驗` stays the compact 湯 → 麵 → 餸 rail. On small screens the same three steps may stack so nothing scrolls sideways. **Superseded:** replacing that rail with the timber cards or queue figures.
 - Top Ten uses tap/accordion behavior.
 - Press content becomes a compact list or horizontal swipe.
 - No essential information depends on animation.

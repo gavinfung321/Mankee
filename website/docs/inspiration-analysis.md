@@ -1,6 +1,8 @@
 # 文記網站 — 10/10 Burger inspiration analysis
 
-Planning document only. The six global direction decisions were approved by the owner on 12 Oct 2026. Section work still follows its own implementation gate and checklist.
+Planning document only. The six global direction decisions were approved by the owner on 12 Oct 2026. This file remains the visual inspiration and pacing guide.
+
+Workflow order defers to `website/docs/project-plan.md`. The execution order later in this file is a historical recommendation from 12 Oct 2026. It does not override the pause at the Typography Lock, and it does not authorise the next section.
 
 Review basis:
 
@@ -223,6 +225,8 @@ This sequence uses the inspiration's peak-and-pause rhythm without copying its c
 
 ## Highest-value changes
 
+Pacing recommendations only. The current work order is the pause at the Typography Lock in `website/docs/project-plan.md`. The cinemagraph item below stays deferred.
+
 ### Priority 1 — unify the global palette and type hierarchy
 
 - [ ] Define one background role per chapter.
@@ -258,9 +262,11 @@ This sequence uses the inspiration's peak-and-pause rhythm without copying its c
 - [x] Make the footer a strong brand moment.
 - [x] Preserve documentary authenticity instead of copying the source's glossy chain aesthetic.
 
-**Approved by the owner on 12 Oct 2026.** These decisions are now the visual-direction gate for subsequent section work.
+**Approved by the owner on 12 Oct 2026.** These decisions remain the visual-direction and pacing gate. They do not set workflow order. That order is in `website/docs/project-plan.md`, and visual implementation is paused at the Typography Lock.
 
 ## Approved execution order
+
+**Superseded on 14 October 2026 as workflow.** Current sequence and approval status are in `website/docs/project-plan.md`. Visual implementation is paused at the Typography Lock. The list below remains a record of the 12 Oct 2026 pacing recommendation.
 
 1. Keep `你揀，文記煮` static; its optional cinemagraph is deferred until the final continuity audit.
 2. Audit the global colour roles and typography scale without restructuring approved sections.
@@ -271,7 +277,7 @@ This sequence uses the inspiration's peak-and-pause rhythm without copying its c
 
 ## Section alignment status
 
-This matrix is the planning control for subsequent section work. A plan may move into implementation only after its Inspiration Alignment Gate is explicit and approved.
+This matrix records pacing alignment. Workflow and the current pause stay in `website/docs/project-plan.md`. A plan may move into implementation only after the Typography Lock and its own Inspiration Alignment Gate are approved.
 
 Status meanings:
 

@@ -1,18 +1,22 @@
 # Mankee Hero Video Project Handoff
 
-Updated 9 October 2026. This file is the authoritative continuation brief for a fresh Codex chat working in `C:\Users\gavin\OneDrive\Desktop\Mankee`.
+Workstream: Hero media only. Updated 14 October 2026.
+
+This file is the continuation brief for the separate Hero-media workstream: credit safety, texture, continuity and generation. It does not set the current website task. Website order, interaction and visual workflow are in `CONCEPT-B-APPROVED-STRUCTURE.md`, `IMPLEMENTATION_PLAN.md` and `website/docs/project-plan.md`.
+
+The local port-4500 URL and the proof-board next step later in this file are Hero-lab context. They are not the website to build, review or serve.
 
 ## Immediate status
 
-The website prototype is functional and currently uses a temporary natural-looking hero video. The final hero sequence must not be generated yet. The present blocker is a synthetic embossed or tessellated texture baked across the previous AI foundation image, including the stainless-steel counter, trays, broth and food. It appears as repeated squares, triangles, polygons, grids, scale-like marks and occasional letter-like stamps.
+Hero-lab context, not the current website task. The website uses a temporary natural-looking hero video. The final hero sequence must not be generated yet. The Hero-lab blocker is a synthetic embossed or tessellated texture baked across the previous AI foundation image, including the stainless-steel counter, trays, broth and food. It appears as repeated squares, triangles, polygons, grids, scale-like marks and occasional letter-like stamps.
 
-The latest work created no-credit cleanup proofs for the affected material classes. These proofs have not been merged into the master foundation and have not yet been approved by the user.
+The latest Hero-lab work created no-credit cleanup proofs for the affected material classes. These proofs have not been merged into the master foundation and have not yet been approved by the user.
 
-Start by showing or reviewing this board with the user:
+Hero-lab review board, for a Hero-media session only:
 
 `C:\Users\gavin\OneDrive\Desktop\Mankee\scrollcraft\builds\mankee-hero-r1\lab\clean-foundation-proofs-v1\clean-foundation-no-credit-proof-board-v1.jpg`
 
-Do not generate video or spend Kie.ai credits until the user approves a completely clean master foundation and the full F0–F7 still-board package.
+Do not generate video or spend Kie.ai credits until the user approves a completely clean master foundation and the full F0–F7 still-board package. Do not treat that review as the next website task.
 
 ## User priorities
 
@@ -129,6 +133,8 @@ Earlier motion clips remain reference material only. They are not authoritative 
 
 ## Website prototype state
 
+Hero-lab context. This section records the wireframe page used while the temporary Hero was being reviewed. It is not the current website, and port 4500 is not a site to start or open for website work.
+
 Prototype page:
 
 `C:\Users\gavin\OneDrive\Desktop\Mankee\wireframes\concept-b.html`
@@ -137,7 +143,7 @@ Scroll logic:
 
 `C:\Users\gavin\OneDrive\Desktop\Mankee\wireframes\concept-b.js`
 
-Current local URL used for review:
+Hero-lab review URL, superseded for website work on 14 October 2026:
 
 `http://localhost:4500/wireframes/concept-b.html?hero=focus&v=7`
 
@@ -146,7 +152,7 @@ The temporary hero asset is intentionally retained for scroll testing:
 - `assets/generated/mankee-hero/hero-motion-temp-natural-no-zoom-scrub.mp4`
 - `assets/generated/mankee-hero/hero-motion-temp-natural-poster.webp`
 
-Current hero behavior already established:
+Hero-lab wireframe behavior already established. This list describes the Concept B prototype, not a current website instruction:
 
 - Full-screen video presentation without grey side blocks.
 - Hero navigation shows only the logo and red Mankee name; the remaining navigation and background stay transparent until the next section.
@@ -183,6 +189,8 @@ The earlier fish-maw sequence established that visual continuity alone is insuff
 
 ## Required next step
 
+Hero-lab context, not the current website task. Website work stays paused at the Typography Lock until the owner asks for Hero-media work.
+
 1. Let the user review `clean-foundation-no-credit-proof-board-v1.jpg`.
 2. Record which cleanup directions are approved or rejected.
 3. Do not merge the board’s proofs automatically.
@@ -193,4 +201,4 @@ The earlier fish-maw sequence established that visual continuity alone is insuff
 
 ## Suggested first message for the new chat
 
-> Read `C:\Users\gavin\OneDrive\Desktop\Mankee\PROJECT-HANDOFF.md` completely and continue the Mankee hero project from its Required next step. Preserve all credit-safety, texture, continuity and security rules. Do not generate paid video or merge any proof until I explicitly approve it.
+> Read `C:\Users\gavin\OneDrive\Desktop\Mankee\PROJECT-HANDOFF.md` completely and continue the Mankee Hero-media workstream from its Required next step. That step is Hero-lab context, not the current website task. Preserve all credit-safety, texture, continuity and security rules. Do not generate paid video or merge any proof until I explicitly approve it.

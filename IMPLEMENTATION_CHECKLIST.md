@@ -4,6 +4,8 @@ Use this checklist with `IMPLEMENTATION_PLAN.md` and `GITHUB_ISSUES_GUIDE.md`. D
 
 Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline commit. Next.js App Router with TypeScript is the approved production architecture, recorded on `chore/issue-19-nextjs-architecture`.
 
+Status on 14 October 2026: visual implementation is paused at the Typography Lock in `website/docs/project-plan.md`. Typography, Founder, Recognition, Locations and Footer are not visually approved. Do not mark that unresolved work complete. The checks below record earlier structure and issue work; they are not a visual sign-off.
+
 ## Gate 0 — Before Cursor writes code
 
 - [x] Confirm the correct Mankee GitHub repository, visibility and default branch. `gavinfung321/Mankee` is public, with default branch `main`.
@@ -37,7 +39,7 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 - [x] Next.js and TypeScript scaffold exists only under `website/`.
 - [x] Existing reference and Hero-production folders are unchanged.
 - [x] Run, build, format and test commands are documented.
-- [x] Design tokens cover colour, typography, spacing, focus and motion. The brand colours are paper, ink, lacquer, jade, and noodle. Jade dark is the Hero backdrop only. The page background is paper.
+- [x] Design tokens cover colour, spacing, focus and motion. The brand colours are paper, ink, lacquer, jade, and noodle. Jade dark is the Hero backdrop only. The page background is paper. Typography remains unresolved at the Typography Lock.
 - [x] `lang="zh-HK"` is applied.
 - [x] Content records are locale-keyed but only Traditional Chinese is visible.
 - [x] No inactive language switcher is rendered.
@@ -48,13 +50,13 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 
 - [x] Hero uses the temporary approved development media.
 - [x] Hero has a poster fallback and replaceable media contract.
-- [x] Sensory section uses 香／瑞士雞翼, 厚／上湯花膠, 濃／南乳豬手.
-- [x] Ordering is presented as 湯 → 麵 → 餸.
+- [x] The second section is `舊式香港`, implemented inside the historically named `SensoryTrio`. The names 香／瑞士雞翼, 厚／上湯花膠, 濃／南乳豬手 stay approved dish names; this check does not place them in a new section.
+- [x] Ordering is presented as the compact photographic 湯 → 麵 → 餸 rail. The timber-card and queue-figure specification is superseded.
 - [x] Curry, satay and spicy flavour are optional within the soup step.
 - [x] 文記十大 matches the wall list in `IMPLEMENTATION_PLAN.md`.
 - [x] Availability disclaimer is visible.
-- [x] Completed order slip transitions into the Founder story.
-- [x] Founder section contains only sourced, approval-ready content.
+- [x] The order form stays in `文記十大`, changes from 落單 to 完成 while still visible near the end of that section, and does not fly into `你揀，文記煮`. **Superseded:** the service-window transition into Founder.
+- [x] Founder section is present after `你揀，文記煮`. Visual approval and the publication review are still open.
 - [x] Homepage recognition is limited to Michelin, 白種元 and 黎芷珊.
 - [x] Other coverage routes to `/press/`.
 - [x] 深水埗 is visually primary in locations.
@@ -81,8 +83,8 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 ## Content, rights and operational data
 
 - [ ] Every production image has owner/source, usage status and alt text.
-- [x] Founder portrait and quotation are approved.
-- [x] Michelin wording and mark usage are approved.
+- [ ] Founder portrait and quotation have passed the pending-publication review in `CONTENT_REGISTER.md`. Visual approval is also open.
+- [ ] Michelin artwork and wording have passed the pending-publication review in `CONTENT_REGISTER.md`. Visual approval is also open.
 - [x] 白種元 and 黎芷珊 are described as documented visits, not endorsements.
 - [ ] Addresses, hours, map links and delivery links are owner-verified.
 - [x] Pending operational fields do not render as confirmed facts.
@@ -108,7 +110,7 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 - [x] Production build completes without warnings that affect users.
 - [x] No lab, review-board or rejected media ships in the bundle.
 - [x] Images are responsive and appropriately compressed.
-- [x] Fonts are licensed and loading is controlled.
+- [ ] Fonts are licensed and loading is controlled. Shipped subsets are not the Typography Lock, which remains open.
 - [x] Hero loading does not prevent first content render.
 - [ ] Metadata, canonical URLs and social cards are correct.
 - [ ] Structured data contains only verified information.
@@ -118,23 +120,23 @@ Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline comm
 
 ## Homepage polish — Issue #20
 
-Status on 10 October 2026. The structure issues #1–#19 are closed. Issue #20 is open on `design/issue-20-concept-b-visual-system`. The header and pinned hero are committed. Issue #21 is closed: the sensory slot is the queue pause, and that work is not committed yet.
+Historical log from 10 October 2026. The structure issues #1–#19 are closed. Issue #20 was opened on `design/issue-20-concept-b-visual-system`.
 
-Gemini’s seven steps are the same sequence as the five passes. The sensory chapter is the one extra issue, #21. Do not open a series for the remaining steps.
+**Current status, 14 October 2026:** visual implementation is paused at the Typography Lock. The checks in this section are not permission to continue a visual pass. Step 1 is not the Typography Lock and stays open. Founder, Recognition, Locations and Footer stay open.
 
-- [x] 1. Global typography, spacing, widths and color discipline. Pass 1. Type tokens, one content width, one photo frame, one text-link style, and section padding reduced from 6.5rem to 48px.
-- [x] 2. Header and Hero overlay. Pass 2. Transparent 64px bar, logo, bold headline, and the pinned film are in place.
-- [x] 3. Sensory, ordering and 文記十大 narrative flow. Pass 2. Sensory is closed on #21 as the queue pause. Ordering reads down the copy column as 湯、麵、餸. 文記十大 is one column, with 香、厚、濃 above the names.
+- [ ] 1. Global typography. An earlier token pass exists. It is not approval of the Typography Lock, and this item stays open.
+- [x] 2. Header and Hero overlay. The temporary Hero film remains. This check does not approve a new logo or a font lock.
+- [x] 3. `舊式香港`, `文記落單體驗` and `文記十大`. `舊式香港` is the current second section inside `SensoryTrio`. Ordering is the compact photographic rail. **Superseded:** the queue-figure pause, the timber cards, and the copy-column layout as current direction.
 
 ### Sensory chapter — Issue #21
 
-Closed. The pinned three-dish chapter was set aside. The locked section is the old-style queue pause: the three lines, day and evening queue photos on a full dark ground, and a scroll that stands the day print first and the evening print after. 香、厚、濃 sit above 文記十大. The changes are not committed yet.
+Historical note. The pinned three-dish chapter was set aside, and the second section is now `舊式香港` inside `SensoryTrio`. **Superseded as current direction:** any instruction that the locked section is still the old-style queue pause. This checklist does not decide a new placement for 香、厚、濃.
 
-Found while reviewing this chapter, not part of #21: at the join, the pinned film is still behind the bar, and the bar is 96% opaque, so the last frame ghosts through the navigation.
-- [ ] 4. Order slip, founder and recognition. Pass 3. Slip, portrait and Michelin mark exist. They do not yet read as one sequence.
-- [ ] 5. Locations and footer. Pass 3. Facts are published. Daytime Sham Shui Po storefront is chosen and not yet placed. Broadcast frames of 白種元 and 黎芷珊 stay off the page.
-- [ ] 6. Mobile and responsive treatment. Pass 4. Audited at 1440, 1280 and 390. Not refined.
-- [ ] 7. Subtle motion and final performance work. Pass 5. Not started. Hero media stays unchanged.
+Found while reviewing that chapter, not part of #21: at the join, the pinned film is still behind the bar, and the bar is 96% opaque, so the last frame ghosts through the navigation.
+- [ ] 4. `你揀，文記煮`, Founder and Recognition. The static food photograph is the current `你揀，文記煮` decision, and its cinemagraph stays deferred. Founder and Recognition are not visually approved. **Superseded:** a flying slip into this section.
+- [ ] 5. Locations and Footer. Not visually approved. Daytime Sham Shui Po storefront placement is still open. Broadcast frames of 白種元 and 黎芷珊 stay off the page. Tsim Sha Tsui facts and delivery links remain in the pending-publication review.
+- [ ] 6. Mobile and responsive treatment. Audited at 1440, 1280 and 390. Not refined, and not approved.
+- [ ] 7. Subtle motion and final performance work. Not started. Hero media stays unchanged. The `你揀，文記煮` cinemagraph stays deferred.
 
 Locked for every step: approved facts, Hero video and poster bytes, heading 文記十大, founder before recognition, no prices, no V10 or honeycomb media, no redraw of the stall mural.
 

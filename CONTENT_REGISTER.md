@@ -228,8 +228,10 @@ The Concept B wireframe currently uses Foodpanda's Man Kee chain page as a provi
 
 ### Traditional Chinese typography requirements
 
+**Superseded on 14 October 2026 as a font lock.** The recommendation below is historical. Typography is unresolved and blocked by the Typography Lock in `website/docs/project-plan.md`. `website/docs/visual-system.md` stays a draft until that lock is approved.
+
 - Use a maximum of two Chinese type families: one expressive display face and one highly legible text/UI face.
-- Recommended starting stack: Noto Serif TC or Source Han Serif TC for display; Noto Sans TC, PingFang TC or Microsoft JhengHei for text and controls.
+- Historical recommendation: Noto Serif TC or Source Han Serif TC for display; Noto Sans TC, PingFang TC or Microsoft JhengHei for text and controls.
 - Final webfonts must be licensed, subset to the approved copy and delivered as WOFF2 where licensing permits.
 - Do not place essential Chinese copy inside images or 3D textures.
 - Author headline line breaks deliberately for desktop and phone; avoid punctuation stranded at the beginning of a line.
@@ -239,15 +241,29 @@ The Concept B wireframe currently uses Foodpanda's Man Kee chain page as a provi
 
 ## Open decisions — do not publish as confirmed
 
-Unverified facts must not render as confirmed facts. The Big 10 wall list above is confirmed. These decisions are still open:
+Unverified facts must not render as confirmed facts. The Big 10 wall list above is confirmed. The notes below are the working-site record. A line that says material was placed on the site is history, not clearance.
 
-- Founder: Simon Wong, the draft portrait, and the draft quotation 「最希望是港人珍惜本土風味食店。」 are published.
-- Michelin: the public years are 2018–2025, with the draft image `michelin-2018-2025.png`. 
+- Founder: Simon Wong, the draft portrait, and the draft quotation 「最希望是港人珍惜本土風味食店。」 were placed on the working site.
+- Michelin: the public years shown are 2018–2025, with the draft image `michelin-2018-2025.png`.
 - Portraits of 白種元 and 黎芷珊 stay off the new site.
-- Maps: 深水埗 uses https://share.google/otLrnzLumqWZaN8mg. 尖沙咀 has no map link. The unit is 尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas.
-- Contact: (+852) 9059-5104 and mankeecartnoodles@gmail.com are published on 深水埗.
+- Maps: 深水埗 uses https://share.google/otLrnzLumqWZaN8mg. 尖沙咀 has no map link. The unit recorded for the working site is 尖沙咀廣東道3-27號海港城港威商場4樓4102號舖11號檔 Food Atlas.
+- Contact: (+852) 9059-5104 and mankeecartnoodles@gmail.com were placed on 深水埗.
 - Hours: 深水埗 daily 11:00–04:00. 尖沙咀 daily 11:00–21:00. Last-order time and holiday exceptions are not confirmed. The OpenRice hours of 11:00–23:00 stay unused.
-- Delivery links: Foodpanda for 深水埗 is https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle. Foodpanda for 尖沙咀 is https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos. There is no Keeta link.
+- Delivery links placed on the working site: Foodpanda for 深水埗 is https://www.foodpanda.hk/zh/chain/cu0nv/man-kee-cart-noodle. Foodpanda for 尖沙咀 is https://www.foodpanda.hk/zh/restaurant/anos/man-kee-cart-noodle-harbour-city-anos. There is no Keeta link.
+
+## Pending-publication review — 14 October 2026
+
+This review does not grant clearance. Earlier evidence in this register still stands, including the official-site founder quotation, the Michelin year-range artwork note, the Harbour City research row, and the Foodpanda links recorded above.
+
+One owner review is still required before any of the following can be treated as cleared for publication:
+
+1. Founder portrait.
+2. Founder quotation 「最希望是港人珍惜本土風味食店。」
+3. Michelin artwork, including `michelin-2018-2025.png` and the 2018–2025 year range.
+4. Tsim Sha Tsui facts, including the unit wording, the daily 11:00–21:00 hours, and the absence of a map, phone and email.
+5. Delivery links, including both Foodpanda URLs above and the still-absent Keeta link.
+
+Until that review is recorded, these items stay pending. Do not invent a new permission, a new address, or a new delivery URL to close the review.
 
 ## Owner data still required
 
