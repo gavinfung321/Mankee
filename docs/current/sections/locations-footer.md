@@ -19,7 +19,7 @@ Locations is not another storytelling climax. It should feel confident, useful a
 
 ## Governing visual direction
 
-This plan adopts the approved decisions in `docs/inspiration-analysis.md` and the Mankee-specific principles in `docs/analysis.md`.
+This plan adopts the approved decisions in `docs/current/inspiration-analysis.md` and the Mankee-specific principles in `docs/reference/visual-analysis.md`.
 
 - Locations is the practical action chapter, not another narrative spectacle.
 - Footer is the final brand peak: visually memorable, compositionally simple and free of invented content.

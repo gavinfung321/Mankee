@@ -9,9 +9,9 @@ Status: adopted from the Meridian CPA workflow and adapted for Mankee. Meridian 
 | Repository | **To be confirmed before the first production issue is created** |
 | Production directory | `website/` |
 | Planning root | `C:\Users\gavin\OneDrive\Desktop\Mankee` |
-| Source structure | `CONCEPT-B-APPROVED-STRUCTURE.md` |
-| Implementation plan | `IMPLEMENTATION_PLAN.md` |
-| Implementation checklist | `IMPLEMENTATION_CHECKLIST.md` |
+| Source structure | `docs/current/homepage-structure.md` |
+| Implementation plan | `docs/current/implementation-plan.md` |
+| Implementation checklist | `docs/current/implementation-checklist.md` |
 
 Never create Mankee issues in `gavinfung321/Meridian-CPA`.
 

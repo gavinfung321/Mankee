@@ -15,21 +15,21 @@ On 14 October 2026 the recovery checkpoint `35548f48b5545db9918ec02cd7c3f482508e
 
 The Git and project root is `Mankee/`, not `Mankee/website/`. Root governance remains authoritative:
 
-1. `PROJECT-HANDOFF.md` for Hero media, credit safety and generation restrictions.
-2. `CONCEPT-B-APPROVED-STRUCTURE.md` for homepage order and content scope.
-3. `IMPLEMENTATION_PLAN.md` and `IMPLEMENTATION_CHECKLIST.md` for production architecture and gates.
-4. `CONTENT_REGISTER.md` for factual evidence, permissions and operational status.
-5. `ASSET_MANIFEST.md` for asset provenance and approval.
+1. `docs/reference/hero-media-handoff.md` for Hero media, credit safety and generation restrictions.
+2. `docs/current/homepage-structure.md` for homepage order and content scope.
+3. `docs/current/implementation-plan.md` and `docs/current/implementation-checklist.md` for production architecture and gates.
+4. `docs/reference/content-register.md` for factual evidence, permissions and operational status.
+5. `docs/reference/asset-manifest.md` for asset provenance and approval.
 
 Within the current website-design phase:
 
 1. This file coordinates sequence and status.
-2. `docs/visual-system.md` governs fonts, type scale, colour roles and shared visual tokens **after its approval gate passes**.
-3. `docs/inspiration-analysis.md` governs pacing, focal-point discipline, composition principles and motion budget.
-4. The relevant `docs/sections/*` plan governs section-specific layout and acceptance criteria.
-5. `docs/analysis.md` remains historical rationale rather than a current implementation checklist.
+2. `docs/current/visual-system.md` governs fonts, type scale, colour roles and shared visual tokens **after its approval gate passes**.
+3. `docs/current/inspiration-analysis.md` governs pacing, focal-point discipline, composition principles and motion budget.
+4. The relevant `docs/current/sections/*` plan governs section-specific layout and acceptance criteria.
+5. `docs/reference/visual-analysis.md` remains historical rationale rather than a current implementation checklist.
 
-Typed records in `src/content/zh-HK/*` implement approved content; they do not replace the evidence and permission status in the root `CONTENT_REGISTER.md`. No document may override factual, licensing, accessibility or performance requirements.
+Typed records in `src/content/zh-HK/*` implement approved content; they do not replace the evidence and permission status in the root `docs/reference/content-register.md`. No document may override factual, licensing, accessibility or performance requirements.
 
 ## Workspace boundary
 
@@ -87,7 +87,7 @@ Use the self-hosted display font first so Windows, macOS and mobile render the s
 - [ ] Review the specimen at 1440px, 1024px and 390px.
 - [ ] Verify font loading, glyph coverage, layout shift and fallback behaviour.
 - [ ] Run the typography test only after the system is visually approved.
-- [ ] Mark `docs/visual-system.md` approved only after all checks pass.
+- [ ] Mark `docs/current/visual-system.md` approved only after all checks pass.
 
 ### Typography stop conditions
 
@@ -114,7 +114,7 @@ This is a token pass, not a section redesign.
 
 Work sequentially:
 
-1. **Founder** — active redesign after Typography Lock. Keep 黃志強 centred and follow the reopened checklist in `docs/sections/founder-recognition/implementation.md`.
+1. **Founder** — active redesign after Typography Lock. Keep 黃志強 centred and follow the reopened checklist in `docs/current/sections/founder-recognition.md`.
 2. **Recognition** — begin only after Founder receives visual approval.
 3. **Locations** — begin only after Recognition is approved.
 4. **Footer** — begin only after Locations is approved; finish with the approved memorable 文記 brand field.
@@ -135,7 +135,7 @@ Recommended review order:
 
 For each section:
 
-- [ ] Audit against `docs/inspiration-analysis.md`.
+- [ ] Audit against `docs/current/inspiration-analysis.md`.
 - [ ] Decide explicitly whether to keep, refine or redesign.
 - [ ] Update its section plan and reopen affected checklist items.
 - [ ] Preserve confirmed content and working interactions.
@@ -182,4 +182,4 @@ Motion remains last.
 
 ## Current next action
 
-Do not ask Cursor to improve another section. The recovery checkpoint exists. The current next action is to audit and approve the two-font typography system before returning to Founder or any other section. `docs/visual-system.md` stays a draft until that lock is approved.
+Do not ask Cursor to improve another section. The recovery checkpoint exists. The current next action is to audit and approve the two-font typography system before returning to Founder or any other section. `docs/current/visual-system.md` stays a draft until that lock is approved.

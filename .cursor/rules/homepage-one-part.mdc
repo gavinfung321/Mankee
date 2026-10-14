@@ -9,7 +9,7 @@ alwaysApply: true
 - Read only that component and its CSS. Make the smallest diff.
 - Do not edit other sections, Hero media, `/menu`, or `/press`.
 - Do not commit, push, or merge.
-- Do not update the canvas or GitHub. Tick `IMPLEMENTATION_CHECKLIST.md` only when the user asked to track that section.
+- Do not update the canvas or GitHub. Tick `docs/current/implementation-checklist.md` only when the user asked to track that section.
 
 # Example
 

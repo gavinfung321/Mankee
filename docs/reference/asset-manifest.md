@@ -49,11 +49,11 @@ The Hero recipe and the provisional bowl references below belong to the Hero-med
 
 - Provisional Hero ingredient combination: 瑞士雞中翼、南乳豬手、鹵水豬大腸.
 - Provisional and reference bowls: the PackTravel image (R10), the owner close-up, and R12–R14. Their rights limits in the sections below still apply.
-- The temporary Hero video and poster remain the development pair named in `PROJECT-HANDOFF.md`. They are not the payoff still.
+- The temporary Hero video and poster remain the development pair named in `docs/reference/hero-media-handoff.md`. They are not the payoff still.
 
 ### Approved `你揀，文記煮` photograph
 
-`你揀，文記煮` uses the approved static food photograph. Its cinemagraph remains deferred. The section plan is `website/docs/sections/order-pass/你揀，文記煮.md`.
+`你揀，文記煮` uses the approved static food photograph. Its cinemagraph remains deferred. The section plan is `docs/current/sections/你揀，文記煮.md`.
 
 - Desktop still: `website/public/media/order-pass/order-pass-desktop-approved-v1.png` (V15, 1672×941).
 - Mobile still: `website/public/media/order-pass/order-pass-mobile-approved-v1.png` (864×1152). It is not a crop of the desktop still.
@@ -265,6 +265,6 @@ Do not place API keys, private customer data or unpublished business records ins
 
 1. Supply the highest-resolution version of every existing brand asset.
 2. Identify which photos and videos Mankee owns outright.
-3. Supply the branch and menu records requested in `CONTENT_REGISTER.md`.
+3. Supply the branch and menu records requested in `docs/reference/content-register.md`.
 4. Confirm whether a controlled photo/video shoot is possible in both a traditional and conveyor branch.
 5. Confirm whether the bowl/noodle-strand signature move accurately represents Mankee.

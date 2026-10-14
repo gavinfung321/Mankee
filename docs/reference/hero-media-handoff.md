@@ -2,7 +2,7 @@
 
 Workstream: Hero media only. Updated 14 October 2026.
 
-This file is the continuation brief for the separate Hero-media workstream: credit safety, texture, continuity and generation. It does not set the current website task. Website order, interaction and visual workflow are in `CONCEPT-B-APPROVED-STRUCTURE.md`, `IMPLEMENTATION_PLAN.md` and `website/docs/project-plan.md`.
+This file is the continuation brief for the separate Hero-media workstream: credit safety, texture, continuity and generation. It does not set the current website task. Website order, interaction and visual workflow are in `docs/current/homepage-structure.md`, `docs/current/implementation-plan.md` and `docs/current/project-plan.md`.
 
 The local port-4500 URL and the proof-board next step later in this file are Hero-lab context. They are not the website to build, review or serve.
 
@@ -201,4 +201,4 @@ Hero-lab context, not the current website task. Website work stays paused at the
 
 ## Suggested first message for the new chat
 
-> Read `C:\Users\gavin\OneDrive\Desktop\Mankee\PROJECT-HANDOFF.md` completely and continue the Mankee Hero-media workstream from its Required next step. That step is Hero-lab context, not the current website task. Preserve all credit-safety, texture, continuity and security rules. Do not generate paid video or merge any proof until I explicitly approve it.
+> Read `C:\Users\gavin\OneDrive\Desktop\Mankee\docs/reference/hero-media-handoff.md` completely and continue the Mankee Hero-media workstream from its Required next step. That step is Hero-lab context, not the current website task. Preserve all credit-safety, texture, continuity and security rules. Do not generate paid video or merge any proof until I explicitly approve it.

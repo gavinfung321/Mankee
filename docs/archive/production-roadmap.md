@@ -2,7 +2,7 @@
 
 Status: Historical. Superseded for production on 9 October 2026 by GitHub issue [#1](https://github.com/gavinfung321/Mankee/issues/1).
 
-Production does not follow this roadmap. These instructions in this file are superseded by `CONCEPT-B-APPROVED-STRUCTURE.md`, `IMPLEMENTATION_PLAN.md`, and `IMPLEMENTATION_CHECKLIST.md`:
+Production does not follow this roadmap. These instructions in this file are superseded by `docs/current/homepage-structure.md`, `docs/current/implementation-plan.md`, and `docs/current/implementation-checklist.md`:
 
 - The vertical noodle divider and the horizontal noodle ribbon as production navigation.
 - Copying the ScrollCraft engine into the production site.
@@ -10,7 +10,7 @@ Production does not follow this roadmap. These instructions in this file are sup
 - A 3D Hero peak, and the provisional serving 瑞士雞中翼、南乳豬手、鹵水豬大腸.
 - Beginning application code immediately after wireframe approval.
 
-Hero media restrictions remain in `PROJECT-HANDOFF.md`. The locked 文記十大 is the wall list in `IMPLEMENTATION_PLAN.md`. The body below is retained as discovery history.
+Hero media restrictions remain in `docs/reference/hero-media-handoff.md`. The locked 文記十大 is the wall list in `docs/current/implementation-plan.md`. The body below is retained as discovery history.
 
 ## Milestone 1: Wireframes
 

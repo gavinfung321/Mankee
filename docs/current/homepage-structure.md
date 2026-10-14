@@ -2,7 +2,7 @@
 
 Status: current homepage structure, updated 14 October 2026. Gate 0 is complete. Visual implementation is paused at the Typography Lock.
 
-Implementation is governed by `IMPLEMENTATION_PLAN.md`, `IMPLEMENTATION_CHECKLIST.md` and the Mankee-specific `GITHUB_ISSUES_GUIDE.md`. Current visual work follows `website/docs/project-plan.md` and the section plans. Production architecture remains Next.js.
+Implementation is governed by `docs/current/implementation-plan.md`, `docs/current/implementation-checklist.md` and the Mankee-specific `docs/reference/github-issues-guide.md`. Current visual work follows `docs/current/project-plan.md` and the section plans. Production architecture remains Next.js.
 
 ## Homepage sequence
 

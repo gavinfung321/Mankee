@@ -179,7 +179,7 @@ These answers are still required before production begins:
 
 1. Identify any photos, footage or people that must not be reused.
 2. Confirm whether third-party material is reference/embed-only unless written permission is supplied.
-3. Supply or approve the remaining branch fields and menu clarifications requested in `CONTENT_REGISTER.md`.
+3. Supply or approve the remaining branch fields and menu clarifications requested in `docs/reference/content-register.md`.
 
 ## Approval record
 
@@ -200,6 +200,6 @@ These answers are still required before production begins:
 - Public main-location label: **深水埗店**, owner-approved.
 - Provisional 3D hero combination: **瑞士雞中翼、南乳豬手、鹵水豬大腸**, owner-selected for planning.
 - Bowl reference: owner supplied a Mankee bowl close-up and approves its overall appearance. It becomes the primary material, colour and close-composition reference. The earlier watermarked PackTravel image remains reference-only.
-- Current menu photograph: supplied; transcription and one visible price conflict recorded in `CONTENT_REGISTER.md`.
+- Current menu photograph: supplied; transcription and one visible price conflict recorded in `docs/reference/content-register.md`.
 - Remaining operational content verification: pending.
 - Architecture and storyboard review checklist: owner-approved; proceed to wireframes and Cursor handoff planning.

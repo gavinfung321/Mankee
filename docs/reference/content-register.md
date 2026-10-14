@@ -228,7 +228,7 @@ The Concept B wireframe currently uses Foodpanda's Man Kee chain page as a provi
 
 ### Traditional Chinese typography requirements
 
-**Superseded on 14 October 2026 as a font lock.** The recommendation below is historical. Typography is unresolved and blocked by the Typography Lock in `website/docs/project-plan.md`. `website/docs/visual-system.md` stays a draft until that lock is approved.
+**Superseded on 14 October 2026 as a font lock.** The recommendation below is historical. Typography is unresolved and blocked by the Typography Lock in `docs/current/project-plan.md`. `docs/current/visual-system.md` stays a draft until that lock is approved.
 
 - Use a maximum of two Chinese type families: one expressive display face and one highly legible text/UI face.
 - Historical recommendation: Noto Serif TC or Source Han Serif TC for display; Noto Sans TC, PingFang TC or Microsoft JhengHei for text and controls.

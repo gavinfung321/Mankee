@@ -2,7 +2,7 @@
 
 Status: **Gate 1 approved and locked on 12 Oct 2026. V5 is the composition master.**
 
-The approved brief covers the desktop composition proof for `docs/sections/order-pass/你揀，文記煮.md`. Missing condiment photographs block final identity approval but do not invalidate the provisional unbranded group. This file does not authorise a production-code edit, replacement of the live scene, or removal of Three.js.
+The approved brief covers the desktop composition proof for `docs/current/sections/你揀，文記煮.md`. Missing condiment photographs block final identity approval but do not invalidate the provisional unbranded group. This file does not authorise a production-code edit, replacement of the live scene, or removal of Three.js.
 
 Paths are relative to the Mankee repository root. Versioned review proofs are stored under `assets/generated/order-pass/`; they must not be treated as production-resolution assets.
 

@@ -3,19 +3,19 @@
 Status: **draft — typography approval pending**  
 Updated: 14 Oct 2026
 
-This file remains an explicit draft until the Typography Lock in `docs/project-plan.md` is approved. That approval has not happened. Until then, do not treat the proposed font stack, weights, scale or chapter colours as approved production direction. Section plans describe content and layout; their font instructions also wait for the lock. After this guide is approved, its shared fonts, type scale and chapter colour roles win over section-level styling instructions.
+This file remains an explicit draft until the Typography Lock in `docs/current/project-plan.md` is approved. That approval has not happened. Until then, do not treat the proposed font stack, weights, scale or chapter colours as approved production direction. Section plans describe content and layout; their font instructions also wait for the lock. After this guide is approved, its shared fonts, type scale and chapter colour roles win over section-level styling instructions.
 
 ## Order of authority
 
-The root-level precedence in `IMPLEMENTATION_PLAN.md` remains authoritative. In particular, `PROJECT-HANDOFF.md`, `CONCEPT-B-APPROVED-STRUCTURE.md`, `CONTENT_REGISTER.md` and `ASSET_MANIFEST.md` remain outside `website/` and must be read from the `Mankee/` project root.
+The root-level precedence in `docs/current/implementation-plan.md` remains authoritative. In particular, `docs/reference/hero-media-handoff.md`, `docs/current/homepage-structure.md`, `docs/reference/content-register.md` and `docs/reference/asset-manifest.md` remain outside `website/` and must be read from the `Mankee/` project root.
 
 Within the current website-design phase:
 
-1. `docs/project-plan.md` — workflow, priority and approval status.
+1. `docs/current/project-plan.md` — workflow, priority and approval status.
 2. This file after its approval gate passes — fonts, type scale and chapter colours.
-3. `docs/inspiration-analysis.md` — pacing and motion budget: one focal point per viewport, peak-and-pause rhythm, signature motion limited to Hero, 文記十大 and the optional bowl cinemagraph.
-4. `docs/sections/*` — layout and copy requirements for each section.
-5. `docs/analysis.md` — historical analysis and rationale.
+3. `docs/current/inspiration-analysis.md` — pacing and motion budget: one focal point per viewport, peak-and-pause rhythm, signature motion limited to Hero, 文記十大 and the optional bowl cinemagraph.
+4. `docs/current/sections/*` — layout and copy requirements for each section.
+5. `docs/reference/visual-analysis.md` — historical analysis and rationale.
 
 Typed content in `src/content/zh-HK/*` implements approved facts but does not establish evidence or media permission by itself.
 
@@ -63,5 +63,5 @@ Lacquer red stays semantic: actions, completion, the Michelin band and kicker ru
 
 ## Recognition content limits
 
-- Text-only until a visitor photograph's reuse permission is recorded in `CONTENT_REGISTER.md`. Card layouts keep a slot so a cleared photograph can be added without restructuring.
-- One short factual line per visitor, drawn only from what `CONTENT_REGISTER.md` supports. No quotations, no endorsement, recommendation or sponsorship wording.
+- Text-only until a visitor photograph's reuse permission is recorded in `docs/reference/content-register.md`. Card layouts keep a slot so a cleared photograph can be added without restructuring.
+- One short factual line per visitor, drawn only from what `docs/reference/content-register.md` supports. No quotations, no endorsement, recommendation or sponsorship wording.

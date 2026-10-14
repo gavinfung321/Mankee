@@ -47,7 +47,7 @@ Founder is the emotional chapter. Recognition is supporting evidence. Neither sh
 
 ## Governing visual direction
 
-This plan adopts the approved decisions in `docs/inspiration-analysis.md` without copying the reference site's branding or compositions.
+This plan adopts the approved decisions in `docs/current/inspiration-analysis.md` without copying the reference site's branding or compositions.
 
 - Use the approved peak-and-pause rhythm: Founder is a quiet human pause after the food payoff; Recognition is the factual evidence that follows it.
 - Give each viewport one obvious focal point. Founder is led by the portrait and quotation; Recognition is led by the Michelin record and its adjacent visitor ledger.

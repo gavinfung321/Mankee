@@ -21,6 +21,6 @@ Display: LXGW WenKai TC Bold, then `"Kaiti TC", "BiauKai", serif`.
 
 Text and controls: Noto Sans TC, then `"PingFang TC", "Microsoft JhengHei", sans-serif`.
 
-Components never set their own font; see `docs/visual-system.md`.
+Components never set their own font; see `../docs/current/visual-system.md`.
 
 LXGW WenKai TC and Noto Sans TC are licensed under the SIL Open Font License, Version 1.1. The license is `src/fonts/OFL.txt`. The site ships WOFF2 subsets of the published copy, with `font-display: swap` and no preload, so the Hero poster stays ahead of the fonts. Regenerate them with `npm run fonts -- <directory>` after placing `NotoSansTC.ttf` and `LXGWWenKaiTC-Bold.ttf` from the Google Fonts `ofl/notosanstc` and `ofl/lxgwwenkaitc` sources in that directory; a missing source keeps its existing subset. Kaiti TC, BiauKai, PingFang TC and Microsoft JhengHei are local fallbacks and are not redistributed.

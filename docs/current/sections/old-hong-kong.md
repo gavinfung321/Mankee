@@ -4,7 +4,7 @@ Status: **planning approved for implementation review; production code is unchan
 
 Issue: https://github.com/gavinfung321/Mankee/issues/23  
 Related: #20, #21  
-Visual direction: `docs/inspiration-analysis.md`
+Visual direction: `docs/current/inspiration-analysis.md`
 
 ## Purpose
 

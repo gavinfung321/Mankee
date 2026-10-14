@@ -8,22 +8,22 @@ This plan converts the approved Concept B v9 wireframe into a production website
 
 When project documents disagree, use this precedence:
 
-1. `PROJECT-HANDOFF.md` — Hero-media workstream only: credit safety, texture and continuity restrictions. Its port-4500 review URL and proof-board next step are Hero-lab context, not the current website task.
-2. `CONCEPT-B-APPROVED-STRUCTURE.md` — current homepage order, navigation, language and content scope.
-3. `IMPLEMENTATION_PLAN.md` — production architecture, technical direction and delivery gates. The 14 October 2026 addendum below is the current visual-phase reading of this file.
-4. `CONTENT_REGISTER.md` — factual evidence, permissions and operational-data status.
-5. `ASSET_MANIFEST.md` — asset provenance and approval status.
-6. Current website visual work, in this order: `website/docs/project-plan.md` (workflow and approval status), `website/docs/visual-system.md` (draft until the Typography Lock is approved), `website/docs/inspiration-analysis.md` (pacing and motion budget; its workflow order defers to the project plan), and `website/docs/sections/` (section plans).
+1. `docs/reference/hero-media-handoff.md` — Hero-media workstream only: credit safety, texture and continuity restrictions. Its port-4500 review URL and proof-board next step are Hero-lab context, not the current website task.
+2. `docs/current/homepage-structure.md` — current homepage order, navigation, language and content scope.
+3. `docs/current/implementation-plan.md` — production architecture, technical direction and delivery gates. The 14 October 2026 addendum below is the current visual-phase reading of this file.
+4. `docs/reference/content-register.md` — factual evidence, permissions and operational-data status.
+5. `docs/reference/asset-manifest.md` — asset provenance and approval status.
+6. Current website visual work, in this order: `docs/current/project-plan.md` (workflow and approval status), `docs/current/visual-system.md` (draft until the Typography Lock is approved), `docs/current/inspiration-analysis.md` (pacing and motion budget; its workflow order defers to the project plan), and `docs/current/sections/` (section plans).
 7. `wireframes/concept-b.html` (Concept B v9) — historical visual reference. Superseded on 14 October 2026 as the current visual source for section layout and interaction.
 8. Older roadmaps, architecture drafts and wireframes — historical reference only where they do not conflict with the documents above.
 
-Approved facts still come from `CONTENT_REGISTER.md`. Where a wireframe sentence and a confirmed fact disagree, the fact is what gets published. A checklist note does not replace a section plan.
+Approved facts still come from `docs/reference/content-register.md`. Where a wireframe sentence and a confirmed fact disagree, the fact is what gets published. A checklist note does not replace a section plan.
 
 ### Current-phase addendum — 14 October 2026
 
 Next.js App Router with TypeScript remains the approved production architecture. This addendum does not replace that decision, and it does not authorise a new master plan.
 
-Visual implementation is paused at the Typography Lock in `website/docs/project-plan.md`. Typography is unresolved. The Noto Serif display stack in this file, the wireframe Kai titles, and the draft LXGW WenKai proposal in `website/docs/visual-system.md` are not an approved font lock.
+Visual implementation is paused at the Typography Lock in `docs/current/project-plan.md`. Typography is unresolved. The Noto Serif display stack in this file, the wireframe Kai titles, and the draft LXGW WenKai proposal in `docs/current/visual-system.md` are not an approved font lock.
 
 Current homepage order. Component filenames stay as they are:
 
@@ -46,7 +46,7 @@ Current interaction decisions:
 - The order form supports the `文記十大` interaction.
 - It changes from 落單 to 完成 while still visible near the end of that section.
 - It does not fly into `你揀，文記煮`.
-- `你揀，文記煮` uses the approved static food photograph recorded in `ASSET_MANIFEST.md` and `website/docs/sections/order-pass/`.
+- `你揀，文記煮` uses the approved static food photograph recorded in `docs/reference/asset-manifest.md` and `docs/current/sections/`.
 - Its cinemagraph remains deferred.
 - Founder, Recognition, Locations and Footer are not visually approved.
 
@@ -58,7 +58,7 @@ Do not restore the older nine-act homepage, the former three-topping combination
 
 ### 文記落單體驗
 
-**Superseded on 14 October 2026.** The timber-card, queue-figure and flying-slip instructions in this section are not current. The current section is the compact photographic 湯 → 麵 → 餸 rail in `website/docs/sections/how-to-order/文記落單體驗.md`. The historical specification is kept below so the withdrawn direction stays readable.
+**Superseded on 14 October 2026.** The timber-card, queue-figure and flying-slip instructions in this section are not current. The current section is the compact photographic 湯 → 麵 → 餸 rail in `docs/current/sections/文記落單體驗.md`. The historical specification is kept below so the withdrawn direction stays readable.
 
 Decided 10 October 2026, and withdrawn as current direction on 14 October 2026. The layout that stacks 一、二、三 under the heading, with one counter photograph beside that column, was withdrawn on 10 October 2026.
 
@@ -171,7 +171,7 @@ The production app is this Next.js App Router tree. Section components, token va
 
 ### Design tokens
 
-Planned for the design-token issue. Values come from the Concept B heritage palette and the typography rules in `CONTENT_REGISTER.md`.
+Planned for the design-token issue. Values come from the Concept B heritage palette and the typography rules in `docs/reference/content-register.md`.
 
 Colour is five brand tokens, plus one Hero surface:
 
@@ -188,7 +188,7 @@ Spacing uses a 4px step: 4, 8, 12, 16, 24, 32, 48, 64, 96.
 
 Layout: content width `72rem`, text measure `40rem`. Review widths remain 360, 390, tablet, and desktop. Breakpoints are `48rem` and `64rem`.
 
-Type, two families only. **Superseded on 14 October 2026 as a font lock.** The stacks below are the historical token-issue recommendation. Typography is unresolved and blocked by the Typography Lock. Do not treat Noto Serif TC, the wireframe Kai faces, or the draft display face in `website/docs/visual-system.md` as approved.
+Type, two families only. **Superseded on 14 October 2026 as a font lock.** The stacks below are the historical token-issue recommendation. Typography is unresolved and blocked by the Typography Lock. Do not treat Noto Serif TC, the wireframe Kai faces, or the draft display face in `docs/current/visual-system.md` as approved.
 
 - Display: `"Noto Serif TC", "Source Han Serif TC", "PMingLiU", serif`
 - Text and controls: `"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`
@@ -263,7 +263,7 @@ Locked on 9 October 2026 from the owner-confirmed wall titled 本店十大必食
 9. 玻璃辣魷魚
 10. 蠔皇小花菇
 
-Use these names and this order for 文記十大. Keep the wall forms 滷水豬大腸 and 自制韭菜餃. The approved sensory names remain `香：瑞士雞翼`, `厚：上湯花膠`, `濃：南乳豬手`. They are not the second homepage section; that section is `舊式香港`. Founder portrait, founder quotation, Michelin artwork, Tsim Sha Tsui facts and delivery links stay in the pending-publication review in `CONTENT_REGISTER.md` and must not be treated as cleared.
+Use these names and this order for 文記十大. Keep the wall forms 滷水豬大腸 and 自制韭菜餃. The approved sensory names remain `香：瑞士雞翼`, `厚：上湯花膠`, `濃：南乳豬手`. They are not the second homepage section; that section is `舊式香港`. Founder portrait, founder quotation, Michelin artwork, Tsim Sha Tsui facts and delivery links stay in the pending-publication review in `docs/reference/content-register.md` and must not be treated as cleared.
 
 ## 5. GitHub milestones
 
@@ -372,7 +372,7 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
 ### v0.4 — Content & Media Approval
 
 15. `Content: Verify founder, recognition and location records`
-    - Historical issue text follows. It disagrees with itself about what was unpublished and what was placed on the site. **Superseded as a clearance decision on 14 October 2026.** The pending-publication review in `CONTENT_REGISTER.md` is the current status for the founder portrait, founder quotation, Michelin artwork, Tsim Sha Tsui facts and delivery links.
+    - Historical issue text follows. It disagrees with itself about what was unpublished and what was placed on the site. **Superseded as a clearance decision on 14 October 2026.** The pending-publication review in `docs/reference/content-register.md` is the current status for the founder portrait, founder quotation, Michelin artwork, Tsim Sha Tsui facts and delivery links.
     - The public founder line stays 黃志強. The English name, quotation, and portrait stay unpublished.
     - Recognition stays 米芝蓮, 白種元曾到訪文記, and 黎芷珊曾到訪文記. No year count, mark, or quotation.
     - 深水埗 keeps the confirmed address and 每日 11:00–04:00. 尖沙咀店 stays a name. Maps, phones, last-order times, holiday notes, and delivery links stay unpublished. OpenRice 11:00–23:00 and the wireframe Foodpanda chain URL stay unused.
@@ -384,7 +384,7 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
 
 17. `Media: Produce and approve final Hero package`
     - Blocked until the owner explicitly approves still foundations and authorizes paid generation.
-    - Follow all `PROJECT-HANDOFF.md` quality gates.
+    - Follow all `docs/reference/hero-media-handoff.md` quality gates.
 
 ### v1.0 — Launch Ready
 
@@ -406,7 +406,7 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
 ## 7. Delivery sequence
 
 1. Confirm the Mankee repository name, visibility and default branch.
-2. Create or verify the labels and milestones in `GITHUB_ISSUES_GUIDE.md`.
+2. Create or verify the labels and milestones in `docs/reference/github-issues-guide.md`.
 3. Search for existing issues; create only missing v0.1 issues.
 4. Complete the documentation-freeze issue before application code.
 5. Scaffold `website/` under its own issue and branch.

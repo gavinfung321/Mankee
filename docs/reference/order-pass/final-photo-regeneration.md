@@ -2,7 +2,7 @@
 
 Status: **complete and owner-approved on 12 Oct 2026. V15 is locked as the desktop production still.**
 
-All candidates are also governed by `docs/visual-generation-standards.md`. Its synthetic-texture ban is a hard rejection gate.
+All candidates are also governed by `docs/reference/visual-generation-standards.md`. Its synthetic-texture ban is a hard rejection gate.
 
 Composition source: `public/media/order-pass/gate-1-composition-proof-v5-squid-dumplings.png`
 
@@ -124,7 +124,7 @@ Also reject:
 - [x] Output remains 16:9 and is accepted for the current 1152px maximum website display. Do not fabricate resolution by upscaling.
 - [x] The left HTML-slip reserve and later motion-safe broth area remain clear.
 
-Only after every item passes should this image replace V5 as the production still and become the source for `cinemagraph-plan.md`.
+Only after every item passes should this image replace V5 as the production still and become the source for `docs/reference/order-pass/cinemagraph-plan.md`.
 
 ## Review candidate v1
 

@@ -9,7 +9,7 @@ Review basis:
 - Existing Hero, Order Pass, Founder + Recognition, and Locations + Footer plans
 - Visual review date: 2026-10-11
 
-Related follow-up: `docs/inspiration-analysis.md` compares the current direction with the 10/10 Burger reference recording and records adopt/adapt/avoid decisions without replacing this document's Mankee-specific principles.
+Related follow-up: `docs/current/inspiration-analysis.md` compares the current direction with the 10/10 Burger reference recording and records adopt/adapt/avoid decisions without replacing this document's Mankee-specific principles.
 
 ## Executive verdict
 

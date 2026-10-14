@@ -2,7 +2,7 @@
 
 Status: Historical. Superseded for production on 9 October 2026 by GitHub issue [#1](https://github.com/gavinfung321/Mankee/issues/1).
 
-Production does not follow this draft. These instructions in this file are superseded by `CONCEPT-B-APPROVED-STRUCTURE.md` and `IMPLEMENTATION_PLAN.md`:
+Production does not follow this draft. These instructions in this file are superseded by `docs/current/homepage-structure.md` and `docs/current/implementation-plan.md`:
 
 - The nine-section homepage, including 一碗香港, 靜候一刻, and 一條麵，連起兩代.
 - Primary navigation labels 菜單 and 分店, and the noodle-divider navigation.
@@ -11,7 +11,7 @@ Production does not follow this draft. These instructions in this file are super
 - Homepage recognition that adds the Hong Kong Tourism Board beside Michelin, 白種元, and 黎芷珊.
 - A menu page that publishes prices or presents a complete catalogue.
 
-Open facts are recorded in `CONTENT_REGISTER.md` and must not render as confirmed. The body below is retained as planning history.
+Open facts are recorded in `docs/reference/content-register.md` and must not render as confirmed. The body below is retained as planning history.
 
 Primary language: Traditional Chinese for Hong Kong (`zh-HK`).
 
