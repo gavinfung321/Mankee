@@ -39,7 +39,7 @@ Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md`
 - [x] Next.js and TypeScript scaffold exists only under `website/`.
 - [x] Existing reference and Hero-production folders are unchanged.
 - [x] Run, build, format and test commands are documented.
-- [x] Design tokens cover colour, spacing, focus and motion. The brand colours are paper, ink, lacquer, jade, and noodle. Jade dark is the Hero backdrop only. The page background is paper. Font families are locked as `--font-display` and `--font-text`; weights and type scale stay open for Stage 5.
+- [x] Design tokens cover colour, spacing, focus and motion. The brand colours are paper, ink, lacquer, jade, and noodle. Jade dark is the Hero backdrop only. The page background is paper. Font families are locked as `--font-display` and `--font-text`; weights and type scale stay open for Stage 5. Stage 2 colour and spacing roles (`--cream`, `--ground-*`, `--jade-text`, `--gold-bright`, `--ink-muted`, `--michelin`, `--section-space`, `--rule-length`, `--rule-weight`) were approved on 14 Oct 2026 and apply to frozen sections only when they are reopened.
 - [x] `lang="zh-HK"` is applied.
 - [x] Content records are locale-keyed but only Traditional Chinese is visible.
 - [x] No inactive language switcher is rendered.

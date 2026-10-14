@@ -95,14 +95,18 @@ The other Stage 0 checks stay open. This documentation reconciliation did not ru
 
 ## Stage 2 — Shared colour and spacing roles
 
-Start only after Typography Lock.
+**Approved by the owner on 14 Oct 2026. No visual change.** The audit, roles, decisions and contrast results are in `docs/current/visual-system.md` under "Stage 2 — colour and spacing roles".
 
-- [ ] Confirm the global colour roles for paper, ink, lacquer, jade and noodle gold.
-- [ ] Confirm one dominant ground per chapter.
-- [ ] Define shared spacing and content-width rules.
-- [ ] Define shared kicker, rule, caption, focus and action treatments.
-- [ ] Change tokens before changing individual sections.
-- [ ] Verify WCAG AA contrast for every approved role.
+- [x] Audit colour and spacing usage across `globals.css` and `home.css`.
+- [x] Add role tokens with existing values and replace exact-match raw colours.
+- [x] Confirm the global colour roles and the destination token for each near-duplicate.
+- [x] Define shared spacing and content-width rules: `--section-space` is 64px below `64rem` and 96px from `64rem`, for reopened sections only.
+- [x] Define the shared kicker, rule, focus and action treatments. The rule is `--rule-length` × `--rule-weight` (2.25rem × 2px) in lacquer. Caption styling stays with the Stage 5 audit.
+- [x] Lacquer small text on a light ground requires at least 4.5:1.
+- [x] Verify WCAG AA contrast for every approved role pairing from source.
+- [ ] One dominant ground per chapter. The three neighbouring light grounds (`文記十大`, `你揀，文記煮`, Founder) are decided during the Founder redesign.
+
+Frozen sections (Hero, `舊式香港`, `文記落單體驗`, `文記十大`, `你揀，文記煮`) do not receive kicker colours, `--section-space` or near-duplicate merges until each is reopened in Stage 4. Known exception to fix on reopening: `.order-slip-card .slip-row b`, lacquer on the slip at 4.37:1.
 
 This is a token pass, not a section redesign.
 
@@ -110,7 +114,7 @@ This is a token pass, not a section redesign.
 
 Work sequentially:
 
-1. **Founder** — active redesign after Typography Lock. Keep 黃志強 centred and follow the reopened checklist in `docs/current/sections/founder-recognition.md`.
+1. **Founder** — next active redesign. Uses the Stage 2 roles and decides the neighbouring light grounds. Keep 黃志強 centred and follow the reopened checklist in `docs/current/sections/founder-recognition.md`.
 2. **Recognition** — begin only after Founder receives visual approval.
 3. **Locations** — begin only after Recognition is approved.
 4. **Footer** — begin only after Locations is approved; finish with the approved memorable 文記 brand field.
@@ -169,7 +173,7 @@ Motion remains last.
 | `文記落單體驗` | Built; future inspiration review planned | Freeze until Stage 4 |
 | `文記十大` | Built; future inspiration review planned | Freeze until Stage 4 |
 | `你揀，文記煮` | Static composition built; cinemagraph deferred | Freeze until Stage 4/6 |
-| Founder | Redesign plan reopened; current result not approved | Blocked by Stage 2 |
+| Founder | Redesign plan reopened; current result not approved | Next: Stage 3 redesign |
 | Recognition | Implementation has begun but is not visually approved | Freeze; resume after Founder |
 | Locations | Aligned plan exists | Not started |
 | Footer | Aligned plan exists | Not started |
@@ -178,4 +182,4 @@ Motion remains last.
 
 ## Current next action
 
-Do not ask Cursor to improve another section. The recovery checkpoint exists and the Typography Lock is approved. The current next action is Stage 2 — shared colour and spacing roles — before returning to Founder or any other section. In `docs/current/visual-system.md`, fonts are locked; the type scale and chapter colours stay draft.
+Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. The current next action is Stage 3, starting with the Founder redesign, which also decides the neighbouring light grounds. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.

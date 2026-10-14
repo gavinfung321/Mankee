@@ -6,6 +6,16 @@
   --noodle: #c99e26;
   --jade-dark: #102d26;
 
+  --cream: #fff8ea;
+  --ground-light: #f4efe6;
+  --ground-sage: #e6ead8;
+  --ground-dark: #1c1712;
+  --jade-text: #1b4336;
+  --gold-bright: #ffd25d;
+  --ink-muted: #5c574e;
+  /* Matches the Michelin artwork's flat red; Recognition band only. */
+  --michelin: #a3191e;
+
   --space-4: 4px;
   --space-8: 8px;
   --space-12: 12px;
@@ -15,6 +25,11 @@
   --space-48: 48px;
   --space-64: 64px;
   --space-96: 96px;
+  /* Vertical section padding for reopened sections; frozen sections keep their own values. */
+  --section-space: var(--space-64);
+
+  --rule-length: 2.25rem;
+  --rule-weight: 2px;
 
   --content: 72rem;
   --measure: 40rem;
@@ -42,6 +57,12 @@
 
   --focus-width: 2px;
   --focus-offset: 2px;
+}
+
+@media (min-width: 64rem) {
+  :root {
+    --section-space: var(--space-96);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
