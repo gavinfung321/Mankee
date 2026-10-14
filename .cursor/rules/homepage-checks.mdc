@@ -60,3 +60,14 @@ Use this tier only when the request explicitly changes responsive layout, overfl
 - If verification becomes slow or uncertain, stop and report the specific issue instead of exploring repeatedly.
 - Explicit user instructions override the tier limits.
 - Report the result and stop.
+
+# Speed budget
+
+- Unless the user explicitly says “verify in browser,” do not open the browser.
+- When exact target files are supplied, read and edit only those files and their direct imports.
+- Do not reread project documentation for a narrowly scoped edit.
+- Do not inspect computed styles, DOM measurements or screenshots unless diagnosing a visible defect.
+- When the user can review a local page themselves, provide the URL and stop.
+- Never repeat a successful verification.
+- If a small task has not produced an edit within three minutes, stop and report the blocker.
+- A direct small edit should normally finish without tests, screenshots or browser actions.
