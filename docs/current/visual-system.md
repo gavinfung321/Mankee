@@ -1,9 +1,9 @@
 # 文記 homepage — visual system
 
-Status: **draft — typography approval pending**  
+Status: **fonts locked 14 Oct 2026 — type scale and chapter colours still draft**  
 Updated: 14 Oct 2026
 
-This file remains an explicit draft until the Typography Lock in `docs/current/project-plan.md` is approved. That approval has not happened. Until then, do not treat the proposed font stack, weights, scale or chapter colours as approved production direction. Section plans describe content and layout; their font instructions also wait for the lock. After this guide is approved, its shared fonts, type scale and chapter colour roles win over section-level styling instructions.
+The Typography Lock in `docs/current/project-plan.md` was approved on 14 Oct 2026. The font roles below are production direction and win over any section-level font instruction. The type scale, display weights and chapter colours remain drafts until their own gates pass.
 
 ## Order of authority
 
@@ -21,18 +21,17 @@ Typed content in `src/content/zh-HK/*` implements approved facts but does not es
 
 Baseline: Concept B's type and colour system, refined by the inspiration's pacing and restraint.
 
-## Proposed fonts — not yet approved
+## Fonts — locked 14 Oct 2026
 
-Two roles, defined once in `src/styles/tokens.css` (mirrored in the `@theme` block of `src/app/globals.css`). No component or rule sets a font any other way. `tests/typography.test.mjs` enforces this.
+Exactly two roles, `--font-display` and `--font-text`, defined once in `src/styles/tokens.css` (mirrored in the `@theme` block of `src/app/globals.css`). No component or rule sets a font any other way. `src/lib/fonts.ts` loads the self-hosted files and adds no fallbacks; the order lives only in the two roles. `tests/typography.test.mjs` enforces both stacks.
 
 | Role | Stack | Used for |
 | --- | --- | --- |
-| Display | LXGW WenKai TC Bold (self-hosted), `"DFKai-SB", "BiauKai", "Kaiti TC", serif` | Every heading, the Hero, quotes, names, location names, signature lines |
-| Text | Noto Sans TC (self-hosted), `"PingFang TC", "Microsoft JhengHei", sans-serif` | Body copy, kickers, labels, buttons, navigation |
+| Display | `"DFKai-SB"`, `"BiauKai"`, self-hosted LXGW WenKai TC Bold, `"Kaiti TC"`, `serif` | Every heading, the Hero, quotes, names, location names, signature lines |
+| Text | self-hosted Noto Sans TC, `"PingFang TC"`, `"Microsoft JhengHei"`, `sans-serif` | Body copy, kickers, labels, buttons, navigation |
 
-- The proposed primary display face is the self-hosted LXGW WenKai TC Bold so Windows, macOS and mobile receive the same design. `DFKai-SB`, `BiauKai` and `Kaiti TC` remain fallbacks only.
-- Display text uses weight 700. The shipped file does not provide 400, 500 or 650; do not request unsupported weights and depend on browser synthesis.
-- Existing display-role rules below 700 are audit items, including `.order-steps li`, `.top-ten-feature`, `.top-ten-intro`, `#top-ten .top-ten-dish`, `.founder-context` and `.recognition-ledger p`. Resolve them centrally during Typography Lock rather than section by section.
+- 標楷體 (`DFKai-SB` on Windows, `BiauKai` on macOS) leads the display role to match the Hero. It cannot be self-hosted, so the self-hosted WenKai TC is the stand-in wherever 標楷體 is missing.
+- Display weights are not part of the lock. Existing display-role rules below 700, including `.order-steps li`, `.top-ten-feature`, `.top-ten-intro`, `#top-ten .top-ten-dish`, `.founder-context` and `.recognition-ledger p`, stay as they are and are audited centrally in Stage 5 rather than section by section.
 - After any copy change, run `npm run fonts -- <dir with NotoSansTC.ttf and LXGWWenKaiTC-Bold.ttf>`. Both files are trimmed to the characters in `src/`; a missing character silently falls back to 微軟正黑體 or PingFang mid-line.
 
 ## Type scale

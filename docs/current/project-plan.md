@@ -7,9 +7,9 @@ This is the current website-phase index for workflow, priorities and approval st
 
 ## Immediate rule
 
-Pause all visual implementation in Cursor until Stage 1 — Typography Lock is approved.
+Stage 1 — Typography Lock was approved on 14 Oct 2026. Font families are now fixed; no section may change them.
 
-On 14 October 2026 the recovery checkpoint `35548f48b5545db9918ec02cd7c3f482508e4cbb` was made on `codex/mankee-recovery-2026-10-14`. The earlier note of 23 uncommitted changes described the tree before that checkpoint. Do not layer another section redesign onto the current phase. Visual implementation stays paused at the Typography Lock.
+On 14 October 2026 the recovery checkpoint `35548f48b5545db9918ec02cd7c3f482508e4cbb` was made on `codex/mankee-recovery-2026-10-14`. The earlier note of 23 uncommitted changes described the tree before that checkpoint. Do not layer another section redesign onto the current phase.
 
 ## Order of authority
 
@@ -24,7 +24,7 @@ The Git and project root is `Mankee/`, not `Mankee/website/`. Root governance re
 Within the current website-design phase:
 
 1. This file coordinates sequence and status.
-2. `docs/current/visual-system.md` governs fonts, type scale, colour roles and shared visual tokens **after its approval gate passes**.
+2. `docs/current/visual-system.md` governs fonts (locked 14 Oct 2026), and type scale, colour roles and shared visual tokens **after their approval gates pass**.
 3. `docs/current/inspiration-analysis.md` governs pacing, focal-point discipline, composition principles and motion budget.
 4. The relevant `docs/current/sections/*` plan governs section-specific layout and acceptance criteria.
 5. `docs/reference/visual-analysis.md` remains historical rationale rather than a current implementation checklist.
@@ -66,33 +66,29 @@ The other Stage 0 checks stay open. This documentation reconciliation did not ru
 
 ## Stage 1 — Typography Lock
 
-This is the next active stage. No section redesign proceeds until it is approved.
+**Locked by the owner on 14 Oct 2026.** Font families are fixed. Sizes, weights, spacing and colour were not changed by the lock.
 
-### Recommended two-role system
+### Locked two-role system
 
-- **Display:** self-hosted LXGW WenKai TC Bold, weight 700, for Hero and section headings, feature quotations, founder/location names and signature lines.
-- **Text:** self-hosted Noto Sans TC for body copy, navigation, kickers, captions, labels, buttons and practical information.
+- **Display — `--font-display`:** `"DFKai-SB"`, then `"BiauKai"`, then the existing self-hosted LXGW WenKai TC Bold, then `"Kaiti TC"`, `serif`. Used for Hero and section headings, feature quotations, founder/location names and signature lines.
+- **Text — `--font-text`:** the existing self-hosted Noto Sans TC, then `"PingFang TC"`, `"Microsoft JhengHei"`, `sans-serif`. Used for body copy, navigation, kickers, captions, labels, buttons and practical information.
 
-Use the self-hosted display font first so Windows, macOS and mobile render the same primary face. System `DFKai-SB`, `BiauKai` and `Kaiti TC` may remain fallbacks only. A system font must not lead the stack if cross-device consistency is the goal.
+標楷體 leads the display role to match the Hero. It cannot be self-hosted, so self-hosted WenKai TC is the consistent stand-in on devices without `DFKai-SB` or `BiauKai`. The stacks are defined once in `website/src/styles/tokens.css` and mirrored in `website/src/app/globals.css`; `website/src/lib/fonts.ts` only loads the files and adds no fallbacks of its own.
 
-### Typography decisions to approve
+### Typography decisions
 
-- [ ] Approve LXGW WenKai TC Bold as the first display face across devices.
-- [ ] Approve Noto Sans TC as the first text face across devices.
-- [ ] Confirm exactly two font-family roles: `var(--font-display)` and `var(--font-text)`.
-- [ ] Remove duplicate or conflicting font declarations after the two roles are approved.
-- [ ] Set supported display weights to 700; do not request unavailable 500/650 weights from the bold-only font.
-- [ ] Define one responsive scale for kicker, section heading, feature quote, title, body and caption.
-- [ ] Produce a single typography specimen using real homepage Chinese copy.
-- [ ] Review the specimen at 1440px, 1024px and 390px.
-- [ ] Verify font loading, glyph coverage, layout shift and fallback behaviour.
-- [ ] Run the typography test only after the system is visually approved.
-- [ ] Mark `docs/current/visual-system.md` approved only after all checks pass.
+- [x] Approve the display order `DFKai-SB`, `BiauKai`, self-hosted WenKai TC, `Kaiti TC`, `serif`.
+- [x] Approve self-hosted Noto Sans TC as the first text face.
+- [x] Confirm exactly two font-family roles: `var(--font-display)` and `var(--font-text)`.
+- [x] Remove duplicate or conflicting font declarations. The temporary `/typography-review` route is removed.
+- [x] Run the focused typography test.
+- [ ] Display weights below 700 and the shared responsive type scale are carried to the Stage 5 typography audit. The lock does not change sizes or weights.
 
 ### Typography stop conditions
 
 - No component-specific font family.
-- No mixture of Noto Serif, DFKai, BiauKai and WenKai as competing primary faces.
+- No font-family role other than `--font-display` and `--font-text`.
+- No reordering of the locked display or text stacks without owner approval.
 - No synthesized or unsupported display weights.
 - No section-specific type scale invented during layout work.
 - No font file deletion is accepted until the replacement loads and covers the published copy.
@@ -173,7 +169,7 @@ Motion remains last.
 | `文記落單體驗` | Built; future inspiration review planned | Freeze until Stage 4 |
 | `文記十大` | Built; future inspiration review planned | Freeze until Stage 4 |
 | `你揀，文記煮` | Static composition built; cinemagraph deferred | Freeze until Stage 4/6 |
-| Founder | Redesign plan reopened; current result not approved | Blocked by Typography Lock |
+| Founder | Redesign plan reopened; current result not approved | Blocked by Stage 2 |
 | Recognition | Implementation has begun but is not visually approved | Freeze; resume after Founder |
 | Locations | Aligned plan exists | Not started |
 | Footer | Aligned plan exists | Not started |
@@ -182,4 +178,4 @@ Motion remains last.
 
 ## Current next action
 
-Do not ask Cursor to improve another section. The recovery checkpoint exists. The current next action is to audit and approve the two-font typography system before returning to Founder or any other section. `docs/current/visual-system.md` stays a draft until that lock is approved.
+Do not ask Cursor to improve another section. The recovery checkpoint exists and the Typography Lock is approved. The current next action is Stage 2 — shared colour and spacing roles — before returning to Founder or any other section. In `docs/current/visual-system.md`, fonts are locked; the type scale and chapter colours stay draft.

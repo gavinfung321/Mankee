@@ -36,3 +36,21 @@ test("the display role leads with the Hero's 標楷體 and falls back to WenKai 
     );
   }
 });
+
+test("the text role leads with self-hosted Noto Sans TC", () => {
+  for (const file of ["src/styles/tokens.css", "src/app/globals.css"]) {
+    const source = readFileSync(join(root, file), "utf8");
+    const text = source.match(/--font-text:\s*([^;]+);/)[1].replace(/\s+/g, " ");
+    assert.equal(
+      text.trim(),
+      'var(--font-text-loaded, "Noto Sans TC"), "PingFang TC", "Microsoft JhengHei", sans-serif',
+      file,
+    );
+  }
+});
+
+test("font loaders leave fallback order to the two roles", () => {
+  const fonts = readFileSync(join(root, "src/lib/fonts.ts"), "utf8");
+  assert.doesNotMatch(fonts, /fallback\s*:/);
+  assert.equal(fonts.match(/variable:\s*"--font-(display|text)-loaded"/g)?.length, 2);
+});

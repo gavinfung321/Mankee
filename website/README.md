@@ -17,7 +17,7 @@ The production architecture is Next.js App Router with TypeScript. Tailwind CSS 
 
 ## Fonts
 
-Display: LXGW WenKai TC Bold, then `"Kaiti TC", "BiauKai", serif`.
+Display: `"DFKai-SB"`, `"BiauKai"`, self-hosted LXGW WenKai TC Bold, `"Kaiti TC"`, `serif`.
 
 Text and controls: Noto Sans TC, then `"PingFang TC", "Microsoft JhengHei", sans-serif`.
 

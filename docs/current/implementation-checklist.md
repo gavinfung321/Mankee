@@ -4,7 +4,7 @@ Use this checklist with `docs/current/implementation-plan.md` and `docs/referenc
 
 Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline commit. Next.js App Router with TypeScript is the approved production architecture, recorded on `chore/issue-19-nextjs-architecture`.
 
-Status on 14 October 2026: visual implementation is paused at the Typography Lock in `docs/current/project-plan.md`. Typography, Founder, Recognition, Locations and Footer are not visually approved. Do not mark that unresolved work complete. The checks below record earlier structure and issue work; they are not a visual sign-off.
+Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md` is approved for font families only. Display weights and the responsive type scale stay open for Stage 5. Founder, Recognition, Locations and Footer are not visually approved. Do not mark that unresolved work complete. The checks below record earlier structure and issue work; they are not a visual sign-off.
 
 ## Gate 0 — Before Cursor writes code
 
@@ -39,7 +39,7 @@ Status on 14 October 2026: visual implementation is paused at the Typography Loc
 - [x] Next.js and TypeScript scaffold exists only under `website/`.
 - [x] Existing reference and Hero-production folders are unchanged.
 - [x] Run, build, format and test commands are documented.
-- [x] Design tokens cover colour, spacing, focus and motion. The brand colours are paper, ink, lacquer, jade, and noodle. Jade dark is the Hero backdrop only. The page background is paper. Typography remains unresolved at the Typography Lock.
+- [x] Design tokens cover colour, spacing, focus and motion. The brand colours are paper, ink, lacquer, jade, and noodle. Jade dark is the Hero backdrop only. The page background is paper. Font families are locked as `--font-display` and `--font-text`; weights and type scale stay open for Stage 5.
 - [x] `lang="zh-HK"` is applied.
 - [x] Content records are locale-keyed but only Traditional Chinese is visible.
 - [x] No inactive language switcher is rendered.
@@ -110,7 +110,7 @@ Status on 14 October 2026: visual implementation is paused at the Typography Loc
 - [x] Production build completes without warnings that affect users.
 - [x] No lab, review-board or rejected media ships in the bundle.
 - [x] Images are responsive and appropriately compressed.
-- [ ] Fonts are licensed and loading is controlled. Shipped subsets are not the Typography Lock, which remains open.
+- [ ] Fonts are licensed and loading is controlled. The font families are locked; this release check stays open until licensing and loading are verified for launch.
 - [x] Hero loading does not prevent first content render.
 - [ ] Metadata, canonical URLs and social cards are correct.
 - [ ] Structured data contains only verified information.
@@ -122,9 +122,10 @@ Status on 14 October 2026: visual implementation is paused at the Typography Loc
 
 Historical log from 10 October 2026. The structure issues #1–#19 are closed. Issue #20 was opened on `design/issue-20-concept-b-visual-system`.
 
-**Current status, 14 October 2026:** visual implementation is paused at the Typography Lock. The checks in this section are not permission to continue a visual pass. Step 1 is not the Typography Lock and stays open. Founder, Recognition, Locations and Footer stay open.
+**Current status, 14 October 2026:** the Typography Lock is approved for font families. The checks in this section are not permission to continue a visual pass. Step 1 stays open for weights and type scale. Founder, Recognition, Locations and Footer stay open.
 
-- [ ] 1. Global typography. An earlier token pass exists. It is not approval of the Typography Lock, and this item stays open.
+- [x] Typography Lock — font families. Approved 14 Oct 2026. Display: `"DFKai-SB"`, `"BiauKai"`, self-hosted LXGW WenKai TC, `"Kaiti TC"`, `serif`. Text: self-hosted Noto Sans TC. Exactly two roles, `--font-display` and `--font-text`. The temporary `/typography-review` route is removed.
+- [ ] 1. Global typography. Font families are locked. Display weights and the responsive type scale stay open for Stage 5.
 - [x] 2. Header and Hero overlay. The temporary Hero film remains. This check does not approve a new logo or a font lock.
 - [x] 3. `舊式香港`, `文記落單體驗` and `文記十大`. `舊式香港` is the current second section inside `SensoryTrio`. Ordering is the compact photographic rail. **Superseded:** the queue-figure pause, the timber cards, and the copy-column layout as current direction.
 

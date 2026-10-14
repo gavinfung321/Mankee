@@ -23,7 +23,7 @@ Approved facts still come from `docs/reference/content-register.md`. Where a wir
 
 Next.js App Router with TypeScript remains the approved production architecture. This addendum does not replace that decision, and it does not authorise a new master plan.
 
-Visual implementation is paused at the Typography Lock in `docs/current/project-plan.md`. Typography is unresolved. The Noto Serif display stack in this file, the wireframe Kai titles, and the draft LXGW WenKai proposal in `docs/current/visual-system.md` are not an approved font lock.
+The Typography Lock in `docs/current/project-plan.md` was approved on 14 Oct 2026. The locked font roles are in `docs/current/visual-system.md`. The Noto Serif display stack in this file and the wireframe Kai titles are historical and are not the lock.
 
 Current homepage order. Component filenames stay as they are:
 
@@ -188,7 +188,7 @@ Spacing uses a 4px step: 4, 8, 12, 16, 24, 32, 48, 64, 96.
 
 Layout: content width `72rem`, text measure `40rem`. Review widths remain 360, 390, tablet, and desktop. Breakpoints are `48rem` and `64rem`.
 
-Type, two families only. **Superseded on 14 October 2026 as a font lock.** The stacks below are the historical token-issue recommendation. Typography is unresolved and blocked by the Typography Lock. Do not treat Noto Serif TC, the wireframe Kai faces, or the draft display face in `docs/current/visual-system.md` as approved.
+Type, two families only. **Superseded on 14 October 2026 as a font lock.** The stacks below are the historical token-issue recommendation. The locked roles, approved 14 Oct 2026, are in `docs/current/visual-system.md`. Do not treat Noto Serif TC or the wireframe Kai faces as approved.
 
 - Display: `"Noto Serif TC", "Source Han Serif TC", "PMingLiU", serif`
 - Text and controls: `"Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif`

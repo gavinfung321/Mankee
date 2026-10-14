@@ -1,6 +1,6 @@
 # Concept B — Approved Production Structure
 
-Status: current homepage structure, updated 14 October 2026. Gate 0 is complete. Visual implementation is paused at the Typography Lock.
+Status: current homepage structure, updated 14 October 2026. Gate 0 is complete. The Typography Lock was approved on 14 Oct 2026; workflow continues in `docs/current/project-plan.md`.
 
 Implementation is governed by `docs/current/implementation-plan.md`, `docs/current/implementation-checklist.md` and the Mankee-specific `docs/reference/github-issues-guide.md`. Current visual work follows `docs/current/project-plan.md` and the section plans. Production architecture remains Next.js.
 
