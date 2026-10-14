@@ -71,7 +71,7 @@ Lacquer red stays semantic: actions, completion, the Michelin band and kicker ru
 - **Shared lacquer rule:** 2.25rem × 2px, as `--rule-length` and `--rule-weight`.
 - **Lacquer small text:** lacquer may be used for small text on a light ground only where contrast is at least 4.5:1.
 - **Kicker colour:** `--jade-text` on light grounds, `--gold-bright` on dark grounds.
-- **Neighbouring light grounds** for `文記十大`, `你揀，文記煮` and Founder are decided during the Founder redesign.
+- **Neighbouring light grounds** (decided during Founder): `文記十大`, `你揀，文記煮` and Founder share `--ground-light`. Neighbouring light chapters separate through `--section-space` and a 1px ink hairline at 18% on the lower chapter's top edge. `你揀，文記煮` keeps `#e9dfcd` until it is reopened.
 - **Frozen sections:** kicker colours, `--section-space` and near-duplicate colour merges are not applied to Hero, `舊式香港`, `文記落單體驗`, `文記十大` or `你揀，文記煮` until each is reopened in Stage 4. Reopened and unfinished sections (Founder, Recognition, Locations, Footer) adopt them when they are built.
 
 ### Findings

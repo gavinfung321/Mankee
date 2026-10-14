@@ -4,7 +4,7 @@ Use this checklist with `docs/current/implementation-plan.md` and `docs/referenc
 
 Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline commit. Next.js App Router with TypeScript is the approved production architecture, recorded on `chore/issue-19-nextjs-architecture`.
 
-Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md` is approved for font families only. Display weights and the responsive type scale stay open for Stage 5. Founder, Recognition, Locations and Footer are not visually approved. Do not mark that unresolved work complete. The checks below record earlier structure and issue work; they are not a visual sign-off.
+Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md` is approved for font families only. Display weights and the responsive type scale stay open for Stage 5. Founder was visually approved on 14 Oct 2026 at desktop and mobile. Recognition, Locations and Footer are not visually approved. Do not mark that unresolved work complete. The checks below record earlier structure and issue work; they are not a visual sign-off.
 
 ## Gate 0 — Before Cursor writes code
 
@@ -56,7 +56,7 @@ Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md`
 - [x] 文記十大 matches the wall list in `docs/current/implementation-plan.md`.
 - [x] Availability disclaimer is visible.
 - [x] The order form stays in `文記十大`, changes from 落單 to 完成 while still visible near the end of that section, and does not fly into `你揀，文記煮`. **Superseded:** the service-window transition into Founder.
-- [x] Founder section is present after `你揀，文記煮`. Visual approval and the publication review are still open.
+- [x] Founder section is present after `你揀，文記煮`. Visual approval is complete (14 Oct 2026, editorial poster composition). The publication review is still open.
 - [x] Homepage recognition is limited to Michelin, 白種元 and 黎芷珊.
 - [x] Other coverage routes to `/press/`.
 - [x] 深水埗 is visually primary in locations.
@@ -83,7 +83,7 @@ Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md`
 ## Content, rights and operational data
 
 - [ ] Every production image has owner/source, usage status and alt text.
-- [ ] Founder portrait and quotation have passed the pending-publication review in `docs/reference/content-register.md`. Visual approval is also open.
+- [ ] Founder portrait and quotation have passed the pending-publication review in `docs/reference/content-register.md`. Visual approval is complete (14 Oct 2026); this publication review stays open.
 - [ ] Michelin artwork and wording have passed the pending-publication review in `docs/reference/content-register.md`. Visual approval is also open.
 - [x] 白種元 and 黎芷珊 are described as documented visits, not endorsements.
 - [ ] Addresses, hours, map links and delivery links are owner-verified.
@@ -122,7 +122,7 @@ Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md`
 
 Historical log from 10 October 2026. The structure issues #1–#19 are closed. Issue #20 was opened on `design/issue-20-concept-b-visual-system`.
 
-**Current status, 14 October 2026:** the Typography Lock is approved for font families. The checks in this section are not permission to continue a visual pass. Step 1 stays open for weights and type scale. Founder, Recognition, Locations and Footer stay open.
+**Current status, 14 October 2026:** the Typography Lock is approved for font families. The checks in this section are not permission to continue a visual pass. Step 1 stays open for weights and type scale. Founder is visually approved. Recognition, Locations and Footer stay open.
 
 - [x] Typography Lock — font families. Approved 14 Oct 2026. Display: `"DFKai-SB"`, `"BiauKai"`, self-hosted LXGW WenKai TC, `"Kaiti TC"`, `serif`. Text: self-hosted Noto Sans TC. Exactly two roles, `--font-display` and `--font-text`. The temporary `/typography-review` route is removed.
 - [ ] 1. Global typography. Font families are locked. Display weights and the responsive type scale stay open for Stage 5.
@@ -134,7 +134,7 @@ Historical log from 10 October 2026. The structure issues #1–#19 are closed. I
 Historical note. The pinned three-dish chapter was set aside, and the second section is now `舊式香港` inside `SensoryTrio`. **Superseded as current direction:** any instruction that the locked section is still the old-style queue pause. This checklist does not decide a new placement for 香、厚、濃.
 
 Found while reviewing that chapter, not part of #21: at the join, the pinned film is still behind the bar, and the bar is 96% opaque, so the last frame ghosts through the navigation.
-- [ ] 4. `你揀，文記煮`, Founder and Recognition. The static food photograph is the current `你揀，文記煮` decision, and its cinemagraph stays deferred. Founder and Recognition are not visually approved. **Superseded:** a flying slip into this section.
+- [ ] 4. `你揀，文記煮`, Founder and Recognition. The static food photograph is the current `你揀，文記煮` decision, and its cinemagraph stays deferred. Founder was visually approved on 14 Oct 2026; Recognition is not visually approved, so this item stays open. **Superseded:** a flying slip into this section.
 - [ ] 5. Locations and Footer. Not visually approved. Daytime Sham Shui Po storefront placement is still open. Broadcast frames of 白種元 and 黎芷珊 stay off the page. Tsim Sha Tsui facts and delivery links remain in the pending-publication review.
 - [ ] 6. Mobile and responsive treatment. Audited at 1440, 1280 and 390. Not refined, and not approved.
 - [ ] 7. Subtle motion and final performance work. Not started. Hero media stays unchanged. The `你揀，文記煮` cinemagraph stays deferred.

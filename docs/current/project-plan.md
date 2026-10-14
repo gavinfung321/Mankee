@@ -104,7 +104,7 @@ The other Stage 0 checks stay open. This documentation reconciliation did not ru
 - [x] Define the shared kicker, rule, focus and action treatments. The rule is `--rule-length` × `--rule-weight` (2.25rem × 2px) in lacquer. Caption styling stays with the Stage 5 audit.
 - [x] Lacquer small text on a light ground requires at least 4.5:1.
 - [x] Verify WCAG AA contrast for every approved role pairing from source.
-- [ ] One dominant ground per chapter. The three neighbouring light grounds (`文記十大`, `你揀，文記煮`, Founder) are decided during the Founder redesign.
+- [x] One dominant ground per chapter. Decided during Founder on 14 Oct 2026: `文記十大`, `你揀，文記煮` and Founder share `--ground-light`; neighbouring light chapters separate through `--section-space` and a 1px ink hairline at 18% on the lower chapter's top edge.
 
 Frozen sections (Hero, `舊式香港`, `文記落單體驗`, `文記十大`, `你揀，文記煮`) do not receive kicker colours, `--section-space` or near-duplicate merges until each is reopened in Stage 4. Known exception to fix on reopening: `.order-slip-card .slip-row b`, lacquer on the slip at 4.37:1.
 
@@ -114,8 +114,8 @@ This is a token pass, not a section redesign.
 
 Work sequentially:
 
-1. **Founder** — next active redesign. Uses the Stage 2 roles and decides the neighbouring light grounds. Keep 黃志強 centred and follow the reopened checklist in `docs/current/sections/founder-recognition.md`.
-2. **Recognition** — begin only after Founder receives visual approval.
+1. **Founder** — approved 14 Oct 2026 at desktop and mobile as the editorial poster composition in `docs/current/sections/founder-recognition.md`. Optional motion is deferred to Stage 6.
+2. **Recognition** — next active chapter. Founder approval is complete.
 3. **Locations** — begin only after Recognition is approved.
 4. **Footer** — begin only after Locations is approved; finish with the approved memorable 文記 brand field.
 
@@ -173,8 +173,8 @@ Motion remains last.
 | `文記落單體驗` | Built; future inspiration review planned | Freeze until Stage 4 |
 | `文記十大` | Built; future inspiration review planned | Freeze until Stage 4 |
 | `你揀，文記煮` | Static composition built; cinemagraph deferred | Freeze until Stage 4/6 |
-| Founder | Redesign plan reopened; current result not approved | Next: Stage 3 redesign |
-| Recognition | Implementation has begun but is not visually approved | Freeze; resume after Founder |
+| Founder | Approved 14 Oct 2026: editorial poster composition, desktop and mobile | Freeze; optional motion in Stage 6 |
+| Recognition | Implementation has begun but is not visually approved | Next: Stage 3 build |
 | Locations | Aligned plan exists | Not started |
 | Footer | Aligned plan exists | Not started |
 | Global visual audit | Pending | Stage 5 |
@@ -182,4 +182,4 @@ Motion remains last.
 
 ## Current next action
 
-Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. The current next action is Stage 3, starting with the Founder redesign, which also decides the neighbouring light grounds. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.
+Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. Founder is approved. The current next action is Stage 3 — Recognition. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.

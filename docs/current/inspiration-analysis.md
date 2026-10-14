@@ -297,7 +297,7 @@ An **Approved and aligned** section is protected from accidental drift, but it i
 | `文記十大` | Approved and aligned | Preserve the multi-select interaction, fixed preview and completion state. |
 | `你揀，文記煮` static composition | Approved and aligned | Preserve the approved food payoff and still photograph. |
 | `你揀，文記煮` cinemagraph | Deferred | Reconsider only after the final continuity audit. |
-| Founder | In progress | Warm editorial pause; portrait and approved quotation are the dominant masses. |
+| Founder | Approved and aligned | Approved 14 Oct 2026 at desktop and mobile as the editorial poster composition: quotation above, dominant documentary portrait, identity rail. Optional motion deferred to Stage 6. |
 | Recognition | In progress | Aligned plan exists; static evidence composition is not yet visually approved. |
 | Locations | In progress | Aligned plan exists; 深水埗 must remain the practical focal point. |
 | Footer | In progress | Aligned plan now requires a memorable oversized 文記 brand ending. |

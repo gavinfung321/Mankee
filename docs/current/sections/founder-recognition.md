@@ -4,20 +4,39 @@
 
 Updated 14 Oct 2026. This block wins. Older paragraphs below are history; ignore them when they disagree.
 
-### Founder — already on the page
+### Founder — editorial poster composition (approved 14 Oct 2026)
 
-- Cream ground. 黃志強 stays centred. Photograph and type each take about half the canvas. No cream overlap.
-- Top line: red rule, then `黃志強 · Simon Wong` and `創辦人`.
-- The quotation is the only large type. Break after `珍惜`:
+**Approved by the owner on 14 Oct 2026 at desktop and mobile.** This is the Founder design of record. Do not restructure it; the Stage 5 audit may only adjust shared type scale and weights. Optional motion is deferred to Stage 6.
+
+The half-and-half photograph/type split is **retired**, as are the 52/48 split and the equal-height three-zone text column.
+
+Approved values (`src/components/home/Founder.tsx`, Founder rules in `src/styles/home.css`):
+
+- Quotation: desktop up to 80px, scaled to the canvas; mobile and tablet scale to the canvas width (about 34px at 390px). Line height 1.04 on desktop. The closing `」` is pulled back against `。`.
+- Portrait: about 70% of the canvas on desktop (7fr/3fr feature grid), frame 1.78 with crop position `50% 76%`; mobile frame 1.62 at `50% 74%`. 黃志強 horizontally centred.
+- Rail: same height as the photograph on desktop. A short lacquer rule and identity align to the photo's top; the 17px context sentence aligns to its bottom.
+- Lacquer accents: the label rule and the rail rule only.
 
 ```text
-最希望是港人珍惜
-本土風味食店。
+創辦人故事
+
+「最希望是港人珍惜
+  本土風味食店。」
+
+[        large documentary portrait — about 68% width        ]   黃志強 · Simon Wong
+                                                                創辦人
+
+                                                                車仔麵為本土食物，夠地道。
 ```
 
-- Small line under the quotation: `車仔麵為本土食物，夠地道。`
-- Do not copy the Concept B dark field, the biography paragraph, or a second copy of the quotation.
-- Entrance reveal stays off.
+- Ground and boundary unchanged: `--ground-light`, `--section-space` padding, 1px ink hairline at 18% on the top edge. Inner spacing uses the `--space-*` scale.
+- Top: lacquer rule, then `創辦人故事`. The rule is the only lacquer accent.
+- The quotation sits above the photograph and spans most of the canvas. It is the only large type. Break after `珍惜`; the second line indents one character so `本` sits under `最`.
+- The photograph is a large documentary feature beneath the quotation, about 68% of the canvas width. 黃志強 stays horizontally centred. Crop reduces the bright ceiling while keeping the restaurant context.
+- Identity and context form a narrow editorial rail beside the photograph, aligned to its lower edge: `黃志強 · Simon Wong`, `創辦人`, then `車仔麵為本土食物，夠地道。`.
+- The composition is intentionally asymmetric and has enough vertical presence to stand against the red Recognition section.
+- Mobile order: label → quotation → photograph → identity → context. No extreme crop.
+- No overlap, card, shadow, biography, second quotation, new media or animation. Do not copy the Concept B dark field.
 
 ### Recognition — the next build
 
@@ -344,7 +363,9 @@ Check an item only after it has been implemented and visually verified. Founder 
 
 - [x] Confirm the component uses only the approved name, English name, quotation and portrait.
 - [x] Add the `創辦人故事` chapter label without adding biography or timeline claims.
-- [x] Build the connected desktop canvas with the photograph occupying approximately 62–66% and the quote field overlapping its right edge by approximately 40–56px.
+- [x] ~~Build the connected desktop canvas with photograph and type each taking about half the canvas.~~ Retired 14 Oct 2026, with the 62–66% overlap version before it.
+- [x] Build the editorial poster composition: quotation above, about 68% documentary portrait below, identity and context rail beside it.
+- [x] Verify the mobile order: label, quotation, photograph, identity, context.
 - [x] Keep 黃志強 horizontally centred in the visible photograph at desktop, tablet and mobile widths.
 - [x] Keep the portrait close to its natural landscape ratio and preserve the restaurant context.
 - [x] Make the approved quotation the visual headline.
@@ -353,14 +374,16 @@ Check an item only after it has been implemented and visually verified. Founder 
 - [x] Confirm the quotation has a decisive scale jump from the label and identity line.
 - [x] Confirm the portrait and quotation are the only two major visual masses.
 - [x] Confirm the quote field is square, shadowless and visually part of the warm-cream page ground rather than a floating card.
-- [x] Confirm label, quotation and identity use the quote field's full vertical span rather than forming one small central cluster.
-- [ ] Add only the approved short entrance reveal; no pinning, zoom or parallax.
+- [x] ~~Confirm label, quotation and identity use the quote field's full vertical span.~~ Retired with the split layout; the poster rail matches the photograph height instead.
+- [ ] Optional short entrance reveal — deferred to Stage 6. No pinning, zoom or parallax.
 - [x] Verify reduced motion displays the complete static composition.
-- [x] Verify the mobile order is portrait, quotation, then identity without extreme cropping.
+- [x] ~~Verify the mobile order is portrait, quotation, then identity.~~ Retired; the poster mobile order is label, quotation, photograph, identity, context.
 - [x] Capture and review one 1440×900 Founder screenshot.
 - [x] Capture and review one 1024px Founder screenshot.
 - [x] Capture and review one 390×844 Founder screenshot.
-- [ ] Receive Founder visual approval before starting Recognition.
+- [x] Adopt the Stage 2 roles (14 Oct 2026): `--section-space` padding, top hairline boundary, inner spacing on the `--space-*` scale. Type sizes and weights wait for Stage 5.
+- [x] Owner review of the poster composition, including the Stage 2 spacing and hairline, at desktop and mobile.
+- [x] Receive Founder visual approval before starting Recognition. Approved 14 Oct 2026.
 
 ### Recognition — implementation and approval
 
@@ -424,4 +447,4 @@ Check an item only after it has been implemented and visually verified. Founder 
 
 ## Current next step
 
-Follow the block at the top. Founder is already on the page in that form. Next build is Recognition only: larger Michelin mark, no repeated year, two quieter visit rows, one press link. Motion stays off.
+Follow the block at the top. Founder is approved as the editorial poster composition (14 Oct 2026); its optional motion is deferred to Stage 6. Next build is Recognition only, which stays open: larger Michelin mark, no repeated year, two quieter visit rows, one press link. Motion stays off.
