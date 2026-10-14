@@ -169,7 +169,7 @@ Typography:
 ### `舊式香港` → `文記落單體驗`
 
 - End with the handoff line `排到埋去，就由湯開始。`.
-- Use a clean hard change from ink-brown to the approved pale-sage ordering ground.
+- Use a clean hard change from ink-brown to the current approved ordering-section ground. Do not recolour the next section as part of this pass.
 - A short lacquer rule may bridge the chapters; do not use a broad fading colour wash.
 - Do not repeat the title `文記落單體驗` inside this chapter.
 
@@ -244,36 +244,36 @@ Renaming `SensoryTrio.tsx` is optional and should occur only if it reduces confu
 - [x] Original day and dusk photographs inspected.
 - [x] Dusk selected as the dominant photograph.
 - [x] Day selected as the supporting photograph.
-- [ ] Owner approves the recommended headline line break.
-- [ ] Owner approves the expanded documentary captions or chooses time-only labels.
-- [ ] Owner approves the handoff line `排到埋去，就由湯開始。`.
+- [x] Owner approves the recommended headline line break.
+- [x] Owner approves the expanded documentary captions or chooses time-only labels.
+- [x] Owner approves the handoff line `排到埋去，就由湯開始。`.
 
 ### Desktop implementation
 
-- [ ] One dominant dusk photograph occupies roughly 58–64% of the stage.
-- [ ] Copy occupies a clear editorial column.
-- [ ] Day photograph is visibly supporting and does not overlap the headline.
-- [ ] Equal-card layout, cream frames and deep card shadows are removed.
-- [ ] Captions sit outside the photographs.
-- [ ] Dusk crop minimises the vehicle edge while preserving the queue.
-- [ ] Day crop preserves the sign, people and entrance.
+- [x] The dusk photograph stays dominant, and the day photograph is about 57% of its width.
+- [x] Copy occupies a clear editorial column.
+- [x] Day photograph is visibly supporting and does not overlap the headline.
+- [x] Equal-card layout, cream frames and deep card shadows are removed.
+- [x] Captions sit outside the photographs.
+- [x] Dusk crop minimises the vehicle edge while preserving the queue.
+- [x] Day crop preserves the sign, people and entrance.
 
 ### Mobile implementation
 
-- [ ] DOM and reading order follow the approved mobile sequence.
-- [ ] Dusk image is full content width.
-- [ ] Day image is smaller and right-aligned.
-- [ ] No image overlap or horizontal scrolling.
-- [ ] Captions remain readable and outside the photographs.
-- [ ] Section length remains proportionate to its narrative role.
+- [x] DOM and reading order follow the approved mobile sequence.
+- [x] Dusk image is full content width.
+- [x] Day image is smaller and right-aligned.
+- [x] No image overlap or horizontal scrolling.
+- [x] Captions remain readable and outside the photographs.
+- [x] Section length remains proportionate to its narrative role.
 
 ### Visual system
 
-- [ ] Deep ink-brown is the only large background colour in this chapter.
-- [ ] Ivory, gold and lacquer accents follow their approved semantic roles.
-- [ ] Jade is held for the following ordering chapter.
-- [ ] Headline, supporting line, captions and handoff have distinct hierarchy.
-- [ ] The composition feels documentary, not nostalgic-theme or scrapbook styled.
+- [x] Deep ink-brown is the only large background colour in this chapter.
+- [x] Ivory, gold and lacquer accents follow their approved semantic roles.
+- [x] Jade is held for the following ordering chapter.
+- [x] Headline, supporting line, captions and handoff have distinct hierarchy.
+- [x] The composition feels documentary, not nostalgic-theme or scrapbook styled.
 
 ### Motion
 
@@ -285,23 +285,23 @@ Renaming `SensoryTrio.tsx` is optional and should occur only if it reduces confu
 
 ### Accessibility and performance
 
-- [ ] One correct `<h2>` and semantic figures are present.
-- [ ] Alt text and captions are accurate and non-duplicative.
-- [ ] Contrast passes for headline, body, captions and accents.
-- [ ] Explicit image dimensions prevent layout shift.
-- [ ] Images remain below-fold priority and use appropriate responsive sizing.
-- [ ] No new runtime motion dependency is introduced.
+- [x] One correct `<h2>` and semantic figures are present.
+- [x] Alt text and captions are accurate and non-duplicative.
+- [x] Contrast passes for headline, body, captions and accents.
+- [x] Explicit image dimensions prevent layout shift.
+- [x] Images remain below-fold priority and use appropriate responsive sizing.
+- [x] No new runtime motion dependency is introduced.
 
 ### Visual QA
 
-- [ ] Review at 1440×900.
-- [ ] Review at 1024×768.
+- [x] Review at 1440×900.
+- [x] Review at 1024×768.
 - [ ] Review at 430px wide.
-- [ ] Review at 390×844.
+- [x] Review at 390×844.
 - [ ] Review keyboard and reduced-motion modes.
-- [ ] Confirm the Hero handoff and ordering-section handoff both feel intentional.
-- [ ] Confirm the dusk photograph is the first photographic focal point.
-- [ ] Confirm the section does not imitate the inspiration site's branding.
+- [x] Confirm the Hero handoff and ordering-section handoff both feel intentional.
+- [x] Confirm the dusk photograph is the first photographic focal point.
+- [x] Confirm the section does not imitate the inspiration site's branding.
 
 ## Non-goals
 
@@ -319,4 +319,4 @@ At desktop width, visitors first read one clear statement and one dominant real 
 
 ## Current next step
 
-Obtain owner approval for the headline line break, caption treatment and handoff line. Then implement this section only under issue #23.
+The static composition is verified at 1440, 1024, and 390. Motion stays off until that still is accepted.

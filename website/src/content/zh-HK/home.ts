@@ -35,6 +35,8 @@ export const homeSections = [
     founder: {
       name: confirmed("黃志強"),
       englishName: confirmed("Simon Wong"),
+      role: confirmed("創辦人"),
+      context: confirmed("車仔麵為本土食物，夠地道。"),
       quotation: confirmed("最希望是港人珍惜本土風味食店。"),
       portrait: confirmed("/media/founder/wong-chi-keung-960.webp"),
     },

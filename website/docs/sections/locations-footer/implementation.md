@@ -9,13 +9,41 @@ Live check: http://localhost:3000/
 Locations and Footer form the practical ending of the homepage:
 
 1. **Locations:** turn interest into a clear visit, call, email or delivery action.
-2. **Footer:** close the page quietly with useful navigation and brand continuity.
+2. **Footer:** deliver a memorable brand-led ending with concise navigation and practical continuity.
 
 The intended final sequence is:
 
-**Founder purpose → Recognition records → Visit or order → Quiet site ending**
+**Founder purpose → Recognition records → Visit or order → Decisive 文記 sign-off**
 
-This is not another storytelling climax. It should feel confident, useful and unmistakably designed for 文記 rather than like a generic pair of location cards.
+Locations is not another storytelling climax. It should feel confident, useful and unmistakably designed for 文記 rather than like a generic pair of location cards. Footer then supplies the stronger final brand beat without adding another information-heavy chapter.
+
+## Governing visual direction
+
+This plan adopts the approved decisions in `docs/inspiration-analysis.md` and the Mankee-specific principles in `docs/analysis.md`.
+
+- Locations is the practical action chapter, not another narrative spectacle.
+- Footer is the final brand peak: visually memorable, compositionally simple and free of invented content.
+- Use one dominant focal point per viewport, strong type-scale contrast and strict colour roles.
+- Preserve documentary authenticity and local character rather than imitating a glossy international chain.
+- The static layout must be approved before any supporting reveal is considered.
+
+## Inspiration Alignment Gate
+
+This gate must pass before Locations or Footer is marked complete.
+
+1. **Single visual job:** Locations answers where, when and how to visit or order. Footer leaves one unmistakable final 文記 impression and a concise route back through the site.
+2. **Page rhythm:** Locations is a practical pause after Recognition. Footer is the decisive final brand beat, not a second information directory.
+3. **Dominant focal point:** 深水埗 is the Locations focal point. The oversized 文記 wordmark/signage treatment is the Footer focal point.
+4. **Colour role:** Locations uses one dominant dark-green or ink ground with ivory text. Footer uses a decisive ink or lacquer-red brand field. Gold and red remain small semantic accents unless lacquer red is selected as the Footer ground.
+5. **Type hierarchy:** Location name, address, hours, actions and secondary branch must be visibly distinct. Footer wordmark is deliberately oversized; navigation remains compact and secondary.
+6. **Image treatment:** No image is required. If one approved documentary image is later accepted, it remains supporting atmosphere and never competes with location facts or the Footer wordmark.
+7. **Motion budget:** Locations may receive one short reading-order reveal only after static approval. Footer requires no dedicated animation. Reduced motion shows the complete state immediately.
+8. **Prohibited patterns:** No equal location cards, map embed, corporate sitemap, newsletter block, invented slogan, decorative marquee, parallax, scroll capture, glass effect or competing palette.
+9. **Transitions:** Recognition moves deliberately into practical Locations. Locations then resolves into a visibly stronger brand field without merging its final action with Footer navigation.
+10. **Viewport approval:** Static Locations and Footer must be visually approved at 1440px, 1024px and 390px, including hierarchy, long-address wrapping, touch targets and overflow.
+11. **Global-pass boundary:** The later Global Visual-System Pass may standardise tokens, scale, rules, captions and spacing, but must not restructure an approved composition.
+
+Factual accuracy, link validity and accessibility override visual inspiration whenever they conflict.
 
 ## Source-of-truth content
 
@@ -78,12 +106,13 @@ What is weak:
 
 ## Design direction
 
-Use a **dark-green practical closing chapter followed by a quieter near-black footer**.
+Use a **dark-green practical chapter followed by a decisive brand-led footer**.
 
 - Locations should feel rooted, direct and useful.
 - 深水埗 must be visually dominant; 尖沙咀 is a supporting location.
 - Use typography, rules, spacing and asymmetric scale rather than two equal rounded cards.
 - Reuse the existing lacquer red and muted gold only as small directional accents.
+- Make the Footer a memorable final brand field using an oversized 文記 wordmark/signage treatment and either a decisive ink or lacquer-red ground.
 - Avoid gradients, glowing buttons, oversized icons, glass effects and template-style card grids.
 - The static layout must work without any new media.
 
@@ -99,7 +128,7 @@ Use this reading order:
 2. Clear location heading
 3. Primary 深水埗 location
 4. Secondary 尖沙咀 location
-5. Quiet handoff into the Footer
+5. Clear handoff into the Footer
 
 The heading should explain the section's purpose without adding a marketing claim. Keep labels concise and in Traditional Chinese.
 
@@ -150,11 +179,12 @@ Do not generate a new location image during this implementation.
 
 ### Role
 
-The Footer is a restrained closing frame, not another content section and not a second call-to-action panel.
+The Footer is a decisive brand closing frame, not another information section and not a second call-to-action panel.
 
 It should:
 
 - reinforce the 文記 identity;
+- make the established 文記 wordmark/signage treatment the dominant final visual;
 - provide concise navigation back to important destinations;
 - include Press as a secondary editorial route;
 - end the page with deliberate spacing and a clear baseline.
@@ -169,14 +199,15 @@ It should not:
 
 ### Desktop composition
 
-- Continue from the dark-green Locations background into a darker charcoal or near-black footer.
+- Resolve the dark-green Locations chapter into a decisive ink or lacquer-red Footer field.
 - Use a compact two-zone structure:
-  - brand/wordmark zone;
+  - oversized brand/wordmark zone;
   - concise navigation and secondary links zone.
+- Let the wordmark carry the visual ending; navigation and Press remain clearly secondary.
 - Use the existing primary navigation labels in their established order.
 - Add `/press/` as a visually secondary link.
-- Use a thin lacquer or muted-gold rule to mark the transition if needed.
-- Keep the footer shallow enough that the end of the page feels intentional rather than empty.
+- Use one thin contrasting rule to mark the transition if needed.
+- Give the wordmark enough scale and space to form a memorable ending without turning the Footer into a corporate sitemap.
 
 ### Mobile composition
 
@@ -202,8 +233,8 @@ It should not:
 
 ### Locations → Footer
 
-- Darken the same colour family instead of introducing a new visual theme.
-- Use spacing and one rule rather than another oversized heading.
+- Move into the selected ink or lacquer-red brand field as a deliberate final colour beat.
+- Use spacing and one rule to separate practical actions from the oversized brand sign-off.
 - The final Foodpanda action and Footer navigation must not visually merge.
 
 ## Mobile plan
@@ -326,8 +357,9 @@ Check an item only after it has been implemented and visually verified. Location
 
 ### Footer — implementation and approval
 
-- [ ] Continue the Locations colour family into a darker, quieter footer.
-- [ ] Build the compact brand zone plus navigation/secondary-links zone.
+- [ ] Resolve Locations into the approved decisive ink or lacquer-red Footer field.
+- [ ] Build the oversized wordmark zone plus compact navigation/secondary-links zone.
+- [ ] Confirm the 文記 wordmark/signage treatment is the single Footer focal point.
 - [ ] Preserve the established primary navigation labels and destinations.
 - [ ] Add `/press/` only as a secondary editorial destination.
 - [ ] Do not repeat the location address, contact details or red location CTA.
@@ -367,7 +399,8 @@ Check an item only after it has been implemented and visually verified. Location
 
 ### Footer
 
-- Feels like an intentional quiet ending rather than a repeated header.
+- Feels like an intentional, memorable 文記 sign-off rather than a repeated header or utility bar.
+- Uses an oversized established wordmark/signage treatment without inventing a slogan or new brand asset.
 - Reinforces the brand and offers concise navigation without repeating Locations.
 - Contains only real, approved destinations.
 - Remains compact and readable on desktop and mobile.

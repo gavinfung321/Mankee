@@ -10,8 +10,8 @@
   --color-noodle: #c99e26;
   --color-jade-dark: #102d26;
   --font-display:
-    var(--font-display-loaded, "Noto Serif TC"), "Source Han Serif TC",
-    "PMingLiU", serif;
+    "DFKai-SB", "BiauKai", var(--font-display-loaded, "LXGW WenKai TC"),
+    "Kaiti TC", serif;
   --font-text:
     var(--font-text-loaded, "Noto Sans TC"), "PingFang TC",
     "Microsoft JhengHei", sans-serif;

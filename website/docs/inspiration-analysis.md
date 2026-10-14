@@ -269,6 +269,36 @@ This sequence uses the inspiration's peak-and-pause rhythm without copying its c
 5. Implement Locations + Footer, ending with the stronger brand field.
 6. Run one desktop/mobile continuity and performance pass after all chapters are assembled, then decide whether `你揀，文記煮` still needs the cinemagraph.
 
+## Section alignment status
+
+This matrix is the planning control for subsequent section work. A plan may move into implementation only after its Inspiration Alignment Gate is explicit and approved.
+
+Status meanings:
+
+- **Approved and aligned:** static direction is accepted; do not restructure it.
+- **In progress:** the plan is aligned, but implementation or visual approval is incomplete.
+- **Plan requires alignment:** implementation must not start until the plan adopts this document's approved principles.
+- **Deferred:** intentionally postponed until a later decision gate.
+- **Global visual audit pending:** reserved for cross-page token and continuity work after all static chapters are assembled.
+
+An **Approved and aligned** section is protected from accidental drift, but it is not permanently frozen. The owner may explicitly reopen any section for an inspiration-led redesign. Reopened work must receive its own updated section plan and Inspiration Alignment Gate before production code changes; redesigns are reviewed one section at a time rather than applied globally in a single pass.
+
+| Chapter | Status | Governing note |
+| --- | --- | --- |
+| Hero | Approved and aligned | Preserve the existing scrub as the primary cinematic movement. |
+| `舊式香港` | Approved and aligned | Preserve the asymmetric documentary spread and one dominant dusk photograph. |
+| `文記落單體驗` | Approved and aligned | Preserve the compact 湯 → 麵 → 餸 rail; review only in the global consistency pass. |
+| `文記十大` | Approved and aligned | Preserve the multi-select interaction, fixed preview and completion state. |
+| `你揀，文記煮` static composition | Approved and aligned | Preserve the approved food payoff and still photograph. |
+| `你揀，文記煮` cinemagraph | Deferred | Reconsider only after the final continuity audit. |
+| Founder | In progress | Warm editorial pause; portrait and approved quotation are the dominant masses. |
+| Recognition | In progress | Aligned plan exists; static evidence composition is not yet visually approved. |
+| Locations | In progress | Aligned plan exists; 深水埗 must remain the practical focal point. |
+| Footer | In progress | Aligned plan now requires a memorable oversized 文記 brand ending. |
+| Cross-page colour, typography and continuity | Global visual audit pending | Standardise tokens and rhythm without restructuring approved chapters. |
+
+No section currently remains in **Plan requires alignment** after this documentation audit. If a future plan omits an explicit Inspiration Alignment Gate, it automatically returns to that status.
+
 ## Definition of success
 
 The improved Mankee site should feel as intentional and paced as the inspiration, but unmistakably like a real Sham Shui Po cart-noodle shop. Visitors should remember the ordering ritual, the food, the founder and the place—not the fact that the website used animation.
