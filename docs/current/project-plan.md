@@ -121,6 +121,12 @@ Work sequentially:
 
 Each chapter requires static approval at 1440px, 1024px and 390px before the next begins.
 
+## Owner-directed addition — 報道與推介
+
+Approved for implementation on 14 Oct 2026 before Stage 4. Issue #25 replaces the separate `/press/` index with a homepage `報道與推介` rail after Recognition and before Locations. The existing Michelin panel links directly to Michelin; six text-led cards link to ELLE, Time Out Hong Kong, SCMP, UFood, Hong Kong Tourism Board and Wanderlog. Use `docs/current/sections/press-rail.md`; do not copy third-party imagery or install ReUI.
+
+This addition must pass static approval at 1440px, 1024px and 390px before Stage 4 begins.
+
 ## Stage 4 — Inspiration-led review of completed chapters
 
 The owner has chosen to reconsider completed sections using the new inspiration analysis. Reopen them one at a time; do not redesign the whole page simultaneously.
@@ -175,6 +181,7 @@ Motion remains last.
 | `你揀，文記煮` | Static composition built; cinemagraph deferred | Freeze until Stage 4/6 |
 | Founder | Approved 14 Oct 2026: editorial poster composition, desktop and mobile | Freeze; optional motion in Stage 6 |
 | Recognition | Approved 14 Oct 2026: Michelin-first composition and typography, desktop, tablet and mobile; programme screenshots pending publication clearance | Freeze; optional motion in Stage 6 |
+| `報道與推介` | Owner-approved plan 14 Oct 2026; issue #25 open | Implement and review at desktop, tablet and mobile |
 | Locations | Approved 14 Oct 2026, visually and factually: two equal store entries, desktop, tablet and mobile | Freeze; no motion |
 | Footer | Approved 14 Oct 2026: compact three-zone Footer on warm paper, desktop, tablet and mobile | Freeze |
 | Global visual audit | Pending | Stage 5 |
@@ -182,4 +189,4 @@ Motion remains last.
 
 ## Current next action
 
-Do not ask Cursor to improve another section. The recovery checkpoint exists, and the Typography Lock and Stage 2 are approved. Founder, Recognition, Locations and Footer are approved and frozen, and Stage 3 is complete (checkpoint commit, 14 Oct 2026). The current next action is Stage 4 — the inspiration-led review, starting with Hero. In `docs/current/visual-system.md`, fonts and the colour and spacing roles are approved; the type scale and per-chapter grounds stay draft.
+Do not ask Cursor to improve another existing section. Founder, Recognition, Locations and Footer are approved and frozen. Before Stage 4, implement the owner-directed `報道與推介` addition in issue #25 from `docs/current/sections/press-rail.md`, obtain static approval at 1440px, 1024px and 390px, and checkpoint it. Stage 4 then resumes with the Hero review.

@@ -4,7 +4,7 @@ Use this checklist with `docs/current/implementation-plan.md` and `docs/referenc
 
 Status on 9 October 2026: Gate 0 is complete. Local `main` has the baseline commit. Next.js App Router with TypeScript is the approved production architecture, recorded on `chore/issue-19-nextjs-architecture`.
 
-Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md` is approved for font families only. Display weights and the responsive type scale stay open for Stage 5. Founder was visually approved on 14 Oct 2026 at desktop and mobile. Recognition was visually approved on 14 Oct 2026 at desktop, tablet and mobile, including typography, and is frozen; its programme screenshots remain pending publication clearance. Locations was visually and factually approved on 14 Oct 2026 at desktop, tablet and mobile as two equal store entries and is frozen. Footer was visually approved on 14 Oct 2026 at desktop, tablet and mobile as a compact three-zone Footer on warm paper and is frozen. Stage 3 is complete. Do not mark that unresolved work complete. The checks below record earlier structure and issue work; they are not a visual sign-off.
+Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md` is approved for font families only. Display weights and the responsive type scale stay open for Stage 5. Founder, Recognition, Locations and Footer are approved and frozen. Before Stage 4, the owner directed issue #25 to replace the separate Press index with a homepage `報道與推介` rail; its plan is approved but implementation and visual review remain open. Recognition's programme screenshots remain pending publication clearance.
 
 ## Gate 0 — Before Cursor writes code
 
@@ -58,7 +58,7 @@ Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md`
 - [x] The order form stays in `文記十大`, changes from 落單 to 完成 while still visible near the end of that section, and does not fly into `你揀，文記煮`. **Superseded:** the service-window transition into Founder.
 - [x] Founder section is present after `你揀，文記煮`. Visual approval is complete (14 Oct 2026, editorial poster composition). The publication review is still open.
 - [x] Homepage recognition is limited to Michelin, 白種元 and 黎芷珊.
-- [x] Other coverage routes to `/press/`.
+- [ ] `報道與推介` follows Recognition and links to the seven confirmed external sources as specified in `docs/current/sections/press-rail.md`; Michelin links from its panel and the other six appear in the rail. Issue #25 is open.
 - [x] ~~深水埗 is visually primary in locations.~~ Superseded 14 Oct 2026: 深水埗 and 尖沙咀 are equal store entries; 深水埗 stays first.
 - [x] No prototype notes, technical labels or review annotations appear.
 
@@ -66,7 +66,7 @@ Status on 14 October 2026: the Typography Lock in `docs/current/project-plan.md`
 
 - [x] `/menu/` works by direct URL and after refresh.
 - [x] `/menu/` explains the experience rather than claiming a live complete catalogue.
-- [x] `/press/` works by direct URL and after refresh.
+- [ ] `/press/` redirects to `/#press`, which works by direct URL and after refresh.
 - [x] Third-party imagery is used only when permission or a safe official embed exists.
 - [ ] `/privacy/` is added only if site behavior requires it.
 

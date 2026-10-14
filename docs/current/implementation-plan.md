@@ -226,15 +226,16 @@ Current order, 14 October 2026. See the addendum. Component filenames are unchan
 5. `你揀，文記煮` — approved static food photograph; the order form does not fly here
 6. Founder and Mankee story — not visually approved
 7. Recognition — Michelin, 白種元 and 黎芷珊 only; approved 14 Oct 2026 and frozen; programme screenshots pending publication clearance
-8. Locations and delivery — two equal store entries; visually and factually approved 14 Oct 2026 and frozen
-9. Footer — compact three-zone Footer on warm paper; approved 14 Oct 2026 and frozen
+8. `報道與推介` — Michelin links from its approved panel; six rights-safe text cards link to the other confirmed external sources
+9. Locations and delivery — two equal store entries; visually and factually approved 14 Oct 2026 and frozen
+10. Footer — compact three-zone Footer on warm paper; approved 14 Oct 2026 and frozen
 
 **Superseded homepage list, 9–10 October 2026.** The earlier list put a three-texture chapter second, specified timber cards for how to order, and called item 5 a completed order-slip transition into Founder. Those three instructions are not current.
 
 ### Supporting routes
 
 - `/menu/` — evergreen ordering guide and signature selection, not a complete live price catalogue
-- `/press/` — other verified coverage and source links
+- `/press/` — redirect to `/#press`; the homepage `報道與推介` rail is the canonical coverage destination
 - `/privacy/` — only if analytics, forms or other tracking require it
 
 Founder and location material can remain homepage sections initially. Separate `/story/` or `/locations/` routes require a later approved issue rather than being assumed.
@@ -329,12 +330,11 @@ Issue numbers are assigned only after the correct Mankee GitHub repository is co
    - Use the existing `zh-HK` records. Add no new dish, price, or address. No delivery button, map, or hours on this page.
    - JavaScript stays off. No accordion and no new island. Review at desktop and about 390px. The homepage sections stay as they are.
 
-8. `Feature: Build press index with rights-safe treatments`
-   - Replace the empty `/press/` page with a static index. The visible heading is 報道. The page title stays `文記車仔麵｜報道`. Press stays out of the primary navigation.
-   - Render a text link only when that item has a confirmed title and a confirmed source URL. The current `pressItems` list is empty, so the page shows the heading and no article cards.
-   - Do not publish the reference screenshots or name 星島頭條, 香港01, 新假期, LOVIN HK, TVB, or the Korean programme. No thumbnail, embed, or image until a source URL and reuse permission are recorded.
-   - Leave the homepage recognition as it is: 米芝蓮, 白種元曾到訪文記, 黎芷珊曾到訪文記, and the existing 報道 link.
-   - JavaScript stays off. Review at desktop and about 390px.
+8. `Feature: Build press index with rights-safe treatments` — **superseded 14 Oct 2026 by issue #25**
+   - `/press/` no longer renders a separate index; redirect it to `/#press`.
+   - Add the homepage `報道與推介` rail after Recognition and before Locations, following `docs/current/sections/press-rail.md`.
+   - Link the approved Michelin panel to Michelin and render the other six confirmed external sources as text-led cards. Do not copy publisher imagery, logos, screenshots or article text.
+   - Preserve no-JavaScript access to every link and review at 1440px, 1024px and 390px.
 
 9. `Feature: Build locations and delivery section`
    - Keep the homepage 到店／外賣 section. 深水埗 stays first and visually primary, with the confirmed address and daily 11:00–04:00. 尖沙咀店 stays the secondary name. Do not add a `/locations/` route. **Superseded 14 Oct 2026:** both shops are equal store entries; see `docs/current/sections/locations-footer.md`.

@@ -214,6 +214,20 @@ The Concept B wireframe currently uses Foodpanda's Man Kee chain page as a provi
 - Thumbnail permission/status
 - Approved excerpt or summary
 
+### Confirmed external source links — owner decision, 14 October 2026
+
+These seven destinations were confirmed from the owner-supplied existing Mankee Blogs page. They may be linked from the new homepage `報道與推介` treatment. Confirmation of a destination does not grant permission to reproduce its photography, logo, screenshot or article text.
+
+| Publisher | Source URL | Approved production treatment |
+| --- | --- | --- |
+| ELLE | https://www.elle.com/tw/life/travel/g63110243/2026-hongkong-food-map/ | Text-led external link |
+| Time Out Hong Kong | https://www.timeout.com/hong-kong/restaurants/best-cart-noodles-in-hong-kong | Text-led external link |
+| South China Morning Post | https://www.scmp.com/lifestyle/food-drink/article/3077947/real-hong-kong-street-food-how-cart-noodles-have-survived-21st | Text-led external link |
+| UFood | https://ufood.com.hk/restaurant/news/detail/2254117 | Text-led external link; use `文記車仔麵` until a source-visible title is reverified |
+| Michelin Guide | https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/man-kei-cart-noodles | Link from the existing Michelin panel |
+| Hong Kong Tourism Board | https://www.discoverhongkong.com/us/place-to-go/man-kee-cart-noodles.html | Text-led external link |
+| Wanderlog | https://wanderlog.com/place/details/410396/man-kee-cart-noodle | Text-led external link |
+
 ## Proposed language policy
 
 - Traditional Chinese for Hong Kong (`zh-HK`) is the source and primary interface language.

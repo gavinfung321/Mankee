@@ -15,8 +15,9 @@ Current order, 14 October 2026. Do not rename the components that already implem
 5. `你揀，文記煮` — the approved static food photograph. The order form does not fly into this section. The cinemagraph remains deferred.
 6. Founder and Mankee story — not visually approved
 7. Recognition — Michelin, 白種元 and 黎芷珊; approved 14 Oct 2026 and frozen; programme screenshots pending publication clearance
-8. Locations and delivery — two equal store entries; visually and factually approved 14 Oct 2026 and frozen
-9. Footer — compact three-zone Footer on warm paper; approved 14 Oct 2026 and frozen
+8. `報道與推介` — responsive text-led source rail linking to the seven confirmed external sources; Michelin links from its existing panel and the other six appear in the rail
+9. Locations and delivery — two equal store entries; visually and factually approved 14 Oct 2026 and frozen
+10. Footer — compact three-zone Footer on warm paper; approved 14 Oct 2026 and frozen
 
 **Superseded on 14 October 2026:** the earlier second chapter called “three textures”, the completed order-slip transition into Founder, and the requirement that the slip pass through a service window and disappear before the Founder content. `你揀，文記煮` is its own section. The order form stays with `文記十大`.
 
@@ -38,7 +39,7 @@ Homepage recognition is limited to:
 2. 白種元曾到訪文記
 3. 黎芷珊曾到訪文記
 
-All other coverage moves to `/press/`. Use sourced facts and approved imagery. Avoid publishing programme or publication screenshots unless usage permission is confirmed.
+The approved Recognition hierarchy remains Michelin, 白種元 and 黎芷珊. The following `報道與推介` section links to the seven confirmed external sources using rights-safe text-led treatments: Michelin links from its existing panel and the other six sources appear in the responsive rail. `/press/` redirects to `/#press`; it is no longer a separate index. Do not publish programme or publication screenshots, logos, article imagery or excerpts unless usage permission is confirmed. See `docs/current/sections/press-rail.md`.
 
 ## Founder section
 
@@ -62,7 +63,7 @@ All other coverage moves to `/press/`. Use sourced facts and approved imagery. A
 
 點餐 opens `/menu/`. The homepage still explains 湯 → 麵 → 餸 for people who are scrolling.
 
-Press is reached from the recognition/story area and does not need a primary-navigation item.
+`報道與推介` is reached from Recognition flow and the Footer's secondary `報道` link. It does not need a primary-header item.
 
 ## Top Ten behavior
 
