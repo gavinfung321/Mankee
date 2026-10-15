@@ -216,7 +216,7 @@ The Concept B wireframe currently uses Foodpanda's Man Kee chain page as a provi
 
 ### Confirmed external source links — owner decision, 14 October 2026
 
-These seven destinations were confirmed from the owner-supplied existing Mankee Blogs page. They may be linked from the new homepage `報道與推介` treatment. Confirmation of a destination does not grant permission to reproduce its photography, logo, screenshot or article text.
+These seven destinations were confirmed from the owner-supplied existing Mankee Blogs page. They may be linked from the new homepage `報道與推介` treatment. Confirmation of a destination does not grant permission to reproduce its photography, logo, screenshot or article text. The typed records are in `website/src/content/zh-HK/press.ts` (issue #25). The owner requested image-backed cards using publisher identity artwork on 14 Oct 2026; each asset must be sourced from an official publisher location or supplied by the owner, stored locally with provenance, and marked review-only until publication use is confirmed. Do not hotlink assets or use article photography as a substitute. The six rail assets and their official source URLs are recorded as asset manifest R18 (review-only); the records also carry the owner-approved summaries from `docs/current/sections/press-rail.md`. A production build omits review-only artwork.
 
 | Publisher | Source URL | Approved production treatment |
 | --- | --- | --- |
@@ -225,8 +225,31 @@ These seven destinations were confirmed from the owner-supplied existing Mankee 
 | South China Morning Post | https://www.scmp.com/lifestyle/food-drink/article/3077947/real-hong-kong-street-food-how-cart-noodles-have-survived-21st | Text-led external link |
 | UFood | https://ufood.com.hk/restaurant/news/detail/2254117 | Text-led external link; use `文記車仔麵` until a source-visible title is reverified |
 | Michelin Guide | https://guide.michelin.com/us/en/hong-kong-region/hong-kong/restaurant/man-kei-cart-noodles | Link from the existing Michelin panel |
-| Hong Kong Tourism Board | https://www.discoverhongkong.com/us/place-to-go/man-kee-cart-noodles.html | Text-led external link |
+| Hong Kong Tourism Board | https://www.discoverhongkong.com/tc/place-to-go/travel.guide-man-kee-cart-noodles.html (the original `/us/place-to-go/man-kee-cart-noodles.html` returns 404 as of 14 Oct 2026) | Text-led external link |
 | Wanderlog | https://wanderlog.com/place/details/410396/man-kee-cart-noodle | Text-led external link |
+
+### Legacy Gallery provenance — research draft, 14 October 2026
+
+The 23 photographs on the legacy `/gallery` page are third-party coverage material, not Mankee-owned photography. Each has been traced where possible and grouped into coverage records in `docs/current/journal-source-inventory.md`. The owner reviewed the candidates on 14 Oct 2026.
+
+These are kept for the journal carousel, as logo cards:
+
+- 香港01, 30 Nov 2017
+- 新假期, 29 Sep 2022
+- 阿金 · 香港D (graphics watermarked 「阿金 · LOVIN HK」), last updated 25 Mar 2020
+- 星島頭條, 24 Sep 2024
+- the Deliveroo 2020 ranking as reported by Metro, 22 Dec 2020. Metro names 文記's 自選粉麵 at 49 of Deliveroo's global top 100. HolidaySmart's article lists only the top 10 and does not mention 文記, so it is not used.
+
+The final 11-card set and its acceptance checklist are in `docs/current/sections/journal-gallery.md`.
+
+These stay in Recognition only:
+
+- TVB 《香港美食匠人》第4集, article dated 2 Oct 2025
+- 백종원 배고파 홍콩 EP.01, 30 Mar 2023; the exact URL is still missing
+
+The owner excluded every legacy Gallery photograph from the journal, including the nine unattributed photographs and the unidentified social post. None of them will be published.
+
+Neither appearing on the old site nor having a confirmed link grants reuse permission. No coverage photograph, programme screenshot or video thumbnail may be published until permission is recorded.
 
 ## Proposed language policy
 

@@ -16,6 +16,7 @@ test("homepage renders the eight static sections from confirmed records", () => 
     "<OrderSlip",
     "<Founder",
     "<Recognition",
+    "<PressRail",
     "<Locations",
   ];
   let cursor = -1;
@@ -40,6 +41,7 @@ test("homepage renders the eight static sections from confirmed records", () => 
     slip,
     founder,
     recognition,
+    read("PressRail.tsx"),
     locations,
   ].join("\n");
 
@@ -48,7 +50,7 @@ test("homepage renders the eight static sections from confirmed records", () => 
   assert.match(topTen, /id=\{section\.anchor\}/);
   assert.match(founder, /id=\{section\.anchor\}/);
   assert.match(locations, /id=\{section\.anchor\}/);
-  assert.match(recognition, /href="\/press\/"/);
+  assert.match(recognition, /href=\{michelinGuide\.url\}/);
   assert.match(slip, /<p className="order-pass-line">/);
   assert.doesNotMatch(slip, /<h2/);
   assert.match(founder, /englishName/);

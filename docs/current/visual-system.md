@@ -51,6 +51,21 @@ The jump between kicker, heading and body must stay obvious. No middle-sized-eve
 
 ## Chapter colours
 
+### Proposed single-ground direction — pending owner visual approval
+
+The owner requested one green background across every homepage chapter to reflect the Tsim Sha Tsui shop's muted green identity. Use the existing `--ground-sage` (`#e6ead8`) as the first proof-of-concept; do not create multiple near-identical green tokens. This proposal supersedes the alternating chapter-ground table below only after a full-page desktop and mobile comparison is approved.
+
+- Apply `--ground-sage` to the page canvas, header, every homepage section and Footer. Section wrappers should inherit or be transparent rather than restating different grounds.
+- The Hero photograph and media are content surfaces, not alternate chapter grounds; their loading/fallback ground is sage.
+- Convert Locations from a dark-jade field to the shared sage ground. Use `--jade-dark` and `--jade-text` for headings, facts, filled actions and map/delivery accents instead of a large dark backdrop.
+- Convert the Footer from paper to the shared sage ground. Retain its 2px lacquer top rule and three-zone organization.
+- Preserve Michelin red, publisher identity fields, photographs and other approved media as contained focal surfaces. Do not tint photographs green.
+- Separate chapters using `--section-space`, the existing shared kicker/rule grammar, and at most a 1px jade/ink hairline at low opacity. Do not introduce cards, shadows, gradients or alternating green shades to compensate for the shared canvas.
+- Keep `--cream` for text placed on contained dark/red media only; default copy on sage is `--ink`, secondary copy `--ink-muted`, and section kickers `--jade-text`.
+- Prototype the continuous sequence Recognition → Press → Locations → Footer first because it contains all major surface types. Review at 1440px and 390px before applying the direction to the earlier homepage chapters.
+
+The intended rhythm is one calm green architectural canvas with contrast supplied by content, not a sequence of coloured bands.
+
 | Chapter | Ground | Notes |
 | --- | --- | --- |
 | Hero | Photograph / `#17120e` | Unchanged |

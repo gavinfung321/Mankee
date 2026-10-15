@@ -5,10 +5,14 @@ export const recognition = [
     id: "michelin",
     name: confirmed("米芝蓮"),
     line: confirmed("米芝蓮"),
-    heading: confirmed("米芝蓮指南，八年記錄。"),
+    heading: confirmed("米芝蓮推介，八年記錄。"),
     wording: pending(),
     yearRange: confirmed("2018–2025"),
     image: confirmed("/media/recognition/michelin-2018-2025.png"),
+    // Facts shown on the official Michelin listing, restated by the owner on 14 Oct 2026; not copied editorial text.
+    listingName: confirmed("文記車仔麵（深水埗）"),
+    listingMeta: confirmed("Street Food · $"),
+    listingAddress: confirmed("121 Fuk Wing Street, Sham Shui Po"),
     portrait: pending(),
   },
   {

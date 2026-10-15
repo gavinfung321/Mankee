@@ -285,8 +285,7 @@ header.site-header .nav-cta:focus-visible {
 
 .sensory-handoff a,
 .order-link,
-.order-handoff a,
-.press-link {
+.order-handoff a {
   font-family: var(--font-display);
   font-size: var(--type-lead);
   font-weight: 650;
@@ -296,22 +295,9 @@ header.site-header .nav-cta:focus-visible {
   text-underline-offset: 0.22em;
 }
 
-.menu-guide h1,
-.press-index h1 {
+.menu-guide h1 {
   margin: 0 0 var(--space-48);
   font-size: var(--type-display);
-}
-
-.press-index h1:last-child {
-  margin-bottom: 0;
-}
-
-.press-list {
-  display: grid;
-  gap: var(--space-16);
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 .home-section h2 {
@@ -1592,18 +1578,111 @@ header.site-header .nav-cta:focus-visible {
   text-wrap: balance;
 }
 
-/* --michelin matches the artwork's flat red so the mark's tile edge disappears. */
+/* Red artwork meets ivory listing on a flush edge; that colour split is the only styling. The panel is static. */
 .recognition-hero {
   container-type: inline-size;
+  position: relative;
   display: grid;
-  background: var(--michelin);
-  color: var(--cream);
+  background: var(--cream);
 }
 
+.recognition-listing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-48) var(--space-24);
+  color: var(--ink);
+}
+
+.recognition-listing-name,
+.recognition-listing-title,
+.recognition-listing-meta,
+.recognition-listing-address {
+  margin: 0;
+}
+
+/* The section kicker above already carries the red rule; the listing label goes without it. */
+.recognition-listing .section-kicker::before {
+  content: none;
+}
+
+.recognition-listing-name {
+  font-size: clamp(26px, 2.5vw, 34px);
+  font-weight: 550;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+/* Three levels on ivory: ink name, then English at 85% ink, then details at 75% ink. */
+.recognition-listing-title {
+  margin-top: var(--space-4);
+  color: color-mix(in srgb, var(--ink) 85%, transparent);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.recognition-listing-meta {
+  margin-top: var(--space-24);
+}
+
+.recognition-listing-meta,
+.recognition-listing-address {
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Cream on --michelin is about 7.4:1, and about 8.6:1 on the deepened hover fill. */
+.recognition-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 44px;
+  margin-top: var(--space-32);
+  padding: 13px 20px;
+  background: var(--michelin);
+  color: var(--cream);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color var(--duration-short) var(--ease);
+}
+
+.recognition-cta-arrow {
+  transition: translate var(--duration-short) var(--ease);
+}
+
+.recognition-cta:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  background: color-mix(in srgb, var(--michelin) 82%, var(--ink));
+}
+
+@media (hover: hover) {
+  .recognition-cta:hover {
+    background: color-mix(in srgb, var(--michelin) 82%, var(--ink));
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .recognition-cta:hover .recognition-cta-arrow,
+  .recognition-cta:focus-visible .recognition-cta-arrow {
+    translate: 2px -2px;
+  }
+}
+
+/* --michelin matches the artwork's flat red so the mark's tile edge disappears. */
 .recognition-art {
   position: relative;
   overflow: hidden;
   aspect-ratio: 5 / 4;
+  background: var(--michelin);
 }
 
 /* Shown at 120% of its column; the artwork's own empty red margins absorb the crop. */
@@ -1617,33 +1696,8 @@ header.site-header .nav-cta:focus-visible {
   transform: translate(-50%, -50%);
 }
 
-.recognition-record {
-  padding: 0 var(--space-24) var(--space-32);
-}
-
-.recognition-streak {
-  margin: 0 0 var(--space-12);
-  color: var(--cream);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  line-height: 1.4;
-}
-
-/* 2018—2025 is about 5–5.8em wide in the Kai faces; it must stay on one line. */
-.recognition-years {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: min(96px, calc((100cqi - 48px) / 6.2));
-  font-weight: 700;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: -0.02em;
-  line-height: 1;
-  white-space: nowrap;
-}
-
 .recognition-visits-intro {
-  margin: var(--space-32) 0 var(--space-24);
+  margin: var(--space-48) 0 var(--space-24);
 }
 
 .recognition-divider {
@@ -1741,23 +1795,9 @@ header.site-header .nav-cta:focus-visible {
   width: 80%;
 }
 
-.recognition-section .press-link {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  color: var(--ink);
-  font-family: var(--font-text);
-  font-size: 16px;
-  font-weight: 600;
-}
-
-/* The artwork already carries 2018 - 2025, so the external record is desktop-only.
+/* Stacked panel: the artwork crop stays as approved; the listing follows underneath.
    This is the exact complement of the 64rem split breakpoint. */
 @media (width < 64rem) {
-  .recognition-record {
-    display: none;
-  }
-
   /* The artwork's content box is ~49% × 51% of the file, centred at 49.5% / 48.3%;
      a 0.72 panel leaves about 0.1 of the mark as red above and below that content. */
   .recognition-art {
@@ -1772,8 +1812,280 @@ header.site-header .nav-cta:focus-visible {
   }
 }
 
-.press-link {
+@media (40rem <= width < 64rem) {
+  .recognition-listing {
+    padding: var(--space-48);
+  }
+}
+
+@media (width < 40rem) {
+  .recognition-cta {
+    align-self: stretch;
+    justify-content: center;
+  }
+}
+
+/* Sage separates Press from the continuous Founder/Recognition light ground. */
+.press-section {
+  padding-block: var(--section-space);
+  background: var(--ground-sage);
+  color: var(--ink);
+}
+
+.press-header {
+  margin-bottom: var(--space-32);
+}
+
+.press-section .section-kicker {
+  color: var(--jade-text);
+}
+
+.press-section h2 {
+  max-width: none;
+  margin: 0;
+  color: var(--ink);
   font-family: var(--font-display);
+  font-size: clamp(30px, 3.2vw, 46px);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.press-carousel {
+  position: relative;
+}
+
+/* Mobile: one row under the card. From 40rem the row dissolves and the arrows move to the sides. */
+.press-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--space-16);
+}
+
+.press-arrow {
+  z-index: 1;
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid color-mix(in srgb, var(--jade-text) 45%, transparent);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--jade-text);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-short) var(--ease),
+    color var(--duration-short) var(--ease);
+}
+
+.press-arrow--prev {
+  left: 0;
+}
+
+.press-arrow--next {
+  right: 0;
+}
+
+@media (hover: hover) {
+  .press-arrow:hover {
+    background: var(--jade);
+    color: var(--cream);
+  }
+}
+
+.press-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.press-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--jade-text) 30%, transparent);
+  transition:
+    width var(--duration-short) var(--ease),
+    background-color var(--duration-short) var(--ease);
+}
+
+.press-dot[data-active] {
+  width: 18px;
+  background: var(--jade-text);
+}
+
+/* The inline padding keeps the focus ring inside the scroll box; the negative margin re-aligns cards. */
+.press-rail {
+  --press-gap: var(--space-16);
+  --press-per-view: 1;
+  display: grid;
+  grid-auto-columns: calc(
+    (100% - var(--press-gap) * (var(--press-per-view) - 1)) /
+      var(--press-per-view)
+  );
+  grid-auto-flow: column;
+  gap: var(--press-gap);
+  margin: 0 calc(-1 * var(--space-8));
+  padding: var(--space-8);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-padding-inline: var(--space-8);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+}
+
+.press-rail::-webkit-scrollbar {
+  display: none;
+}
+
+.press-card {
+  scroll-snap-align: start;
+}
+
+.press-card a {
+  container-type: inline-size;
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--cream);
+  text-decoration: none;
+}
+
+.press-card-art {
+  object-fit: cover;
+  transition: transform var(--duration-medium) var(--ease);
+}
+
+.press-card a:hover .press-card-art,
+.press-card a:focus-visible .press-card-art {
+  transform: scale(1.03);
+}
+
+/* Height is a fixed share of the card, never the content. Cream on jade is about 9:1. */
+.press-card-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  height: 56%;
+  padding: 7cqi 8cqi;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--jade) 95%, transparent);
+  transition: height var(--duration-medium) var(--ease);
+}
+
+/* Only the summary may shrink, so the hidden summary never squeezes the title. */
+.press-publisher,
+.press-title {
+  flex-shrink: 0;
+}
+
+/* One line, so the format label never changes the overlay's content height. */
+.press-publisher {
+  overflow: hidden;
+  color: var(--gold-bright);
+  font-size: clamp(11px, 4.6cqi, 13px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.press-format {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.press-title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: clamp(14px, 6.6cqi, 19px);
+  font-weight: 600;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.press-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: var(--space-4);
+  color: color-mix(in srgb, var(--cream) 88%, transparent);
+  font-size: clamp(12.5px, 5.4cqi, 15px);
+  line-height: 1.5;
+  transition: opacity var(--duration-medium) var(--ease);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+/* Fine pointers rest at the shorter overlay; touch keeps the expanded one with its summary. */
+@media (hover: hover) and (pointer: fine) {
+  .press-card-overlay {
+    height: 34%;
+  }
+
+  .press-summary {
+    opacity: 0;
+  }
+
+  .press-card a:hover .press-card-overlay,
+  .press-card a:focus-visible .press-card-overlay {
+    height: 56%;
+  }
+
+  .press-card a:hover .press-summary,
+  .press-card a:focus-visible .press-summary {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 40rem) {
+  .press-carousel {
+    padding-inline: calc(44px + var(--space-16));
+  }
+
+  .press-controls {
+    display: contents;
+  }
+
+  .press-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .press-dots {
+    display: none;
+  }
+
+  .press-rail {
+    --press-per-view: 2;
+  }
+}
+
+@media (min-width: 48rem) {
+  .press-header {
+    margin-bottom: var(--space-48);
+  }
+
+  .press-rail {
+    --press-gap: 20px;
+    --press-per-view: 3;
+  }
+}
+
+@media (min-width: 64rem) {
+  .press-rail {
+    --press-per-view: 4;
+  }
 }
 
 /* Cream on --jade-dark is about 13:1; the muted cream labels stay above 7:1. */
@@ -2134,8 +2446,7 @@ header.site-header .nav-cta:focus-visible {
   }
 
   .recognition-hero {
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-    align-items: center;
+    grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
     min-height: 432px;
   }
 
@@ -2144,16 +2455,17 @@ header.site-header .nav-cta:focus-visible {
     aspect-ratio: auto;
   }
 
-  .recognition-record {
-    padding: 0 var(--space-48);
+  /* The wider column would enlarge the artwork; this holds it near its approved scale. */
+  .recognition-mark {
+    width: min(120%, 560px);
   }
 
-  .recognition-years {
-    font-size: min(96px, calc((60cqi - 96px) / 6.2));
+  .recognition-listing {
+    padding: var(--space-48) clamp(48px, 5vw, 72px);
   }
 
   .recognition-visits-intro {
-    margin: var(--space-48) 0 var(--space-32);
+    margin: var(--space-64) 0 var(--space-32);
   }
 
   .recognition-visits {
@@ -2191,7 +2503,7 @@ header.site-header .nav-cta:focus-visible {
 
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {
-    .home-section:not(#top-ten):not(.sensory-section):not(.order-section):not(.founder-section):not(.recognition-section):not(.locations-section) {
+    .home-section:not(#top-ten):not(.sensory-section):not(.order-section):not(.founder-section):not(.recognition-section):not(.press-section):not(.locations-section) {
       animation: section-enter linear both;
       animation-duration: auto;
       animation-timeline: view();

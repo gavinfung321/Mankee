@@ -1,4 +1,9 @@
-import { recognition } from "../../content/index.ts";
+import {
+  pressItems,
+  recognition,
+  visiblePressLinks,
+} from "../../content/index.ts";
+import type { ReactNode } from "react";
 import type { Fact } from "../../content/types.ts";
 import { publicValue } from "../../lib/facts.ts";
 
@@ -10,8 +15,10 @@ function shown(fact: unknown) {
 }
 
 const [michelin, lead, second] = recognition;
+const [michelinGuide] = visiblePressLinks(pressItems, "michelin");
 
-const streakLabel = "指南收錄記錄";
+const listingLabel = "米芝蓮指南資料";
+const michelinCta = "查看米芝蓮指南";
 const visitsKicker = "到訪記錄";
 const visitsHeading = "從指南，到鏡頭。";
 const visitsLine = "文記亦曾出現在海外與本地節目。";
@@ -68,6 +75,50 @@ function Visit({
   );
 }
 
+// The panel is static; only the button links to the Michelin Guide (owner decision, 14 Oct 2026).
+// The listing is restated from confirmed facts: no screenshot, iframe or copied description.
+function MichelinPanel({ children }: { children: ReactNode }) {
+  const name = publicValue(michelin.listingName);
+  const meta = publicValue(michelin.listingMeta);
+  const address = publicValue(michelin.listingAddress);
+  return (
+    <div className="recognition-hero">
+      {children}
+      {michelinGuide && (
+        <div className="recognition-listing">
+          <p className="section-kicker">{listingLabel}</p>
+          {name && <p className="recognition-listing-name">{name}</p>}
+          <p className="recognition-listing-title" lang="en">
+            {michelinGuide.title}
+          </p>
+          {meta && (
+            <p className="recognition-listing-meta" lang="en">
+              {meta}
+            </p>
+          )}
+          {address && (
+            <p className="recognition-listing-address" lang="en">
+              {address}
+            </p>
+          )}
+          <a
+            className="recognition-cta"
+            href={michelinGuide.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${michelinCta}（新分頁開啟）`}
+          >
+            {michelinCta}
+            <span className="recognition-cta-arrow" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Recognition() {
   const years = shown(michelin.yearRange);
   const image = shown(michelin.image);
@@ -81,7 +132,7 @@ export function Recognition() {
           <p className="section-kicker">認可與到訪</p>
           {heading && <h2>{heading}</h2>}
         </header>
-        <div className="recognition-hero">
+        <MichelinPanel>
           {image && (
             <div className="recognition-art">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -96,13 +147,7 @@ export function Recognition() {
               />
             </div>
           )}
-          {years && (
-            <div className="recognition-record">
-              <p className="recognition-streak">{streakLabel}</p>
-              <p className="recognition-years">{years.replace("–", "—")}</p>
-            </div>
-          )}
-        </div>
+        </MichelinPanel>
         <header className="recognition-visits-intro">
           <p className="recognition-divider">{visitsKicker}</p>
           <h3>{visitsHeading}</h3>
@@ -112,9 +157,6 @@ export function Recognition() {
           <Visit item={lead} className="recognition-visit--lead" />
           <div className="recognition-side">
             <Visit item={second} className="recognition-visit--second" />
-            <a className="press-link" href="/press/">
-              其他報道 →
-            </a>
           </div>
         </div>
       </div>

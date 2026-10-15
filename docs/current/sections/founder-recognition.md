@@ -42,6 +42,61 @@ Approved values (`src/components/home/Founder.tsx`, Founder rules in `src/styles
 
 **Approved by the owner on 14 Oct 2026 at desktop, tablet and mobile, including typography.** This Michelin-first composition (Michelin > 白種元 > 黎芷珊) is the Recognition design of record and is frozen against further visual redesign; the Stage 5 audit may only adjust shared type scale and weights. The programme screenshots remain pending publication clearance (see below). Optional motion is deferred to Stage 6.
 
+**Link-affordance amendment — 14 Oct 2026.** The owner could not tell that the Michelin panel linked to the external Michelin Guide. Keep the approved composition and whole-panel link, but add a permanently visible CTA `查看米芝蓮指南詳情 ↗` at the lower-right. The first hover treatment, which independently scaled the Michelin artwork while changing the CTA, was rejected because the moving objects did not match the full-panel hit area. Treat the red panel as one shallow 2.5D object: on hover and `:focus-visible`, lift the entire panel about 6–8px with a maximum 1deg fixed perspective tilt and restrained jade-toned depth shadow. Keep the mark, year record and CTA locked to the surface; only the CTA colour reversal and slight arrow translation remain independent. On `:active`, settle the panel toward the page. Do not add cursor-following parallax, glare, gradients or spring motion. Touch retains the visible CTA without a hover-only lift, reduced motion removes panel transforms, and focus must outline the whole linked panel. This is a discoverability correction, not a Recognition redesign.
+
+**Implementation notes — 14 Oct 2026 (uncommitted, awaiting owner review).** `Recognition.tsx` wraps the linked `.recognition-hero` in a static `.recognition-hero-stage`; the stage carries the 1600px perspective and the `:hover`/`:focus-within` detection, so the lifted panel's edge never leaves the hit area. The lift is `translateY(-7px) rotateX(1deg) scale(1.005)` from the bottom edge with a `--jade-dark` depth shadow; `:active` settles it to `translateY(-2px)` with a shorter shadow. Lift, shadow and the 3px arrow shift sit in one `(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)` query, so touch and reduced motion keep a flat panel. The CTA's cream reversal stays outside that query, so it still marks hover and focus everywhere. The artwork no longer scales on its own. The CTA is absolutely positioned, so panel size and crop are unchanged; below 40rem it uses tighter padding and an 8px inset to clear the artwork's own year line. `:focus-visible` draws a 3px ink outline around the whole panel.
+
+**Michelin link decision — 14 Oct 2026 (owner; final decision of record; supersedes the two paragraphs above; implemented 14 Oct 2026 — the button carries an invisible hit area of at least 44px height).** The red panel becomes static.
+
+- **Link:** only the `查看米芝蓮指南詳情 ↗` button is clickable. It is the single external link to the Michelin Guide, keeps its current label, position and new-tab behaviour, and has an accessible name marked `（新分頁開啟）`.
+- **Panel:** not a link. It has no hover, active or focus state, no lift, tilt, scale or shadow, and no `.recognition-hero-stage` perspective wrapper.
+- **Hover styling:** applies only to the button: the cream background with Michelin-red text, and the small arrow movement.
+- **Keyboard focus:** `:focus-visible` outlines only the button.
+- **Touch and reduced motion:** the button stays visible and usable; there is no panel motion anywhere.
+- **Unchanged:** the panel's approved size, artwork crop, typography and the Michelin-first hierarchy.
+
+**Michelin listing preview — 14 Oct 2026 (owner-directed refinement; reopens the Michelin panel only; supersedes every `指南收錄記錄 / 2018—2025` instruction in this file, and the CTA label, position and size in the link decision above).**
+
+- **Removed:** the whole `指南收錄記錄 / 2018—2025` record. It duplicated the artwork's own years and the section heading. `streakLabel`, `.recognition-record`, `.recognition-streak` and `.recognition-years` are deleted from markup and styles.
+- **Replacement:** a designed preview of the official Michelin listing, as a clean editorial information block set directly on the red. In order:
+  - small label `米芝蓮指南頁面`;
+  - title `Man Kee Cart Noodles (Sham Shui Po)`;
+  - metadata `Street Food · $`;
+  - address `121 Fuk Wing Street, Sham Shui Po`;
+  - CTA `查看米芝蓮指南 ↗`, linking to the existing confirmed Michelin URL in a new tab, with the accessible name `查看米芝蓮指南（新分頁開啟）`.
+- **Not allowed:** a Michelin webpage screenshot, an iframe, downloaded Michelin photographs, copied editorial description, a floating card, a shadow, a gradient, fake browser chrome or a border radius.
+- **Link:** only the CTA is a link. The red panel stays static, with no hover, focus or active state.
+- **CTA:** a solid cream button with Michelin-red text, at least 44px tall as drawn (no invisible hit-area extension needed). Hover and `:focus-visible` affect only the CTA: a restrained shift of the fill from cream to `--paper` and a 3px arrow movement (the movement is removed under reduced motion). `:focus-visible` adds a 2px cream outline offset from the button so it reads on the red.
+- **Desktop (1024px and up):** a balanced two-column composition of about 55/45, with the existing artwork on the left and the listing preview on the right, vertically centred.
+- **Tablet and mobile (below 1024px):** the artwork first, cropped exactly as approved, with the listing preview underneath it inside the same red panel, separated by a cream hairline. The preview is never hidden.
+- **Unchanged:** the section heading `米芝蓮指南，八年記錄。`, the artwork file and its alt text, the 白種元／黎芷珊 visit area, and every other section.
+
+**Red/ivory split — 14 Oct 2026 (owner refinement of the listing preview; supersedes its colour, typography, CTA treatment and divider).**
+
+- **Composition:** about 55% red artwork and 45% ivory (`--cream`) information. The boundary between red and ivory is perfectly flush. That sharp colour split is the styling: no divider, border, shadow, radius or other decorative effect.
+- **Listing content, in order:** the site's own small kicker `米芝蓮指南頁面` (lacquer rule, `--jade-text`); the Chinese name `文記車仔麵（深水埗）` as the primary line in ink; the official English name `Man Kee Cart Noodles (Sham Shui Po)` smaller and lighter underneath; then `Street Food · $` and `121 Fuk Wing Street, Sham Shui Po` in `--ink-muted` at regular weight; then the CTA.
+- **Alignment:** the listing is one deliberate block, vertically centred in the ivory column, with generous empty space around it.
+- **CTA:** `查看米芝蓮指南 ↗`, a solid `--michelin` button with cream text, at least 44px tall but not oversized. Hover and `:focus-visible` affect only the button: the fill deepens slightly and the arrow moves 3px. Focus adds a 2px ink outline. It is the only interactive element; the panel stays static.
+- **Below 1024px:** the red artwork, cropped as approved, stacks directly on top of the ivory listing block, flush, with no divider.
+
+**Contrast pass — 15 Oct 2026 (owner refinement; supersedes the kicker wording and secondary-text colours above).**
+
+- **Kicker:** `米芝蓮指南資料`.
+- **Three text levels on ivory:** the Chinese name in `--ink`; the English name at 17px, regular weight, in `--ink` at 85%; `Street Food · $` and the address at 16px, weight 500, in `--ink` at 75%. No grey-brown `--ink-muted` on the ivory panel.
+- **Chinese punctuation:** `文記車仔麵（深水埗）` renders with the full-width brackets hugging 深水埗. Both brackets must come from the self-hosted Noto Sans TC subset (`npm run fonts`), not from a fallback font that centres them.
+- **CTA:** 13px vertical padding. Cream on `--michelin` is about 7.4:1, and about 8.6:1 on the hover/focus fill.
+- **Unchanged:** the flush split, whitespace, button-only hover; no divider, shadow, radius or extra decoration.
+
+**Precision pass — 15 Oct 2026 (owner refinement).**
+
+- **Heading:** `米芝蓮推介，八年記錄。`
+- **Listing kicker:** `米芝蓮指南資料` without the red rule; the section kicker above keeps the only rule.
+- **Chinese name weight:** 550 (was 600), so it no longer competes with the artwork.
+- **CTA states:** at least 44px tall; a 3px ink focus outline; hover/focus deepen the red and move only the arrow 2px up and right. Nothing else moves.
+- **Below 640px:** the CTA spans the listing width, label centred.
+- **Transition:** 48px (64px from 1024px) between the panel and `到訪記錄`.
+- **Outer alignment:** checked on 15 Oct 2026; the heading and panel already share the `.home-inner` edge with every other chapter (16px at 1024, 137px at 1440).
+
 Rejected on 14 Oct 2026: the full-red certificate layout, and the documentary spread that made 白種元 dominant with a compact Michelin block (its hierarchy was backwards). Replace; do not refine either.
 
 Required hierarchy: **Michelin > 白種元 > 黎芷珊.**

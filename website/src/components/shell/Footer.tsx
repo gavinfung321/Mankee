@@ -54,7 +54,7 @@ export function Footer() {
               </li>
             ))}
             <li>
-              <Link href="/press/">報道 →</Link>
+              <Link href="/#journal">文記誌 →</Link>
             </li>
           </ul>
         </nav>

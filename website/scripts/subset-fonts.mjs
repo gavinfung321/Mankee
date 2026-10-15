@@ -12,8 +12,9 @@ if (!sourceDir) {
   process.exit(1);
 }
 
+// The site sets no text weight below 400, so the thin masters are dropped to stay within the font budget.
 const families = [
-  ["NotoSansTC.ttf", "noto-sans-tc.woff2"],
+  ["NotoSansTC.ttf", "noto-sans-tc.woff2", { wght: { min: 400, max: 900 } }],
   ["LXGWWenKaiTC-Bold.ttf", "lxgw-wenkai-tc-bold.woff2"],
 ];
 
@@ -38,7 +39,7 @@ const text = [...new Set(await collectText(join(website, "src")))].join("");
 const outDir = join(website, "src", "fonts");
 await mkdir(outDir, { recursive: true });
 
-for (const [sourceName, outName] of families) {
+for (const [sourceName, outName, variationAxes] of families) {
   const sourcePath = join(sourceDir, sourceName);
   try {
     await access(sourcePath);
@@ -47,7 +48,7 @@ for (const [sourceName, outName] of families) {
     continue;
   }
   const source = await readFile(sourcePath);
-  const subset = await subsetFont(source, text, { targetFormat: "woff2" });
+  const subset = await subsetFont(source, text, { targetFormat: "woff2", variationAxes });
   const outPath = join(outDir, outName);
   await writeFile(outPath, subset);
   const size = (await stat(outPath)).size;

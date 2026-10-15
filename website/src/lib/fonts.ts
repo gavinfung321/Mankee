@@ -5,7 +5,7 @@ export const fontText = localFont({
   src: "../fonts/noto-sans-tc.woff2",
   display: "swap",
   preload: false,
-  weight: "100 900",
+  weight: "400 900",
   variable: "--font-text-loaded",
   adjustFontFallback: false,
 });

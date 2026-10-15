@@ -123,7 +123,7 @@ Each chapter requires static approval at 1440px, 1024px and 390px before the nex
 
 ## Owner-directed addition — 報道與推介
 
-Approved for implementation on 14 Oct 2026 before Stage 4. Issue #25 replaces the separate `/press/` index with a homepage `報道與推介` rail after Recognition and before Locations. The existing Michelin panel links directly to Michelin; six text-led cards link to ELLE, Time Out Hong Kong, SCMP, UFood, Hong Kong Tourism Board and Wanderlog. Use `docs/current/sections/press-rail.md`; do not copy third-party imagery or install ReUI.
+Approved for implementation on 14 Oct 2026 before Stage 4. Issue #25 replaces the separate `/press/` index with a homepage `報道與推介` rail after Recognition and before Locations. The existing Michelin panel links directly to Michelin; six image-led cards link to ELLE, Time Out Hong Kong, SCMP, UFood, Hong Kong Tourism Board and Wanderlog. Use `docs/current/sections/press-rail.md`; do not copy third-party article imagery or install ReUI.
 
 This addition must pass static approval at 1440px, 1024px and 390px before Stage 4 begins.
 
@@ -181,7 +181,7 @@ Motion remains last.
 | `你揀，文記煮` | Static composition built; cinemagraph deferred | Freeze until Stage 4/6 |
 | Founder | Approved 14 Oct 2026: editorial poster composition, desktop and mobile | Freeze; optional motion in Stage 6 |
 | Recognition | Approved 14 Oct 2026: Michelin-first composition and typography, desktop, tablet and mobile; programme screenshots pending publication clearance | Freeze; optional motion in Stage 6 |
-| `報道與推介` | Owner-approved plan 14 Oct 2026; issue #25 open | Implement and review at desktop, tablet and mobile |
+| `報道與推介` | Text pass rejected 0/10; image-card motion pass rejected 2/10 on 14 Oct 2026; issue #25 remains open | Third pass: sage chapter, shared header grammar, equal jade overlays, corrected UFood art, autoplay, side arrows and no visible scrollbar |
 | Locations | Approved 14 Oct 2026, visually and factually: two equal store entries, desktop, tablet and mobile | Freeze; no motion |
 | Footer | Approved 14 Oct 2026: compact three-zone Footer on warm paper, desktop, tablet and mobile | Freeze |
 | Global visual audit | Pending | Stage 5 |

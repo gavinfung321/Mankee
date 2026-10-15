@@ -31,10 +31,6 @@ export function menuDescription() {
   return sentence([order?.label, "湯 → 麵 → 餸", publicValue(site.disclaimer)]);
 }
 
-export function pressDescription() {
-  return sentence([publicValue(site.name), "報道"]);
-}
-
 export function pageMetadata(
   title: string,
   description: string | undefined,
