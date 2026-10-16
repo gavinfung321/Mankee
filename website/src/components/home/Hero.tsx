@@ -54,7 +54,7 @@ export function Hero() {
       section.style.setProperty("--hero-finish-opacity", finish.toFixed(3));
       section.style.setProperty("--hero-toppings-opacity", toppings.toFixed(3));
       section.style.setProperty("--hero-finish-y", "0px");
-      section.style.setProperty("--hero-mobile-media-top", "56%");
+      section.style.setProperty("--hero-mobile-media-top", "56svh");
       section.style.setProperty(
         "--hero-mobile-media-width",
         `${(140 + mobileMediaPhase * 6).toFixed(2)}vw`,

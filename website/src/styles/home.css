@@ -334,11 +334,15 @@ html[data-mankee-intro="quick"] .hero-lead {
     background: #100b08;
   }
 
+  .hero-backdrop.home-hero {
+    background: #100b08;
+  }
+
   .hero-stick {
     z-index: 1;
     isolation: isolate;
     height: 100svh;
-    min-height: 100svh;
+    min-height: 100lvh;
     background: #100b08;
     box-shadow: 0 4px 0 #100b08;
   }
@@ -360,7 +364,7 @@ html[data-mankee-intro="quick"] .hero-lead {
   .hero-video {
     z-index: 1;
     inset: auto;
-    top: var(--hero-mobile-media-top, 56%);
+    top: var(--hero-mobile-media-top, 56svh);
     left: 50%;
     width: var(--hero-mobile-media-width, 140vw);
     max-width: none;
