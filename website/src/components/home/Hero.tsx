@@ -42,6 +42,7 @@ export function Hero() {
       );
       const intro = 1 - Math.min(1, progress / 0.22);
       const finish = Math.min(1, Math.max(0, (progress - 0.82) / 0.06));
+      const toppings = Math.min(1, Math.max(0, (progress - 0.88) / 0.1));
       const mobileMediaPhase = Math.min(
         1,
         Math.max(0, (progress - 0.08) / 0.16),
@@ -51,11 +52,9 @@ export function Hero() {
       section.style.setProperty("--hero-intro-opacity", intro.toFixed(3));
       section.style.setProperty("--hero-intro-y", `${(-progress * 22).toFixed(2)}px`);
       section.style.setProperty("--hero-finish-opacity", finish.toFixed(3));
+      section.style.setProperty("--hero-toppings-opacity", toppings.toFixed(3));
       section.style.setProperty("--hero-finish-y", "0px");
-      section.style.setProperty(
-        "--hero-mobile-media-top",
-        `${(56 - mobileMediaPhase * 8).toFixed(2)}%`,
-      );
+      section.style.setProperty("--hero-mobile-media-top", "56%");
       section.style.setProperty(
         "--hero-mobile-media-width",
         `${(140 + mobileMediaPhase * 6).toFixed(2)}vw`,

@@ -260,8 +260,16 @@ html[data-mankee-intro="quick"] .hero-lead {
   bottom: clamp(44px, 8vh, 86px);
   left: clamp(22px, 5vw, 76px);
   width: min(470px, 42vw);
-  opacity: var(--hero-finish-opacity, 0);
   transform: none;
+}
+
+.hero-finish > span,
+.hero-finish strong {
+  opacity: var(--hero-finish-opacity, 0);
+}
+
+.hero-finish p {
+  opacity: var(--hero-toppings-opacity, 0);
 }
 
 .hero-finish strong {
@@ -329,9 +337,8 @@ html[data-mankee-intro="quick"] .hero-lead {
   .hero-stick {
     z-index: 1;
     isolation: isolate;
-    height: 100vh;
-    height: calc(100dvh + 3px);
-    min-height: calc(100dvh + 3px);
+    height: 100svh;
+    min-height: 100svh;
     background: #100b08;
     box-shadow: 0 4px 0 #100b08;
   }
