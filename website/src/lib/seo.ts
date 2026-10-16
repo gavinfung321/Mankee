@@ -3,7 +3,7 @@ import { locations, site } from "../content/index.ts";
 import { publicValue } from "./facts.ts";
 
 const socialPreview = {
-  url: "https://gavinfung321.github.io/Mankee/brand/mankee-hero-link-preview-v1.png",
+  url: "https://gavinfung321.github.io/Mankee/brand/mankee-hero-link-preview-v2.png",
   width: 1200,
   height: 630,
   alt: "文記車仔麵招牌配料落碗",
