@@ -54,9 +54,6 @@ export function Footer() {
                 <Link href={item.href}>{item.label}</Link>
               </li>
             ))}
-            <li>
-              <Link href="/#journal">文記誌 →</Link>
-            </li>
           </ul>
         </nav>
 

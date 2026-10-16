@@ -189,8 +189,8 @@ main {
   align-items: center;
   min-height: 2.5rem;
   padding: 0.45rem 0.85rem;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--lacquer);
+  color: var(--cream);
   font-family: var(--font-text);
   font-size: 0.9rem;
   line-height: 1;

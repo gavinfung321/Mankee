@@ -43,7 +43,7 @@ const footer = readFileSync(
 );
 const navigation = readFileSync(join(root, "src/lib/navigation.ts"), "utf8");
 const site = readFileSync(join(root, "src/content/zh-HK/site.ts"), "utf8");
-for (const label of ["首頁", "點餐", "文記十大", "故事", "到店／外賣"]) {
+for (const label of ["首頁", "點餐", "文記十大", "故事", "文記誌", "到店／外賣"]) {
   assert.match(site, new RegExp(label));
 }
 assert.match(header, /primaryNav/);
@@ -53,6 +53,7 @@ assert.match(site, /href: "\/menu\/"/);
 assert.match(site, /href: "\/#top-ten"/);
 assert.match(site, /href: "\/#story"/);
 assert.match(site, /href: "\/#locations"/);
+assert.match(site, /href: "\/#journal"/);
 assert.doesNotMatch(
   `${header}\n${footer}\n${navigation}`,
   /福榮街|11:00|Foodpanda|Keeta/,

@@ -28,8 +28,12 @@ test("the layout stacks on small screens and keeps the order slip in flow", () =
   assert.match(mobile, /\.order-pass-plate[\s\S]*order:\s*2/);
   assert.match(mobile, /aspect-ratio:\s*1/);
   assert.doesNotMatch(mobile, /\.order-steps/);
-  assert.match(header, /md:hidden/);
-  assert.match(header, /md:flex/);
+  assert.match(header, /menu-toggle/);
+  assert.match(header, /mobile-nav/);
+  assert.match(
+    home,
+    /header\.site-header \.menu-toggle,\s*header\.site-header \.mobile-nav \{\s*display:\s*none;/,
+  );
   assert.match(slip, /order-pass-line/);
   assert.doesNotMatch(slip, /position:\s*(fixed|sticky)/);
   const wideTop = home.indexOf("@media (min-width: 64rem)");

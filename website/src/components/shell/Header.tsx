@@ -47,45 +47,48 @@ export function Header() {
   return (
     <header className={`site-header${overlay ? " is-hero" : " is-solid"}`}>
       <nav aria-label="主要" className="masthead">
-        <Link href="/" className="brand-mark" aria-label="文記車仔麵首頁">
-          <img
-            src={withBase("/brand/mankee-logo-transparent.png")}
-            alt=""
-            width={46}
-            height={46}
-          />
-          <span>文記車仔麵</span>
-        </Link>
-        <button
-          type="button"
-          className="menu-toggle ml-auto inline-flex min-h-11 items-center gap-2 px-4 md:hidden"
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? (
-            <X aria-hidden="true" size={20} />
-          ) : (
-            <Menu aria-hidden="true" size={20} />
-          )}
-          選單
-        </button>
-        <ul
-          className={`nav-links list-none items-center gap-1 p-0 ${overlay ? "hidden" : "hidden md:flex"}`}
-        >
-          {sectionLinks.map((item) => (
-            <NavLink key={item.id} item={item} pathname={pathname} />
-          ))}
-        </ul>
-        {visit ? (
-          <Link href={visit.href} className="nav-cta hidden md:inline-flex">
-            {visit.label}
+        <div className="masthead-bar">
+          <Link href="/" className="brand-mark" aria-label="文記車仔麵首頁">
+            <img
+              src={withBase("/brand/mankee-logo-transparent.png")}
+              alt=""
+              width={46}
+              height={46}
+            />
+            <span>文記車仔麵</span>
           </Link>
-        ) : null}
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? (
+              <X aria-hidden="true" size={20} />
+            ) : (
+              <Menu aria-hidden="true" size={20} />
+            )}
+            選單
+          </button>
+          <ul className="nav-links">
+            {sectionLinks.map((item) => (
+              <NavLink key={item.id} item={item} pathname={pathname} />
+            ))}
+          </ul>
+          {visit ? (
+            <Link
+              href={visit.href}
+              className="nav-cta nav-cta-desktop"
+            >
+              {visit.label}
+            </Link>
+          ) : null}
+        </div>
         <AnimatePresence>
           {open ? (
             <motion.ul
               key="mobile-nav"
-              className="grid w-full list-none gap-2 p-0 md:hidden"
+              className="mobile-nav"
               initial={reduceMotion ? false : { opacity: 0, y: -8 }}
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, y: -8 }}

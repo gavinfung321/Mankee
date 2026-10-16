@@ -323,7 +323,8 @@ test("old press, blogs and gallery pages redirect to the Journal anchors", () =>
     config,
     /source: "\/gallery\/", destination: "\/#journal", permanent: true/,
   );
-  assert.match(footer, /<Link href="\/#journal">文記誌 →<\/Link>/);
+  assert.match(site, /label: "文記誌", href: "\/#journal"/);
+  assert.match(footer, /primaryNav/);
   assert.doesNotMatch(footer, /href="\/press\/"|href="\/#press"|報道 →/);
   assert.doesNotMatch(recognition, /\/press\/|其他報道/);
   assert.match(recognition, /visiblePressLinks\(pressItems, "michelin"\)/);
