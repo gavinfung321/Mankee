@@ -287,7 +287,7 @@
 header.site-header {
   height: auto;
   min-height: 64px;
-  padding: 0 32px;
+  padding: 0 20px;
   color: #f3e7ce;
 }
 
@@ -316,7 +316,7 @@ header.site-header .brand-mark span {
 header.site-header .brand-mark {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   min-height: 0;
   line-height: 1;
   text-decoration: none;
@@ -438,6 +438,10 @@ header.site-header .mobile-nav .nav-cta {
 }
 
 @media (min-width: 48rem) {
+  header.site-header {
+    padding: 0 32px;
+  }
+
   header.site-header .masthead-bar {
     grid-template-columns: 180px minmax(0, 1fr) auto;
     gap: 28px;
