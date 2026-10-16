@@ -126,7 +126,6 @@ export function Hero() {
       <div className="hero-scrim" aria-hidden="true" />
       <div className="hero-finish-shade" aria-hidden="true" />
       <header className="hero-intro">
-        <p className="hero-kicker">文記推介</p>
         <h1>
           {heroTitleLines.map((line) => (
             <span className="hero-title-line" key={line}>
@@ -134,7 +133,10 @@ export function Hero() {
             </span>
           ))}
         </h1>
-        <p className="hero-lead">捲動控制三款招牌配料逐一落碗。</p>
+        <p className="hero-lead">
+          <span>捲動逐一落碗</span>
+          <i className="hero-scroll-mark" aria-hidden="true" />
+        </p>
       </header>
       <div className="hero-finish">
         <span>三款招牌</span>

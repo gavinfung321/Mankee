@@ -96,16 +96,8 @@
   gap: 10px;
 }
 
+.home-hero .hero-kicker::before,
 .home-hero .hero-kicker::after {
-  display: block;
-  width: 42px;
-  height: 1px;
-  background: currentColor;
-  content: "";
-  transform-origin: left center;
-}
-
-.home-hero .hero-kicker::before {
   display: none;
 }
 
@@ -146,12 +138,33 @@
   line-height: 1.65;
 }
 
-html[data-mankee-intro="full"] .home-hero .hero-kicker {
-  animation: hero-kicker-in 0.48s 0.68s cubic-bezier(0.16, 1, 0.3, 1) both;
+.hero-lead {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--gold-bright);
 }
 
-html[data-mankee-intro="full"] .home-hero .hero-kicker::after {
-  animation: hero-rule-in 0.48s 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
+.hero-scroll-mark {
+  position: relative;
+  display: block;
+  flex: 0 0 96px;
+  width: 96px;
+  height: 2px;
+  background: rgba(224, 229, 235, 0.55);
+  overflow: hidden;
+}
+
+.hero-scroll-mark::after {
+  position: absolute;
+  inset: 0;
+  background: var(--gold-bright);
+  content: "";
+  animation: hero-scroll-mark-in 2.35s linear infinite;
+}
+
+html[data-mankee-intro="full"] .home-hero .hero-kicker {
+  animation: hero-kicker-in 0.48s 0.68s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 html[data-mankee-intro="full"] .hero-title-line:nth-child(1) > span {
@@ -185,14 +198,25 @@ html[data-mankee-intro="quick"] .hero-lead {
   }
 }
 
-@keyframes hero-rule-in {
-  from {
-    opacity: 0;
-    transform: scaleX(0);
+@keyframes hero-scroll-mark-in {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 1);
   }
-  to {
-    opacity: 1;
-    transform: scaleX(1);
+  38% {
+    clip-path: inset(0 0 0 0);
+    animation-timing-function: linear;
+  }
+  53% {
+    clip-path: inset(0 0 0 0);
+    animation-timing-function: cubic-bezier(0.7, 0, 1, 1);
+  }
+  81% {
+    clip-path: inset(0 0 0 100%);
+    animation-timing-function: linear;
+  }
+  100% {
+    clip-path: inset(0 0 0 100%);
   }
 }
 
@@ -589,13 +613,15 @@ header.site-header .mobile-nav .nav-cta {
   }
 
   .home-hero .hero-kicker,
-  .home-hero .hero-kicker::after,
   .hero-title-line > span,
-  .hero-lead {
+  .hero-lead,
+  .hero-scroll-mark,
+  .hero-scroll-mark::after {
     animation: none !important;
     opacity: 1;
     filter: none;
     transform: none;
+    clip-path: none;
   }
 }
 
