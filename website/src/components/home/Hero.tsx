@@ -13,7 +13,12 @@ const heroTitleLines =
     ? [heroTitle.slice(0, heroTitleBreak), heroTitle.slice(heroTitleBreak)]
     : [heroTitle];
 
-const toppingMoments = [
+const toppingMoments: {
+  start: number;
+  end: number;
+  name: string;
+  untilProgress?: number;
+}[] = [
   { start: 0.3, end: 2.75, name: "瑞士雞翼" },
   { start: 4.25, end: 7.25, name: "上湯花膠" },
   { start: 8.65, end: 11.35, untilProgress: 0.8, name: "南乳豬手" },
@@ -60,7 +65,7 @@ export function Hero() {
           ? heroMediaProgress(progress) * video.duration
           : 0;
       const active = toppingMoments.find((item) =>
-        "untilProgress" in item
+        item.untilProgress != null
           ? time >= item.start && progress <= item.untilProgress
           : time >= item.start && time <= item.end,
       );
