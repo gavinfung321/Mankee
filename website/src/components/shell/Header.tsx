@@ -23,7 +23,7 @@ export function Header() {
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
-    const introKey = "mankee-header-intro-seen";
+    const introKey = "mankee-opening-credits-v2-seen";
     const seen = window.sessionStorage.getItem(introKey) === "true";
     const mode = seen ? "quick" : "full";
     setIntroMode(mode);
