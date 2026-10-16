@@ -55,15 +55,10 @@ export function Header() {
   }, [pathname]);
 
   const overlay = pathname === "/" && heroProgress < 0.995 && !open;
-  const collapse = overlay ? Math.min(1, heroProgress * 1.7) : 1;
   const headerStyle = {
-    "--header-progress": collapse.toFixed(3),
-    "--header-bg-alpha": overlay
-      ? Math.min(0.94, collapse * 0.9).toFixed(3)
-      : "0.98",
-    "--header-border-alpha": overlay
-      ? Math.max(0, collapse - 0.25).toFixed(3)
-      : "1",
+    "--header-progress": overlay ? "0" : "1",
+    "--header-bg-alpha": overlay ? "0" : "0.98",
+    "--header-border-alpha": overlay ? "0" : "1",
   } as CSSProperties;
 
   return (
@@ -71,7 +66,7 @@ export function Header() {
       className={[
         "site-header",
         overlay ? "is-hero" : "is-solid",
-        collapse > 0.68 ? "is-condensed" : "",
+        overlay ? "" : "is-condensed",
         `intro-${introMode}`,
       ]
         .filter(Boolean)

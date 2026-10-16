@@ -16,7 +16,7 @@ const heroTitleLines =
 const toppingMoments = [
   { start: 0.3, end: 2.75, name: "瑞士雞翼" },
   { start: 4.25, end: 7.25, name: "上湯花膠" },
-  { start: 8.65, end: 11.35, name: "南乳豬手" },
+  { start: 8.65, end: 11.35, untilProgress: 0.8, name: "南乳豬手" },
 ];
 
 export function Hero() {
@@ -36,7 +36,7 @@ export function Hero() {
         Math.max(0, -section.getBoundingClientRect().top / travel),
       );
       const intro = 1 - Math.min(1, progress / 0.22);
-      const finish = Math.min(1, Math.max(0, (progress - 0.66) / 0.08));
+      const finish = Math.min(1, Math.max(0, (progress - 0.82) / 0.06));
       const mobileMediaPhase = Math.min(
         1,
         Math.max(0, (progress - 0.08) / 0.16),
@@ -46,7 +46,7 @@ export function Hero() {
       section.style.setProperty("--hero-intro-opacity", intro.toFixed(3));
       section.style.setProperty("--hero-intro-y", `${(-progress * 22).toFixed(2)}px`);
       section.style.setProperty("--hero-finish-opacity", finish.toFixed(3));
-      section.style.setProperty("--hero-finish-y", `${((1 - progress) * 28).toFixed(2)}px`);
+      section.style.setProperty("--hero-finish-y", "0px");
       section.style.setProperty(
         "--hero-mobile-media-top",
         `${(56 - mobileMediaPhase * 8).toFixed(2)}%`,
@@ -59,7 +59,11 @@ export function Hero() {
         video instanceof HTMLVideoElement && Number.isFinite(video.duration)
           ? heroMediaProgress(progress) * video.duration
           : 0;
-      const active = toppingMoments.find((item) => time >= item.start && time <= item.end);
+      const active = toppingMoments.find((item) =>
+        "untilProgress" in item
+          ? time >= item.start && progress <= item.untilProgress
+          : time >= item.start && time <= item.end,
+      );
       label?.classList.toggle("is-visible", Boolean(active));
       if (labelName) labelName.textContent = active?.name ?? "";
     };
@@ -115,6 +119,7 @@ export function Hero() {
         aria-hidden="true"
       />
       <div className="hero-scrim" aria-hidden="true" />
+      <div className="hero-finish-shade" aria-hidden="true" />
       <header className="hero-intro">
         <p className="hero-kicker">文記推介</p>
         <h1>
