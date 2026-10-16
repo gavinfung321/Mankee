@@ -16,10 +16,15 @@ test("the masthead opens cinematically without blocking the page", () => {
   assert.match(header, /mankee-header-intro-seen/);
   assert.match(header, /dataset\.mankeeIntro/);
   assert.match(header, /--header-progress/);
-  assert.match(header, /masthead-light/);
-  assert.match(css, /@keyframes masthead-seal-in/);
-  assert.match(css, /@keyframes masthead-wordmark-in/);
-  assert.match(css, /@keyframes masthead-stamp-in/);
+  assert.doesNotMatch(header, /masthead-light/);
+  assert.match(css, /header\.site-header::before/);
+  assert.match(css, /@keyframes masthead-credit-in/);
+  assert.match(css, /@keyframes masthead-rule-in/);
+  assert.match(css, /@keyframes masthead-cta-in/);
+  assert.match(css, /masthead-quick-in 0\.5s/);
+  assert.doesNotMatch(css, /@keyframes masthead-seal-in/);
+  assert.doesNotMatch(css, /@keyframes masthead-stamp-in/);
+  assert.doesNotMatch(css, /@keyframes masthead-metal-pass/);
   assert.match(css, /header\.site-header\.is-hero \.nav-links/);
   assert.match(
     css,

@@ -389,7 +389,7 @@ main {
   transition: opacity 0.35s ease;
 }
 
-/* Cinematic masthead: the counter opens, the brand is stamped, service begins. */
+/* Cinematic masthead: quiet opening credits shared with the hero title. */
 header.site-header {
   --header-progress: 0;
   --header-bg-alpha: 0;
@@ -409,6 +409,22 @@ header.site-header {
     backdrop-filter 0.2s ease;
 }
 
+header.site-header::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(10 8 6 / 0.42) 0%,
+    rgb(10 8 6 / 0.14) 64%,
+    transparent 100%
+  );
+  content: "";
+  opacity: calc(1 - var(--header-progress));
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
 header.site-header.is-condensed,
 header.site-header.is-solid {
   color: var(--ink);
@@ -420,8 +436,13 @@ header.site-header.is-solid {
   backdrop-filter: blur(12px);
 }
 
+header.site-header.is-solid::before {
+  opacity: 0;
+}
+
 header.site-header .masthead {
   position: relative;
+  z-index: 1;
 }
 
 header.site-header .masthead-bar {
@@ -466,6 +487,10 @@ header.site-header .nav-links {
   gap: calc(28px - var(--header-progress) * 4px);
 }
 
+header.site-header .nav-links li {
+  overflow: clip;
+}
+
 header.site-header .nav-links a {
   position: relative;
   overflow: hidden;
@@ -496,7 +521,6 @@ header.site-header .nav-links a.is-current::after {
 header.site-header .nav-cta {
   position: relative;
   overflow: hidden;
-  transform-origin: center;
   box-shadow: 0 8px 20px rgb(16 11 8 / 0.14);
 }
 
@@ -505,177 +529,84 @@ header.site-header .nav-cta > span {
   z-index: 1;
 }
 
-header.site-header .nav-cta::after {
-  position: absolute;
-  inset: -30% auto -30% -65%;
-  width: 42%;
-  background: linear-gradient(
-    105deg,
-    transparent,
-    rgb(255 236 184 / 0.48),
-    transparent
-  );
-  content: "";
-  transform: skewX(-16deg);
-}
-
 header.site-header .menu-toggle-icon {
   display: inline-grid;
   place-items: center;
-  transform-origin: center;
-}
-
-header.site-header .masthead-light {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  bottom: 0;
-  left: -35vw;
-  width: 24vw;
-  min-width: 180px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgb(255 224 154 / 0.13),
-    transparent
-  );
-  opacity: 0;
-  pointer-events: none;
-  transform: skewX(-18deg);
 }
 
 header.site-header.intro-full .brand-mark img {
-  animation: masthead-seal-in 0.55s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: masthead-credit-in 0.42s 0.18s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 header.site-header.intro-full .brand-wordmark > span {
-  animation: masthead-wordmark-in 0.52s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: masthead-credit-in 0.44s 0.26s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 header.site-header.intro-full .nav-links li {
-  animation: masthead-nav-in 0.48s calc(0.44s + var(--nav-index) * 0.065s)
+  animation: masthead-credit-in 0.42s calc(0.38s + var(--nav-index) * 0.05s)
     cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-header.site-header.intro-full .nav-cta-desktop {
-  animation: masthead-stamp-in 0.46s 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+header.site-header.intro-full .nav-links a.is-current::after {
+  animation: masthead-rule-in 0.3s 0.76s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-header.site-header.intro-full .nav-cta-desktop::after {
-  animation: masthead-metal-pass 0.65s 0.88s ease-out both;
+header.site-header.intro-full .nav-cta-desktop {
+  animation: masthead-cta-in 0.42s 1.05s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 header.site-header.intro-full .menu-toggle {
-  animation: masthead-nav-in 0.42s 0.46s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-header.site-header.intro-full .menu-toggle-icon {
-  animation: masthead-menu-turn 0.5s 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-header.site-header.intro-full .masthead-light {
-  animation: masthead-light-pass 0.9s 0.08s ease-out both;
+  animation: masthead-credit-in 0.42s 0.42s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 header.site-header.intro-quick {
-  animation: masthead-quick-in 0.3s ease-out both;
+  animation: masthead-quick-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-@keyframes masthead-seal-in {
-  0% {
-    opacity: 0;
-    filter: brightness(1.7);
-    transform: translateY(-8px) scale(0.82) rotate(-5deg);
-  }
-  70% {
-    opacity: 1;
-    transform: translateY(1px) scale(1.04) rotate(1deg);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(1);
-    transform: none;
-  }
-}
-
-@keyframes masthead-wordmark-in {
+@keyframes masthead-credit-in {
   from {
     opacity: 0;
-    transform: translateX(-105%);
+    filter: blur(4px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
+    filter: blur(0);
     transform: none;
   }
 }
 
-@keyframes masthead-nav-in {
+@keyframes masthead-cta-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    filter: blur(4px);
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
+    filter: blur(0);
     transform: none;
   }
 }
 
-@keyframes masthead-stamp-in {
-  0% {
-    opacity: 0;
-    transform: translateX(18px) scale(0.92);
-  }
-  70% {
-    opacity: 1;
-    transform: translateX(0) scale(1.035);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes masthead-metal-pass {
+@keyframes masthead-rule-in {
   from {
-    transform: translateX(0) skewX(-16deg);
+    transform: scaleX(0);
   }
   to {
-    transform: translateX(420%) skewX(-16deg);
-  }
-}
-
-@keyframes masthead-menu-turn {
-  from {
-    opacity: 0;
-    transform: rotate(-38deg) scale(0.82);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes masthead-light-pass {
-  0% {
-    opacity: 0;
-    transform: translateX(0) skewX(-18deg);
-  }
-  22% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(155vw) skewX(-18deg);
+    transform: scaleX(1);
   }
 }
 
 @keyframes masthead-quick-in {
   from {
     opacity: 0;
-    transform: translateY(-5px);
+    filter: blur(2px);
+    transform: translateY(4px);
   }
   to {
     opacity: 1;
+    filter: blur(0);
     transform: none;
   }
 }
@@ -687,9 +618,5 @@ header.site-header.intro-quick {
   header.site-header *::after {
     animation: none !important;
     transition-duration: 0.01ms !important;
-  }
-
-  header.site-header .masthead-light {
-    display: none;
   }
 }

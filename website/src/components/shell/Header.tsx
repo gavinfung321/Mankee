@@ -79,7 +79,6 @@ export function Header() {
       style={headerStyle}
     >
       <nav aria-label="主要" className="masthead">
-        <span className="masthead-light" aria-hidden="true" />
         <div className="masthead-bar">
           <Link href="/" className="brand-mark" aria-label="文記車仔麵首頁">
             <img

@@ -130,11 +130,11 @@
 }
 
 html[data-mankee-intro="full"] .home-hero .hero-kicker {
-  animation: hero-kicker-in 0.48s 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-kicker-in 0.48s 0.68s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 html[data-mankee-intro="full"] .home-hero .hero-kicker::after {
-  animation: hero-rule-in 0.48s 0.88s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-rule-in 0.48s 0.82s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 html[data-mankee-intro="full"] .hero-title-line:nth-child(1) > span {
@@ -146,13 +146,13 @@ html[data-mankee-intro="full"] .hero-title-line:nth-child(2) > span {
 }
 
 html[data-mankee-intro="full"] .hero-lead {
-  animation: hero-lead-in 0.5s 1.18s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: hero-lead-in 0.5s 1.08s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 html[data-mankee-intro="quick"] .home-hero .hero-kicker,
 html[data-mankee-intro="quick"] .hero-title-line > span,
 html[data-mankee-intro="quick"] .hero-lead {
-  animation: hero-copy-quick-in 0.32s ease-out both;
+  animation: hero-copy-quick-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @keyframes hero-kicker-in {
