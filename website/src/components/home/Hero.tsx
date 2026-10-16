@@ -7,7 +7,7 @@ import { heroMedia, heroMediaProgress } from "../../lib/hero.ts";
 
 const hero = homeSections[0];
 const heroTitle = `${hero.heading}。`;
-const heroTitleBreak = heroTitle.lastIndexOf("開始");
+const heroTitleBreak = heroTitle.indexOf("由這裏");
 const heroTitleLines =
   heroTitleBreak > 0
     ? [heroTitle.slice(0, heroTitleBreak), heroTitle.slice(heroTitleBreak)]
