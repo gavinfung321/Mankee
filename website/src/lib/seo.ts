@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { locations, site } from "../content/index.ts";
 import { publicValue } from "./facts.ts";
 
+const socialPreview = {
+  url: "https://gavinfung321.github.io/Mankee/brand/mankee-hero-link-preview-v1.png",
+  width: 1200,
+  height: 630,
+  alt: "文記車仔麵招牌配料落碗",
+};
+
 const week = [
   "Monday",
   "Tuesday",
@@ -43,6 +50,13 @@ export function pageMetadata(
       description,
       locale: "zh_HK",
       type: "website",
+      images: [socialPreview],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [socialPreview.url],
     },
   };
 }

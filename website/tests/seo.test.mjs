@@ -38,7 +38,9 @@ test("metadata and structured data stay on confirmed facts", async () => {
   assert.match(homeDescription() ?? "", /每日 11:00–04:00/);
   assert.match(menuDescription() ?? "", /湯 → 麵 → 餸/);
   assert.match(seo, /locale: "zh_HK"/);
-  assert.doesNotMatch(seo, /images:|metadataBase|mankeecartnoodles/);
+  assert.match(seo, /mankee-hero-link-preview-v1\.png/);
+  assert.match(seo, /summary_large_image/);
+  assert.doesNotMatch(seo, /metadataBase|mankeecartnoodles/);
   assert.match(layout, /RestaurantJsonLd/);
   assert.doesNotMatch(layout, /metadataBase|canonical/);
 });
