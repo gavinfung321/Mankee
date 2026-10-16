@@ -14,6 +14,7 @@ test("the masthead opens cinematically without blocking the page", () => {
   const css = readFileSync(join(root, "src/app/globals.css"), "utf8");
 
   assert.match(header, /mankee-header-intro-seen/);
+  assert.match(header, /dataset\.mankeeIntro/);
   assert.match(header, /--header-progress/);
   assert.match(header, /masthead-light/);
   assert.match(css, /@keyframes masthead-seal-in/);

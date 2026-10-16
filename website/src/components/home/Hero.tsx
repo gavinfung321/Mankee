@@ -6,6 +6,12 @@ import { attachHeroScrub } from "../../islands/HeroScrub.ts";
 import { heroMedia, heroMediaProgress } from "../../lib/hero.ts";
 
 const hero = homeSections[0];
+const heroTitle = `${hero.heading}。`;
+const heroTitleBreak = heroTitle.lastIndexOf("開始");
+const heroTitleLines =
+  heroTitleBreak > 0
+    ? [heroTitle.slice(0, heroTitleBreak), heroTitle.slice(heroTitleBreak)]
+    : [heroTitle];
 
 const toppingMoments = [
   { start: 0.3, end: 2.75, name: "瑞士雞翼" },
@@ -111,7 +117,13 @@ export function Hero() {
       <div className="hero-scrim" aria-hidden="true" />
       <header className="hero-intro">
         <p className="hero-kicker">文記推介</p>
-        <h1>{hero.heading}。</h1>
+        <h1>
+          {heroTitleLines.map((line) => (
+            <span className="hero-title-line" key={line}>
+              <span>{line}</span>
+            </span>
+          ))}
+        </h1>
         <p className="hero-lead">捲動控制三款招牌配料逐一落碗。</p>
       </header>
       <div className="hero-finish">

@@ -25,7 +25,9 @@ export function Header() {
   useEffect(() => {
     const introKey = "mankee-header-intro-seen";
     const seen = window.sessionStorage.getItem(introKey) === "true";
-    setIntroMode(seen ? "quick" : "full");
+    const mode = seen ? "quick" : "full";
+    setIntroMode(mode);
+    document.documentElement.dataset.mankeeIntro = mode;
     if (!seen) window.sessionStorage.setItem(introKey, "true");
   }, []);
 

@@ -34,6 +34,7 @@ test("the hero uses the locked three-topping scrub and tuned scroll contract", (
   assert.match(contract, /fit: "cover"/);
   assert.match(contract, /textSafe: "left"/);
   assert.match(hero, /<h1>/);
+  assert.match(hero, /hero-title-line/);
   assert.match(hero, /heroMedia\.poster/);
   assert.match(hero, /hero-video/);
   assert.match(hero, /preload="auto"/);
@@ -45,6 +46,12 @@ test("the hero uses the locked three-topping scrub and tuned scroll contract", (
   assert.match(hero, /heroMediaProgress/);
   assert.match(css, /object-fit:\s*cover|hero-video/);
   assert.match(css, /min-height:\s*300vh/);
+  assert.match(css, /@keyframes hero-title-in/);
+  assert.match(css, /@keyframes hero-kicker-in/);
+  assert.match(
+    css,
+    /prefers-reduced-motion:\s*reduce[\s\S]*\.hero-title-line > span/,
+  );
   assert.match(css, /prefers-reduced-motion:\s*reduce[\s\S]*\.hero-video/);
   const heroMedia = css.slice(
     css.indexOf(".hero-poster,"),
