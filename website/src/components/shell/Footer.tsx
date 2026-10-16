@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "../../lib/basePath.ts";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { primaryNav } from "../../lib/navigation";
@@ -34,7 +35,7 @@ export function Footer() {
         <div className="footer-brand">
           <Image
             className="footer-seal"
-            src="/brand/mankee-seal-320.webp"
+            src={withBase("/brand/mankee-seal-320.webp")}
             alt=""
             width={320}
             height={295}

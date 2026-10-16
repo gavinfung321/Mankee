@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "../../lib/basePath.ts";
 
 export function OrderSlip() {
   return (
@@ -14,7 +15,7 @@ export function OrderSlip() {
         </p>
         <Image
           className="order-pass-plate"
-          src="/media/order-pass/order-pass-desktop-approved-v1.png"
+          src={withBase("/media/order-pass/order-pass-desktop-approved-v1.png")}
           alt="文記櫃檯上的完成車仔麵"
           width={1672}
           height={941}

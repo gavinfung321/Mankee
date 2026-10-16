@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { withBase } from "../../lib/basePath.ts";
 import { isCurrentPath, primaryNav } from "../../lib/navigation";
 
 type NavItem = (typeof primaryNav)[number];
@@ -48,7 +49,7 @@ export function Header() {
       <nav aria-label="主要" className="masthead">
         <Link href="/" className="brand-mark" aria-label="文記車仔麵首頁">
           <img
-            src="/brand/mankee-logo-transparent.png"
+            src={withBase("/brand/mankee-logo-transparent.png")}
             alt=""
             width={46}
             height={46}

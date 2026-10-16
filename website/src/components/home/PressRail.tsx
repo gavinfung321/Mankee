@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "../../lib/basePath.ts";
 import { pressItems, visiblePressLinks } from "../../content/index.ts";
 import { PressCarousel } from "./PressCarousel";
 
@@ -43,7 +44,7 @@ export function PressRail() {
                   {link.artwork && (
                     <Image
                       className="press-card-art"
-                      src={link.artwork}
+                      src={withBase(link.artwork)}
                       alt=""
                       fill
                       sizes="(min-width: 64rem) 16rem, (min-width: 48rem) 30vw, (min-width: 40rem) 45vw, 100vw"

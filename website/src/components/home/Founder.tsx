@@ -1,4 +1,5 @@
 import { homeSections } from "../../content/index.ts";
+import { withBase } from "../../lib/basePath.ts";
 import { publicValue } from "../../lib/facts.ts";
 
 const section = homeSections[5];
@@ -8,7 +9,12 @@ const portraitValue = publicValue(section.founder.portrait);
 const roleValue = publicValue(section.founder.role);
 const contextValue = publicValue(section.founder.context);
 const quotation = publicValue(section.founder.quotation);
-const portrait = typeof portraitValue === "string" ? portraitValue : undefined;
+const portrait =
+  typeof portraitValue === "string" ? withBase(portraitValue) : undefined;
+const portraitSmall =
+  typeof portraitValue === "string"
+    ? withBase(portraitValue.replace("-960.webp", "-640.webp"))
+    : undefined;
 const english = typeof englishName === "string" ? englishName : undefined;
 const role = typeof roleValue === "string" ? roleValue : undefined;
 const context = typeof contextValue === "string" ? contextValue : undefined;
@@ -42,7 +48,7 @@ export function Founder() {
               <img
                 className="founder-photo"
                 src={portrait}
-                srcSet={`${portrait.replace("-960.webp", "-640.webp")} 640w, ${portrait} 960w`}
+                srcSet={`${portraitSmall} 640w, ${portrait} 960w`}
                 sizes="(min-width: 64rem) 52vw, 100vw"
                 width={960}
                 height={641}

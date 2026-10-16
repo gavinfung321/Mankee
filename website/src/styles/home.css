@@ -188,7 +188,7 @@
     position: absolute;
     z-index: 0;
     inset: -8%;
-    background-image: url("/media/hero/hero-signature-three-toppings-poster-v1-640.webp");
+    background-image: var(--hero-mobile-poster);
     background-position: 64% 50%;
     background-size: cover;
     filter: blur(20px) saturate(0.8) brightness(0.42);

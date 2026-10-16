@@ -1,3 +1,5 @@
+import { withBase } from "../../lib/basePath.ts";
+
 export function SensoryTrio() {
   return (
     <section className="home-section sensory-section" aria-label="舊式香港">
@@ -20,7 +22,7 @@ export function SensoryTrio() {
             <span className="sensory-shot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/media/store/queue-dusk.webp"
+                src={withBase("/media/store/queue-dusk.webp")}
                 alt="傍晚，客人沿街輪候"
                 width={1024}
                 height={768}
@@ -62,7 +64,7 @@ export function SensoryTrio() {
             <span className="sensory-shot">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/media/store/queue-day.webp"
+                src={withBase("/media/store/queue-day.webp")}
                 alt="日間，客人在文記店外輪候"
                 width={1024}
                 height={768}

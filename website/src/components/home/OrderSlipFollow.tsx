@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { withBase } from "../../lib/basePath.ts";
 
 const stages = [
   ["#how-to-order", 0],
@@ -184,7 +185,7 @@ export function OrderSlipFollow() {
       <aside ref={railRef} className="order-slip-rail order-slip-card" aria-label="你的文記落單紙">
         <header>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/brand/mankee-logo-transparent.png" alt="" width={28} height={28} />
+          <img src={withBase("/brand/mankee-logo-transparent.png")} alt="" width={28} height={28} />
           <span>文記落單紙</span>
         </header>
         <div className="slip-row">

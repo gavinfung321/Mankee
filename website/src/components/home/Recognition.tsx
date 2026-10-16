@@ -5,6 +5,7 @@ import {
 } from "../../content/index.ts";
 import type { ReactNode } from "react";
 import type { Fact } from "../../content/types.ts";
+import { withBase } from "../../lib/basePath.ts";
 import { publicValue } from "../../lib/facts.ts";
 
 function shown(fact: unknown) {
@@ -48,9 +49,14 @@ function Visit({
   const visit = publicValue(item.line);
   if (!visit) return null;
   const name = publicValue(item.name);
-  const src = shown(item.still);
+  const still = shown(item.still);
   const credit = shown(item.stillCredit);
   const size = stills[item.id];
+  const src = typeof still === "string" ? withBase(still) : undefined;
+  const smallSrc =
+    typeof still === "string"
+      ? withBase(still.replace(`-${size.width}.webp`, `-${size.small}.webp`))
+      : undefined;
   return (
     <figure className={`recognition-visit ${className}`}>
       {src && (
@@ -58,7 +64,7 @@ function Visit({
         <img
           className="recognition-still"
           src={src}
-          srcSet={`${src.replace(`-${size.width}.webp`, `-${size.small}.webp`)} ${size.small}w, ${src} ${size.width}w`}
+          srcSet={`${smallSrc} ${size.small}w, ${src} ${size.width}w`}
           sizes={size.sizes}
           width={size.width}
           height={size.height}
@@ -121,7 +127,8 @@ function MichelinPanel({ children }: { children: ReactNode }) {
 
 export function Recognition() {
   const years = shown(michelin.yearRange);
-  const image = shown(michelin.image);
+  const mark = shown(michelin.image);
+  const image = typeof mark === "string" ? withBase(mark) : undefined;
   const heading = shown(michelin.heading);
   const line = publicValue(michelin.line);
 

@@ -1,8 +1,14 @@
+import { withBase } from "./basePath.ts";
+
 export const heroMedia = {
-  src: "/media/hero/hero-signature-three-toppings-scrub-v1-web.mp4",
-  poster: "/media/hero/hero-signature-three-toppings-poster-v1.webp",
-  posterSrcSet:
-    "/media/hero/hero-signature-three-toppings-poster-v1-640.webp 640w, /media/hero/hero-signature-three-toppings-poster-v1.webp 1280w",
+  src: withBase("/media/hero/hero-signature-three-toppings-scrub-v1-web.mp4"),
+  poster: withBase("/media/hero/hero-signature-three-toppings-poster-v1.webp"),
+  posterSrcSet: [
+    withBase("/media/hero/hero-signature-three-toppings-poster-v1-640.webp") +
+      " 640w",
+    withBase("/media/hero/hero-signature-three-toppings-poster-v1.webp") +
+      " 1280w",
+  ].join(", "),
   posterWidth: 1280,
   posterHeight: 720,
   scrollStart: 0.02,

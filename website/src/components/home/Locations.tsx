@@ -4,6 +4,7 @@ import {
   locations,
   visibleLocationLinks,
 } from "../../content/index.ts";
+import { withBase } from "../../lib/basePath.ts";
 import { publicValue } from "../../lib/facts.ts";
 
 const section = homeSections[7];
@@ -36,6 +37,8 @@ function Location({ location }: { location: (typeof locations)[number] }) {
   const links = visibleLocationLinks(location);
   const photo = location.storefront;
   const image = publicValue(photo.image);
+  const imageSrc = image ? withBase(image) : undefined;
+  const imageSmall = withBase(photo.small);
   const headingId = `${location.id}-name`;
 
   return (
@@ -47,8 +50,8 @@ function Location({ location }: { location: (typeof locations)[number] }) {
         {image && (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={image}
-            srcSet={`${photo.small} ${photo.smallWidth}w, ${image} ${photo.width}w`}
+            src={imageSrc}
+            srcSet={`${imageSmall} ${photo.smallWidth}w, ${imageSrc} ${photo.width}w`}
             sizes="(min-width: 64rem) 34rem, calc(100vw - 32px)"
             width={photo.width}
             height={(photo.width * 3) / 4}
@@ -109,7 +112,7 @@ function Location({ location }: { location: (typeof locations)[number] }) {
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       className="location-action-icon"
-                      src={icon}
+                      src={withBase(icon)}
                       width={20}
                       height={20}
                       alt=""

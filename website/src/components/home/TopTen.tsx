@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type KeyboardEvent, type TransitionEvent } from "react";
 import { homeSections, site, topTen } from "../../content/index.ts";
+import { withBase } from "../../lib/basePath.ts";
 import { publicValue } from "../../lib/facts.ts";
 import { previewFor } from "./dishPreview.ts";
 
@@ -143,7 +144,7 @@ export function TopTen() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 className="dish-preview-photo"
-                src={settled.image}
+                src={withBase(settled.image)}
                 alt={settled.name}
                 width={1200}
                 height={750}
@@ -153,7 +154,7 @@ export function TopTen() {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   className={`dish-preview-photo dish-preview-photo-in${overlayIn ? " is-in" : ""}`}
-                  src={overlay.image}
+                  src={withBase(overlay.image)}
                   alt=""
                   aria-hidden="true"
                   width={1200}
@@ -174,7 +175,7 @@ export function TopTen() {
           <aside ref={slipRef} className="order-slip-card top-ten-slip" aria-label="你的文記落單紙">
             <div className="slip-head">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/brand/mankee-logo-transparent.png" alt="" width={28} height={28} />
+              <img src={withBase("/brand/mankee-logo-transparent.png")} alt="" width={28} height={28} />
               <span>文記落單紙</span>
             </div>
             <div className="slip-row">

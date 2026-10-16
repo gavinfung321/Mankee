@@ -11,3 +11,7 @@ scrollcraftbuildsmankee-hero-r1labv18-motion.txt
 
 .DS_Store
 Thumbs.db
+
+# Local Codex repair dependencies are disposable and must never be committed.
+.codex-local-deps/
+.codex-repair-deps/

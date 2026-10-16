@@ -9,6 +9,7 @@ import {
   type MotionValue,
 } from "framer-motion";
 import { homeSections, site } from "../../content/index.ts";
+import { withBase } from "../../lib/basePath.ts";
 import { publicValue } from "../../lib/facts.ts";
 
 const section = homeSections[2];
@@ -110,7 +111,7 @@ export function HowToOrder() {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/media/food/counter-trays.webp"
+                  src={withBase("/media/food/counter-trays.webp")}
                   alt=""
                   width={1024}
                   height={768}
@@ -137,7 +138,7 @@ export function HowToOrder() {
                 <div className="slip-head">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/brand/mankee-logo-transparent.png"
+                    src={withBase("/brand/mankee-logo-transparent.png")}
                     alt=""
                     width={28}
                     height={28}
