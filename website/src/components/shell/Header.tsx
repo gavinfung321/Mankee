@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { type CSSProperties, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -16,18 +16,28 @@ const sectionLinks = primaryNav.filter((item) => item.id !== "visit");
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [overHero, setOverHero] = useState(pathname === "/");
+  const [heroProgress, setHeroProgress] = useState(pathname === "/" ? 0 : 1);
+  const [introMode, setIntroMode] = useState<"pending" | "full" | "quick">(
+    "pending",
+  );
   const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    const introKey = "mankee-header-intro-seen";
+    const seen = window.sessionStorage.getItem(introKey) === "true";
+    setIntroMode(seen ? "quick" : "full");
+    if (!seen) window.sessionStorage.setItem(introKey, "true");
+  }, []);
+
+  useEffect(() => {
     if (pathname !== "/") {
-      setOverHero(false);
+      setHeroProgress(1);
       return;
     }
     const update = () => {
       const hero = document.querySelector(".home-hero");
       if (!(hero instanceof HTMLElement)) {
-        setOverHero(false);
+        setHeroProgress(1);
         return;
       }
       const travel = Math.max(1, hero.offsetHeight - window.innerHeight);
@@ -35,18 +45,39 @@ export function Header() {
         1,
         Math.max(0, -hero.getBoundingClientRect().top / travel),
       );
-      setOverHero(progress < 0.995);
+      setHeroProgress(progress);
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
     return () => window.removeEventListener("scroll", update);
   }, [pathname]);
 
-  const overlay = overHero && !open;
+  const overlay = pathname === "/" && heroProgress < 0.995 && !open;
+  const collapse = overlay ? Math.min(1, heroProgress * 1.7) : 1;
+  const headerStyle = {
+    "--header-progress": collapse.toFixed(3),
+    "--header-bg-alpha": overlay
+      ? Math.min(0.94, collapse * 0.9).toFixed(3)
+      : "0.98",
+    "--header-border-alpha": overlay
+      ? Math.max(0, collapse - 0.25).toFixed(3)
+      : "1",
+  } as CSSProperties;
 
   return (
-    <header className={`site-header${overlay ? " is-hero" : " is-solid"}`}>
+    <header
+      className={[
+        "site-header",
+        overlay ? "is-hero" : "is-solid",
+        collapse > 0.68 ? "is-condensed" : "",
+        `intro-${introMode}`,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      style={headerStyle}
+    >
       <nav aria-label="主要" className="masthead">
+        <span className="masthead-light" aria-hidden="true" />
         <div className="masthead-bar">
           <Link href="/" className="brand-mark" aria-label="文記車仔麵首頁">
             <img
@@ -55,7 +86,9 @@ export function Header() {
               width={46}
               height={46}
             />
-            <span>文記車仔麵</span>
+            <span className="brand-wordmark">
+              <span>文記車仔麵</span>
+            </span>
           </Link>
           <button
             type="button"
@@ -63,24 +96,24 @@ export function Header() {
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
           >
-            {open ? (
-              <X aria-hidden="true" size={20} />
-            ) : (
-              <Menu aria-hidden="true" size={20} />
-            )}
-            選單
+            <span className="menu-toggle-icon" aria-hidden="true">
+              {open ? <X size={20} /> : <Menu size={20} />}
+            </span>
+            <span>選單</span>
           </button>
           <ul className="nav-links">
-            {sectionLinks.map((item) => (
-              <NavLink key={item.id} item={item} pathname={pathname} />
+            {sectionLinks.map((item, index) => (
+              <NavLink
+                key={item.id}
+                item={item}
+                pathname={pathname}
+                introIndex={index}
+              />
             ))}
           </ul>
           {visit ? (
-            <Link
-              href={visit.href}
-              className="nav-cta nav-cta-desktop"
-            >
-              {visit.label}
+            <Link href={visit.href} className="nav-cta nav-cta-desktop">
+              <span>{visit.label}</span>
             </Link>
           ) : null}
         </div>
@@ -98,11 +131,12 @@ export function Header() {
                   : { duration: 0.16, ease: [0.2, 0, 0, 1] }
               }
             >
-              {primaryNav.map((item) => (
+              {primaryNav.map((item, index) => (
                 <NavLink
                   key={item.id}
                   item={item}
                   pathname={pathname}
+                  introIndex={index}
                   onNavigate={() => setOpen(false)}
                 />
               ))}
@@ -117,17 +151,19 @@ export function Header() {
 function NavLink({
   item,
   pathname,
+  introIndex = 0,
   onNavigate,
 }: {
   item: NavItem;
   pathname: string;
+  introIndex?: number;
   onNavigate?: () => void;
 }) {
   const current = isCurrentPath(item.href, pathname);
   const cta = item.id === "visit";
 
   return (
-    <li>
+    <li style={{ "--nav-index": introIndex } as CSSProperties}>
       <Link
         href={item.href}
         aria-current={current ? "page" : undefined}
@@ -138,7 +174,7 @@ function NavLink({
           current && !cta ? "is-current" : "",
         ].join(" ")}
       >
-        {item.label}
+        <span>{item.label}</span>
       </Link>
     </li>
   );

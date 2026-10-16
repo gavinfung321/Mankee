@@ -8,19 +8,9 @@ import { heroMedia, heroMediaProgress } from "../../lib/hero.ts";
 const hero = homeSections[0];
 
 const toppingMoments = [
-  { start: 0.3, end: 2.75, kicker: "SWISS CHICKEN WING", name: "瑞士雞翼" },
-  {
-    start: 4.25,
-    end: 7.25,
-    kicker: "SUPERIOR SOUP FISH MAW",
-    name: "上湯花膠",
-  },
-  {
-    start: 8.65,
-    end: 11.35,
-    kicker: "FERMENTED PORK KNUCKLE",
-    name: "南乳豬手",
-  },
+  { start: 0.3, end: 2.75, name: "瑞士雞翼" },
+  { start: 4.25, end: 7.25, name: "上湯花膠" },
+  { start: 8.65, end: 11.35, name: "南乳豬手" },
 ];
 
 export function Hero() {
@@ -32,7 +22,6 @@ export function Hero() {
     attachHeroScrub(section);
     const video = section.querySelector("video");
     const label = section.querySelector(".hero-topping-label");
-    const labelKicker = label?.querySelector("span");
     const labelName = label?.querySelector("strong");
     const paint = () => {
       const travel = Math.max(1, section.offsetHeight - window.innerHeight);
@@ -41,7 +30,7 @@ export function Hero() {
         Math.max(0, -section.getBoundingClientRect().top / travel),
       );
       const intro = 1 - Math.min(1, progress / 0.22);
-      const finish = Math.min(1, Math.max(0, (progress - 0.92) / 0.05));
+      const finish = Math.min(1, Math.max(0, (progress - 0.66) / 0.08));
       const mobileMediaPhase = Math.min(
         1,
         Math.max(0, (progress - 0.08) / 0.16),
@@ -66,7 +55,6 @@ export function Hero() {
           : 0;
       const active = toppingMoments.find((item) => time >= item.start && time <= item.end);
       label?.classList.toggle("is-visible", Boolean(active));
-      if (labelKicker) labelKicker.textContent = active?.kicker ?? "";
       if (labelName) labelName.textContent = active?.name ?? "";
     };
     paint();
@@ -132,7 +120,6 @@ export function Hero() {
         <p>瑞士雞翼、上湯花膠、南乳豬手。</p>
       </div>
       <div className="hero-topping-label" aria-hidden="true">
-        <span />
         <strong />
       </div>
       <div className="hero-progress" aria-hidden="true">

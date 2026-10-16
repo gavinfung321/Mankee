@@ -12,7 +12,7 @@ export const heroMedia = {
   posterWidth: 1280,
   posterHeight: 720,
   scrollStart: 0.02,
-  scrollEnd: 0.92,
+  scrollEnd: 0.74,
   crop: {
     fit: "cover",
     position: "center",

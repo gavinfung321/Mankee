@@ -29,7 +29,7 @@ test("the hero uses the locked three-topping scrub and tuned scroll contract", (
   assert.match(contract, new RegExp(posterName));
   assert.match(contract, new RegExp(posterSmallName));
   assert.match(contract, /scrollStart: 0\.02/);
-  assert.match(contract, /scrollEnd: 0\.92/);
+  assert.match(contract, /scrollEnd: 0\.74/);
   assert.match(contract, /heroMediaProgress/);
   assert.match(contract, /fit: "cover"/);
   assert.match(contract, /textSafe: "left"/);
@@ -44,7 +44,7 @@ test("the hero uses the locked three-topping scrub and tuned scroll contract", (
   assert.match(scrub, /heroMediaProgress/);
   assert.match(hero, /heroMediaProgress/);
   assert.match(css, /object-fit:\s*cover|hero-video/);
-  assert.match(css, /min-height:\s*420vh/);
+  assert.match(css, /min-height:\s*300vh/);
   assert.match(css, /prefers-reduced-motion:\s*reduce[\s\S]*\.hero-video/);
   const heroMedia = css.slice(
     css.indexOf(".hero-poster,"),
