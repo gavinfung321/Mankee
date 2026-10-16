@@ -12,7 +12,6 @@ const sensory = readFileSync(
 const home = readFileSync(join(root, "src/styles/home.css"), "utf8");
 
 test("舊式香港 Gate 1 keeps a static 2.5D queue composition contract", () => {
-  assert.match(sensory, /sensory-steel/);
   assert.match(sensory, /sensory-stage/);
   assert.match(sensory, /sensory-back/);
   assert.match(sensory, /sensory-queue-line/);

@@ -650,14 +650,6 @@ header.site-header .mobile-nav .nav-cta {
   overflow-x: clip;
 }
 
-.sensory-steel {
-  height: 11px;
-  background:
-    linear-gradient(180deg, rgba(255, 247, 232, 0.45), transparent 55%),
-    linear-gradient(180deg, var(--steel-light) 0%, var(--steel-mid) 48%, var(--steel-dark) 100%);
-  box-shadow: var(--shadow-low);
-}
-
 .sensory-spread {
   display: flex;
   flex-direction: column;

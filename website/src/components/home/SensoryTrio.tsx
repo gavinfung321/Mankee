@@ -3,7 +3,6 @@ import { withBase } from "../../lib/basePath.ts";
 export function SensoryTrio() {
   return (
     <section className="home-section sensory-section" aria-label="舊式香港">
-      <div className="sensory-steel" aria-hidden="true" />
       <div className="home-inner sensory-spread">
         <header className="sensory-heading">
           <p className="section-kicker sensory-kicker">舊式香港</p>
