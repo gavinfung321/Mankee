@@ -325,6 +325,7 @@ header.site-header .brand-mark {
 header.site-header .brand-mark img {
   width: 46px;
   height: 46px;
+  margin-right: -13px;
   object-fit: contain;
 }
 
