@@ -178,12 +178,19 @@
 }
 
 @media (max-width: 39.99rem) {
+  .home-hero {
+    overflow: clip;
+    background: #100b08;
+  }
+
   .hero-stick {
+    z-index: 1;
     isolation: isolate;
     height: 100vh;
-    height: 100dvh;
-    min-height: 100dvh;
+    height: calc(100dvh + 3px);
+    min-height: calc(100dvh + 3px);
     background: #100b08;
+    box-shadow: 0 4px 0 #100b08;
   }
 
   .hero-stick::before {
