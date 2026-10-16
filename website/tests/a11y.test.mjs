@@ -43,11 +43,24 @@ test("landmarks, focus, and decorative media stay accessible", () => {
     homeCss,
     /\.top-ten-section \.top-ten-dish\[open\] summary \{[^}]*color: #fff1d9/,
   );
-  const withoutStageStick = homeCss.replace(
-    /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky;/,
-    "#top-ten .top-ten-stage {",
-  );
+  const withoutStageStick = homeCss
+    .replace(
+      /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky;/,
+      "#top-ten .top-ten-stage {",
+    )
+    .replace(
+      /\.order-theatre-stage \{[^}]*position:\s*sticky;/,
+      ".order-theatre-stage {",
+    );
   assert.match(homeCss, /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky/);
+  assert.match(
+    homeCss,
+    /@media \(min-width: 64rem\) \{[\s\S]*?\.order-theatre-stage \{[^}]*position:\s*sticky/,
+  );
+  assert.match(
+    homeCss,
+    /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.order-theatre-stage \{[^}]*position:\s*relative/,
+  );
   assert.doesNotMatch(
     withoutStageStick,
     /position:\s*sticky|animation-timeline:\s*view\(\)[\s\S]*prefers-reduced-motion:\s*reduce/,

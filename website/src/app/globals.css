@@ -3,12 +3,13 @@
 @import "../styles/home.css";
 
 @theme {
-  --color-paper: #eadcbf;
-  --color-ink: #1b1916;
-  --color-lacquer: #cf2028;
-  --color-jade: #23493d;
-  --color-noodle: #c99e26;
-  --color-jade-dark: #102d26;
+  --color-paper: #f1e6cf;
+  --color-canvas: #f1e6cf;
+  --color-ink: #18130f;
+  --color-lacquer: #b8242a;
+  --color-jade: #173b31;
+  --color-noodle: #d4a33e;
+  --color-jade-dark: #0e2b24;
   --font-display:
     "DFKai-SB", "BiauKai", var(--font-display-loaded, "LXGW WenKai TC"),
     "Kaiti TC", serif;
@@ -26,18 +27,22 @@
 
   body {
     margin: 0;
-    background: var(--paper);
+    background: var(--canvas);
     color: var(--ink);
     font-family: var(--font-text);
     font-size: var(--type-body);
+    font-weight: 400;
     line-height: 1.7;
   }
 
   h1,
+  h2,
+  h3,
   .display {
-    font-family: var(--font-display);
-    font-weight: 650;
+    font-family: var(--font-text);
+    font-weight: 800;
     line-height: 1.2;
+    letter-spacing: -0.03em;
   }
 
   a {
@@ -134,7 +139,7 @@ main {
   color: var(--lacquer);
   font-family: var(--font-display);
   font-size: 1.05rem;
-  font-weight: 650;
+  font-weight: 700;
   letter-spacing: 0.06em;
   line-height: 1;
   text-decoration: none;
@@ -154,8 +159,8 @@ main {
 
 .site-header.is-solid {
   color: var(--ink);
-  background: var(--paper);
-  border-bottom: 1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  background: var(--canvas);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .site-header.is-solid .nav-links {
@@ -200,7 +205,7 @@ main {
 .site-footer {
   padding-block: var(--space-32);
   border-top: 2px solid var(--lacquer);
-  background: var(--paper);
+  background: var(--canvas);
   color: var(--ink);
 }
 

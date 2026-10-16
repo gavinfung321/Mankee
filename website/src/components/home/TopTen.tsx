@@ -139,11 +139,6 @@ export function TopTen() {
           </p>
           <div className="top-ten-stage">
           <figure className="dish-preview">
-            <figcaption className="dish-preview-label">
-              <span>目前預覽</span>
-              <span className="dish-preview-num">{String(previewDish.order).padStart(2, "0")}</span>
-              <span className="dish-preview-name">{previewDish.name}</span>
-            </figcaption>
             <span className="dish-preview-frame">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -168,6 +163,13 @@ export function TopTen() {
                 />
               )}
             </span>
+            <figcaption className="dish-preview-label">
+              <span>目前預覽</span>
+              <span className="dish-preview-num">
+                {String(previewDish.order).padStart(2, "0")}
+              </span>
+              <span className="dish-preview-name">{previewDish.name}</span>
+            </figcaption>
           </figure>
           <aside ref={slipRef} className="order-slip-card top-ten-slip" aria-label="你的文記落單紙">
             <div className="slip-head">

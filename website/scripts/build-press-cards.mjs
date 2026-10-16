@@ -19,7 +19,7 @@ const outDir = join(website, "public", "media", "press");
 const width = 900;
 const height = 1200;
 const logoCentreY = 0.3;
-const ground = "#fff8ea";
+const ground = "#fff7e8";
 const wordmarkWidth = 560;
 // Square marks end at about 42% height, clear of the 56% overlay's top edge at 44%.
 const squareSize = 280;

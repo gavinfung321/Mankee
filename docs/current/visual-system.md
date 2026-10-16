@@ -1,9 +1,24 @@
 # 文記 homepage — visual system
 
-Status: **fonts locked; colour and spacing roles approved (14 Oct 2026) — type scale and chapter grounds still draft**\
-Updated: 14 Oct 2026
+Status: **Counter Theatre global system — 16 Oct 2026**\
+Updated: 16 Oct 2026
 
-The Typography Lock and Stage 2 in `docs/current/project-plan.md` were approved on 14 Oct 2026. The font roles and the Stage 2 colour and spacing roles below are production direction and win over any section-level instruction. The type scale, display weights and per-chapter grounds remain drafts until their own gates pass.
+**Cream canvas, green structure, black cinema, red action.** Colour, type and depth tokens in `website/src/styles/tokens.css` are the production source of truth and win over older chapter-ground tables below until those sections are rebuilt.
+
+| Role | Token | Hex | Use |
+| --- | --- | --- | --- |
+| Canvas | `--canvas` / `--paper` | `#F1E6CF` | Continuous page ground |
+| Cream | `--cream` | `#FFF7E8` | Text/surfaces on dark or red media |
+| Ink | `--ink` | `#18130F` | Primary copy |
+| Structure | `--structure` / `--jade` | `#173B31` | Rails, panels, nav structure, kickers |
+| Deep green | `--structure-deep` / `--jade-dark` | `#0E2B24` | Deep structural fills |
+| Lacquer | `--lacquer` | `#B8242A` | Actions, stamps, rules, active states |
+| Gold | `--gold` / `--noodle` | `#D4A33E` | Numbers, progress, food highlights |
+| Cinema | `--cinema` / `--ground-dark` | `#17120E` | Hero media and inset photo wells only — not section bands |
+
+**One page ground (16 Oct 2026):** after the hero, the homepage is continuous `--canvas`. Cinematic feel comes from photo framing, scrims and shadows (舊式香港 queues, 文記十大 preview), not from alternating chapter colours. Bottle green and lacquer stay structural/action accents.
+
+Typography: `--font-text` (Noto Sans TC) for body and primary headings at 800–900; `--font-display` is the calligraphic accent only (dish names, stamps, quotes, brand accents). Depth: `--shadow-low`, `--shadow-mid`, `--shadow-raised` (upper-left light).
 
 ## Order of authority
 

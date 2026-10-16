@@ -1,3 +1,5 @@
+import { heroMediaProgress } from "../lib/hero.ts";
+
 const reduceMotion = "(prefers-reduced-motion: reduce)";
 
 export function attachHeroScrub(section: HTMLElement) {
@@ -13,7 +15,7 @@ export function attachHeroScrub(section: HTMLElement) {
     const rect = section.getBoundingClientRect();
     const travel = Math.max(1, rect.height - window.innerHeight);
     const progress = Math.min(1, Math.max(0, -rect.top / travel));
-    const nextTime = progress * video.duration;
+    const nextTime = heroMediaProgress(progress) * video.duration;
     if (Math.abs(video.currentTime - nextTime) > 0.012) {
       video.currentTime = nextTime;
     }

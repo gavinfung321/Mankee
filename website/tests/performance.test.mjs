@@ -33,6 +33,7 @@ test("fonts, images, and the hero stay within the launch budget", () => {
   );
 
   const hero = readFileSync(join(root, "src/components/home/Hero.tsx"), "utf8");
+  const heroContract = readFileSync(join(root, "src/lib/hero.ts"), "utf8");
   const founder = readFileSync(
     join(root, "src/components/home/Founder.tsx"),
     "utf8",
@@ -41,7 +42,16 @@ test("fonts, images, and the hero stay within the launch budget", () => {
     join(root, "src/components/home/Recognition.tsx"),
     "utf8",
   );
-  assert.match(hero, /preload="none"/);
+  assert.match(hero, /preload="auto"/);
+  assert.match(heroContract, /hero-signature-three-toppings-scrub-v1-web\.mp4/);
+  assert.ok(
+    statSync(
+      join(
+        root,
+        "public/media/hero/hero-signature-three-toppings-scrub-v1-web.mp4",
+      ),
+    ).size < 10_000_000,
+  );
   assert.match(hero, /fetchPriority="high"/);
   assert.match(hero, /prefers-reduced-motion/);
   assert.doesNotMatch(hero, /poster=\{/);

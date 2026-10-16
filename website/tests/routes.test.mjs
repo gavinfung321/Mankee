@@ -61,12 +61,21 @@ assert.match(layout, /globals\.css/);
 
 const tokens = readFileSync(join(root, "src/styles/tokens.css"), "utf8");
 for (const token of [
-  "--paper: #eadcbf",
-  "--ink: #1b1916",
-  "--lacquer: #cf2028",
-  "--jade: #23493d",
-  "--noodle: #c99e26",
-  "--jade-dark: #102d26",
+  "--canvas: #f1e6cf",
+  "--cream: #fff7e8",
+  "--ink: #18130f",
+  "--structure: #173b31",
+  "--structure-deep: #0e2b24",
+  "--lacquer: #b8242a",
+  "--gold: #d4a33e",
+  "--cinema: #17120e",
+  "--paper: var(--canvas)",
+  "--jade: var(--structure)",
+  "--jade-dark: var(--structure-deep)",
+  "--noodle: var(--gold)",
+  "--shadow-low:",
+  "--shadow-mid:",
+  "--shadow-raised:",
   "--font-display:",
   "LXGW WenKai TC",
   "--font-text:",
@@ -81,7 +90,7 @@ for (const token of [
 
 assert.doesNotMatch(
   tokens,
-  /--wood|--steel|--paper-deep|--lacquer-bright|--muted|--on-jade|KaiTi/,
+  /--wood|--paper-deep|--lacquer-bright|--muted|--on-jade|KaiTi/,
 );
 
 const globalCss = readFileSync(join(root, "src/app/globals.css"), "utf8");

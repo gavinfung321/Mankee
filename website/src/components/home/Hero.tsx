@@ -3,14 +3,24 @@
 import { useEffect, useRef } from "react";
 import { homeSections } from "../../content/index.ts";
 import { attachHeroScrub } from "../../islands/HeroScrub.ts";
-import { heroMedia } from "../../lib/hero.ts";
+import { heroMedia, heroMediaProgress } from "../../lib/hero.ts";
 
 const hero = homeSections[0];
 
 const toppingMoments = [
-  { start: 1.55, end: 2.9, kicker: "SWISS CHICKEN WING", name: "瑞士雞翼" },
-  { start: 5.55, end: 6.55, kicker: "SUPERIOR SOUP FISH MAW", name: "上湯花膠" },
-  { start: 10.55, end: 11.7, kicker: "FERMENTED PORK KNUCKLE", name: "南乳豬手" },
+  { start: 0.3, end: 2.75, kicker: "SWISS CHICKEN WING", name: "瑞士雞翼" },
+  {
+    start: 4.25,
+    end: 7.25,
+    kicker: "SUPERIOR SOUP FISH MAW",
+    name: "上湯花膠",
+  },
+  {
+    start: 8.65,
+    end: 11.35,
+    kicker: "FERMENTED PORK KNUCKLE",
+    name: "南乳豬手",
+  },
 ];
 
 export function Hero() {
@@ -31,16 +41,28 @@ export function Hero() {
         Math.max(0, -section.getBoundingClientRect().top / travel),
       );
       const intro = 1 - Math.min(1, progress / 0.22);
-      const finish = Math.min(1, Math.max(0, (progress - 0.94) / 0.05));
+      const finish = Math.min(1, Math.max(0, (progress - 0.92) / 0.05));
+      const mobileMediaPhase = Math.min(
+        1,
+        Math.max(0, (progress - 0.08) / 0.16),
+      );
       section.style.setProperty("--hero-p", progress.toFixed(4));
       section.style.setProperty("--hero-shade-opacity", (1 - progress * 0.55).toFixed(3));
       section.style.setProperty("--hero-intro-opacity", intro.toFixed(3));
       section.style.setProperty("--hero-intro-y", `${(-progress * 22).toFixed(2)}px`);
       section.style.setProperty("--hero-finish-opacity", finish.toFixed(3));
       section.style.setProperty("--hero-finish-y", `${((1 - progress) * 28).toFixed(2)}px`);
+      section.style.setProperty(
+        "--hero-mobile-media-top",
+        `${(56 - mobileMediaPhase * 8).toFixed(2)}%`,
+      );
+      section.style.setProperty(
+        "--hero-mobile-media-width",
+        `${(140 + mobileMediaPhase * 6).toFixed(2)}vw`,
+      );
       const time =
         video instanceof HTMLVideoElement && Number.isFinite(video.duration)
-          ? progress * video.duration
+          ? heroMediaProgress(progress) * video.duration
           : 0;
       const active = toppingMoments.find((item) => time >= item.start && time <= item.end);
       label?.classList.toggle("is-visible", Boolean(active));
@@ -59,7 +81,7 @@ export function Hero() {
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const start = () => {
       if (reduced.matches) return;
-      video.preload = "metadata";
+      video.preload = "auto";
       video.load();
     };
     if (document.readyState === "complete") start();
@@ -89,22 +111,14 @@ export function Hero() {
         alt=""
         fetchPriority="high"
         aria-hidden="true"
-        style={{
-          objectFit: "cover",
-          objectPosition: "54% 56%",
-        }}
       />
       <video
         className="hero-video"
         src={heroMedia.src}
         muted
         playsInline
-        preload="none"
+        preload="auto"
         aria-hidden="true"
-        style={{
-          objectFit: "cover",
-          objectPosition: "54% 56%",
-        }}
       />
       <div className="hero-scrim" aria-hidden="true" />
       <header className="hero-intro">

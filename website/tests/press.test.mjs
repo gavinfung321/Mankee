@@ -110,7 +110,7 @@ test("publisher artwork is local, sourced and review-only", async () => {
   assert.match(manifest, /review-only/i);
 
   const script = read("scripts/build-press-cards.mjs");
-  assert.match(script, /const ground = "#fff8ea";/);
+  assert.match(script, /const ground = "#fff7e8";/);
   assert.doesNotMatch(script, /#ffffff|#fefefe/);
   for (const item of rail) {
     assert.match(script, new RegExp(`id: "${item.id}"`), item.id);
@@ -228,11 +228,12 @@ test("the press rail is an image-card native scroll-snap carousel", () => {
   assert.doesNotMatch(css, /press-autoplay/);
 
   const block =
-    css.match(/\.press-section \{[\s\S]*?(?=\/\* Cream on --jade-dark)/)?.[0] ??
-    "";
+    css.match(
+      /\.press-section \{[\s\S]*?(?=\/\* Locations sits|\.locations-section \{)/,
+    )?.[0] ?? "";
   assert.match(
     block,
-    /\.press-section \{[^}]*background: var\(--ground-sage\)/,
+    /\.press-section \{[^}]*background: var\(--canvas\)/,
   );
   assert.match(block, /\.press-rail \{[^}]*scroll-snap-type: x mandatory/);
   assert.match(block, /\.press-rail \{[^}]*scrollbar-width: none/);

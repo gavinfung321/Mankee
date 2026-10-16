@@ -25,7 +25,7 @@ test("fonts are set only through the two shared roles", () => {
   }
 });
 
-test("the display role leads with the Hero's 標楷體 and falls back to WenKai TC", () => {
+test("the display role is the calligraphic accent (標楷體 → WenKai TC)", () => {
   for (const file of ["src/styles/tokens.css", "src/app/globals.css"]) {
     const source = readFileSync(join(root, file), "utf8");
     const display = source.match(/--font-display:\s*([^;]+);/)[1].replace(/\s+/g, " ");
@@ -37,7 +37,7 @@ test("the display role leads with the Hero's 標楷體 and falls back to WenKai 
   }
 });
 
-test("the text role leads with self-hosted Noto Sans TC", () => {
+test("the text role leads with self-hosted Noto Sans TC for body and headings", () => {
   for (const file of ["src/styles/tokens.css", "src/app/globals.css"]) {
     const source = readFileSync(join(root, file), "utf8");
     const text = source.match(/--font-text:\s*([^;]+);/)[1].replace(/\s+/g, " ");
@@ -47,6 +47,9 @@ test("the text role leads with self-hosted Noto Sans TC", () => {
       file,
     );
   }
+  const home = readFileSync(join(root, "src/styles/home.css"), "utf8");
+  assert.match(home, /\.home-section h2 \{[^}]*font-family: var\(--font-text\)/);
+  assert.match(home, /\.home-hero h1,\s*\.hero-finish strong \{[^}]*font-family: var\(--font-text\)/);
 });
 
 test("font loaders leave fallback order to the two roles", () => {

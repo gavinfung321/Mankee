@@ -1,20 +1,48 @@
 :root {
-  --paper: #eadcbf;
-  --ink: #1b1916;
-  --lacquer: #cf2028;
-  --jade: #23493d;
-  --noodle: #c99e26;
-  --jade-dark: #102d26;
+  /* —— Palette: cream canvas, green structure, black cinema, red action —— */
+  --canvas: #f1e6cf;
+  --cream: #fff7e8;
+  --ink: #18130f;
+  --ink-muted: #5c5348;
+  --structure: #173b31;
+  --structure-deep: #0e2b24;
+  --lacquer: #b8242a;
+  --gold: #d4a33e;
+  --cinema: #17120e;
 
-  --cream: #fff8ea;
-  --ground-light: #f4efe6;
-  --ground-sage: #e6ead8;
-  --ground-dark: #1c1712;
-  --jade-text: #1b4336;
-  --gold-bright: #ffd25d;
-  --ink-muted: #5c574e;
-  /* Matches the Michelin artwork's flat red; Recognition band only. */
+  /* Stainless — physical counter elements only */
+  --steel-light: #e0e5eb;
+  --steel-mid: #8f97a1;
+  --steel-dark: #3f454c;
+
+  /* Michelin artwork's flat red; Recognition band only. */
   --michelin: #a3191e;
+
+  /* —— Semantic bridges (existing call sites) —— */
+  --paper: var(--canvas);
+  --jade: var(--structure);
+  --jade-dark: var(--structure-deep);
+  --jade-text: var(--structure);
+  --noodle: var(--gold);
+  --gold-bright: var(--gold);
+  --ground-light: var(--canvas);
+  --ground-sage: var(--canvas);
+  --ground-dark: var(--cinema);
+
+  /* —— Depth: one light from the upper left —— */
+  --shadow-low:
+    0 1px 2px rgba(24, 19, 15, 0.06),
+    0 2px 6px rgba(24, 19, 15, 0.05);
+  --shadow-mid:
+    -2px 4px 10px rgba(24, 19, 15, 0.08),
+    0 10px 22px rgba(24, 19, 15, 0.1);
+  --shadow-raised:
+    -4px 8px 18px rgba(24, 19, 15, 0.1),
+    0 18px 36px rgba(24, 19, 15, 0.14);
+
+  --border-subtle: color-mix(in srgb, var(--ink) 14%, transparent);
+  --border-strong: color-mix(in srgb, var(--ink) 28%, transparent);
+  --highlight-top: inset 0 1px 0 rgba(255, 247, 232, 0.55);
 
   --space-4: 4px;
   --space-8: 8px;
@@ -25,7 +53,6 @@
   --space-48: 48px;
   --space-64: 64px;
   --space-96: 96px;
-  /* Vertical section padding for reopened sections; frozen sections keep their own values. */
   --section-space: var(--space-64);
 
   --rule-length: 2.25rem;
@@ -43,13 +70,19 @@
   --bp-tablet: 48rem;
   --bp-desktop: 64rem;
 
-  /* 標楷體 cannot be self-hosted; WenKai TC is the hosted stand-in where it is missing. */
-  --font-display:
-    "DFKai-SB", "BiauKai", var(--font-display-loaded, "LXGW WenKai TC"),
-    "Kaiti TC", serif;
+  /*
+    Two font roles:
+    --font-text = architectural body + primary headings (Noto Sans TC)
+    --font-display = calligraphic accent only (Kai / WenKai): dish names,
+    short cultural phrases, stamps, founder quotes, brand accents
+  */
   --font-text:
     var(--font-text-loaded, "Noto Sans TC"), "PingFang TC",
     "Microsoft JhengHei", sans-serif;
+  --font-display:
+    "DFKai-SB", "BiauKai", var(--font-display-loaded, "LXGW WenKai TC"),
+    "Kaiti TC", serif;
+  --font-accent: var(--font-display);
 
   --duration-short: 160ms;
   --duration-medium: 320ms;
