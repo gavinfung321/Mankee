@@ -180,6 +180,9 @@
 @media (max-width: 39.99rem) {
   .hero-stick {
     isolation: isolate;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100dvh;
     background: #100b08;
   }
 
