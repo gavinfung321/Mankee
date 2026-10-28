@@ -62,17 +62,20 @@ assert.match(layout, /globals\.css/);
 
 const tokens = readFileSync(join(root, "src/styles/tokens.css"), "utf8");
 for (const token of [
-  "--canvas: #f1e6cf",
+  "--lounge: #0e0c0a",
+  "--lounge-raised: #1c1814",
+  "--canvas: #0e0c0a",
   "--cream: #fff7e8",
-  "--ink: #18130f",
-  "--structure: #173b31",
-  "--structure-deep: #0e2b24",
+  "--ink: #fff7e8",
+  "--ink-deep: #18130f",
+  "--structure: #dcca87",
+  "--structure-deep: #1c1814",
   "--lacquer: #b8242a",
-  "--gold: #d4a33e",
-  "--cinema: #17120e",
-  "--paper: var(--canvas)",
-  "--jade: var(--structure)",
-  "--jade-dark: var(--structure-deep)",
+  "--gold: #dcca87",
+  "--cinema: #0e0c0a",
+  "--paper: var(--cream)",
+  "--jade: var(--lounge-raised)",
+  "--jade-dark: var(--lounge)",
   "--noodle: var(--gold)",
   "--shadow-low:",
   "--shadow-mid:",
@@ -97,7 +100,7 @@ assert.doesNotMatch(
 const globalCss = readFileSync(join(root, "src/app/globals.css"), "utf8");
 assert.match(globalCss, /outline: var\(--focus-width\) solid var\(--noodle\)/);
 assert.match(globalCss, /outline-offset: var\(--focus-offset\)/);
-assert.match(globalCss, /\.hero-backdrop[\s\S]*background: var\(--jade-dark\)/);
+assert.match(globalCss, /\.hero-backdrop[\s\S]*background: var\(--lounge\)/);
 assert.doesNotMatch(globalCss, /color:\s*var\(--noodle\)/);
 
 const page = readFileSync(join(root, "src/app/page.tsx"), "utf8");

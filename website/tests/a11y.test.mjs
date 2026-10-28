@@ -36,33 +36,18 @@ test("landmarks, focus, and decorative media stay accessible", () => {
   assert.match(slip, /order-pass-line/);
   assert.doesNotMatch(slip, /aria-hidden="true"/);
   assert.match(topTen, /alt=""/);
-  assert.match(topTen, /aria-live="polite"/);
+  assert.doesNotMatch(topTen, /aria-live="polite"/);
   assert.match(globalCss, /a \{\s*color: var\(--ink\)/);
   assert.match(globalCss, /\.nav-cta[\s\S]*font-weight: 700/);
   assert.match(
     homeCss,
-    /\.top-ten-section \.top-ten-dish\[open\] summary \{[^}]*color: #fff1d9/,
+    /#top-ten \.top-ten-dish\[aria-current="true"\]::before \{[^}]*background: var\(--gold\)/,
   );
-  const withoutStageStick = homeCss
-    .replace(
-      /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky;/,
-      "#top-ten .top-ten-stage {",
-    )
-    .replace(
-      /\.order-theatre-stage \{[^}]*position:\s*sticky;/,
-      ".order-theatre-stage {",
-    );
-  assert.match(homeCss, /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky/);
-  assert.match(
-    homeCss,
-    /@media \(min-width: 64rem\) \{[\s\S]*?\.order-theatre-stage \{[^}]*position:\s*sticky/,
-  );
-  assert.match(
-    homeCss,
-    /@media \(prefers-reduced-motion: reduce\) \{[\s\S]*?\.order-theatre-stage \{[^}]*position:\s*relative/,
-  );
+  assert.match(homeCss, /#top-ten \.top-ten-stage \{[^}]*position:\s*static/);
+  assert.doesNotMatch(homeCss, /#top-ten \.top-ten-stage \{[^}]*position:\s*sticky/);
+  assert.doesNotMatch(homeCss, /\.order-theatre-stage \{[^}]*position:\s*sticky/);
   assert.doesNotMatch(
-    withoutStageStick,
+    homeCss,
     /position:\s*sticky|animation-timeline:\s*view\(\)[\s\S]*prefers-reduced-motion:\s*reduce/,
   );
 });

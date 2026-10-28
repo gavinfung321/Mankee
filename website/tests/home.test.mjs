@@ -6,11 +6,10 @@ import test from "node:test";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-test("homepage renders the eight static sections from confirmed records", () => {
+test("homepage renders the static sections from confirmed records", () => {
   const page = readFileSync(join(root, "src/app/page.tsx"), "utf8");
   const order = [
     "<Hero",
-    "<SensoryTrio",
     "<HowToOrder",
     "<TopTen",
     "<OrderSlip",
@@ -25,7 +24,7 @@ test("homepage renders the eight static sections from confirmed records", () => 
     assert.ok(index > cursor, marker);
     cursor = index;
   }
-  assert.doesNotMatch(page, /specimen|client:|HeroScrub|video/);
+  assert.doesNotMatch(page, /specimen|client:|HeroScrub|video|SensoryTrio/);
 
   const hero = read("Hero.tsx");
   const founder = read("Founder.tsx");
@@ -35,7 +34,6 @@ test("homepage renders the eight static sections from confirmed records", () => 
   const topTen = read("TopTen.tsx");
   const homeFiles = [
     hero,
-    read("SensoryTrio.tsx"),
     read("HowToOrder.tsx"),
     topTen,
     slip,

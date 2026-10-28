@@ -1,14 +1,18 @@
 :root {
-  /* —— Palette: cream canvas, green structure, black cinema, red action —— */
-  --canvas: #f1e6cf;
+  /* —— Palette: dark lounge, cream ink, gold highlight, lacquer action —— */
+  --lounge: #0e0c0a;
+  --lounge-raised: #1c1814;
+  --canvas: #0e0c0a;
   --cream: #fff7e8;
-  --ink: #18130f;
-  --ink-muted: #5c5348;
-  --structure: #173b31;
-  --structure-deep: #0e2b24;
+  --cream-muted: #a8a091;
+  --ink: #fff7e8;
+  --ink-muted: #a8a091;
+  --ink-deep: #18130f;
+  --structure: #dcca87;
+  --structure-deep: #1c1814;
   --lacquer: #b8242a;
-  --gold: #d4a33e;
-  --cinema: #17120e;
+  --gold: #dcca87;
+  --cinema: #0e0c0a;
 
   /* Stainless — physical counter elements only */
   --steel-light: #e0e5eb;
@@ -19,30 +23,30 @@
   --michelin: #a3191e;
 
   /* —— Semantic bridges (existing call sites) —— */
-  --paper: var(--canvas);
-  --jade: var(--structure);
-  --jade-dark: var(--structure-deep);
-  --jade-text: var(--structure);
+  --paper: var(--cream);
+  --jade: var(--lounge-raised);
+  --jade-dark: var(--lounge);
+  --jade-text: var(--gold);
   --noodle: var(--gold);
   --gold-bright: var(--gold);
-  --ground-light: var(--canvas);
-  --ground-sage: var(--canvas);
+  --ground-light: var(--lounge-raised);
+  --ground-sage: var(--lounge);
   --ground-dark: var(--cinema);
 
-  /* —— Depth: one light from the upper left —— */
+  /* —— Depth: soft cream lift on dark —— */
   --shadow-low:
-    0 1px 2px rgba(24, 19, 15, 0.06),
-    0 2px 6px rgba(24, 19, 15, 0.05);
+    0 1px 2px rgba(255, 247, 232, 0.04),
+    0 2px 8px rgba(0, 0, 0, 0.35);
   --shadow-mid:
-    -2px 4px 10px rgba(24, 19, 15, 0.08),
-    0 10px 22px rgba(24, 19, 15, 0.1);
+    -2px 4px 14px rgba(0, 0, 0, 0.4),
+    0 10px 28px rgba(0, 0, 0, 0.45);
   --shadow-raised:
-    -4px 8px 18px rgba(24, 19, 15, 0.1),
-    0 18px 36px rgba(24, 19, 15, 0.14);
+    -4px 8px 22px rgba(0, 0, 0, 0.5),
+    0 18px 40px rgba(0, 0, 0, 0.55);
 
-  --border-subtle: color-mix(in srgb, var(--ink) 14%, transparent);
-  --border-strong: color-mix(in srgb, var(--ink) 28%, transparent);
-  --highlight-top: inset 0 1px 0 rgba(255, 247, 232, 0.55);
+  --border-subtle: color-mix(in srgb, var(--cream) 14%, transparent);
+  --border-strong: color-mix(in srgb, var(--cream) 28%, transparent);
+  --highlight-top: inset 0 1px 0 rgba(255, 247, 232, 0.08);
 
   --space-4: 4px;
   --space-8: 8px;

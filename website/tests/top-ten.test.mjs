@@ -6,40 +6,50 @@ import test from "node:test";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-test("the homepage top ten uses checkbox selection and keeps the names visible", () => {
+test("the homepage top ten uses preview selection and a large dish stage", () => {
   const topTen = readFileSync(join(root, "src/components/home/TopTen.tsx"), "utf8");
   const menu = readFileSync(
     join(root, "src/components/menu/OrderingGuide.tsx"),
     "utf8",
   );
   const css = readFileSync(join(root, "src/styles/home.css"), "utf8");
-  const slip = readFileSync(
-    join(root, "src/components/home/OrderSlipFollow.tsx"),
-    "utf8",
-  );
 
   assert.equal(existsSync(join(root, "src/islands/TopTenPreview.ts")), false);
-  assert.match(topTen, /role="checkbox"/);
-  assert.match(topTen, /aria-checked=\{selected\}/);
+  assert.doesNotMatch(topTen, /role="checkbox"/);
+  assert.doesNotMatch(topTen, /aria-checked/);
+  assert.match(topTen, /aria-current=\{current \? "true" : undefined\}/);
   assert.match(topTen, /data-dish-name=\{dish\.name\}/);
   assert.match(topTen, /data-dish-id=\{dish\.order\}/);
   assert.match(topTen, /<button/);
   assert.match(topTen, /dish-preview/);
+  assert.match(topTen, /點選配料，預覽大圖/);
+  assert.doesNotMatch(topTen, /已揀|加入|selectedNames|selectedIds/);
   assert.doesNotMatch(topTen, /<details|<summary>|attachTopTenPreview|top-ten-feature/);
   assert.doesNotMatch(topTen, /assets\/references|assets\/sourced|\$\d/);
   assert.doesNotMatch(topTen, /top-ten-senses|dish-preview-note/);
   assert.doesNotMatch(topTen, /name="top-ten"/);
-  assert.match(css, /#top-ten \.top-ten-dish\[aria-checked="true"\]/);
+  assert.doesNotMatch(topTen, /order-slip-card|top-ten-slip|slipDone|落單紙|slip-toppings/);
+  assert.doesNotMatch(topTen, /slipDone \? "完成" : "落單"/);
+  assert.doesNotMatch(css, /aria-checked="true"/);
+  assert.doesNotMatch(css, /top-ten-action|top-ten-tick|top-ten-plus|top-ten-count/);
+  assert.match(css, /#top-ten \.dish-preview-frame \{[^}]*height: 240px/);
+  assert.match(css, /clamp\(320px, 42vh, 380px\)/);
+  assert.match(css, /clamp\(360px, 44vh, 440px\)/);
+  assert.doesNotMatch(css, /min\(56vh, 520px\)/);
+  assert.match(css, /#top-ten \.top-ten-stage[\s\S]*position:\s*static/);
+  assert.doesNotMatch(css, /#top-ten \.top-ten-stage[\s\S]*position:\s*sticky/);
+  assert.match(
+    css,
+    /@media \(hover: hover\) and \(pointer: fine\) \{\s*#top-ten \.top-ten-dish:hover/,
+  );
+  assert.match(css, /repeat\(2, minmax\(0, 1fr\)\)/);
+  assert.match(css, /min-height: 72px/);
+  assert.doesNotMatch(css, /top-ten-tick-in|\.dish-preview::before/);
+  assert.match(topTen, /showPreview\(dish\.order, true\)/);
+  assert.match(topTen, /showPreview\(dishes\[index\]\.order, false\)/);
+  assert.match(topTen, /rootMargin: "0px 0px -24% 0px"/);
+  assert.doesNotMatch(css, /#top-ten \.top-ten-slip/);
   assert.match(menu, /top-ten-list/);
   assert.doesNotMatch(menu, /<details|TopTenPreview|top-ten-feature/);
-  assert.match(topTen, /slip-toppings/);
-  assert.match(topTen, /selectedNames\.join\("、"\)/);
-  assert.match(topTen, /slipDone \? "完成" : "落單"/);
-  assert.match(topTen, /is-complete/);
-  assert.match(css, /top-ten-stamp 300ms ease/);
-  assert.match(css, /prefers-reduced-motion:\s*reduce[\s\S]*top-ten-slip \.slip-stamp\.is-complete[\s\S]*animation:\s*none/);
   assert.doesNotMatch(topTen, /\[open\] summary|slipName|花膠/);
-  assert.match(slip, /#top-ten \[aria-checked='true'\]/);
-  assert.match(slip, /dataset\.dishName/);
-  assert.doesNotMatch(slip, /\[open\] summary|slipName|花膠/);
 });

@@ -7,7 +7,7 @@ import {
 import { withBase } from "../../lib/basePath.ts";
 import { publicValue } from "../../lib/facts.ts";
 
-const section = homeSections[7];
+const section = homeSections[6];
 
 const fieldLabels = { hours: "營業時間", phone: "電話", email: "電郵" };
 

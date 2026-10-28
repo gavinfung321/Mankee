@@ -21,11 +21,10 @@ test("the layout stacks on small screens and keeps the order slip in flow", () =
   const mobile = home.slice(mobileStart, home.indexOf("@media", mobileStart + 1));
 
   assert.match(home, /width: min\(var\(--content\)/);
-  assert.match(wide, /\.sensory-dusk/);
   assert.match(wide, /\.top-ten-list/);
   assert.match(mobile, /\.order-pass-stage[\s\S]*flex-direction:\s*column/);
   assert.doesNotMatch(home, /order-pass-wood/);
-  assert.match(mobile, /\.order-pass-plate[\s\S]*order:\s*2/);
+  assert.match(mobile, /\.order-pass-plate-track[\s\S]*order:\s*2/);
   assert.match(mobile, /aspect-ratio:\s*1/);
   assert.doesNotMatch(mobile, /\.order-steps/);
   assert.match(header, /menu-toggle/);
@@ -39,5 +38,6 @@ test("the layout stacks on small screens and keeps the order slip in flow", () =
   const wideTop = home.indexOf("@media (min-width: 64rem)");
   assert.doesNotMatch(home, /position:\s*fixed/);
   assert.doesNotMatch(home.slice(0, wideTop), /position:\s*sticky/);
-  assert.match(home.slice(wideTop), /#top-ten \.top-ten-stage[\s\S]*position:\s*sticky/);
+  assert.match(home.slice(wideTop), /#top-ten \.top-ten-stage[\s\S]*position:\s*static/);
+  assert.doesNotMatch(home.slice(wideTop), /#top-ten \.top-ten-stage[\s\S]*position:\s*sticky/);
 });

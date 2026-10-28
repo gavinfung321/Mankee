@@ -66,7 +66,7 @@ export function PressRail() {
                         id={`press-summary-${link.id}`}
                         className="press-summary"
                       >
-                        {link.summary}
+                        <span className="press-summary-text">{link.summary}</span>
                       </span>
                     )}
                   </span>

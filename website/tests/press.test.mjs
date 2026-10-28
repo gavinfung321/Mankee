@@ -110,7 +110,7 @@ test("publisher artwork is local, sourced and review-only", async () => {
   assert.match(manifest, /review-only/i);
 
   const script = read("scripts/build-press-cards.mjs");
-  assert.match(script, /const ground = "#fff7e8";/);
+  assert.match(script, /const ground = "#1c1814";/);
   assert.doesNotMatch(script, /#ffffff|#fefefe/);
   for (const item of rail) {
     assert.match(script, new RegExp(`id: "${item.id}"`), item.id);
@@ -241,14 +241,17 @@ test("the press rail is an image-card native scroll-snap carousel", () => {
   assert.match(block, /\.press-card \{[^}]*scroll-snap-align: start/);
   assert.match(
     block,
-    /\.press-card a \{[^}]*aspect-ratio: 3 \/ 4;[^}]*overflow: hidden;[^}]*background: var\(--cream\);/,
+    /\.press-card a \{[^}]*aspect-ratio: 3 \/ 4;[^}]*overflow: hidden;[^}]*background: var\(--lounge-raised\);/,
   );
   assert.match(
     block,
     /\.press-publisher \{[^}]*overflow: hidden;[^}]*text-overflow: ellipsis;[^}]*white-space: nowrap;/,
   );
   assert.match(block, /\.press-format \{[^}]*color: var\(--cream\);/);
-  assert.doesNotMatch(block.match(/\.press-card a \{[^}]*\}/)[0], /border/);
+  assert.match(
+    block.match(/\.press-card a \{[^}]*\}/)[0],
+    /border: 1px solid color-mix\(in srgb, var\(--gold\) 22%, transparent\)/,
+  );
   assert.match(block, /\.press-card-art \{[^}]*object-fit: cover/);
 
   assert.match(
@@ -271,13 +274,32 @@ test("the press rail is an image-card native scroll-snap carousel", () => {
   const overlay = block.match(/\.press-card-overlay \{[^}]*\}/)[0];
   assert.match(overlay, /height: 56%;/);
   assert.match(overlay, /overflow: hidden;/);
-  assert.match(overlay, /background: color-mix\(in srgb, var\(--jade\) 95%/);
+  assert.match(overlay, /background: var\(--cinema\);/);
   assert.doesNotMatch(block, /--ink\) \d+%|rgba\(0, 0, 0/);
   assert.match(
     block,
-    /@media \(hover: hover\) and \(pointer: fine\) \{\s*\.press-card-overlay \{\s*height: 34%;[\s\S]*?:focus-visible \.press-card-overlay \{\s*height: 56%;/,
+    /@media \(hover: hover\) and \(pointer: fine\) \{\s*\.press-card-overlay \{\s*height: 40%;[\s\S]*?:focus-visible \.press-card-overlay \{\s*height: 56%;/,
   );
   assert.match(block, /:focus-visible \.press-summary \{\s*opacity: 1;/);
+  assert.match(
+    block,
+    /@media \(width < 40rem\) \{\s*\.press-card a \{\s*aspect-ratio: 1 \/ 1;/,
+  );
+  assert.match(
+    block,
+    /@media \(width < 40rem\) and \(\(hover: none\) or \(pointer: coarse\)\) \{\s*\.press-card a \{\s*aspect-ratio: 4 \/ 5;/,
+  );
+  assert.match(
+    block,
+    /@media \(hover: hover\) and \(pointer: fine\) and \(width < 40rem\) \{\s*\.press-summary \{\s*grid-template-rows: 0fr;/,
+  );
+  assert.doesNotMatch(
+    block.match(
+      /@media \(hover: hover\) and \(pointer: fine\) and \(width < 40rem\) \{[\s\S]*?\n\}/,
+    )[0],
+    /position: absolute/,
+  );
+  assert.match(block, /\.press-card-overlay \{\s*height: auto;/);
 
   assert.match(block, /--press-per-view: 1;/);
   assert.match(

@@ -25,8 +25,9 @@ const ownerSupplied =
 
 // The 11 文記誌 sources in owner-approved order (docs/current/sections/journal-gallery.md).
 // Summaries are Mankee's own approved wording, not publisher excerpts.
-// Artwork places each publisher's official file on a shared warm-white 3:4 field
-// (scripts/build-press-cards.mjs); provenance is asset manifest R18.
+// Artwork places each publisher's official file on one shared dark 3:4 field,
+// with every mark fitted to the same box (scripts/build-press-cards.mjs).
+// Provenance is asset manifest R18.
 export const pressItems: PressItem[] = [
   {
     id: "elle",
@@ -104,7 +105,7 @@ export const pressItems: PressItem[] = [
     placement: "rail",
     artwork: {
       src: "/media/press/ufood-card.webp",
-      source: "https://ufood.com.hk/images/v5/UF_og_image.jpg",
+      source: "https://ufood.com.hk/images/v5/ufood-logo.svg",
       status: "review-only",
     },
   },

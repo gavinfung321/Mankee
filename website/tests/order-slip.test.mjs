@@ -13,15 +13,12 @@ const css = readFileSync(join(root, "src/styles/home.css"), "utf8");
 const page = readFileSync(join(root, "src/app/page.tsx"), "utf8");
 const pkg = readFileSync(join(root, "package.json"), "utf8");
 
-test("the live slip stays in Top Ten and the flight file is not mounted", () => {
+test("Top Ten no longer mounts a slip; OrderSlipFollow stays unmounted", () => {
   const topTen = readFileSync(join(root, "src/components/home/TopTen.tsx"), "utf8");
   const order = readFileSync(join(root, "src/components/home/OrderSlip.tsx"), "utf8");
   assert.equal(existsSync(join(root, "src/components/home/OrderSlipFollow.tsx")), true);
   assert.doesNotMatch(page, /<OrderSlipFollow/);
-  assert.match(topTen, /selectedNames\.join\("、"\)/);
-  assert.match(topTen, /"逐樣揀"/);
-  assert.match(topTen, /slipDone \? "完成" : "落單"/);
-  assert.match(topTen, /setSlipDone\(false\)/);
+  assert.doesNotMatch(topTen, /selectedNames|top-ten-slip|slipDone|落單紙|"逐樣揀"/);
   assert.doesNotMatch(order, /order-ticket|order-slip-card/);
   assert.match(order, /熱騰騰上枱/);
   assert.match(order, /坐低，開餐。/);
@@ -45,8 +42,8 @@ test("the slip stays static below 1024px and flies only on a wide screen", () =>
   const mobileStart = css.indexOf("@media (max-width: 639px)");
   const mobile = css.slice(mobileStart, css.indexOf("@media", mobileStart + 1));
   assert.match(mobile, /flex-direction:\s*column/);
-  assert.match(mobile, /\.order-pass-plate[\s\S]*position:\s*relative/);
-  assert.match(mobile, /order:\s*2/);
+  assert.match(mobile, /\.order-pass-plate-track[\s\S]*position:\s*relative/);
+  assert.match(mobile, /\.order-pass-plate-track[\s\S]*order:\s*2/);
 });
 
 test("reduced motion keeps the final static slip", () => {

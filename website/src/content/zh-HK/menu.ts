@@ -16,7 +16,7 @@ export const ordering = {
     {
       id: "topping",
       label: "餸",
-      note: "可以逐樣加",
+      note: "六十二款，可以逐樣加",
     },
   ],
   disclaimer: site.disclaimer,

@@ -2,8 +2,8 @@ import { homeSections, site, topTen } from "../../content/index.ts";
 import { publicValue } from "../../lib/facts.ts";
 
 const orderLink = site.navigation.find((item) => item.id === "order");
-const steps = homeSections[2];
-const signatures = homeSections[3];
+const steps = homeSections[1];
+const signatures = homeSections[2];
 const disclaimer = publicValue(site.disclaimer);
 
 export function OrderingGuide() {

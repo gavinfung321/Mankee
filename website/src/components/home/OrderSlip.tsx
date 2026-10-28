@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { withBase } from "../../lib/basePath.ts";
 
@@ -13,15 +15,17 @@ export function OrderSlip() {
           <span className="order-pass-line-lead">熱騰騰上枱</span>
           <span className="order-pass-line-payoff">坐低，開餐。</span>
         </p>
-        <Image
-          className="order-pass-plate"
-          src={withBase("/media/order-pass/order-pass-desktop-approved-v1.png")}
-          alt="文記櫃檯上的完成車仔麵"
-          width={1672}
-          height={941}
-          sizes="(max-width: 639px) calc((100vw - 32px) * 1.78), (min-width: 1184px) 1152px, calc(100vw - 32px)"
-          loading="lazy"
-        />
+        <div className="order-pass-plate-track">
+          <Image
+            className="order-pass-plate"
+            src={withBase("/media/order-pass/order-pass-bowl-atmosphere.png")}
+            alt="文記完成車仔麵"
+            width={1024}
+            height={572}
+            unoptimized
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   );

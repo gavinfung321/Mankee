@@ -19,7 +19,6 @@ test("pending facts resolve to nothing and confirmed facts stay", async () => {
     homeSections.map((section) => section.id),
     [
       "hero",
-      "sensory",
       "how-to-order",
       "top-ten",
       "order-slip",
@@ -29,19 +28,14 @@ test("pending facts resolve to nothing and confirmed facts stay", async () => {
     ],
   );
   assert.equal(homeSections[0].heading, "一碗，由這裏開始");
-  assert.deepEqual(
-    homeSections[1].items.map((item) => `${item.sense}：${item.dish}`),
-    ["香：瑞士雞翼", "厚：上湯花膠", "濃：南乳豬手"],
-  );
-  assert.equal(homeSections[2].flow, "湯 → 麵 → 餸");
-  assert.deepEqual(homeSections[2].steps[0].flavours, ["咖喱", "沙嗲", "麻辣"]);
-  assert.equal(homeSections[4].role, "transition");
-  assert.equal(publicValue(homeSections[5].founder.englishName), "Simon Wong");
+  assert.equal(homeSections[1].flow, "湯 → 麵 → 餸");
+  assert.deepEqual(homeSections[1].steps[0].flavours, ["咖喱", "沙嗲", "麻辣"]);
+  assert.equal(homeSections[3].role, "transition");
+  assert.equal(publicValue(homeSections[4].founder.englishName), "Simon Wong");
   assert.equal(
-    publicValue(homeSections[5].founder.quotation),
-    "最希望是港人珍惜本土風味食店。",
+    publicValue(homeSections[4].founder.quotation),    "最希望是港人珍惜本土風味食店。",
   );
-  assert.equal(publicValue(homeSections[5].founder.name), "黃志強");
+  assert.equal(publicValue(homeSections[4].founder.name), "黃志強");
 
   assert.deepEqual(
     topTen.map((dish) => dish.name),
