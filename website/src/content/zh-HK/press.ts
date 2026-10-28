@@ -264,13 +264,15 @@ export const pressItems: PressItem[] = [
   },
 ];
 
-// Review-only artwork renders in development for owner review and never in a production build.
+// Review-only artwork renders in development for owner review.
+// The GitHub Pages demo also shows it; other production builds keep it hidden until approved.
 export function shownArtwork(
   artwork: PressArtwork | undefined,
   production = process.env.NODE_ENV === "production",
 ) {
   if (!artwork) return undefined;
   if (artwork.status === "approved" || !production) return artwork.src;
+  if (process.env.GITHUB_PAGES === "true") return artwork.src;
   return undefined;
 }
 
