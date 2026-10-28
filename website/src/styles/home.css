@@ -1510,6 +1510,7 @@ header.site-header .mobile-nav .nav-cta {
   min-height: 0;
   aspect-ratio: auto;
   overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
 }
 
 @media (max-width: 47.99rem) {
